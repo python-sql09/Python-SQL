@@ -1,3 +1,6 @@
 print('This is my first Python program!')
 print("It is beautiful")
 print("Hello, World!")
+print("Hello, welcome to the banking portal.")
+print("In this portal, you can handle all your banking needs.")
+print("Hello, world!"); print("How are you doing?")

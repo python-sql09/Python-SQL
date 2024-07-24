@@ -8,3 +8,10 @@ price = float(input(" Price of carpet : "))
 total_footage = length * width
 total_cost = total_footage * price
 print("Total Cost :", total_cost) 
+
+x = 75 #integer
+quantity = 75
+x = 6.458 #float
+price = 6.58
+x = "Hello, world!" #string
+Greeting = "Hello, world!"
