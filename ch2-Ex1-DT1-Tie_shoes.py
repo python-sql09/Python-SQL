@@ -1,4 +1,3 @@
-#def tie_shoes():
 print("1. Take one lace in each hand.")
 print("2. Cross the laces over each other and pull them tight.")
 print("3. Make a loop (bunny ear) with each lace.")
@@ -6,6 +5,3 @@ print("4. Cross the loops over each other.")
 print("5. Pull one loop through the hole created by crossing the loops.")
 print("6. Pull the loops tight to secure the knot.")
 print("Shoes are tied.")
-
-# tie_shoes()
-
