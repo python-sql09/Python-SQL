@@ -1,11 +1,24 @@
+# 2024 Tax Rates
+# -------------------------------------------
+# Tax Rate    Income for Single Individuals #
+# -------------------------------------------
+#   10%             Up to $11,600            #             
+#   12%             $11,601 to $47,150       # 
+#   22%             $47,151 to $100,525      #
+#   24%             $100,526 to $191,950     #
+#   32%             $191,950 to $243,725    #
+#   35%             $243,726 to $609,350    #
+#   37%             $609,350 or more        #
+#--------------------------------------------
+
 # Our completed tax program
 # initialize the variables
-max10 = 9875
-max12 = 40125
-max22 = 85525
-max24 = 163300
-max32 = 207350
-max35 = 518400
+max10 = 11600
+max12 = 47150
+max22 = 100526
+max24 = 191950
+max32 = 243725
+max35 = 609350
 tier10_tax = max10 * .1
 tier12_tax = tier10_tax + ((max12 - max10) * .12)
 tier22_tax = tier12_tax + ((max22 - max12) * .22)
@@ -16,7 +29,7 @@ tier35_tax = tier32_tax + ((max35 - max32) * .35)
 gross_inc = float(input("Enter your gross income from your W-2 for 2020: "))
 num_dep = int(input("How many dependents are you claiming? "))
 # calculate taxable income
-tax_income = gross_inc -12200 - (2000 * num_dep)
+tax_income = gross_inc -14600 - (3600 * num_dep)
 if tax_income <=0:
     tax_due = 0
 elif tax_income <= max10:
