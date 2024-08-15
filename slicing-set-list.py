@@ -1,4 +1,4 @@
-# Slicing a set of lists with corresponding data
+# 8.10 Slicing a set of lists with corresponding data
 trans_date=['2021-04-03','2021-12-03',
             '2021-13-03','2021-15-03','2021-22-03',
             '2021-25-03','21-30-03','2021-03-04']
