@@ -26,3 +26,17 @@ Uses a value			Uses an index				Uses an index
 Single item removed		Single item removed	S		ingle item or entire list removed
 No return value			Removed value returned		No return value
 ----------------------------------------------------------------------------------------
+Tuple:
+-----
+A tuple is another way to save a group of related pieces of data in Python. The biggest
+difference between a tuple and a list is that a tuple is immutable, which means that we cannot add or remove items from a tuple after we have defined it.
+
+Slicing Tuple
+-------------
+•• tuple[x:y]: Retrieves a range of values starting with index x and ending with the
+item before index y. If y is equal to the length of the list, the output includes the
+last item in the list.
+•• tuple[:y]: Retrieves the items from index 0 through the item before index y. This
+is equivalent to using [0:y].
+•• tuple[x:]: Retrieves a string that starts with the item whose index is x and includes
+all items to the right of that character. This is equivalent to using [x:(length)]
