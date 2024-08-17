@@ -40,3 +40,20 @@ last item in the list.
 is equivalent to using [0:y].
 •• tuple[x:]: Retrieves a string that starts with the item whose index is x and includes
 all items to the right of that character. This is equivalent to using [x:(length)]
+
+
+Method						Description
+
+keys()				Returns a list containing the dictionary’s keys
+items()				Returns a list containing a tuple for each key: value pair
+values()			Returns a list of all the values in the dictionary
+get()				Returns the value of the specified key
+pop()				Removes the element with the specified key
+update()			Updates the dictionary with the specified key: value pairs
+copy()				Returns a copy of the dictionary
+clear()				Removes all the elements from the dictionary
+
+
+
+
+

@@ -13,4 +13,6 @@ first_name = "Deepa"
 last_name = "Ponnusamy"
 full_name_upper = last_name.upper() + ", " + first_name.upper()
 print (full_name_upper)
+full_name_lower = last_name.lower() + ", " + first_name.lower()
+print (full_name_lower)
 
