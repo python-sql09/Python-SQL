@@ -54,6 +54,38 @@ copy()				Returns a copy of the dictionary
 clear()				Removes all the elements from the dictionary
 
 
+GETTING STARTED WITH DICTIONARIES
+A dictionary is a collection of items using defined keys. The key acts as a unique index,
+which does not have to be an integer, and each key maps to a specific value in the dic-
+tionary. Each item in a dictionary is a pair made of a key and a value. Dictionaries are not
+sorted. Dictionaries are written with curly braces {}.
+
+MyFirstDict = {
+"key1": "value1",
+"key2": "value2",
+"key3": "value3"
+}
+
+Table 10.2 Common Dictionary Methods
+-----------------------------------------------------------------------------------
+Method                                     Description
+-----------------------------------------------------------------------------------
+keys()			Returns a list containing the dictionary’s keys
+items()			Returns a list containing a tuple for each key: value pair
+values()		Returns a list of all the values in the dictionary
+get()			Returns the value of the specified key
+pop()			Removes the element with the specified key
+update()		Updates the dictionary with the specified key: value pairs
+copy()			Returns a copy of the dictionary
+clear()			Removes all the elements from the dictionary
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+
 
 
 
