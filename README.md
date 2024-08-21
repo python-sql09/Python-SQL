@@ -80,9 +80,47 @@ copy()			Returns a copy of the dictionary
 clear()			Removes all the elements from the dictionary
 -----------------------------------------------------------------------------------
 
+FUNCTIONS OVERVIEW
+-------------------
+A function is a block of organized, reusable code that uses one or more Python state-
+ments to complete a single, related action. We use functions to help with code reusability, increased readability, and redundancy checking (making sure that we do not use the same lines over and over within an application).
 
+•• Functions are blocks of organized, reusable code.
+•• Function code blocks are groups of Python program code executed as a unit, such
+as a module, a class definition, or a function body. A colon (:) is used to start a
+function code block.
+•• User-­defined functions are functions defined by the user. These functions use the
+def keyword to define them.
+•• Built-­in functions are functions that are built into Python.
+•• Redundancy checking is used to check that the same code lines are not unneces-
+sarily repeated within an application.
+•• Docstrings (short for Python documentation) are used to organize functions, mod-
+ules, classes, and methods. Docstrings are similar to comments, but docstrings
+describe what the function does rather than how.
+•• Parameters are the variables listed inside the parentheses in the function defini-
+tion. You can think of parameters as variables that we define as part of defining a
+function. Their purpose is to store the values provided by our function arguments.
+•• Arguments are pieces of information passed into functions. An argument is the
+value sent to the function when called upon.
 
+DEFINING FUNCTIONS IN PYTHON
+As we stated earlier, a function in Python is a block of organized, reusable code. A function performs a single, related action. A function in Python can take any number of parameters. When defining functions within Python, we must adhere to the following rules:
+•• Python function blocks begin with the keyword def followed by the function name
+and parentheses ().
+•• Input arguments should be placed within these parentheses.
+•• The first statement of a function can be an optional statement—­the documentation
+string of the function, or docstring.
+•• We exit a function using the statement return [expression]. The exit function
+may optionally pass back an expression to the caller of the function. The action of
+Return None would essentially provide an indication that the function completed
+successfully, while no return function leaves the function to operate with no return
+as if it was completed.
+•• The colon (:) delineates the start of the function code block, which should
+be indented.
 
+def function_name(function_parameters):
+function_body # Set of Python statements
+return # optional return statement
 
 
 

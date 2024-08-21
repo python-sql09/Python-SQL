@@ -9,23 +9,7 @@ last_name = input("Enter your last name: ")
 
 while True:
     # Display the current tuple
-    print("\nCurrent tuple:", updated_tuple)MethodDescription
-keys()
-items()
-values()
-get()
-pop()
-update()
-copy()
-clear()Returns a list containing the dictionary’s keys
-Returns a list containing a tuple for each key: value pair
-Returns a list of all the values in the dictionary
-Returns the value of the specified key
-Removes the element with the specified key
-Updates the dictionary with the specified key: value pairs
-Returns a copy of the dictionary
-Removes all the elements from the dictionary
-    
+    print("\nCurrent tuple:", updated_tuple)    
     # Ask for a value
     value = input("Enter a value: ")
 
