@@ -1,5 +1,5 @@
 # 0.7 Getting the last three customers
-info = ("Wendi, Garek","Pearline, Engdahl","Kellen, Tristram",
+info = ("Vedha, Tamil","Wendi, Garek","Pearline, Engdahl","Kellen, Tristram",
 "Latisha, Franza","Calla, Hedve","Janis, Boehike",
 "Fidelia, Schonfeld","Ottilie, Agle","Cristabel, Thad",
 "Althea, Truc","Tonia, Elvyn","Margalo, Barney","Jacenta, Joseph",

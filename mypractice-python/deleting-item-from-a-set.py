@@ -1,5 +1,5 @@
 # 11.12 Deleting items from a set
-food = {"pasta", "burger", "hot dog", "pizza"}
+food = {"pasta", "burger", "hot dog", "pizza", "pan cake"}
 print(food)
 food.discard("pasta")
 print(food)

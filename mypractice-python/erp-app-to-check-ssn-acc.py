@@ -1,7 +1,7 @@
 # 10.20 ERP app to check for ssn key
 account_info = {
 "owner": "Violet Duffy",
-"accounts": ['checking','savings'],
+"accounts": ['checking','savings', 'loan'],
 "address": "123 Main Street, Louisville, KY"
 }
 user_input = input("Please enter a key to search: ")

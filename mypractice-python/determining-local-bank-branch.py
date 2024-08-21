@@ -1,6 +1,6 @@
 # 11.22 Determining a local bank branch
 branch_states = {"AZ", "CA", "FL", "GA", "IN", "KY", "MA", "NV", "NY", "NC",
-"PA", "SC", "TN"}
+"PA", "SC", "TN", "WI", "WY"}
 local_states = set()
 user_input = input("Please enter the abbreviation of a state that is local to you \
 [type 'done' to quit]: ").upper()

@@ -49,7 +49,8 @@ acct_bals = {
 100046 : 18668,
 100047 : 125017,
 100048 : 8983,
-100049 : 109160
+100049 : 109160,
+100050 : 60000
 }
 highwealth_list = acct_bals.copy()
 for key,value in list(highwealth_list.items()):

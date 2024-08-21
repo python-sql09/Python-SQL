@@ -8,7 +8,13 @@ print(students_dict)
 print(students_dict2)
 update_person = {'X10002':'Beth'}
 new_person = {'X10003':'George'}
+new_person1 = {'X10004':'Sri'}
+new_person2 = {'X10005':'Shelly'}
+new_person3 = {'X10006':'Selvi'}
 students_dict.update(update_person)
 students_dict.update(new_person)
+students_dict.update(new_person1)
+students_dict.update(new_person2)
+students_dict.update(new_person3)
 print(students_dict)
 print(students_dict2)

@@ -1,5 +1,5 @@
 # 11.13 Deleting items from a set
-names = {"Savion", "Amiah", "Niko", "Jackson"}
+names = {"Savion", "Amiah", "Niko", "Jackson", "Vedha"}
 print(names)
 user_input = input("Please enter a name to remove: ")
 if user_input in names:

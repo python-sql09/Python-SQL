@@ -1,5 +1,5 @@
 # 11.18 Deleting a set of account names
-acct_names_1 = {"Hayden", "Rishi", "Jane"}
+acct_names_1 = {"Hayden", "Rishi", "John"}
 acct_names_2 = {"Hailee", "Kasen", "Dylan"}
 acct_names_3 = {"Leah", "Maxwell", "Rory"}
 print("acct_names_1", acct_names_1, "acct_names_2", acct_names_2, "acct_names_3",
