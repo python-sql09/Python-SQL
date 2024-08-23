@@ -122,6 +122,37 @@ def function_name(function_parameters):
 function_body # Set of Python statements
 return # optional return statement
 
+OBJECT-­O RIENTED PROGRAMMING OVERVIEW
+---------------------------------------
+Object-­oriented programming (OOP) is a programming paradigm based on objects.
+There are four principles that define and differentiate object-­oriented programming. These principles are encapsulation, abstraction, polymorphism, and inheritance.
+
+•• Classes are a type of object with a state and behavior. (Example: the vehicle class)
+•• Objects is an instance of a class. (Examples: Honda Accord, Toyota Camry, midsize
+vehicle, luxury vehicle)
+•• Attributes define a property of an object. (Example: vehicles have four wheels)
+•• Encapsulation is the formation of a digital barrier around a class that keeps the
+information hidden from the rest of the code in the program.
+•• Abstraction is an extension of encapsulation; abstraction keeps object-­oriented
+programming simple in that certain properties and methods from the outside code
+are hidden.
+•• Polymorphism is the ability of an object within the object-­oriented programming
+paradigm to take on many forms.
+•• Instantiation is the process of allocating memory for an object after its constructor
+has been run.
+•• Constructors are a unique method that Python calls for instantiations (creations) of
+object definitions found within a class.
+
+DEFINING CLASSES
+----------------
+When using an object-­oriented approach to software development, classes represent or describe real-­world entities. To define a class, we use the keyword class followed by the name of the class. Within the class, we define its attributes, which describe its state.
+class VehicleClass:
+	pass
+
+class Person:
+	# init method or constructor
+	def _ _init_ _(self, name):
+	self.name = name #name is an instance attribute.
 
 
 
