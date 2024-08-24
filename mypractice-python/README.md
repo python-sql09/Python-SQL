@@ -155,6 +155,14 @@ class Person:
 	self.name = name #name is an instance attribute.
 
 
+•• Inheritance allows the definition of classes to inherit methods and properties from
+other classes.
+•• Parent class or base class is the original class that is being inherited from. This can
+be any standard class.
+•• Child class or derived class is a class that inherits the functionality of the
+parent class.
+
+
 
 
 
