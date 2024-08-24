@@ -89,34 +89,22 @@ ments to complete a single, related action. We use functions to help with code r
 •• Function code blocks are groups of Python program code executed as a unit, such
 as a module, a class definition, or a function body. A colon (:) is used to start a
 function code block.
-•• User-­defined functions are functions defined by the user. These functions use the
-def keyword to define them.
+•• User-­defined functions are functions defined by the user. These functions use the def keyword to define them.
 •• Built-­in functions are functions that are built into Python.
-•• Redundancy checking is used to check that the same code lines are not unneces-
-sarily repeated within an application.
-•• Docstrings (short for Python documentation) are used to organize functions, mod-
-ules, classes, and methods. Docstrings are similar to comments, but docstrings
+•• Redundancy checking is used to check that the same code lines are not unnecessarily repeated within an application.
+•• Docstrings (short for Python documentation) are used to organize functions, modules, classes, and methods. Docstrings are similar to comments, but docstrings
 describe what the function does rather than how.
-•• Parameters are the variables listed inside the parentheses in the function defini-
-tion. You can think of parameters as variables that we define as part of defining a
-function. Their purpose is to store the values provided by our function arguments.
-•• Arguments are pieces of information passed into functions. An argument is the
-value sent to the function when called upon.
+•• Parameters are the variables listed inside the parentheses in the function definition. You can think of parameters as variables that we define as part of defining a function. Their purpose is to store the values provided by our function arguments.
+•• Arguments are pieces of information passed into functions. An argument is the value sent to the function when called upon.
 
 DEFINING FUNCTIONS IN PYTHON
 As we stated earlier, a function in Python is a block of organized, reusable code. A function performs a single, related action. A function in Python can take any number of parameters. When defining functions within Python, we must adhere to the following rules:
-•• Python function blocks begin with the keyword def followed by the function name
-and parentheses ().
+•• Python function blocks begin with the keyword def followed by the function name and parentheses ().
 •• Input arguments should be placed within these parentheses.
 •• The first statement of a function can be an optional statement—­the documentation
 string of the function, or docstring.
-•• We exit a function using the statement return [expression]. The exit function
-may optionally pass back an expression to the caller of the function. The action of
-Return None would essentially provide an indication that the function completed
-successfully, while no return function leaves the function to operate with no return
-as if it was completed.
-•• The colon (:) delineates the start of the function code block, which should
-be indented.
+•• We exit a function using the statement return [expression]. The exit function may optionally pass back an expression to the caller of the function. The action of Return None would essentially provide an indication that the function completed successfully, while no return function leaves the function to operate with no return as if it was completed.
+•• The colon (:) delineates the start of the function code block, which should be indented.
 
 def function_name(function_parameters):
 function_body # Set of Python statements
@@ -162,7 +150,43 @@ be any standard class.
 •• Child class or derived class is a class that inherits the functionality of the
 parent class.
 
+Creating a Variable for a Date
+--------------------------------
+•• Python’s datetime module supplies classes for manipulating dates and times.
+•• The now() function is used to display the current date and time.
+•• The today() function returns the current local date and time.
 
+datetime.date(year, month, day)
+user_date = datetime.date(int(year),int(month),int(day))
 
+Creating a Variable for Time
+----------------------------
+datetime.time(hour, minute, second)
 
+Creating a Variable for Both Date and Time
+-------------------------------------------
+In addition to the date() and time() methods, there is a datetime() method within the datetime class that works with both at the same time.
+datetime( year, month, day, hour, minutes, second)
 
+GETTING THE CURRENT DATE AND TIME
+---------------------------------
+We can use the attributes now() or today() to reference the current system
+time and date:
+•• now() always includes both date and time.
+•• today() always includes date, but time is optional.
+
+SPLITTING A DATE STRING:
+-------------------------
+We can use string functions to extract individual pieces of a datetime output.
+
+USING DATETIME ATTRIBUTES
+-------------------------
+Although we just saw how to split a datetime string into its various components, there is an easier way to get the pieces. The datetime module has several attributes built i­n:
+•• year
+•• month
+•• day
+•• hour
+•• minute
+•• second
+•• microsecond
+•• time zone information (tzinfo)

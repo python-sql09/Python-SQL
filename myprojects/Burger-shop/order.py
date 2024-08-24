@@ -19,8 +19,8 @@ class order:
 		print("Order for " + self.name)
 		print("Here is a list of items in the order")
 		for item in self.items:
-			print("------------")
+			print("--------------------------------------")
 			print(str(item))
-		print("------------")
+		print("------------------------------------------")
 		print("Total Order Amount :$" + str(self.get_price()))
 		print("==========================================")

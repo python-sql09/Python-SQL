@@ -5,23 +5,37 @@ from menu import combo
 from order import order
 # 12 Defining side constants
 BURGER_PRICE = 6.00
-BURGER_CONDIMENTS = ["tomato","lettuce","onion","cheese"]
-DRINK_TYPES = ["fanta", "coca cola", "sprite"]
+BURGER_CONDIMENTS = ["tomato", "lettuce", "onion", "cheese", "mustard", "ketchup"]
+DRINK_TYPES = ["fanta", "coca cola", "sprite", "water"]
 DRINK_SIZES = [12, 16, 20]
-DRINK_PRICES = [1.00,2.00,3.00]
+DRINK_PRICES = [1.00, 2.00, 3.00, 0.00]  # Water is free, so its price is 0.00
+SIDES = ["fries", "coleslaw", "salad", "onion rings", "fruit"]
 SIDE_PRICE = 3.00
-SIDES = ["fries","coleslaw","salad"]
 COMBO_DISCOUNT = 2.00
+
 # 9 Getting a burger order
 def get_burger_order():
-	b = burger("Burger",BURGER_PRICE)
-	q1 = input("Do you want any condiments on your burger? (y for yes) ")
-	if q1.lower() =="y":
-		for condiment in BURGER_CONDIMENTS:
-			q = input("Do you want " + str(condiment)+"? (y/n): ")
-			if q.lower() == "y":
-				b.add_condiment(condiment)
-	return b
+    b = burger("Burger", BURGER_PRICE)
+    
+    # Ask for condiments
+    q1 = input("Do you want any condiments on your burger? (y for yes) ")
+    if q1.lower() == "y":
+        for condiment in BURGER_CONDIMENTS:
+            q = input(f"Do you want {condiment}? (y/n): ")
+            if q.lower() == "y":
+                b.add_condiment(condiment)
+
+    # Ask for extras
+    q2 = input("Do you want to add cheese for $1.00? (y/n): ")
+    if q2.lower() == "y":
+        b.add_cheese()
+    
+    q3 = input("Do you want to add an extra patty for $2.00? (y/n): ")
+    if q3.lower() == "y":
+        b.add_extra_patty()
+    
+    return b
+
 # 11 Adding a drink
 def get_drink_order():
 	print ("These are the available drinks:")
@@ -106,7 +120,7 @@ def order_once():
 
 # 7 Creating an order
 def order_many():
-	print("Welcome to Mary's Burger Shop!")
+	print("Welcome to Deepa's Burger Shop!")
 	q1 = input("May I have your name for the order? ")
 	o = order(q1)
 	print("Let's get your order in!")
