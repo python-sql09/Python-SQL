@@ -190,3 +190,75 @@ Although we just saw how to split a datetime string into its various components,
 •• second
 •• microsecond
 •• time zone information (tzinfo)
+
+APPLYING TIMESTAMPS
+--------------------
+value = datetime.datetime.timestamp(some_date)
+
+FILE PROCESSING OVERVIEW
+------------------------
+•• Size constraints are lifted
+•• Data can be input more quickly
+•• Data can be used with different applications
+
+• Path: A path identifies the location of the file to be utilized. A path can be absolute or relative.
+•• Absolute path: A path that includes all information required to find the file, regardless of where the script is stored.
+•• An absolute path starts with a forward slash in front of a topmost folder and includes all subfolders leading to the target file, such as /Users/username/Documents/Python Scripts/fileio/data/testfile.txt.
+•• Absolute paths are useful if the Python scripts are not stored in the same parent folder as the target files, or if the Python scripts may be used in different places in a system.
+•• Relative path: A path that starts from the directory where the Python script is stored and includes instructions on how to get to the file using that directory as a starting point.
+•• Building on the example of an absolute path, if the Python script file is stored in the fileio subdirectory, the relative address to the same file is data/testfile.txt.
+•• Relative paths are shorter, but they depend on the location of the Python script to work. If the files and scripts are stored independently of each other or if the script file may be moved to a different directory at a later time, an absolute path may be a better option.
+
+INTRODUCTION TO FILE INPUT/OUTPUT
+----------------------------------
+Python documentation (https://docs.python.org/3/tutorial/inputoutput.html) for all functions available. The basic functions and methods listed here are:
+•• input()
+•• open()
+•• read()
+•• write()
+•• close()
+•• print()
+
+The input() Function
+---------------------
+Python uses the input() function to read data from standard input, which by default comes from the keyboard.
+input(prompt)
+
+The open() Function
+--------------------
+Before we can read or write a file, we must open it. We open it using Python’s built-­in open() function. This is the main function for working with files in Python. The open() function takes two parameters: filename and mode.
+
+The read() Method
+------------------
+The read() method reads a string from an open file. It is important to note that Python strings can have binary data apart from text data. The basic syntax of the read() method is:
+fileObject.read([count]);
+
+The write() Method
+-------------------
+The write() method writes any string to an open file. It is important to note that Python strings can have binary data and not just text. The write() method does not add a newline character (\n) to the end of the string. The basic syntax of the write() method is:
+fileObject.write(string);
+
+The close() Method
+-------------------
+The close() method of a file object flushes any unwritten information and closes the file object, after which no more writing can be done. The basic syntax of the close() method is:
+fileObject.close();
+
+The print() Function
+--------------------
+The simplest way to produce output is by using the print() function, which we’ve used throughout this book. Using the print() function, you pass 0 or other expressions separated by commas. The basic syntax of the print() function is:
+print ("12345")
+
+OPENING A FILE
+---------------
+open("path to the file","r,a,w,x")
+
+•• r: Open the file as read-­only. Python throws an error if the file does not exist.
+•• a: Open the file for appending. The original content cannot be changed, but we can add new content to the file. If the file does not yet exist, Python will create it.
+•• w: Open the file with full editing options, including changing existing content or adding new content. Python will create the file if it does not already exist.
+•• x: Create a new file with the specified name. Python returns an error if a file with that name already exists.
+
+To open a file for input, use "r". If a file with the same name is not accessible, Python raises an error. The code for opening thefile.txt for input is:
+f = open ("thefile.txt", "r")
+A script that opens a file should close the file as well, to remove the file from memory and free up resources:
+f.close()
+
