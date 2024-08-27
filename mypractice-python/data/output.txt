@@ -1,0 +1,18 @@
+hard work is best for life.
+--- End of File 1 (/home/linuxdeepa/python-sql09/Python-SQL/mypractice-python/data/example.txt) ---
+
+Hello world!
+This is my python test. Hello, world.
+Python is fun; Python is powerful.
+I Like to write Python code.
+--- End of File 2 (/home/linuxdeepa/python-sql09/Python-SQL/mypractice-python/data/example1.txt) ---
+
+Apple pie
+BananaMilk Shake
+Arun Ice Cream
+Mango
+Honey
+Date
+biscut
+grapes
+watermilan
