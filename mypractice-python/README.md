@@ -262,3 +262,10 @@ f = open ("thefile.txt", "r")
 A script that opens a file should close the file as well, to remove the file from memory and free up resources:
 f.close()
 
+Using Lambdas
+-------------
+•• Anonymous function: A function definition that is not bound to an identifier.
+•• Lambda function: An anonymous function that can take several arguments but can have only one expression.
+•• map(): The map() function returns a map object after applying the given function to each item of a given iterable function.
+•• reduce(): The reduce() function is a mathematical technique called to an iterable that reduces it to a single cumulative value.
+

@@ -1,0 +1,75 @@
+[
+    {
+        "address": {
+            "building": "1007",
+            "coord": [-73.856077, 40.848447],
+            "street": "Morris Park Ave",
+            "zipcode": "10462"
+        },
+        "borough": "Bronx",
+        "cuisine": "Bakery",
+        "grades": [
+            {"date": {"$date": 1393804800000}, "grade": "A", "score": 2},
+            {"date": {"$date": 1378857600000}, "grade": "A", "score": 6},
+            {"date": {"$date": 1358985600000}, "grade": "A", "score": 10},
+            {"date": {"$date": 1322006400000}, "grade": "A", "score": 9},
+            {"date": {"$date": 1299715200000}, "grade": "B", "score": 14}
+        ],
+        "name": "Morris Park Bake Shop",
+        "restaurant_id": "30075445"
+    },
+    {
+        "address": {
+            "building": "732",
+            "coord": [-73.987631, 40.746169],
+            "street": "Broadway",
+            "zipcode": "10003"
+        },
+        "borough": "Manhattan",
+        "cuisine": "Italian",
+        "grades": [
+            {"date": {"$date": 1405699200000}, "grade": "A", "score": 5},
+            {"date": {"$date": 1388496000000}, "grade": "A", "score": 7},
+            {"date": {"$date": 1366732800000}, "grade": "B", "score": 10},
+            {"date": {"$date": 1335619200000}, "grade": "A", "score": 6}
+        ],
+        "name": "Little Italy",
+        "restaurant_id": "30075446"
+    },
+    {
+        "address": {
+            "building": "1001",
+            "coord": [-73.992807, 40.719626],
+            "street": "Astor Place",
+            "zipcode": "10003"
+        },
+        "borough": "Manhattan",
+        "cuisine": "Chinese",
+        "grades": [
+            {"date": {"$date": 1427884800000}, "grade": "B", "score": 8},
+            {"date": {"$date": 1404172800000}, "grade": "A", "score": 10},
+            {"date": {"$date": 1386864000000}, "grade": "A", "score": 9},
+            {"date": {"$date": 1357036800000}, "grade": "B", "score": 12}
+        ],
+        "name": "Chinatown Express",
+        "restaurant_id": "30075447"
+    },
+    {
+        "address": {
+            "building": "175",
+            "coord": [-73.974182, 40.756093],
+            "street": "7th Ave",
+            "zipcode": "10019"
+        },
+        "borough": "Manhattan",
+        "cuisine": "French",
+        "grades": [
+            {"date": {"$date": 1430428800000}, "grade": "A", "score": 4},
+            {"date": {"$date": 1410432000000}, "grade": "B", "score": 6},
+            {"date": {"$date": 1395763200000}, "grade": "A", "score": 8},
+            {"date": {"$date": 1371187200000}, "grade": "B", "score": 7}
+        ],
+        "name": "Le Gourmet",
+        "restaurant_id": "30075448"
+    }
+]
