@@ -11,7 +11,9 @@
 #   37%             $609,350 or more        #
 #--------------------------------------------
 
-# Our completed tax program
+#----------------------------------------------
+# Single Person Income-Tax Calculator Program #
+#----------------------------------------------
 # initialize the variables
 max10 = 11600
 max12 = 47150
