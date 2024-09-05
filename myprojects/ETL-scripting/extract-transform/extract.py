@@ -1,0 +1,60 @@
+# 7 The current status of the extract class
+# 7 Alltogether CSV, JSON, MySQL, MongoDB
+class extract:
+    # extract data from CSV file
+    def fromCSV(self, file_path, delimiter = ",", quotechar = "|"):
+        if not file_path:
+            raise Exception("You must provide a valid file path.")
+        import csv
+        dataset = list()
+        with open(file_path) as f:
+            csv_file = csv.DictReader(f, delimiter = delimiter,quotechar = quotechar)
+            for row in csv_file:
+                dataset.append(row)
+        return dataset
+    
+    # extract data from JSON file
+    def fromJSON(self, file_path):
+        if not file_path:
+            raise Exception("You must provide a valid file path.")
+        import json
+        dataset = list()
+        with open(file_path) as json_file:
+            dataset = json.load(json_file)
+        return dataset
+    
+    # extract data from Mysql DataBase
+    def fromMYSQL(self, host, username, password, db, query):
+        if not host or not username or not db or not query:
+            raise Exception("Please make sure that you input a valid host, username, password, database, and query.")
+        import sqlite3
+        db = sqlite3.connect(host = host, user = username, password = password,
+        db = db, cursorclass = sqlite3.cursors.DictCursor)
+        cur = db.cursor()
+        cur.execute(query)
+        dataset = list()
+        for r in cur:
+            dataset.append(r)
+        db.commit()
+        cur.close()
+        db.close()
+        return dataset
+    
+    # extract data from Mongo DataBase
+    def fromMONGODB(self, host, port, username, password, db,
+collection, query = None):
+        if not host or not port or not username or not db or not collection:
+            raise Exception("Please make sure that you input a valid host, username, password, database, and collection name")
+        import pymongo
+        client = pymongo.MongoClient(host = host, port = port,username = username,
+password = password)
+        tmp_database = client[db]
+        tmp_collection = tmp_database[collection]
+        dataset = list()
+        if query:
+            for document in tmp_collection.find(query):
+                dataset.append(document)
+            return dataset
+        for document in tmp_collection.find():
+            dataset.append(document)
+        return dataset

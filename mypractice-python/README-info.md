@@ -269,3 +269,29 @@ Using Lambdas
 •• map(): The map() function returns a map object after applying the given function to each item of a given iterable function.
 •• reduce(): The reduce() function is a mathematical technique called to an iterable that reduces it to a single cumulative value.
 
+DESIGN AND IMPLEMENT CUSTOM ETL SCRIPTS
+----------------------------------------
+As mentioned, an ETL process has three steps: extract, transform, and load. One of the most common tasks for a data engineer is designing and implementing ETL processes. We
+will learn how to design and develop a simple ETL tool.
+Before we can start to build an ETL script, we must establish the requirements for our ETL tool. Following is a list of requirements that we will start with.
+1. Extract must be able to access data from a variety of data sources, including:
+•• CSV files
+•• SQL tables
+•• MongoDB collections
+•• JSON files
+2. Transform must support several transformations on the data, including:
+•• Basic data transformation, such as:
+•• Data resizing and reshaping rows (e.g., selecting a limited number of columns from the original data)
+•• Converting and parsing data (e.g., converting a string into an integer or parsing the number part of a string)
+•• Column transformation
+•• Header manipulation (e.g., changing the column headers)
+•• Sorting data
+•• Grouping data
+•• Concatenating data
+•• Detecting and removing duplicates
+•• Filling in missing values and replacing erroneous values
+3. Load must support saving data to a variety of data formats, including:
+•• CSV files
+•• SQL tables
+•• NoSQL tables
+•• JSON files
