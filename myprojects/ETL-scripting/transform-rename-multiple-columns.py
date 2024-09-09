@@ -24,13 +24,13 @@ str(key)+ \
 " does not exist in one of the rows in the dataset.")
             new_dataset.append(new_row)
         return new_dataset
-    e = extract()
-    dataset = e.fromCSV(file_path="data/stocks.csv")
-    print("Original dataset:")
-    print(dataset[0])
-    t = transform()
-    new_dataset = t.rename_attributes(dataset = dataset, attributes = ["Open","Close"],
-    new_attributes = ["open_price", "close_price"])
-    print("\nUpdated dataset:")
-    print(new_dataset[0])
+e = extract()
+dataset = e.fromCSV(file_path="/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv")
+print("Original dataset:")
+print(dataset[0])
+t = transform()
+new_dataset = t.rename_attributes(dataset = dataset, attributes = ["Open","Close"],
+new_attributes = ["open_price", "close_price"])
+print("\nUpdated dataset:")
+print(new_dataset[0])
     

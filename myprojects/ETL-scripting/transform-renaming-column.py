@@ -20,12 +20,13 @@ class transform:
 column " + str(column_name) + " does not exist in one of the rows \
 in the dataset")
         return new_dataset
-    e = extract()
-    dataset = e.fromCSV(file_path="data/got_chars.csv")
-    print("Dataset before renaming the column:")
-    print(dataset[0])
-    t = transform()
-    new_dataset = t.rename_attribute(dataset = dataset, attribute = "character",
-    new_attribute = "character_name")
-    print("\nDataset after renaming the column:")
-    print(new_dataset[0])
+e = extract()
+dataset = e.fromCSV(file_path="/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/got_chars.csv")
+print("Dataset before renaming the column:")
+print(dataset[0])
+    
+t = transform()
+new_dataset = t.rename_attribute(dataset = dataset, attribute = "character",
+new_attribute = "character_name")
+print("\nDataset after renaming the column:")
+print(new_dataset[0])
