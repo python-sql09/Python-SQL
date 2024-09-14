@@ -1,20 +1,20 @@
 # 11 The updated transform.py file
 class transform:
-    #return the top N records from the dataset
-    def head(self, dataset, step): 
+    # Return the top N records from the dataset
+    def head(self, dataset, step):
         if not dataset:
             raise Exception("Dataset cannot be empty.")
         if step < 1:
             raise Exception("The step value must be positive.")
-        return dataset[0:step]
-    
-    #return the last N records from the dataset
-    def tail(self, dataset, step): 
+        return dataset[:step]
+
+    # Return the last N records from the dataset
+    def tail(self, dataset, step):
         if not dataset:
             raise Exception("Dataset cannot be empty.")
         if step < 1:
             raise Exception("The step value must be positive.")
-        return dataset[len(dataset) - step:len(dataset)]
+        return dataset[-step:]
 
     #rename a column in the dataset
     def rename_attribute(self, dataset, attribute, new_attribute):

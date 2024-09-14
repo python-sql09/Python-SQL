@@ -1,5 +1,10 @@
 # 7 The current status of the extract class
 # 7 Alltogether CSV, JSON, MySQL, MongoDB
+import pymongo
+import pymysql
+import sqlite3
+import json
+import csv
 class extract:
     # extract data from CSV file
     def fromCSV(self, file_path, delimiter = ",", quotechar = "|"):
@@ -25,7 +30,7 @@ class extract:
     
     # extract data from Mysql DataBase
     # 4 The fromMySQL method in the extract class
-    import sqlite3
+    #import sqlite3
     def fromSQLite(self, db, query):
         if not db or not query:
             raise Exception("Please make sure that you input a valid database and query.")
@@ -43,7 +48,7 @@ class extract:
 
     # extract data from Mysql DataBase
     # 4 The fromMySQL method in the extract class   
-    import pymysql    
+    #import pymysql    
     def fromMYSQL(self, host, username, password, db, query):
         if not host or not username or not db or not query:
             raise Exception("Please make sure that you input a valid host, username, password, database, and query.")       
@@ -68,7 +73,7 @@ class extract:
         return dataset
 
     # extract data from Mongo DataBase
-    import pymongo
+    #import pymongo
     def fromMONGODB(self, host, port, username, password, db, collection, query=None):
         if not host or not port or not username or not db or not collection:
             raise Exception("Please make sure that you input a valid host, username, password, database, and collection name")
@@ -94,9 +99,3 @@ class extract:
             print(f"Error: {e}")
             return None
 
-# Example usage
-e = Extract()
-dataset = e.fromMONGODB(host="localhost", port=27017, username="mongodb", password="Deepa@369", db="amazon_records", collection="musical_instruments")
-if dataset:
-    print(len(dataset))
-    print(dataset[0])

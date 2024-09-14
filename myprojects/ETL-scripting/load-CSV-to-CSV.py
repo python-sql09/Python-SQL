@@ -1,4 +1,4 @@
-# 21 The toCSV method
+# 22 Using the CSV file to load (csv to csv)
 class load:
     def toCSV(self, file_path, dataset):
         if not dataset:
@@ -11,3 +11,7 @@ class load:
             writer = csv.DictWriter(csvfile, fieldnames = fieldnames)
             writer.writeheader()
             writer.writerows(dataset)
+e = extract()
+dataset = e.fromCSV(file_path = '/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv',delimiter = ',')
+l = load()
+l.toCSV(file_path = "/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1_copy.csv", dataset = dataset)
