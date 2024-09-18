@@ -51,6 +51,7 @@ class transform:
                 new_dataset.append(new_row)
         return new_dataset
 
+    #rename multiple column from the dataset
     @staticmethod
     def rename_attributes(dataset, attributes, new_attributes):
         if not attributes or not new_attributes:
@@ -75,7 +76,7 @@ class transform:
             new_dataset.append(new_row)
         return new_dataset
 
-    #remove a column from the dataset
+    #remove multiple column from the dataset
     @staticmethod
     def remove_attributes(dataset, attributes):
         if not dataset:
@@ -90,6 +91,7 @@ class transform:
                     del new_row[attribute]
             new_dataset.append(new_row)
         return new_dataset
+    
     
     @staticmethod
     def transform(dataset, attribute, new_attribute, transform_function, *args):
@@ -107,12 +109,14 @@ class transform:
             z.update({new_attribute:t}) #create new column in the data
             new_dataset.append(z)
         return new_dataset
-
-    def round_open_price(value,*args):
-        return round(float(value))
-    dataset = extract.fromCSV(file_path = "python-sql09/Python-SQL/mypractice-python/data/stocks.csv")
-    print(dataset[0])
-    new_dataset = transform.transform(dataset = dataset, attribute = "Open",
+'''
+def round_open_price(value,*args):
+    return round(float(value))
+    
+dataset = extract.fromCSV(file_path = "stocks.csv")
+print(dataset[0])
+new_dataset = transform.transform(dataset = dataset, attribute = "Open",
                                       new_attribute = "open_price_rounded",
                                       transform_function = round_open_price)
-    print(new_dataset[0])
+print(new_dataset[0])
+'''

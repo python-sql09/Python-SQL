@@ -55,5 +55,7 @@ class extract:
         for document in tmp_collection.find():
             dataset.append(document)
         return dataset
-dataset = extract.fromCSV(file_path = "/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/ectract-transform-load-static-method/stocks.csv")
+'''   
+dataset = extract.fromCSV(file_path = "stocks.csv")
 print(dataset[0])
+'''
