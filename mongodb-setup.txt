@@ -1,0 +1,108 @@
+Mongo-DB
+--------
+Mongodb Password setup new
+---------------------------
+linuxdeepa@linux-eh70:~> sudo nano /etc/mongod.conf
+linuxdeepa@linux-eh70:~> sudo systemctl restart mongod
+linuxdeepa@linux-eh70:~> mongosh
+Current Mongosh Log ID:	66df3edb2a38469b9d964032
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.1
+Using MongoDB:		6.0.17
+Using Mongosh:		2.3.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+test> use admin
+switched to db admin
+admin> db.createUser({
+... user: "mongodb",
+... pwd: "Deepa@369",
+... roles: [ { role: "userAdminAnyDatabase", db: "amazon_records" } ]
+... })
+{ ok: 1 }
+admin> db.getUsers()
+
+after this goto terminal verify this
+------------------------------------
+linuxdeepa@linux-eh70:~> mongosh "mongodb://mongodb:Deepa@369@localhost:27017/amazon_records"
+Current Mongosh Log ID:	66df4992109609497f964032
+Connecting to:		mongodb://<credentials>@localhost:27017/amazon_records?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.1
+Using MongoDB:		6.0.17
+Using Mongosh:		2.3.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+amazon_records> db.runCommand({ connectionStatus: 1 })
+{
+  authInfo: {
+    authenticatedUsers: [ { user: 'mongodb', db: 'amazon_records' } ],
+    authenticatedUserRoles: [ { role: 'readWrite', db: 'amazon_records' } ]
+  },
+  ok: 1
+}
+amazon_records> db.getUser("mongodb")
+{
+  _id: 'amazon_records.mongodb',
+  userId: UUID('8f723007-7046-4584-a28c-981ce5ab9d8d'),
+  user: 'mongodb',
+  db: 'amazon_records',
+  roles: [ { role: 'readWrite', db: 'amazon_records' } ],
+  mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
+}
+amazon_records> 
+
+
+
+linuxdeepa@linux-eh70:~> mongosh "mongodb://mongodb:Deepa@369@localhost:27017/amazon_records"
+Current Mongosh Log ID:	66ec59831145cb12fa964032
+Connecting to:		mongodb://<credentials>@localhost:27017/amazon_records?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.1
+Using MongoDB:		6.0.17
+Using Mongosh:		2.3.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+
+// table name
+amazon_records> show collections
+musical_instruments
+
+
+
+//database name
+amazon_records> show dbs
+amazon_records  44.00 KiB
+
+
+
+//Display records
+amazon_records> db.musical_instruments.find().limit(1).pretty()
+[
+  {
+    _id: ObjectId('66df4a1ec4f0ef8ec7ea16d3'),
+    rating: 5,
+    title: 'Nice',
+    text: 'If I had a dollar for how many times I have played this CD...',
+    images: [],
+    asin: 'B004RQ2IRG',
+    parent_asin: 'B004RQ2IRG',
+    user_id: 'AFUOYIZBU3MTBOLYKOJE5Z35MBDA',
+    timestamp: Long('1618972613292'),
+    helpful_vote: 0,
+    verified_purchase: true
+  }
+]
+
+
+
+//display user
+amazon_records> db.getUser("mongodb")
+{
+  _id: 'amazon_records.mongodb',
+  userId: UUID('8f723007-7046-4584-a28c-981ce5ab9d8d'),
+  user: 'mongodb',
+  db: 'amazon_records',
+  roles: [ { role: 'readWrite', db: 'amazon_records' } ],
+  mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
+}
+

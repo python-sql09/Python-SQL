@@ -24,3 +24,4 @@ new_attributes = ["open_price", "close_price"])
 print("\nUpdated dataset:")
 print(new_dataset[0])
 '''
+

@@ -1,0 +1,32 @@
+[
+    {
+        "Account No": "123456789",
+        "DATE": "2024-08-01",
+        "WITHDRAWAL AMT": "700000",
+        "DEPOSIT AMT": "50000"
+    },
+    {
+        "Account No": "987654321",
+        "DATE": "2024-08-02",
+        "WITHDRAWAL AMT": "200000",
+        "DEPOSIT AMT": "100000"
+    },
+    {
+        "Account No": "456123789",
+        "DATE": "2024-08-03",
+        "WITHDRAWAL AMT": "850000",
+        "DEPOSIT AMT": "300000"
+    },
+    {
+        "Account No": "789123456",
+        "DATE": "2024-08-04",
+        "WITHDRAWAL AMT": "",
+        "DEPOSIT AMT": "400000"
+    },
+    {
+        "Account No": "321654987",
+        "DATE": "2024-08-05",
+        "WITHDRAWAL AMT": "450000",
+        "DEPOSIT AMT": "200000"
+    }
+]
