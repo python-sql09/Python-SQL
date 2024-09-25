@@ -1,4 +1,4 @@
-# 1 Converting classes to static in the extract class
+# 12 Using the fromCustom method
 class extract:
     @staticmethod
     def fromCSV(file_path, delimiter = ",", quotechar = "|"):
@@ -29,7 +29,7 @@ class extract:
                             password, database, and query.")
         import pymysql
         db = pymysql.connect(host = host, user = username, password = password,
-                             db = db, cursorclass = pymysql.cursors.DictCursor)
+                                db = db, cursorclass = pymysql.cursors.DictCursor)
         cur = db.cursor()
         cur.execute(query)
         dataset = list()
@@ -39,48 +39,26 @@ class extract:
         cur.close()
         db.close()
         return dataset
-    
-    @staticmethod
-    def fromMONGODB(host, port, username, password, db, collection, query=None, limit=None):
-        if not host or not port or not username or not db or not collection:
-            raise Exception("Please make sure that you input a valid host, \
-                            username, password, database, and collection name")
-        
-        import pymongo
-        from urllib.parse import quote_plus
 
-        try:
-            # URL-encode the username and password
-            username = quote_plus(username)
-            password = quote_plus(password)
-            client = pymongo.MongoClient(
-                f"mongodb://{username}:{password}@{host}:{port}/{db}?authSource=amazon_records"
-            )
-            tmp_database = client[db]
-            tmp_collection = tmp_database[collection]
-        
-            dataset = list()
-            if query:
-                for document in tmp_collection.find(query):
-                    dataset.append(document)
-            else:
-                # Ensure that limit is an integer or set it to None for no limit
-                limit = int(limit) if limit is not None else 0
-                
-                # Handle the limit correctly
-                if limit > 0:
-                    for document in tmp_collection.find().limit(limit):
-                        dataset.append(document)
-                else:
-                    for document in tmp_collection.find():
-                        dataset.append(document)
-        
-            print(f"Number of documents retrieved: {len(dataset)}")  # Debug print
+    @staticmethod
+    def fromMONGODB(host, port, username, password, db, collection, query = None):
+        if not host or not port or not username or not db or not collection:
+            raise Exception("Please make sure that you input a valid host, username, \
+                            password, database, and collection name")
+        import pymongo
+        client = pymongo.MongoClient(host = host, port = port,username = username,
+                                        password = password)
+        tmp_database = client[db]
+        tmp_collection = tmp_database[collection]
+        dataset = list()
+        if query:
+            for document in tmp_collection.find(query):
+                dataset.append(document)
             return dataset
-        except Exception as e:
-            print(f"Error connecting to MongoDB: {e}")  # Debug print
-            return None
-            
+        for document in tmp_collection.find():
+            dataset.append(document)
+        return dataset
+
     # new custom extract method
     @staticmethod
     def fromCustom(custom_extractor,**kwds):
@@ -93,7 +71,6 @@ class extract:
         return dataset
 
     #standalone function to extract data from XML
-    @staticmethod
     def xml_extractor(xmlfile):
         import xml.etree.ElementTree as ET
         # create element tree object
@@ -117,4 +94,5 @@ class extract:
             newsitems.append(news)
         # return news items list
         return newsitems
-
+dataset = extract.fromCustom(extract.xml_extractor,xmlfile="/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-custom/newsfeed.xml")
+print(dataset[0])

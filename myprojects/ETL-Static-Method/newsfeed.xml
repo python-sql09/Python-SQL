@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Cricket News Feed</title>
+    <link>https://www.hindustantimes.com</link>
+    <description>This is a cricket news feed</description>
+    <item>
+      <title>India vs West Indies Live Score: Gayle, Lewis begin Windies' 280-run chase</title>
+      <link>https://www.hindustantimes.com/cricket/india-vs-west-indies-live-score-2nd-odi-at-port-of-spain-ind-wi-cricket-scorecard-updates-virat-kohli-and-co-look-to-draw-first-blood/story-DVNTZ4yPVpuicNdrJnrwHP.html</link>
+      <description>India vs West Indies: Catch all the action of the second ODI between the two teams in Trinidad through our live blog</description>
+      <pubDate>Sun, 11 Aug 2019 06:14:53 GMT</pubDate>
+      <media:content url="https://www.hindustantimes.com/rf/image_size_630x354/HT/p2/2019/08/11/Pictures/cricket-windies-ind-t20i_709f7352-bc5f-11e9-b550-1b3b7c3fb345.jpg" />
+      <guid>https://www.hindustantimes.com/cricket/india-vs-west-indies-live-score-2nd-odi-at-port-of-spain-ind-wi-cricket-scorecard-updates-virat-kohli-and-co-look-to-draw-first-blood/story-DVNTZ4yPVpuicNdrJnrwHP.html</guid>
+    </item>
+  </channel>
+</rss>
