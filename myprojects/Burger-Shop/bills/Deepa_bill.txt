@@ -1,0 +1,23 @@
+==========================================
+Bill for Deepa
+==========================================
+Combo: Combo
+Item: Burger
+Price: $6.00
+Condiments: tomato, lettuce, onion, cheese, ketchup
+Extras: 
+
+Item: sprite
+Price: $1.00
+Size: 12oz
+Item: onion rings
+Price: $3.00
+
+Combo Price Before Discount: $10.00
+Discount: $2.00
+Combo Price After Discount: $8.00
+
+------------------------------------------
+Total Price: $8.00
+Payment Method: Cash
+==========================================

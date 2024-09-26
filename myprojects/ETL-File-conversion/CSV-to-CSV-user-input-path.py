@@ -1,4 +1,4 @@
-# Exercise 1: Transforming CSV to CSV
+# Transforming CSV to CSV
 # Write a Python program that prompts the user for the path of an existing CSV file and 
 # copies the data from that file into a new CSV file.
 import csv

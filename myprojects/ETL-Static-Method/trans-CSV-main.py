@@ -7,6 +7,7 @@ def round_open_price(value,*args):
     return round(float(value))
 dataset = extract.fromCSV(file_path = "stocks.csv")
 print(dataset[0])
+# open CSV file and Rename column 
 new_dataset = transform.transform(dataset = dataset, attribute = "Open",
 new_attribute = "open_price_rounded",
 transform_function = round_open_price)

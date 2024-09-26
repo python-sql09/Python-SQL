@@ -1,4 +1,4 @@
-# Exercise 3: Transforming JSON to CSV
+# Transforming JSON to CSV
 # Write a Python program that prompts the user for the path of an existing JSON file and
 # copies the data from that file into a new CSV file.
 import json

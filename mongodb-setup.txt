@@ -1,5 +1,13 @@
 Mongo-DB
 --------
+Run MONGODB:
+-----------
+linuxdeepa@linux-eh70:~> /opt/nosqlbooster/nosqlbooster4mongo
+
+Run MONGODB:
+-----------
+/opt/nosqlbooster/nosqlbooster4mongo
+
 Mongodb Password setup new
 ---------------------------
 linuxdeepa@linux-eh70:~> sudo nano /etc/mongod.conf

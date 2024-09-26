@@ -1,4 +1,4 @@
-# Exercise 5: Removing an Attribute CSV to CSV
+# Removing an Attribute CSV to CSV
 # Write a Python program that performs the following tasks:
 # •• Prompts the user for the path of an existing CSV file and an attribute in that file
 # •• Reads the data from the file

@@ -1,4 +1,4 @@
-# Exercise 4: Transforming JSON to JSON
+# Transforming JSON to JSON
 # Write a Python program that prompts the user for the path of an existing JSON file and
 # copies the data from that file into a new JSON file.
 import json

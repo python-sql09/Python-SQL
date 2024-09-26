@@ -1,4 +1,4 @@
-# Exercise 6: Renaming an Attribute CSV to CSV
+# Renaming an Attribute CSV to CSV
 # Write a Python program that performs the following tasks:
 #  •• Prompts the user for the path of an existing CSV file, an attribute in that file, and a
 #  new name for the same attribute
