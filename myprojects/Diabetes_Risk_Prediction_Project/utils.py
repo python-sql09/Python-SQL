@@ -1,3 +1,4 @@
+# utils.py
 def evaluate_model(y_test, predictions):
     accuracy = accuracy_score(y_test, predictions)
     print("Accuracy:", accuracy)

@@ -1,5 +1,10 @@
+#main.py
+from data_preprocessing import load_data, preprocess_data
+from model_training import train_logistic_regression, train_random_forest, train_knn, train_xgboost
+from utils import evaluate_model
+
 # Load and preprocess data
-data = load_data("data/diabetes_data.csv")
+data = load_data("/home/deepa3/python-sql09/Python-SQL/myprojects/Diabetes_Risk_Prediction_Project/diabetes_risk_prediction_extended.csv")
 X, y = preprocess_data(data)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 

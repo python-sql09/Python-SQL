@@ -1,3 +1,4 @@
+#data_preprocessing.py
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
@@ -12,7 +13,7 @@ def load_data(file_path):
     return data
 
 # Example usage in main script
-data = load_data("data/diabetes_data.csv")
+data = load_data("/home/deepa3/python-sql09/Python-SQL/myprojects/Diabetes_Risk_Prediction_Project/diabetes_risk_prediction_extended.csv")
 
 def preprocess_data(data):
     # Handling missing values
