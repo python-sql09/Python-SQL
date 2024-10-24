@@ -229,3 +229,89 @@ time; useful for timing code with very short execution time
 information/verbosity
 %xdel variable - Delete a variable and attempt to clear any references to the object in the
 IPython internals
+
+Binary operators - Operation Description:
+-----------------------------------------
+a + b - Add a and b
+a - b - Subtract b from a
+a * b - Multiply a by b
+a / b - Divide a by b
+a // b - Floor-divide a by b, dropping any fractional remainder
+a ** b - Raise a to the b power
+a & b - True if both a and b are True; for integers, take the bitwise AND
+a | b - True if either a or b is True; for integers, take the bitwise OR
+a ^ b - For booleans, True if a or b is True, but not both; for integers, take the bitwise
+EXCLUSIVE-OR
+a == b - True if a equals b
+a != b - True if a is not equal to b
+a <= b, a < b - True if a is less than (less than or equal) to b
+a > b, a >= b - True if a is greater than (greater than or equal) to b
+a is b - True if a and b reference the same Python object
+a is not b - True if a and b reference different Python objects
+
+Standard Python scalar types - Type Description:
+------------------------------------------------
+None - The Python “null” value (only one instance of the None object exists)
+str - String type; holds Unicode (UTF-8 encoded) strings
+bytes - Raw ASCII bytes (or Unicode encoded as bytes)
+float - Double-precision (64-bit) floating-point number (note there is no separate double
+type)
+boolA -  True or False value
+int - Arbitrary precision signed integer
+
+Datetime format specification (ISO C89 compatible) - Type Description
+----------------------------------------------------------------------
+%Y - Four-digit year
+%y - Two-digit year
+%m - Two-digit month [01, 12]
+%d - Two-digit day [01, 31]
+%H - Hour (24-hour clock) [00, 23]
+%I - Hour (12-hour clock) [01, 12]
+%M - Two-digit minute [00, 59]
+%S - Second [00, 61] (seconds 60, 61 account for leap seconds)
+%w - Weekday as integer [0 (Sunday), 6]
+%U - Week number of the year [00, 53]; Sunday is considered the first day of the week, and days before the first Sunday of the year are “week 0”
+%W - Week number of the year [00, 53]; Monday is considered the first day of the week, and days before the first Monday of the year are “week 0”
+%z - UTC time zone offset as +HHMM or -HHMM; empty if time zone naive
+%F - Shortcut for %Y-%m-%d (e.g., 2012-4-18)
+%D - Shortcut for %m/%d/%y (e.g., 04/18/12)
+
+list of commonly used set methods - Python set operations:
+-----------------------------------------------------------
+Function      Alternative syntax           Description
+a.add(x)            N/A           Add element x to the set a
+a.clear()           N/A           Reset the set a to an empty state,
+                                  discarding all of its elements
+a.remove(x)         N/A           Remove element x from the set a
+a.pop()             N/A           Remove an arbitrary element from the set
+                                  a, raising KeyError if the set is empty
+a.union(b)        a | b           All of the unique elements in a and b
+a.update(b)       a |= b          Set the contents of a to be the union of
+                                  the elements in a and b
+a.intersection(b) a & b           All of the elements in both a and b
+a.intersection_update(b)  a &= b  Set the contents of a to be the       
+                                  intersection of the elements in a and b
+a.difference(b)   a - bT          he elements in a that are not in b
+a.difference_update(b)  a -= b Set a to the elements in a that are not in b
+a.symmetric_difference(b) a ^ b   All of the elements in either a or b but 
+                                  not both
+a.symmetric_difference_update(b) a ^= b   Set a to contain the elements in 
+                                          either a or b but not both
+a.issubset(b)       N/A           True if the elements of a are all       
+                                  contained in b
+a.issuperset(b)     N/A           True if the elements of b are all 
+                                  contained in a
+a.isdisjoint(b)     N/A          True if a and b have no elements in common
+
+Python file modes - Mode Description:
+-------------------------------------
+r   - Read-only mode
+w   - Write-only mode; creates a new file (erasing the data for any file  
+      with the same name)
+x   - Write-only mode; creates a new file, but fails if the file path 
+      already exists
+a  - Append to existing file (create the file if it does not already exist)
+r+  -  Read and write
+b   -   Add to mode for binary files (i.e., 'rb' or 'wb')
+t   - Text mode for files (automatically decoding bytes to Unicode). This 
+      is the default if not specified. Add t to other modes to use this (i.e., 'rt' or 'xt')
