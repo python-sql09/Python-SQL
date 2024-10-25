@@ -1,0 +1,29 @@
+HTML:
+-----
+start page type html then enter basic hetml tag will display
+Single line comment:
+--------------------
+<!-- Anythib here is a comment -->
+
+Multiline comment:
+-----------------
+select some text then press
+Ctrl + /  --> it will comment selected lines
+
+Run HTML file:
+--------------
+copy full HTML file path from ATOM, paste into the browser then enter to run HTML file
+
+ctrl + \ -->  for project nevigation window hide and show
+
+List:
+-----
+<ol> </ol>    	-->	order list
+<li>		-->	list items or list elements
+
+Bullot points:
+--------------
+<ul>		-->	unorder List
+
+Nesting List:
+------------
