@@ -315,3 +315,28 @@ r+  -  Read and write
 b   -   Add to mode for binary files (i.e., 'rb' or 'wb')
 t   - Text mode for files (automatically decoding bytes to Unicode). This 
       is the default if not specified. Add t to other modes to use this (i.e., 'rt' or 'xt')
+
+list of commonly used set methods. Python set operations:
+---------------------------------------------------------
+Function      Alternative       Description
+                syntax
+a.add(x)            N/A     Add element x to the set a
+a.clear()           N/A     Reset the set a to an empty state,
+                            discarding all of its elements
+a.remove(x)         N/A     Remove element x from the set a
+a.pop()             N/A     Remove an arbitrary element from the set
+                            a, raising KeyError if the set is empty
+a.union(b)          a | b   All of the unique elements in a and b
+a.update(b)         a |= b  Set the contents of a to be the union of
+                            the elements in a and b
+a.intersection(b)   a & b   All of the elements in both a and b
+a.intersection_update(b)  a &= b  Set the contents of a to be the      
+                                  intersection of the elements in a and b
+a.difference(b)     a - b   The elements in a that are not in b
+a.difference_update(b)  a -= b Set a to the elements in a that are not in b
+a.symmetric_difference(b)   a ^ b     All of the elements in either a or b                                     but not both
+a.symmetric_difference_update(b)  a ^= b    Set a to contain the elements
+                                            in either a or b but not both
+a.issubset(b)     N/A     True if the elements of a are all contained in b
+a.issuperset(b)   N/A     True if the elements of b are all contained in a
+a.isdisjoint(b)   N/A     True if a and b have no elements in common

@@ -4,7 +4,7 @@ from menu import side
 from menu import combo
 from order import order
 # 12 Defining side constants
-BURGER_PRICE = 6.00
+BURGER_PRICE = 6.02
 BURGER_CONDIMENTS = ["tomato", "lettuce", "onion", "cheese", "mustard", "ketchup"]
 DRINK_TYPES = ["fanta", "coca cola", "sprite", "water"]
 DRINK_SIZES = [12, 16, 20]
