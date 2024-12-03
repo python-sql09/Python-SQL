@@ -1,0 +1,797 @@
+Module 1, 2:
+------------
+1.Beginner level:
+-----------------
+1. Hands-on power bi desktop application
+2. this model will explore identifying and retriving data from various data sources.
+3. connectivity and data storage
+4 understanding the difference and performance implication of connecting directly to data versus importing it during this module.
+
+1.sample supler store: Excel file
+power Bi Desktop
+In Excel file has 3 tables: load 3 tables orders, returns, users
+save and close
+
+2.open northwind access file open 
+customers
+employees
+order details
+prodects
+shipers
+supplies
+load and save northwind
+Table Relationship:
+file -> options and settings -> options -> Current file -> data load -> relatinship -> check 3 check boxes ok
+save then close
+
+3. load from website
+goto list of U.S. states and territories by income - wikipedia website.
+get data -> box open -> other -> web
+from web -> paste web address -> ok
+select table -> load
+
+4. Customer data excel file
+pivot table, pivot chart are there.
+power pivotdata model used to capture it.
+if we don't hava pivot table we can do it.
+we have to import data from power bi.
+file -> import -> powerquery, power pivot. power report.
+select customer tables -> start 
+
+5.Resolving Data Errors(load error)
+1. remove excel source file in sample super store folder. open sample super store power bi it will open. go to data tab the tables are displayed but, click refresh button on home tab it shows errors.
+2. file -> options and settings -> data source settings
+	-> change source file -> open the path select sorce directory -> close - Apply changes.
+	
+5. No power view how to use report:
+1.file -> import -> power query, power view and, power report
+  select -> IT spend Analysis Sample excel file. -> start.
+  there are 9 queries,9 data model table and 15 KPIs and measures as well as 3 power view sheets.close it
+  2. is shows error power bi didnot support the file error.
+  click the error frame delete and make it one supported
+  
+ 6. open file from one drive
+ 	open -> other -> web -> paste the path load
+
+7. create visualization 
+--------------------
+open static barchart (or) drag and drop.
+fileds -> orders table -> city, sales (drag and drop) 
+filter -> kearens  8 sales are in the city
+save sample super store od.xlsh (onedrive).
+publish -> go to change the excel file
+come to desktop refresh and save
+
+
+
+Module-3:
+--------
+2. Intermediate level
+----------------------
+1. clean, transform, and load data into the data model.
+2. profiling and understanding the condition of data
+3. how to identify anomalies, look at the size and shape of the data and perform data cleaning and transforming.
+4. preparing data loading into the model.
+sample super store.xlsh -> excel file open it
+1.Data shaping or transforming the data by renaming columns or tables, removing rows, setting the first row as headers:
+1. data transformation steps in users table and orders table
+view -> data view
+1. rename table users into Managers table
+-----------------------------------------
+right click -> users -> rename manager.
+2. promote first row as column heading
+home -> queries ->transform data -> open new query editor
+manager
+home -> transform -> use first row as headers
+manager field click dot make copy manager.
+rename manager into manager first
+rename copy manager into manager last
+right click replace value last names
+evens
+rogers
+smith
+willioms
+2.change the orders table
+--------------------------
+home -> choose column uncheck the check box
+row id, order priority, product base margin, quantity ordered new -> ok
+1. filter the state or province 
+click the dot button in state or province -> auto filter
+wait for whole data load. unckeck all -> select
+Arizona, california, new jercy, new yark, florida -> ok
+
+2.rename state or province into state -> click dot -> click sort asscending -> close and apply -> apply changes
+
+3. enhancing the data model:
+---------------------------
+1. merge information from managers table into orders table
+region column is same in both manager and order tables
+2. goto -> home -> queries -> transform data -> in power query
+home -> combine -> merge queries -> merge query as new
+orders -> click region -> bottom select -> managers -> click region
+Right Outer : All from second table, matching from first
+join kind select from drop down Right Outer -> ok
+Join types:
+-----------
+Default Join is Left Outer: All from first table, matching from second
+Right Outer : All from second table, matching from first
+Full Outer : All rows from both tables
+Inner : Only matching rows
+Left Anti : Rows only in first table
+Right Anti : Rows only in second  table
+
+After ok New merge1 is open. in the merge1 last column is managers -> click the dot check three columns region, first, last manager -> ok
+central region is null in left side -> click dot -> click load more in manager region uncheck central -> ok
+again manager click dot -> ascending order
+right side Properties pane change name Merge1 into Orders by region.
+-> close and apply 
+same way Merge and create returned Orders.
+3.Profiling Data:
+----------------
+home -> queries -> transform data
+view -> Data Preview -> check Calumn Quality, check column distribution, and column profile -> close
+
+Module -4 
+1. Fundamental concepts of designing and developing a data model for proper performance and scalibility.
+2. Data modelling issues, including relationships, security and performance.
+3. continue with sample super store.
+Orders Table -> Discount column to be formatted as a percentage
+	     -> Unit Price, shipping column to be formatted as currency
+click one record in Discount column -> in the top column tools
+formatting tab -> select % if you don't want decimal place change to 0.
+select one record in unit price column - > column tools tab -> select $
+select one record in shipping column - > column tools tab -> select $
+right side fields -> orders select Order Date -> column tools tab -> format select March14, 2001 from dropdown
+right side fields -> orders select Ship Date -> column tools tab -> format select March14, 2001 from dropdown
+select 1 record from state -> column tools >categorical tab -> data category -> state or Province -> next city -> postal code -> glob icon shows
+Fact - Dimonsion table:
+------------------------
+Fact :  Keeps numeric data that might be aggregated in the reporting visualizations.
+E.g., Sales, Profits
+Dimension: Keeps descriptive information that can slice and dice the data in the fact table. Require a key field.
+E.g., Customer Info, Product Info
+should not have fact and descriptive field in the same table.
+right click orders table -> copy it then -> right click paste in queries pan -> open it  select Discount column -> manage columns - choose coloums -> uncheck all columns-> then check
+customer id, customer name, customer segment, region, state, city, postal code, region, customer segment, discount.
+change name DimCustomer from field right.
+----------------------------------------
+put customer id first, customer name, city, state, postal code, region.
+
+same as another copy of orders table then select product category, Products-sub category, Product containors, Product Name
+change name DimProducts
+-----------------------
+put Product name first, create new column for numeric
+add column -> index column -> custom -> 001 increment 1 ->
+drop index column is the first column now, product name, category, sub-category, containers  --> close and apply
+Index -> right click -> Rename -> product ID
+create Hierarchy:
+-----------------
+In Orders table -> select Region -> rightclick -> create Hierarchy
+select state -> right click -> add hierarchy -> region hierarchy
+select City -> right click -> add hierarchy -> region hierarchy
+select postal code -> right click -> add hierarchy -> region hierarchy
+
+file -> options and settings -> options -> Current file -> data load -> relatinship -> check 3 check boxes ok
+save then close
+
+Model View:
+-----------
+In Model view -> in the table click eye it will hide.
+DimCustomers - hide, Returned Orders - hide
+DimProducts - hide, orders by region - hide
+
+Orders and returns -> create relationship -> OrderID (one to many)
+click Manage relationship -> Autudetect relationship -> ok
+
+Row level security:
+-------------------
+Model -> Security -> Manage roles
+click create -> roles type East -> Tables select Orders
+DAX(Data Analysis Expression) - It's a Formula Language 
+[region]="East"            Save
+Model -> Security -> Manage roles
+click create -> roles type West -> Tables select Orders
+DAX(Data Analysis Expression) - It's a Formula Language 
+[region]="West"            Save
+Model -> Security -> View as --> we can see East and West we created.
+Publish
+
+
+
+Advance Level Project3:
+-----------------------
+DAX, Aggrication, Quick Measures, Measures, Calculated tables and Calculated columns to solve calculation and data analysis problems.
+DAX - stands for Data Analysis expressions and it is the formula 			
+      language used in PowerBI.
+      DAX is a collection of functions, operators and constants 
+      that can be used in formula or expression to calculate and 
+      return one or more values.
+Modules:
+--------
+Sample super store and retail sales analysis
+
+Distinct function in DAX:
+-------------------------
+ To create a caoculated table that will return one column of all of the distinct order IDs from the orders table.
+create calculated column:
+-------------------------
+Distinct Function -> create Distinct Order Id
+Distinct order Count:
+----------------------
+Modelling -> calculation -> New table 
+In Formula Bar write function -> Distinct Order Count = DISTINCT(Orders[Order ID])
+Difference between Order Date and Ship Date:
+--------------------------------------------
+Right click Order -> create new column -> Days to Ship = DATEDIFF(orders[Order Date].[Date], Orders[Ship Date].Date, DAY) 
+Sales Ranking Highest(Not Using this):
+--------------------------------------
+Create new column in Orders -> Sales Ranking Highest = RANKX(Orders, Orders[Sales])-> Highest ranking sales start with low value(No.1), Lowest ranking sales value start with higher No.
+Edit above High to low
+Sales Ranking Lowest(Not Using this):
+--------------------------------------
+Edit Sales Ranking Highest -> Sales Ranking Lowest = RANKX(Orders, Orders[Sales],,ASC) -> Highest ranking sales start with High value, Lowest ranking sales start with low value(No.1).
+open excel sample super store -> W369 change the value 52.97
+Refresh in power BI
+In Orders Table -> Click Order ID Dot-> type 8853 Order Id -> Uncheck All -> check 88538, 88539 -> ok. two rows shows -> click the dot clear filter.
+Click Sales Ranking Lowest Dot -> type 547 there is nothing type 548 ->
+it shows number 548 -> now cancel the filter.
+Sales Ranking Lowest No Skip(Not Using this):
+----------------------------------------------
+Edit Sales Ranking Lowest -> Sales Ranking Lowest No Skip = RANKX(Orders, Orders[Sales],,ASC,Dense) -> Highest ranking sales start with High value, Lowest ranking sales start with low value(No.1). It's not skip value
+Measures:
+---------
+File size is an issue we may use measures instead of using calculated table and calculated column.
+Two variations of measures:
+---------------------------
+Qucik measures : Templates of source
+Measures : Build from scratch
+Quick Measures:
+---------------
+Right Click Orders Table -> Create Quick Measures -> Dialog box open -> 
+
+In Calculation dropdown select -> Total for category(filters not applied)
+
+In Fields Pan Select -> Orders -> goto Sales   -> Drag and Drop into the Base Value in Calculation side -> it shows Sum of sales We need Average So Click ... (eclipse) or more option -> select Average of sales.
+
+In Fields Pan Select -> Orders -> goto Customer Segment -> Drag and Drop into the Category in Calculation side. ok
+Now we can see the formula automatically created.
+Average of Sales total for Customer Segment = CALCULATE(AVERAGE('Orders'[Sales]), ALL('Orders'[Customer Segment]))
+1.Create report form view:
+---------------------------
+* In Report view -> Drag Average of Sales total for Customer Segment Measure From Fields Pan Orders table and drop into report view. 
+* Drag Customer Segment Drop into Axis box from Visualizations Pan.
+*Drag Product Category Drop into small multiple box from Visualizations Pan.
+Delete it Save this.
+Measures: Measures from scratch:
+--------------------------------
+* Right Click Orders -> create Measures 
+* Formula Bar -> Average Sales per Product Category = CALCULATE(AVERAGE(Orders[Sales]),ALLSELECTED(Orders[Product Category]))           
+Time Intelligence Function:
+----------------------------
+* Calender *Calender Auto
+Calender Auto
+-------------
+* Select Orders Table in Fields Pan -> Table tools -> new table -> Dates = ADDCOLUMNS(CALENDERAUTO(),"Year",YEAR([Date]),
+"Quarter","Q"&QUARTER([Date]),
+"Month",FORMAT([Date],"mmmm"),
+"Month Number",MONTH([Date])
+)
+
+Mark as Date:
+---------------
+* Click Dates -> Right click Date Table -> Mark as Date Table -> Mark as Date tanle -> dialog will open Date column Dropdown select Date ok.
+
+Create relationship between orsers and date table:
+--------------------------------------------------
+* In Model view -> Drag Order Date from Orders table Drop into Date field into the Dates table. In * In Table view days to skip shows error change it:
+---------------------------------------------------
+Right click Order -> create new column -> Days to Ship = DATEDIFF(orders[Order Date], Orders[Ship Date], DAY) 
+create new column:
+------------------
+* Right Click Orders table -> create new column
+End of Months = ENDOFMONTH(Orders[Order Date])
+* Right Click Orders table -> create new column
+End of Quarter = ENDOFQUARTER(Orders[Order Date])
+*Select End of Month Column -> Column tools -> Format March 14, 2001(mmmm d yyyy) select it.
+*Select End of Quarter Column -> Column tools -> Format March 14, 2001(mmmm d yyyy) select it.
+Close Sample super store.
+Open Retail Analysis File:
+--------------------------
+New Page in Report View.
+* In Fields pan -> Drag -> Total Units This Year -> from Sales -> Drop into the report view.
+* In Time table ->drag -> FiscalMonth -> drop into the Bar chart.
+* In Right corner of the chart -> click more options(...) -> Sort by -> FiscalMonth -> again click elipses(...) -> click Sort by Acending order.
+* In visualization pan -> Click KPI 
+* Target goals -> drag Total Units Last Year from sales table drop into the target goals field 
+Rename the page1 into KPI.
+Publish it
+workspace -> my workspace -> see the file published.
+Direct Query:
+-------------
+*In Desktop -> file -> new 
+Home -> Click SQL Server -> Dialog box open -> click Direct Query Option Button. Cancel the box.
+
+Home -> powerBI Datasets -> it Shows Published data set -> select Retail Analysis Sample -> create.
+save -> Direct Query 
+Drag Total Units this year to report view -> Values -> Total Units this year 
+Drag -> Fiscal Month drop into the frame -> ...(more option) -> sort by -> Fiscal Month -> ... -> Sort by Acending order.
+Click KPI to convert KPI.
+Direct Query = 7 KB  
+Retail Analysis Sample = 9,453 KB
+File Size Considering -> Direct Query is Supporting -> Recomend to use direct query.
+Sample Super Store: Load it
+----------------------------
+Variables: Improve performance
+	   Improve readability
+	   Simplify debugging
+	   Reduce complexity
+Use TAB to select:
+-----------------
+*In Fields pan -> Right click orders -> choose new Measure -> Double click the measure in title bar rename it Total Sales = CALCULATE(SUMX(Orders[Sales))
+
+*In Fields pan -> Right click orders -> choose new Measure -> Double click the measure in title bar rename it -> 
+2010 Total Corporate Sales = 
+VAR
+CorporateSales =FILER(ALL(Orders[Customer Segment]),Orders[Customer Segment]="Corporate")
+VAR
+IncludeDates =
+FILTER(ALL(Dates[Year]),Dates[Year]=2010)
+RETURN
+CALCULATE([Total Sales],
+CorporateSales,
+IncludeDates)
+// This Calculation is only for 2010 Corporate Sales.
+
+
+*In Fields pan -> Right click orders -> choose new Measure -> Double click the measure in title bar rename it -> 
+2011 Total Corporate Sales = 
+VAR
+CorporateSales =FILER(ALL(Orders[Customer Segment]),Orders[Customer Segment]="Corporate")
+VAR
+IncludeDates =
+FILTER(ALL(Dates[Year]),Dates[Year]=2011)
+RETURN
+CALCULATE([Total Sales],
+CorporateSales,
+IncludeDates)
+// This Calculation is only for 2011 Corporate Sales.
+
+
+*In Fields pan -> Right click orders -> choose new Measure -> Double click the measure in title bar rename it -> 
+2012 Total Corporate Sales = 
+VAR
+CorporateSales =FILER(ALL(Orders[Customer Segment]),Orders[Customer Segment]="Corporate")
+VAR
+IncludeDates =
+FILTER(ALL(Dates[Year]),Dates[Year]=2012)
+RETURN
+CALCULATE([Total Sales],
+CorporateSales,
+IncludeDates)
+// This Calculation is only for 2012 Corporate Sales.
+
+*In Fields pan -> Right click orders -> choose new Measure -> Double click the measure in title bar rename it -> 
+2013 Total Corporate Sales = 
+VAR
+CorporateSales =FILER(ALL(Orders[Customer Segment]),Orders[Customer Segment]="Corporate")
+VAR
+IncludeDates =
+FILTER(ALL(Dates[Year]),Dates[Year]=2013)
+RETURN
+CALCULATE([Total Sales],
+CorporateSales,
+IncludeDates)
+// This Calculation is only for 2013 Corporate Sales.
+
+* In Visualization pan -> click Multi-row card
+* In Fields Pan -> Drag 2010 total corporate sales drop into the card same as 2011, 2012, 2013.
+
+
+
+Power BI Expert: Charts:
+------------------------
+Retail Analysis Samples, Histogram
+1.Pie chart
+* In Retail Analysis Sales-> + create New Page
+* In Visualization pan -> Drag and Drop -> Pie Chart 
+* In Fields Pan -> Sales Table -> Drag -> Regular Sales Unit -> Drop into the Pie Chart.
+*In Fields Pan -> Sales Table -> Check -> Markdown Sales Unit box.
+* In Visualizations Pan -> Fields pan -> Tooltips -> Drag -> Regular Sales Dollers, from Sales table drop in Tooltips, Drag -> Markdown Sales Dollers, from Sales table drop under Regular Sales in Tooltips.
+Format: Format pan represent paint roller:
+------------------------------------------
+Legent -> On
+Detail Lable -> Off
+Title -> Title Text -> Regular Sales and Markdown Sales
+Alignment -> Center
+Backgroubd -> On
+Color -> sky blue
+Shadow -> On
+Color -> Dark sky blue(Darger color)
+
+Rename Page1 into Reg vs MarkDown -> enter -> save
+---------------------------------------------------------
+1.Clusterd Column Page
+* In Retail Analysis Report-> create New Page
+* In Visualization Pan -> clusterd Column chart
+* In Fileds pan -> sales table -> this year sales -> Check the value, -> check Last year sales -> check total sales variance.
+* In Fields pan -> store table -> check Chain box -> or drag chain and drop into the -> Aaxis box in visualization fields box. 
+* In Fields pan -> store table -> drag -> territory -> and drop into the -> small multiple box in visualization fields box. you off the territory
+* In Fields pan -> Right click store table -> Add to filters -> visual level filter.
+* In Report View -> More Options(...) -> sort by -> This year sales ->More Options(...) -> sort by acending order
+Add Data Label: 
+--------------
+Format Pan (Paint roller) -> Data Label -> On
+Backgroubd -> On
+Color -> sky blue
+Shadow -> On
+Color -> Dark sky blue(Darger color)
+Rename page -> TY,LY and Variance -> Save it
+In Filter pan -> Remove Territory field
+
+Make Room for Slicer in KPI, Reg vs MarkDown, and TY,LY and Variance Page:
+--------------------------------------------------------------------------
+Sync Slicers:
+-------------
+Right side make little space in TY,LY and Variance Page
+Right side make same amount space in KPI report page
+Right side make same amount space in Reg vs MarkDown report page
+* In TY,LY Page -> Drag and drop Slicer
+* In Store table -> Drang Chain drop into the Slicer -> resize the slicer.
+Format Pan (Paint roller)-> Backgroubd -> On
+Color -> sky blue
+Border -> On
+Radious -> 30 px
+select -> Slicer -> View -> Last tab Sync slicers
+*In Sync slicers dialog -> check -> two check boxes -> in TY,LY and variance
+*In Sync slicers dialog -> check -> two check boxes -> in KPI 
+*In Sync slicers dialog -> check -> two check boxes -> in Reg vs MarkDown    -> close Slicer Dialog
+
+Create Drill-through Page:
+--------------------------
+1.Multi-row card
+* In Retail Analysis Report-> create New Page
+* In Visualization Pan -> Multi-row card
+* In Fileds pan -> sales table -> Drag Last year sales drop into the -> Multi-row card
+* In Fileds pan -> sales table -> This year sales -> Drag ->Value -> drop into the -> Multi-row card
+* In Fileds pan -> sales table -> Drag ->Total sales for % -> drop into the -> Multi-row card resize it
+* Select Muti-row card -> See Drill through
+* In Fileds pan -> items table -> Drag ->Category -> drop into the -> Drill through last field -> Add drill through field here. -> save it
+-------------------------------------------------------------------------
+* In Retail Analysis Report-> create New Page -> Sales by Category
+1.Stacked Bar chart
+* In Visualization Pan -> Drag -> Stacked bar chart -> drop into the -> report view -> Select it
+* In Fileds pan -> items table -> Drag ->Category -> drop into the -> Axis box -> in Visualization pan
+* In Fileds pan -> sales table -> This year sales -> Drag ->Value -> drop into the -> Values box -> in Visualization pan
+Add two Slicers Pan: one for Chain another for buyer
+----------------------------------------------------
+1.Slicer
+* In Visualization Pan -> Drag -> Slicer icon -> drop into the -> report view -> Select it move to the right side and resize it. 
+* In Store table -> Drang Chain drop into the Slicer -> In Slicer type(v) -> Choose Dropdown 
+* If we have lot of entries in Slicer we choose Drop down.
+2.Slicer
+* In Visualization Pan -> Drag -> Slicer icon -> drop into the -> report view -> Select it move to the right side and resize it. 
+* In Items table -> Drang Buyer table drop into the Slicer -> In Slicer type(v) -> Choose Dropdown 
+* If we have lot of entries in Slicer we choose Drop down.
+Dril Through page:
+----------------
+* Right click Stacked Bar Chart -> Dril through -> Dril Through -> it will goto Drill Through Page.
+Check the Page after
+* Hold on Back arrow(<--) + Ctrl -> it will come back to Source page 
+In Dril Threw Page -> select it -> Goto -> Format page in visualization -> Border -> On, Color -> Sky Blue, Radious-> 30px, BackGround -> On, Color -> Sky Blue light
+
+Back Arrow: Create our own Back Arrow:
+--------------------------------------
+Delete the Arrow and create new:
+Insert -> Elements -> Shapes -> Black Arrow -> Lift Side arrow -> Make it small -> Keep in top of the Multi-row card.
+* In Format Shape -> Action -> On, Type -> Back
+* Hold on Back arrow(<--) + Ctrl -> it will come back to Source page
+Change Background:
+-----------------
+* In Stacked Bar Chart -> change background - On, Color -Sky Blue, Shadow - On
+* Select Two Slicer together use Ctrl -> goto Format -> Selection control -> Multiselect wit CTRL -> On, Select All -> On, Background -> On, Color -> little Dark Sky blue, items -> Font color -> White
+
+TY,LY and Variance Page:
+------------------------
+1.Table
+* In Visualization pan -> Select Table 
+* In Fields Pan -> Sales table -> Drag -> Lost year Sales -> Drop into the -> Table.
+* In Fields Pan -> Sales table -> This year Sales -> Drag -> Value -> Drop into the -> Table.
+* In Visualization Pan -> Values -> Right click This year sales -> Conditional Formatting -> Background color.
+* Background color Dialog -> Check -> Diverging box 
+* Minimum - 2000000, Center 2350000, Maximum - 2500000
+-> ok
+BookMark Feature:
+-----------------
+* Goto Sales by Category Page - Change font colort in chain and Buyer dropdown.
+* Goto Paint Roller(Format) -> Items -> Background color -> Dark sky blue 
+* In Buyer DropDown -> Check -> Bright, Evangeline
+* View tab -> show paints -> Bookmarks -> Bookmarks Dialouge Pan Open -> Click Add -> Click (...) more options -> Rename -> Evangeline Bright -> Save it -> close it.
+* View tab -> show paints -> Bookmarks -> Bookmarks Dialouge Pan Open -> Click -> Evangeline Bright -> you can see it filter.
+Accessibility Features:
+-----------------------
+* Built-in accessibility features requiring no configuration.
+	* Keyboard navigation
+	* Screen-reader Compatibility
+	* High contrast colors view
+	* Focus mode
+	* Show data table
+* Built-in accessibility features requiring configuration.
+	* Alt text
+	* Tab order
+	* Titles & labels
+	* Markers
+	* Report themes
+Alt text:
+---------
+* Sales by Category Page -> Select Bar Chart -> Goto visualization -> (Paint roll)Format pan -> General -> Alt Text -> Type -> This is a Bar graph representing this year's sales broken down by category.
+Short-cut key combination:
+--------------------------
+* Sales by Category Page -> Select Bar Chart -> Then Alt + Shift + F11 -> Data table shows Under Bar Chart -> then click -> Back to Report Button -> It will back to -> sales by category page.
+Focus Mode:
+-----------
+* Sales by Category Page -> Select Bar Chart -> Then Click Middle Button(Picture Button) -> It will Goto -> Focus Mode -> Zoom the chart for review -> then click -> Back to Report Button -> It will back to -> sales by category page.
+Tab Order:
+----------
+* We can skip one item in tab order
+* Tab Order Out of order 
+* Fix Both 
+* Press tab -> Chart select -> press tab -> Chain select -> press tab -> Buyer select
+* In Ribbon -> View tab -> show panes -> Selection -> Selection Dialog Open -> Click Tab order -> change Tab order -> Close Selection -> Save it.
+Theme:
+-----
+* In Ribbon -> View tab -> Theme Drop down -> Power BI -> 2nd row, 2nd column -> ColorBlind Safe -> click -> apply it
+
+Histogram:
+----------
+* In visualization -> click -> (...) get more visuals -> click -> get more visuals -> Power BI Visuals -> AppSource -> Search -> Histogram -> Select Default histogram 1st one -> click Add -> ok -> Right click histogram -> pin to visualization pan.
+--------------------------------------------------------------
+Histogram:
+----------
+File -> New -> Get Data -> Excel Workbook -> Histogram Excel File -> open -> Employees Salary -> Load it.
+* In Report view -> Rename Page1 -> Histogram
+* In visualization pan -> Click Table 
+* In Fields Pan -> Employee Salaries -> Drag -> Employee -> drop into the -> table
+* In Fields Pan -> Employee Salaries -> Drag -> Employee Salary-> drop into the -> table -> Delete table.
+* In visualization pan -> Add Histogram to report page.
+* In visualization pan -> Drag -> Monthly Salary -> Drop into the -> Values  -> Drag -> Employee -> Drop into the Frequency -> Click First employee next Dropdown -> Click Count
+Format -> Y-Axis -> Decimal Places -> 0
+--------------------------------------------------------------
+* Create a Dashboard
+	* Pin Visuals
+* Real-time Dashboards
+	* Use a form
+* Enhance a Dashboard
+* Configure a Dashboard Tile Alert
+* Use Q&A for Analysis
+
+Create Dashboard:
+-----------------
+* Power BI Service -> Sample Super Store - OD -> open -> click ...(more options) -> Edit 
+* Delete Bar Chart.
+1.Table
+* In visualization pan -> click table -> to add report page.
+* Select Table
+* In Fields pan -> Orders -> Check  Customer Segment, Sales 
+2.Bar chart
+* In visualization pan -> click Stacked Bar chart -> to add report page.
+* Select Stacked Bar chart 
+* In Fields pan -> Orders -> Check  Customer Segment, Sales 
+3.Card
+* In visualization pan -> click Card visualization -> to add report page -> Select Card -> In Fields pan -> Orders -> Check Sales 
+4.Pin to dashboard
+* In Power BI service Right side -> Click Pin to dashboard icon -> Create new dashboard -> Dashboard name - Sample Super Store -> Pin Live -> Go back to dashboard. Green Icon -> Dashboard, Orange Icon -> Report page, Blue Icon -> Source
+--------------------------------------------------------------------------
+Streaming Real-time Data:
+------------------------
+Give users ability to stream data and update dashboards in real-time.
+Data can be from various sources
+	*Social Media, Online Forms
+Real-time datasets are created in the Service
+	*Push Dataset
+		*API
+	*Streaming Dataset
+		*Azure Stream
+	*PubNub Dataset
+Push Dataset:
+------------
+Microsoft Forms -> New Form -> name - Streaming Survey
+Add new -> Choice
+1.Which BI technology are you most interested in learning about?
+Power Apps
+Power Automate
+Power BI
+Other
+Add new -> Choice
+2.What is your current experience level on the technology you selected?
+Beginner
+Intermediate
+Expert
+3.Where are you from?(Provide answer in City, ST format. For example San Francisco, CA)
+Click -> Form to go back.
+---------------------------------------------------------------------------
+Back to Power BI service -> Sample Super Store report page.
+Create -> New Workspace -> name - Streaming Dataset, Description - Contains all components of our streaming data -> Save.
+New -> Streaming Data -> Select -> API -> Next -> name -Streaming Dataset  -> Values from stream -> Technology -> Text -> Experience  -> Text -> Location -> Text -> Historic Data Analysis - On -> Create -> Done.
+* In Streaming Datasrt near -> vertical 3 dots (...) click -> Create report
+1.Table 
+Add -> Experience, Location, Technology to Table
+2.Map
+Add -> Technology to Legend, Experience to size, Location to Location from visualization pan to map.
+3.Stacked Column chart
+Add -> Technology to Axis , Experience to Legend, Location to values.
+4.Card
+Add -> Technology to Fields -> Click dropdown arrow next to technology -> Choose -> Count Distinct -> Save -> Streaming -> Save.
+*Select Table -> Top -> Click Pin to dashboard -> new dashboard -> name - Streaming dashboard -> Pin 
+*Select Map -> Top -> Click Pin to dashboard -> existing dashboard -> Pin 
+*Select Bar chart -> Top -> Click Pin to dashboard -> existing dashboard -> Pin 
+*Select Card -> Top -> Click Pin to dashboard -> existing dashboard -> Pin 
+* Goto Microsoft Waffle-> Select Microsoft Power Automate -> use Verticle(...) elipses click New Power Automate. 
+ * New Window -> Create -> Automated Cloud flow -> Name - Streaming Data Flow -> forms -> Select When a new response is submitted Microsoft forms -> Create -> Select Streaming Survey from Dropdown. 
+ * New step -> form -> Select Get response details -> Form id - Streaming survey, Response id - Dynamic content -> Choose Response id.
+*  New step -> PowerBI -> Actions -> Select Add rows to a dataset (preview) - Workspace - Streaming Dataset, Dataset - Streaming Dataset, Table - RealTimeData,  Technology - Which BI technology are you most interested in learning about?, Experiance - What is your current experience level on the technology you selected?, Location - Where are you from?(Provide answer in City, ST format. For example San Francisco, CA) -> Save it.
+
+* Goto Microsoft Waffle-> Select Form -> Create new window - new form -> Screaming Survey -> Preview 
+Theam:
+------
+Edit -> Dashboard Theme -> Dark or Light or Colorblind or Custom - Background color - Teal blue, Tile background - lite teal, font color - gray, -> Save
+Add video, Audio, text boxes to report:
+---------------------------------------
+Edit -> Add a tile -> web content or video or Audio-> Select Video -> Next -> Title - How to Use Web Apps , Subtitle - Learnit, Video URL - Copy and Paste Youtube video or webieo -> Apply.
+Setting Dashboard Tile Alert:
+-----------------------------
+* Tile alert notify you when data on a dashboard changes above or below limits that you set. 
+*Right now, tile alerts only can be set on card KPI, engage visualizations and powerBI.
+* Select card -> More options in right carner -> Manage Alert -> Click Add alert rule -> Active - ON -> Condition We Choose -> Above or Below -> choose Above , Threshold -> current is 33M so -> we type 35 -> Save and close.
+* Top Right corner -> settings -> notifications -> we check our alert there.
+Q&A:
+----
+* In Service -> For Get Microsoft DataInside Report -> Top Left corner -> Click -> Ask question about your data -> Select the tiles which question you want -> click tile -> Defect QTY Defect totla question -> It shows the report -> click top right corner -> pin to dashboard -> Pin -> Click Exit Q&A come back to report.
+Quick Insights:
+--------------
+* There's a data analytics feature built into the service called quick insights where powerBI will analyze all your data and offer a wide varity of visualizations in order to get access to quick insights. 
+* Go Back to workspace -> Suplier Quality Analysis Database -> In Report Page -> Select More options(...) -> Choose View Insights or Quick Insights.-> Dialog will open -> The report shows.
+* Any Chart we want we can -> pin to dashboard.
+Setting Feature Dashboard:
+--------------------------
+* In Report Page -> (...) More options -> set as fearure -> set as feature dashboard.
+* In workspace -> Faveriate Dashboard -> Click Star(*)
+* In workspace -> Select Supplier Quality Analysis Sample Dashboard -> (---)more option -> choose view usage metrics report.
+Configure Mobile view:
+----------------------
+* In workspace -> Click Supplier Quality Analysis Sample Dashboard to open -> In Report page -> (...)More options -> Disable feature if you want it use another.
+* In workspace -> Click Supplier Quality Analysis Sample Dashboard to open -> In Report page -> Edit -> Mobile layout -> Unpin unwanted reports mostly use cards only.
+-----------------------------------------------------------
+
+
+Modue9: Master Level
+--------------------
+* Create Pagenated Reports can printed or publish. Also can export PDF or PowerPoint and Formated to fit well on the Page.
+* Paginated Reports only available in premium workspaces.
+* Use Power BI Report Builter
+	*Create Paginated Reports
+*Design a Multi-Page Report Layout
+	* Define a data structure
+	* Define a dataset
+*Export a report to PDF
+
+For Get Microsoft Data:
+----------------------
+* In Service -> PowerBI workspace -> Lower Left Corner there is an arrow(-->) -> Click It (It's GetData) -> scroll down -> More ways to create your own content -> Click  Samples -> Click Supplier Quality Analysis Sample -> Click Connect -> Import Data -> Click Supply Quality Analysis.
+
+* In the Page Click Workspace Icon -> My Workspace Near -> Click More Button -> Choose Workspace settings -> 
+* Premium tab -> Premium per user -> Click Save -> Click Continue.
+
+* In Workspace -> New -> Click Paginated Report -> New Report Shows -> Select Table or Matrix Wizard -> choose dataset -> Next -> choose a data source -> Click New Button -> Name - Supplier Quality Analysis, Select connection type - Power BI Dataset Select from dropdown, Connection string - Click Build Button -> It shows all workspace -> Select My Workspace -> Click Supplier Quality Analysis Sample -> Select -> Test Connection -> OK -> Ok -> Next -> Design a query 
+* In Model Expand Vendor -> Expand Vendor -> ,Vendor Field -> Drag and Drop into the near Space(Query builder).
+* In Model Expand Measures -> Expand Matrix -> Total Defect Qty Field -> Drag and Drop near to the Vendor.
+* In Model Expand Measures -> Expand Matrix -> Total Downtime Minutes Field -> Drag and Drop near to the Total Draft Qty -> In center page -> Click Click and execute query -> Next -> Arrange fields -> Double click -> Vendor -> It will go to Row group ->Double click -> Total Defect Qty -> It will go to the Values ->Double click -> Total Downtime Minutes -> It Will go to the Values -> Next -> Shows Preview -> Finished it -> Once click Finished it -> It shows Power BI Report Builder -> Save it Supplier Quality Analysis.
+* In the Design Grid -> Down the Total Defect -> Right click Sum of defect quantity -> Right click go to the -> Row Group and -> Click on group properties -> Left side -> Choose Sorting -> Sort by -> Select total defect qty -> order - Choose Z to A -> OK -> Save it -> Run It -> go back click Design -> In Design Change title bar into the text-> Select title bar -> delete it -> Click Insert from Ribbon -> In the Report items group  -> Click text box -> Insert it -> Type the title -> Total Defects and Downtime Minutes per Vendor -> Font Size -> * View -> Properties -> Other -> Repeat with -> Tablex1 -> Save it.
+* View -> Grouping -> Row group, column group heading -> Click Right side Dot -> Select Advance Model -> Select Static -> Properties Window -> Other -> Fixed Data - True, KeepTogether - False, KeepWithGroup - After, RepeatOnNewPage - True 
+* Row group, column group heading -> Click Right side Dot -> Off Advance Model -> Save it.
+* Left side Pan -> Expand Build in Fields -> then drag and drop -> Execution Time in the footer section-> Publish (Publish Only in Premium Workspace) -> Select My Workspace -> Type Supplier Quality Analysis -> Click Publish -> Click Ok .
+* In Workspace -> Barchart Icon -> Regular Report
+* In Workspace -> Picture inside barchart Icon -> Pagenated Report
+* If we open paginated Report -> Title and header repeat every page -> view -> default -> File -> Print -> Print preview -> We can see all Pages.
+*In workspace -> Supplier Quality Analysis Paginated report -> More options(...) -> Edit in PowerBI Report Builder -> We can add something.
+* Left side Pan -> Expand Build in Fields -> then drag and drop -> Overall Page Number in the footer section-> Save it -> Publish (Publish Only in Premium Workspace) -> Select My Workspace -> Type Supplier Quality Analysis -> Click Publish -> Yes -> Click OK
+Module 10:
+Perform Advanced Analytics:
+----------------------------
+	*Grouping
+	*Binning
+	*Drill Down/Up
+	*Analyze
+Power BI Service ->  Click Arrow(-->) Lower left corner -> Getdata -> Scroll down -> Samples -> Click Sales and Marketing Sample -> learn more -> Down load Power BI file -> Sales and Marketing Sample.pbix file. 
+* Open Sales and Marketing Sample.pbix file -> Growth Opportunities -> Select Column Chart -> Select Youth + Ctrl + Select Regular -> Right Click -> Group Data -> It will Show Different Color -> Change name -> grouping -> Save it
+* In New Page -> Drag and drop -> Clustered column chart -> Name the Page -> Binning ->  In Fields Pan -> In Geo Table -> Drag -> Region -> Drop into the -> Axis, In Sales Fact Table -> Drag -> Sales $ -> Drop into the -> Values, In Date Table -> Right Click -> Year -> Choose New Group -> Bin size -> 5 -> OK -> In Date Table -> Drag -> year(bins) -> Drop into the -> Legend.
+Drill Down and up:
+------------------
+* Right Click Binning Page Tab -> Create Duplicate -> rename it -> Drill down Slash Up -> Select Column Chart 
+* In Geo Table -> Right click -> Region -> create Hierarchy, * In Geo Table -> Right click -> State -> Add Hierarchy -> Region hierarchy.
+In Axis Close the Region -> Drag Region Hierarchy Field -> Drop into the -> Axis Field         
+* In the chart -> upper right corner -> see down arrow -> Click it -> Enable Drill Down Feature -> after enable It shows dark color.
+* Next 3 buttons on Left side -> First Drill Up 
+* Second Drill Down(Double down arrow) it shows lowest level of data (we can analyses here)  
+* Again click Drill Up(1st arrow) it will come to Highest level data(come back normal page), 
+* Third Button -> Expand all the data (Combining Region and state) -> different way of analysis, 
+* In Geo Table -> Right click -> City -> Add Hierarchy -> Region Hierarchy 
+* Uncheck Region hierarchy -> Drag -> Region hierarchy -> Drop into the -> Axis field (it contains Region, state, city)
+* Turn On -> Upper left corner down arrow(Drill down).
+* Drill down and check -> city, state, region.
+* Right click Blank space -> Analyze -> Click -> find where this distribution is different -> See the different chart and analysis -> if you want add analysis -> Click (+) -> It will add to the report page. 
+Artificial Intelligence Visual(AI visual):
+------------------------------------------
+* create new page for -> key influencers and name it
+* In ribbon -> Insert -> AI visuals -> click key influencers visual -> it will display report page.
+* In Fields pan -> Expand Sales Fact table -> drag -> sum of revenue -> Drop into the visualization pan  -> Analyse.
+* In Fields pan -> Expand Product table -> drag -> Manufacturer -> Drop into the visualization pan -> Explain by.
+* In Fields pan -> Expand Product table -> drag -> Product -> Drop into the visualization pan -> Explain by -> Under Manufacturer.
+* In Fields pan -> Expand Product table -> drag -> Category -> Drop into the visualization pan -> Explain by -> Under Product -> Save it
+Scatter chart:
+-------------
+* create new page for -> Scatter chart and name it
+* In visualization pan -> drag and drop -> scatter chart visual -> to the report page.
+* In Fields pan -> Product table -> drag -> Category -> drop into the -> Details.
+* In Fields pan -> Product table-> drag -> Segment(groups) -> drop into the -> Details
+* In Fields pan -> Sales Fact table -> drag -> Total Units YTD -> drop into the -> X Axis 
+* In Fields pan -> Sales Fact table -> drag -> Total Units -> drop into the -> Size
+* In Fields pan -> Date table -> drag -> Year -> drop into the -> Play Axis   Save it.
+Forecast:
+----------
+* create new page for -> Forecast and name it
+* In visualization pan -> drag and drop -> Line chart visual -> to the report page.
+* In Fields pan -> Date table -> drag -> Date Hierarchy -> drop into the -> Axis.
+* In Fields pan -> Sales fact table -> drag -> Sales $ -> drop into the -> Values.
+* In visualization pan -> click Analyze tab(Third one)  -> Forecast-> (+)Add -> Forecast length -> 10 -> Years , Ignore last -> 2 -> Apply
+
+
+Professional level:-
+Custom Analytics Visual:
+------------------------
+* create new page for -> Custom Analytics and name it.
+* In visualization pan ->Click (...)more options -> choose get more visuals -> AppSource -> Advanced Analytics -> Search - violin -> Violin Plot -> Add -> ok
+* In visualization pan -> right click violin plot -> Pin it.
+* In visualization pan -> drag and drop -> violin plot visual -> to the report page.
+* In Fields pan -> Product table -> drag -> Segment -> drop into the -> Sampling.
+* In Fields pan -> Sales Fact table -> drag -> Sales $ -> drop into the -> Measuring Data.
+* In Fields pan -> Product table -> drag -> Category -> drop into the -> Category.
+Assets Dashboard and reports:
+-----------------------------
+Supplier Quality Analysis Dashboard -> Right side up -> Share -> Share Dashboard-> check the check Boxes -> give email -> ok.
+Supplier Quality Analysis Dashboard -> Right side up -> Share -> Share Dashboard-> Click (...)more options -> Click Manage permisions -> lower right corner -> Advance -> Check who you will share the dashboard -> (...) here you can remove the permisions.
+* Move back to the Workspace - Power BI Supplier Quality Analysis Report -> Click Share button.
+* Move back to the Workspace - Power BI Supplier Quality Analysis Report -> Right Click -> Save a copy -> Training workspace -> Save it.
+* Move back to the Workspace -> Training workspace -> (...) more options -> choose Workspace Access -> In Access -> type Email address -> choose the permission between fore (Admin or member or Contributer or Viewer ) -> give permisions -> Add -> (...) down you can change the permission or remove it -> close.
+How to create and publish App:
+------------------------------
+* Goto Workspace -> In right Side -> Include in app -> No(Off) -> Unwanted Reports and Sources -> Select(Yes)  Power BI Supplier Quality Analysis Report, Paginated Supplier Quality Analysis Report, Supplier Quality Analysis sources.
+* Goto Workspace -> In Upper right corner -> Click Create App * In Build app -> Setup -> App name -Supplier Quality Analysis, Description - Include a dashboard, report, and a paginated report
+* Navigation tab
+* Permision Tap -> Specific Individual or group - Give Email Address -> Publish app -> Publish -> Goto App
+* In the app we can see all reports and paginated reports.
+* In the Bottom left -> Go back -> Go Back to our home page over there we can see app too.
+
+Manage Datasets in Power BI:
+------------------------------
+Samplesuperstore OD desktop file
+Parameter:
+----------
+* Open -> Samplesuperstore OD
+* Home Ribbon -> transform data -> Open power query editor
+* Home -> Parameters -> Click Manage Parameters icon -> Manage Parameter dialog open -> Click New
+* Name - Region, Type - Text, Suggested Values - List of values, 1 - East, 2 - Central, 3 - South, 4 - West -> enter,
+Default Value - East, Current value - East -> ok
+* View -> parameters -> Check Always allow.
+* Click Orders Table -> Region Click dot -> load all -> Text Filters -> choose Equals -> Filter Rows Dialog open  -> click abc icon -> choose parameters -> ok -> close and apply -> Publish -> my workspace replace ok -> open sample super store -> Click (...) more options -> Click Edit
+* Create new page -> Order table -> Drag Region, Sales drop into the report.
+Change region east to west in service:
+--------------------------------------
+* In my workspace -> Select Sample superstore dataset -> more options(vertical...) -> Settings -> In settings -> Parameters -> Delete East -> Type West -> Apply
+* In my workspace -> Sample superstore dataset -> Click Refresh(Circular arrow) open it Again -> Refresh inside report.
+* In my workspace -> Select Sample superstore dataset -> more options(vertical...) -> Settings -> In settings -> Under Parameters -> Scheduled refresh - On -> Refresh frequency Daily or Weekly -> Apply
+* In my workspace -> Select Sample superstore dataset -> more options(vertical...) -> Settings -> In settings -> Under Parameters -> Scheduled refresh - Off Desktop level we can't refresh
+
+
+
+
+
