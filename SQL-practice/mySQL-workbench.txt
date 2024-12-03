@@ -1,0 +1,49 @@
+(base) deepa3@deepa3-Vostro-3546:~$ sudo service mysql start
+[sudo] password for deepa3:              (Deepa@369)
+
+(base) deepa3@deepa3-Vostro-3546:~$ sudo service mysql status
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/usr/lib/systemd/system/mysql.service; enabled; preset: en>
+     Active: active (running) since Sat 2024-11-09 19:05:39 PST; 1h 52min ago
+    Process: 1390 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=e>
+   Main PID: 1589 (mysqld)
+     Status: "Server is operational"
+      Tasks: 38 (limit: 9331)
+     Memory: 423.6M (peak: 437.1M)
+        CPU: 1min 19.323s
+     CGroup: /system.slice/mysql.service
+             └─1589 /usr/sbin/mysqld
+
+Nov 09 19:05:01 deepa3-Vostro-3546 systemd[1]: Starting mysql.service - MySQL C>
+Nov 09 19:05:39 deepa3-Vostro-3546 systemd[1]: Started mysql.service - MySQL Co>
+lines 1-14/14 (END)
+[1]+  Stopped                 sudo service mysql status
+
+(base) deepa3@deepa3-Vostro-3546:~$ ls /var/run/mysqld/mysqld.sock
+/var/run/mysqld/mysqld.sock
+
+(base) deepa3@deepa3-Vostro-3546:~$ sudo mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 16
+Server version: 8.0.39-0ubuntu0.24.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Deepa@369';
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> EXIT
+Bye
+
