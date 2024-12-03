@@ -1,0 +1,13 @@
+Bank_transactions.xlsh
+-----------------------
+Pivot Table 1:
+-------------
+Select all data (Date, in, out) -> Insert -> Pivot table
+In pivot table editor -> Rows - Date -> values - out -select sum
+it will add same day spend multiple expenses.
+
+Pivot Table 2:
+----------------
+Select all data (Date, in, out) -> Insert -> Pivot table
+In pivot table editor -> Rows - Date -> values - out -select sum
+In the pivot table -> select values(not total) -> Right Click

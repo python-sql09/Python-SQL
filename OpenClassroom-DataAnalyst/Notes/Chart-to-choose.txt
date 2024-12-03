@@ -1,0 +1,9 @@
+Comparison -> 1 Quantitative and 1 Qualitative -> Bar Chart
+		Good for comparision
+	Ex : Number of Sales(Quantitative) vs. Type of Fruit(Qualitative)
+Trend -> Date and Quantitative variable -> line Chart
+	Ex: Number of days per month or year
+Correlation -> Temperature(Quantitative) and Spoiled Products -> Scatter plot
+Preposition -> Total amount Sales by Category -> Pie chart
+	Ex: % of Sales in different category
+
