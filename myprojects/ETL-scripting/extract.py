@@ -1,5 +1,11 @@
-# 7 The current status of the extract class
-# 7 Alltogether CSV, JSON, MySQL, MongoDB
+# --------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 06, 2024
+# Description : Extract data from a variety of sources(CSV, JSON, MySQL, MongoDB
+# --------------------------------------------------------------------------------
 import pymongo
 import pymysql
 import csv

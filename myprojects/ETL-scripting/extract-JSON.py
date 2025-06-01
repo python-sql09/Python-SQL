@@ -1,4 +1,11 @@
-# 3 The fromJSON method
+# --------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 09, 2024
+# Description :  We will use the extract.py fromJSON method as a model for extracting
+# ----------------------------------------------------------------------------------------
 class extract:
     def fromJSON(self, file_path):
         if not file_path:
@@ -10,6 +17,6 @@ class extract:
         return dataset
 
 e = extract()
-dataset = e.fromJSON(file_path = "/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/person.json")
+dataset = e.fromJSON(file_path = "person.json")
 print(dataset)
 print(len(dataset))

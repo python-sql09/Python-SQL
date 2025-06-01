@@ -1,6 +1,11 @@
-# We will use the extract.py fromCSV method as a model for extracting
-# data from other types of sources.
-# 2 extract.py: The extract class shell
+# --------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 06, 2024
+# Description :  We will use the extract.py fromCSV method as a model for extracting
+# ----------------------------------------------------------------------------------------
 class extract:
     # 2 Creating the fromCSV method
     def fromCSV(self, file_path, delimiter = ",", quotechar = "|"):
@@ -15,7 +20,7 @@ class extract:
         return dataset
    
 e = extract()
-dataset = e.fromCSV(file_path="/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/got_chars.csv")
+dataset = e.fromCSV(file_path="got_chars.csv")
 for row in dataset:
     print(row)
 print(len(dataset))
