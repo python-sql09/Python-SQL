@@ -1,12 +1,20 @@
+# --------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 09, 2024
+# Description : Insert Data into the MongoDB
+# ----------------------------------------------------------------------------------------
 
-from pymongo import MongoClient
 from urllib.parse import quote_plus
+from pymongo import MongoClient
 
 # URL-encode the password
-password = quote_plus('Deepa@369')
+password = quote_plus('admin@369')
 
-# MongoDB connection settings with URL-encoded password
-client = MongoClient(f'mongodb://mongodb:{password}@localhost:27017/amazon_records?authSource=amazon_records')
+# MongoDB connection string with updated username and password
+client = MongoClient(f'mongodb://admin:{password}@localhost:27017/amazon_records?authSource=admin')
 
 # Select the database and collection
 db = client['amazon_records']

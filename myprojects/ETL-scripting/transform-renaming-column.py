@@ -1,4 +1,11 @@
-# 12 Renaming a column
+# ---------------------------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 12, 2024
+# Description : One common transformation step is to rename columns or attributes for extracted data.
+# -------------------------------------------------------------------------------------------------------
 from extract import extract #import our custom built extract module
 class transform:
     #rename a column in the dataset
@@ -21,7 +28,7 @@ column " + str(column_name) + " does not exist in one of the rows \
 in the dataset")
         return new_dataset
 e = extract()
-dataset = e.fromCSV(file_path="/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/got_chars.csv")
+dataset = e.fromCSV(file_path="got_chars.csv")
 print("Dataset before renaming the column:")
 print(dataset[0])
     

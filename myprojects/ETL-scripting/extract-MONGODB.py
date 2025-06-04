@@ -1,9 +1,14 @@
-# 6 Adding the fromMONGODB method
- # extract data from Mongo DataBase
+# --------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 09, 2024
+# Description :  We will use the extract.py, fromMONGODB method as a model for extracting
+# ----------------------------------------------------------------------------------------
 import pymongo
-
 class Extract:
-    def fromMONGODB(self, host, port, username, password, db, collection, query=None):
+    def fromMONGODB(self, host, port, username, password, db, collection, query=None, authSource="admin"):
         if not host or not port or not username or not db or not collection:
             raise Exception("Please make sure that you input a valid host, username, password, database, and collection name")
 
@@ -13,11 +18,11 @@ class Extract:
                 port=port,
                 username=username,
                 password=password,
-                authSource=db
+                authSource=authSource
             )
             tmp_database = client[db]
             tmp_collection = tmp_database[collection]
-            dataset = list()
+            dataset = []
             if query:
                 for document in tmp_collection.find(query):
                     dataset.append(document)
@@ -31,7 +36,15 @@ class Extract:
 
 # Example usage
 e = Extract()
-dataset = e.fromMONGODB(host="localhost", port=27017, username="mongodb", password="Deepa@369", db="amazon_records", collection="musical_instruments")
+dataset = e.fromMONGODB(
+    host="localhost",
+    port=27017,
+    username="admin",           # changed to your admin user
+    password="admin@369",       # changed to your admin password
+    db="amazon_records",
+    collection="musical_instruments",
+    authSource="admin"          # explicitly added authSource here
+)
 if dataset:
     print(len(dataset))
     print(dataset[0])

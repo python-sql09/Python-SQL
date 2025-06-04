@@ -1,3 +1,11 @@
+# --------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 09, 2024
+# Description :  We will use the extract.py, fromSQLite method as a model for extracting
+# ----------------------------------------------------------------------------------------
 import sqlite3
 
 class extract:

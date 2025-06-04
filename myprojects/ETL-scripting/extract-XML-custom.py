@@ -1,3 +1,11 @@
+# ----------------------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 09, 2024
+# Description :  We will use the xml_extractor method as a model for extracting xml files form online
+# ----------------------------------------------------------------------------------------------------
 # 10 Custom class to extract from an XML file
 def xml_extractor(xmlfile):
     import xml.etree.ElementTree as ET
@@ -23,7 +31,7 @@ def xml_extractor(xmlfile):
     # return news items list
     return newsitems
 if __name__ == "__main__":
-    xmlfile = '/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/sample_rss_feed.xml'  # Update this path
+    xmlfile = 'sample_rss_feed.xml'  # Update this path
     news = xml_extractor(xmlfile)
     if news:
         for idx, item in enumerate(news, start=1):

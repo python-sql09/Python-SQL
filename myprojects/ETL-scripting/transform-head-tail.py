@@ -1,7 +1,15 @@
+# ---------------------------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 12, 2024
+# Description : We start by importing the extract class in extract.py. We then create separate head and
+#               tail functions to retrieve a user-specified number of records from the dataset.
+# -------------------------------------------------------------------------------------------------------
 import sys
-sys.path.append('/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting')  # Add directory, not the file
+sys.path.append('ETL-scripting')  # Add directory, not the file
 from extract import extract
-
 class transform:
     # Return the top N records from the dataset
     def head(self, dataset, step):
@@ -21,24 +29,23 @@ class transform:
 
 # Initialize extract and connect to MongoDB
 try:
-    e = Extract()
-
+    e = extract()
     # Connect to MongoDB
     dataset = e.fromMONGODB(
         host="localhost", 
         port=27017, 
-        username="mongodb", 
-        password="Deepa@369", 
+        username="admin",
+        password="admin@369",
         db="amazon_records", 
-        collection="musical_instruments"
+        collection="musical_instruments",
+        #authSource = "admin"  # explicitly added authSource here
     )
-
     # Ensure we have data
     if not dataset:
         raise Exception("The dataset is empty. Please check the MongoDB query or connection.")
 
     # Create transform object
-    t = Transform()
+    t = transform()
 
     # Retrieve the top 5 records in the dataset
     dataset_1 = t.head(dataset=dataset, step=5)

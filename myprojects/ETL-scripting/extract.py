@@ -59,20 +59,21 @@ class extract:
 
     # extract data from Mongo DataBase
    # import pymongo
-    def fromMONGODB(self, host, port, username, password, db, collection, query=None):
+    def fromMONGODB(self, host, port, username, password, db, collection, query=None, authSource="admin"):
         if not host or not port or not username or not db or not collection:
-            raise Exception("Please make sure that you input a valid host, username, password, database, and collection name")
+            raise Exception(
+                "Please make sure that you input a valid host, username, password, database, and collection name")
         try:
             client = pymongo.MongoClient(
                 host=host,
                 port=port,
                 username=username,
                 password=password,
-                authSource=db
+                authSource=authSource  # <-- FIXED HERE
             )
             tmp_database = client[db]
             tmp_collection = tmp_database[collection]
-            dataset = list()
+            dataset = []
             if query:
                 for document in tmp_collection.find(query):
                     dataset.append(document)

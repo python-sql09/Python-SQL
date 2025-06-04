@@ -1,4 +1,12 @@
-# 11 The updated transform.py file
+# --------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 12, 2024
+# Description : We start by creating a transform class template that outlines the steps we
+#               plan to use when transforming the extracted data.
+# ----------------------------------------------------------------------------------------
 class transform:
     # Return the top N records from the dataset
     def head(self, dataset, step):

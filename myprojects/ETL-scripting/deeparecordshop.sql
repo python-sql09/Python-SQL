@@ -1,3 +1,11 @@
+# --------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 09, 2024
+# Description : deeparecordshop database 
+# ----------------------------------------------------------------------------------------
 # DROP DATABASE IF EXISTS deeparecordshop2;
 # CREATE DATABASE deeparecordshop2;
  USE deeparecordshop;

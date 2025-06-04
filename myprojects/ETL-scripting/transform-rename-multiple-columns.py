@@ -1,4 +1,11 @@
-# 15 Renaming multiple columns
+# ---------------------------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 15, 2024
+# Description : One common transformation step is to rename one or more attributes for extracted data.
+# -------------------------------------------------------------------------------------------------------
 from extract import extract #import our custom built extract module
 class transform:
     #rename multiple columns from the dataset
@@ -25,7 +32,7 @@ str(key)+ \
             new_dataset.append(new_row)
         return new_dataset
 e = extract()
-dataset = e.fromCSV(file_path="/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv")
+dataset = e.fromCSV(file_path="stocks1.csv")
 print("Original dataset:")
 print(dataset[0])
 t = transform()
