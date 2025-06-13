@@ -1,9 +1,14 @@
-# 24 Using the JSON file to load csv to json)
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 18, 2024
+# Description : Using toJSON method load json file
+# ----------------------------------------------------------------------------------------------------
 import sys
 import json
-
 # Add the path to the custom 'extract' module
-sys.path.append('/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting')
+sys.path.append('ETL-scripting')
 from extract import extract
 class load:
     def toJSON(self, file_path, dataset):
@@ -15,6 +20,6 @@ class load:
         with open(file_path, 'w') as jsonfile:
             json.dump(dataset, jsonfile, indent=4)  # Using indent for pretty formatting
 e = extract()
-dataset = e.fromCSV(file_path = '/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv', delimiter = ',')
+dataset = e.fromCSV(file_path = 'stocks1.csv', delimiter = ',')
 l = load()
-l.toJSON(file_path = "/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks_copy1.json", dataset = dataset)
+l.toJSON(file_path = "stocks_copy1.json", dataset = dataset)

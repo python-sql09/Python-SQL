@@ -1,3 +1,10 @@
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 18, 2024
+# Description : Using toMYSQL method to load test db
+# ----------------------------------------------------------------------------------------------------
 import sys
 sys.path.append('/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting')
 from extract import extract  # import your custom-built extract module    
@@ -60,6 +67,6 @@ class Load:
 
 # Extract dataset from CSV and load to MySQL
 e = extract()
-dataset = e.fromCSV(file_path='/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv', delimiter=',')
+dataset = e.fromCSV(file_path='stocks1.csv', delimiter=',')
 l = Load()
 l.toMYSQL(host="localhost", username="root", password="Deepa@369", db="test", table="cstocks", dataset=dataset)

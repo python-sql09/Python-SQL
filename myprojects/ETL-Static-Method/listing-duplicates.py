@@ -5,7 +5,7 @@ import csv
 from collections import defaultdict
 
 # File to read
-input_file = '/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-Static-Method/bank_trans.csv'
+input_file = 'bank_trans.csv'
 
 # Dictionary to track the occurrences of records
 record_tracker = defaultdict(int)

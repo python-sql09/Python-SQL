@@ -1,3 +1,11 @@
+# -------------------------------------------------------------------------------------------
+# Project Name: Burger Shop Process Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/Burger-Shop-Process
+# Date        : August 03, 2024
+# Description : This is Menu For the Customer
+# ---------------------------------------------------------------------------------------------------------
 # 10 Defining drink constants
 BURGER_PRICE = 6.00
 BURGER_CONDIMENTS = ["tomato", "lettuce", "onion", "cheese", "mustard", "ketchup"]

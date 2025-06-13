@@ -1,3 +1,13 @@
+
+# ----------------------------------------------------------------------------------------------------
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 18, 2024
+# Description : ETL process is to load the transformed data into a relatively permanent storage location
+# ----------------------------------------------------------------------------------------------------
+from extract import extract
 class load:
     # 22 Using the CSV method to Load
     def toCSV(self, file_path, dataset):
@@ -49,13 +59,27 @@ class load:
         if not collection:
             raise Exception("You must input a valid collection name.")
         import pymongo
-        client = pymongo.MongoClient(host = host, port = port, username = username,
-                                     password = password)
+        client = pymongo.MongoClient(
+            host=host,
+            port=port,
+            username=username,
+            password=password,
+            authSource=db  # Specify authentication database explicitly
+        )
         tmp_database = client[db]
         tmp_collection = tmp_database[collection]
         tmp_collection.insert_many(dataset)
+
+if __name__ == "__main__":
     e = extract()
-    dataset = e.fromCSV(file_path='/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv', delimiter=',')
-    l = Load()
-    #change values here as necessary for your MongoDB instance
-    l.toMONGODB(host="localhost", port=27017, username="testcsv", password="Vedha@369", db="testCSV", collection="cstocks", dataset=dataset)
+    dataset = e.fromCSV(file_path='stocks1.csv', delimiter=',')
+    l = load()
+    l.toMONGODB(
+        host="localhost",
+        port=27017,
+        username="testcsv",
+        password="Vedha@369",
+        db="testCSV",
+        collection="cstocks",
+        dataset=dataset
+)

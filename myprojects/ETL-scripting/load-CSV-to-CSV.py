@@ -1,4 +1,11 @@
-# 22 Using the CSV file to load (csv to csv)
+# Project Name: ETL Transformation with Script Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL
+# Date        : September 18, 2024
+# Description : Using toCSV method load csv file
+# ----------------------------------------------------------------------------------------------------
+from extract import extract
 class load:
     def toCSV(self, file_path, dataset):
         if not dataset:
@@ -12,6 +19,6 @@ class load:
             writer.writeheader()
             writer.writerows(dataset)
 e = extract()
-dataset = e.fromCSV(file_path = '/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv',delimiter = ',')
+dataset = e.fromCSV(file_path = 'stocks1.csv',delimiter = ',')
 l = load()
-l.toCSV(file_path = "/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1_copy.csv", dataset = dataset)
+l.toCSV(file_path = "stocks1_copy.csv", dataset = dataset)
