@@ -1,0 +1,5 @@
+✔️ Import necessary libraries (pandas, numpy)
+✔️ Load the dataset correctly
+✔️ Check for missing values
+✔️ Understand column types and formats
+✔️ Save the cleaned dataset
