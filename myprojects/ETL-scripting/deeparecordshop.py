@@ -1,7 +1,7 @@
 # Project Name: ETL Transformation with Script Project
 # Author      : Deepa Ponnusamy
 # Email       : kpdeepa1980@gmail.com,
-# GitHub      : https://github.com/python-sql09/Python-SQL
+# GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/ETL-scripting
 # Date        : September 12, 2024
 # Description : Load datas to Database
 # ----------------------------------------------------------------------------------------------------

@@ -1,3 +1,12 @@
+#main.py
+# ----------------------------------------------------------------------------------------------------
+# Project Name: Word Analysis
+# Author      : Deepa Ponnusamy
+# Email       : deepa.ponnusamy@calbrightcollege.org
+# GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/Word-Analysis2
+# Date        : October 10, 2024
+# Description :  We will use the xml_extractor method as a model for extracting xml files form online
+# ----------------------------------------------------------------------------------------------------
 from lib import (
     read_json_file,
     tokenize_dataset,
@@ -9,7 +18,7 @@ from lib import (
 from visualization import visualize_word_frequencies
 from collections import Counter  # Add this line
 # Read dataset
-dataset = read_json_file("/home/linuxdeepa/python-sql09/Python-SQL/myprojects/Word-Analysis2/reviews.json")
+dataset = read_json_file("reviews.json")
 print(f"Total reviews loaded: {len(dataset)}")
 
 # Validate dataset
@@ -29,7 +38,7 @@ for review in dataset_tokenized:
     all_word_frequencies.update(compute_word_frequencies(words))
 
 # Save results
-save_results(dataset_word_count, "/home/linuxdeepa/python-sql09/Python-SQL/myprojects/Word-Analysis2/word_counts.json")
+save_results(dataset_word_count, "word_counts.json")
 
 # Visualize word frequencies (only once for all reviews)
 visualize_word_frequencies(all_word_frequencies)

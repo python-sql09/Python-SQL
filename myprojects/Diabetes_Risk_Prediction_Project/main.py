@@ -1,4 +1,6 @@
 #main.py
+from sklearn.model_selection import train_test_split
+
 from data_preprocessing import load_data, preprocess_data
 from model_training import train_logistic_regression, train_random_forest, train_knn, train_xgboost
 from utils import evaluate_model

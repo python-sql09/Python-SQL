@@ -15,7 +15,7 @@ model_trainer = ModelTrainer()
 model_evaluator = ModelEvaluator()
 
 # Load the data
-data_path = "/home/deepa3/python-sql09/Python-SQL/myprojects/Heart_Disease_Prediction/processed_cleveland.data"
+data_path = "processed_cleveland.data"
 data = pd.read_csv(data_path, header=None)
 data.columns = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thalach', 
                 'exang', 'oldpeak', 'slope', 'ca', 'thal', 'target']

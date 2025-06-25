@@ -1,3 +1,12 @@
+#visualization.py
+# ----------------------------------------------------------------------------------------------------
+# Project Name: Word Analysis
+# Author      : Deepa Ponnusamy
+# Email       : deepa.ponnusamy@calbrightcollege.org
+# GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/Word-Analysis2
+# Date        : October 10, 2024
+# Description :  We will use the xml_extractor method as a model for extracting xml files form online
+# ----------------------------------------------------------------------------------------------------
 import matplotlib
 matplotlib.use('TkAgg')  # Use TkAgg backend for interactive plots
 import matplotlib.pyplot as plt
@@ -15,5 +24,5 @@ def visualize_word_frequencies(word_frequencies):
     plt.tight_layout()        # Adjust layout for better fit
     
     # Save the plot instead of showing it
-    plt.savefig('/home/linuxdeepa/python-sql09/Python-SQL/myprojects/Word-Analysis2/word_frequencies.png')  # Save the figure
+    plt.savefig('word_frequencies.png')  # Save the figure
     plt.close()  # Close the plot to free up memory
