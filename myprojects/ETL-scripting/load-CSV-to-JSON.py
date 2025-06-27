@@ -2,7 +2,7 @@
 # Author      : Deepa Ponnusamy
 # Email       : kpdeepa1980@gmail.com,
 # GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/ETL-scripting
-# Date        : September 18, 2024
+# Date        : March 27, 2025 to May 3, 2025
 # Description : Using toJSON method load json file
 # ----------------------------------------------------------------------------------------------------
 import sys

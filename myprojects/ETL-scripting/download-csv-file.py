@@ -1,5 +1,4 @@
 import requests
-
 # URL of the CSV file
 url = "https://the-software-guild.s3.amazonaws.com/datascience/track1-1909/got_chars.csv"
 

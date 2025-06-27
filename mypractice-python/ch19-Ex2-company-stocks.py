@@ -40,7 +40,7 @@ def display_csv_contents(file_path):
         print(f"An error occurred while reading the file: {e}")
 
 def main():
-    file_path = '/home/linuxdeepa/python-sql09/Python-SQL/mypractice-python/data/company-stocks.csv'
+    file_path = 'company-stocks.csv'
     
     # Collect data from the user
     company_data = collect_company_data()

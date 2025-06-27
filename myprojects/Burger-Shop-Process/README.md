@@ -1,3 +1,6 @@
+Date:
+February 1, 2025 to February 21, 2025
+
 REQUIREMENTS FOR OUR BURGER SHOP APPLICATION:
 ---------------------------------------------
 Our burger shop application allows customers to place custom orders for hamburgers and other items. Within the ordering process, we will want the customer to be able to specify what kind of food or drink they want, then we’ll need to calculate the cost of the order and display the completed order to the user. More specifically, the completed application must be able to perform the following steps:

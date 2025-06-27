@@ -20,6 +20,7 @@
       <link>http://example.com/news3</link>
       <description>This is the third news item description.</description>
       <media:content url="http://example.com/media3.jpg" type="image/jpeg"/>
+
     </item>
   </channel>
 </rss>

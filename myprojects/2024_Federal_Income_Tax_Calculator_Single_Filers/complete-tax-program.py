@@ -3,7 +3,7 @@
 # Author      : Deepa Ponnusamy
 # Email       : kpdeepa1980@gmail.com,
 # GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/2024_Federal_Income_Tax_Calculator_Single_Filers
-# Date        : August 21, 2024
+# Date        :  January 6, 2025 to January 27, 2025
 # Description : This Python program calculates the federal income tax owed by a single individual
 #               in the U.S. for the tax year 2024, based on the IRS tax bracket thresholds.
 #               The script considers standard deductions and dependent exemptions before applying

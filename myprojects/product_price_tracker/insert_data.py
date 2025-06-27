@@ -4,19 +4,19 @@
 # Author       : Deepa Ponnusamy
 # Email        : deepa.ponnusamy@calbrightcollege.org
 # GitHub       : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/product_price_tracker
-# Date         : June 22, 2025
-# Description  : A price comparison tool that builds a structured SQLite database
-#                to collect, store, and retrieve pricing data from online retailers.
-#                Supports efficient product lookups, integrates with future
-#                application infrastructure, and demonstrates database schema design,
-#                data insertion, and querying logic.
+# Date         : May 5, 2025 to June 30, 2025
+# Description  : Inserts sample data into a clean SQLite database, avoiding duplicates.
 # ----------------------------------------------------------------------------------------------------------
 from database import create_connection
-from datetime import date
-
 def insert_sample_data():
     conn = create_connection()
     cursor = conn.cursor()
+
+    # Clear existing records
+    cursor.execute("DELETE FROM prices")
+    cursor.execute("DELETE FROM products")
+    cursor.execute("DELETE FROM retailers")
+    conn.commit()
 
     # Insert products
     products = [
@@ -25,9 +25,14 @@ def insert_sample_data():
         ('Portable Charger', 'Accessories', 'Anker'),
         ('Bluetooth Speaker', 'Audio', 'JBL'),
         ('Webcam HD', 'Electronics', 'Logitech'),
-        ('Smart Fitness Tracker', 'Wearables', 'Fitbit')  # New product added
+        ('Smart Fitness Tracker', 'Wearables', 'Fitbit')
     ]
     cursor.executemany("INSERT INTO products (name, category, brand) VALUES (?, ?, ?)", products)
+    conn.commit()
+
+    # Get product_id mapping by name
+    cursor.execute("SELECT product_id, name FROM products")
+    product_map = {name: pid for pid, name in cursor.fetchall()}
 
     # Insert retailers
     retailers = [
@@ -36,44 +41,48 @@ def insert_sample_data():
         ('Walmart', 'https://www.walmart.com'),
         ('Target', 'https://www.target.com'),
         ('Newegg', 'https://www.newegg.com'),
-        ('eBay', 'https://www.ebay.com')  # Added more retailers for diversity
+        ('eBay', 'https://www.ebay.com'),
+        ('Demo Store', 'http://demo.local')
     ]
     cursor.executemany("INSERT INTO retailers (name, website) VALUES (?, ?)", retailers)
+    conn.commit()
 
-    # Insert prices
+    # Get retailer_id mapping by name
+    cursor.execute("SELECT retailer_id, name FROM retailers")
+    retailer_map = {name: rid for rid, name in cursor.fetchall()}
+
+    from datetime import date
+    today = str(date.today())
+
+    # Now use mapped IDs to insert prices
     prices = [
-        # Wireless Mouse
-        (1, 1, 25.99, 'USD', str(date.today())),
-        (1, 2, 27.49, 'USD', str(date.today())),
-        (1, 4, 26.89, 'USD', str(date.today())),
+        (product_map['Wireless Mouse'], retailer_map['Amazon'], 25.99, 'USD', today),
+        (product_map['Wireless Mouse'], retailer_map['Best Buy'], 27.49, 'USD', today),
+        (product_map['Wireless Mouse'], retailer_map['Target'], 26.89, 'USD', today),
 
-        # Noise Cancelling Headphones
-        (2, 1, 199.99, 'USD', str(date.today())),
-        (2, 5, 189.49, 'USD', str(date.today())),
+        (product_map['Noise Cancelling Headphones'], retailer_map['Amazon'], 199.99, 'USD', today),
+        (product_map['Noise Cancelling Headphones'], retailer_map['Newegg'], 189.49, 'USD', today),
 
-        # Portable Charger
-        (3, 3, 39.99, 'USD', str(date.today())),
-        (3, 6, 35.99, 'USD', str(date.today())),
+        (product_map['Portable Charger'], retailer_map['Walmart'], 39.99, 'USD', today),
+        (product_map['Portable Charger'], retailer_map['eBay'], 35.99, 'USD', today),
 
-        # Bluetooth Speaker
-        (4, 1, 79.99, 'USD', str(date.today())),
-        (4, 2, 76.49, 'USD', str(date.today())),
-        (4, 5, 74.99, 'USD', str(date.today())),
+        (product_map['Bluetooth Speaker'], retailer_map['Amazon'], 79.99, 'USD', today),
+        (product_map['Bluetooth Speaker'], retailer_map['Best Buy'], 76.49, 'USD', today),
+        (product_map['Bluetooth Speaker'], retailer_map['Newegg'], 74.99, 'USD', today),
 
-        # Webcam HD
-        (5, 1, 49.99, 'USD', str(date.today())),
-        (5, 2, 47.99, 'USD', str(date.today())),
-        (5, 4, 46.50, 'USD', str(date.today())),
+        (product_map['Webcam HD'], retailer_map['Amazon'], 49.99, 'USD', today),
+        (product_map['Webcam HD'], retailer_map['Best Buy'], 47.99, 'USD', today),
+        (product_map['Webcam HD'], retailer_map['Target'], 46.50, 'USD', today),
 
-        # Smart Fitness Tracker - NEW
-        (6, 1, 99.99, 'USD', str(date.today())),
-        (6, 4, 95.50, 'USD', str(date.today())),
-        (6, 6, 92.99, 'USD', str(date.today())),
+        (product_map['Smart Fitness Tracker'], retailer_map['Amazon'], 99.99, 'USD', today),
+        (product_map['Smart Fitness Tracker'], retailer_map['Target'], 95.50, 'USD', today),
+        (product_map['Smart Fitness Tracker'], retailer_map['eBay'], 92.99, 'USD', today),
     ]
-    cursor.executemany(
-        "INSERT INTO prices (product_id, retailer_id, price, currency, date_collected) VALUES (?, ?, ?, ?, ?)",
-        prices
-    )
+
+    cursor.executemany("""
+        INSERT INTO prices (product_id, retailer_id, price, currency, date_collected)
+        VALUES (?, ?, ?, ?, ?)
+    """, prices)
 
     conn.commit()
     conn.close()

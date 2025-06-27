@@ -6,7 +6,6 @@ sys.path.append('/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripti
 
 # Import the 'Extract' class
 from extract import extract  # Make sure 'extract.py' contains the correct class name
-
 class Load:
     # Method to save dataset to a JSON file
     def toJSON(self, file_path, dataset):

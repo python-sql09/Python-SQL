@@ -4,7 +4,6 @@ class Extract:
     def from_mysql(self, host, username, password, db, query):
         """
         Extracts data from a MySQL database.
-
         :param host: The hostname of the MySQL server.
         :param username: The MySQL username.
         :param password: The MySQL password.

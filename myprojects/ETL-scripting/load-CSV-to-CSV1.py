@@ -14,6 +14,7 @@ class Load:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(dataset)
+
 # Initialize Extract and load data
 e = extract()
 dataset = e.fromCSV(file_path='/home/linuxdeepa/python-sql09/Python-SQL/myprojects/ETL-scripting/stocks1.csv', delimiter=',')

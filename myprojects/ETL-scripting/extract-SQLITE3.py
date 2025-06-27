@@ -15,7 +15,6 @@ class extract:
         cursor.close()
         connection.close()
         return dataset
-
 # Example usage
 e = extract()
 query = "SELECT * FROM artist;"  # Adjust table name accordingly

@@ -28,7 +28,6 @@ class extract:
         except Exception as e:
             print(f"Error connecting to MongoDB: {e}")
             return None
-
 # In the main script:
 username = quote_plus("mongodb")
 password = quote_plus("Deepa@369")

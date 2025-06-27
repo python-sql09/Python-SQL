@@ -1,4 +1,5 @@
 # 1 extract.py: The extract class shell
+
 class extract:
     def fromCSV(self):
         pass
