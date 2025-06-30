@@ -1,3 +1,11 @@
+# -----------------------------------------------------------------------------------------------------
+# Project Name: Burger Shop Process Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/Burger-Shop-Process
+# Date        : February 1, 2025 to February 21, 2025
+# Description : This is Get order from the Customer
+# ---------------------------------------------------------------------------------------------------------
 from menu import burger, drink, side, combo
 from order import order
 

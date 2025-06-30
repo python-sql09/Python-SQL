@@ -1,5 +1,12 @@
+# -------------------------------------------------------------------------------------------
+# Project Name: Burger Shop Process Project
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/Burger-Shop-Process
+# Date        : February 1, 2025 to February 21, 2025
+# Description : This is Menu For the Customer
+# ---------------------------------------------------------------------------------------------------------
 # Menu items and constants
-
 # Base class for food items
 class food_item:
     def __init__(self, name, price):
