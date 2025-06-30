@@ -1,0 +1,236 @@
+Step 1: Create the Fact Table (Fact_Calls)
+The fact table contains transactional data, where each row corresponds to a specific call. It links to various dimensions (e.g., Agent, Topic) through foreign keys.
+
+Fact_Calls Table
+Column Name	Description
+Call_ID	Unique identifier for each call
+Agent_ID	Foreign key to the Agent Table
+DateTime	Date and time of the call
+Answered	Whether the call was answered (Y/N)
+AvgTalkDuration	Duration of the call (in time format)
+Speed_of_Answer	Time taken to answer the call (in seconds)
+Resolved	Whether the issue was resolved (Y/N)
+Satisfaction_Rating	Customer satisfaction rating (1-5)
+Topic_ID	Foreign key to the Topic Table
+
+Step 2: Create Dimension Tables
+Each of these tables represents a specific attribute related to the fact table.
+
+Agent Table
+Column Name	Description
+Agent_ID	Unique identifier for each agent
+Agent_Name	Name of the agent (Diane, Becky, etc.)
+
+Agent_dim = 
+ADDCOLUMNS(
+    VALUES(CallCenter_fact[Agent]),
+    "Agent Id", RANKX(VALUES(CallCenter_fact[Agent]), CallCenter_fact[Agent],, ASC, DENSE)
+)
+
+Date Table
+----------
+Column Name	Description
+Date_ID	Unique identifier for each date
+Date	Full date (e.g., 2021-01-01)
+Month	Month of the call
+Year	Year of the call
+Day_of_Week	Day of the week (Monday, Tuesday, etc.)
+
+Topic Table
+-----------
+Column Name	Description
+Topic_ID	Unique identifier for each topic
+Topic_Name	The name of the topic (Payment related, Contract related, etc.)
+
+Resolution Table
+----------------
+Column Name	Description
+Resolved_ID	Unique identifier for resolution status
+Resolved	Whether the issue was resolved (Yes/No)
+
+Satisfaction Table
+------------------
+Column Name	Description
+Satisfaction_ID	Unique identifier for satisfaction ratings
+Satisfaction_Rating	Customer satisfaction rating (1-5)
+
+
+
+
+AgentTable
+-----------
+Create Agent_dim Table
+Go to Modeling ? New Table
+Use this DAX for the Agent_dim table:
+
+AgentTable = 
+ADDCOLUMNS(
+    DISTINCT(Sheet1[Agent]),
+    "AgentID", RANKX(
+        DISTINCT(Sheet1[Agent]), 
+        Sheet1[Agent], 
+        , ASC, DENSE
+    )
+)
+
+(or)
+
+Agent_dim = 
+ADDCOLUMNS(
+    VALUES(CallCenter_fact[Agent_Name]),
+    "Agent Id", RANKX(VALUES(CallCenter_fact[Agent_Name]), CallCenter_fact[Agent_Name],, ASC, DENSE)
+)
+
+Date and Time Tables
+--------------------
+Create Date_dim , Time_dim Tables
+Go to Modeling ? New Table
+Use this DAX for the Date_dim , Time_dim tables
+
+Date_dim =
+ADDCOLUMNS (
+    CALENDAR (DATE(2021, 1, 1), DATE(2030, 12, 31)),
+    "Date_ID", YEAR([Date]) * 10000 + MONTH([Date]) * 100 + DAY([Date]),
+    "Month", FORMAT([Date], "MMMM"),
+    "Year", YEAR([Date]),
+    "Day_of_Week", FORMAT([Date], "dddd")
+)
+
+(or)
+Date_dim =
+ADDCOLUMNS (
+    CALENDAR (DATE(2021, 1, 1), DATE(2030, 12, 31)),
+    "Date_ID", FORMAT ( [Date], "YYYYMMDD" ),
+    "Date", FORMAT ( [Date], "YYYY-MM-DD" ),
+    "Year", YEAR ( [Date] ),
+    "Month", FORMAT ( [Date], "MMMM" ),
+    "Day_of_Week", FORMAT ( [Date], "dddd" )
+)
+
+Date_dim = 
+SELECTCOLUMNS (
+    DISTINCT ( CallCenter_fact[Date] ),
+    "Date_Id", FORMAT ( [Date], "YYYYMMDD" ),
+    "Date", FORMAT ( [Date], "YYYY-MM-DD" ),
+    "Year", YEAR ( [Date] ),
+    "Month", FORMAT ( [Date], "MMMM" ),
+    "Day_of_Week", FORMAT ( [Date], "dddd" )
+)
+
+Time_dim =
+VAR Hours = SELECTCOLUMNS(GENERATESERIES(0, 23, 1), "Hour", [Value])
+VAR Minutes = SELECTCOLUMNS(GENERATESERIES(0, 59, 1), "Minute", [Value])
+VAR Seconds = SELECTCOLUMNS(GENERATESERIES(0, 59, 1), "Second", [Value])
+RETURN
+    SELECTCOLUMNS (
+        CROSSJOIN (Hours, Minutes, Seconds),
+        "Time_ID", [Hour] * 10000 + [Minute] * 100 + [Second],
+        "Hour", [Hour],
+        "Minute", [Minute],
+        "Second", [Second],
+        "Time", TIME([Hour], [Minute], [Second])
+    )
+
+(or)
+
+Time_dim =
+SELECTCOLUMNS (
+    DISTINCT ( CallCenter_fact[Time] ),
+    "Time_Id", HOUR([Time]) * 10000 + MINUTE([Time]) * 100 + SECOND([Time]),
+    "Hour", HOUR([Time]),
+    "Minute", MINUTE([Time]),
+    "Second", SECOND([Time]),
+    "Time", FORMAT(TIME(HOUR([Time]), MINUTE([Time]), SECOND([Time])), "HH:MM:SS")
+)
+
+Resolution Table
+----------------
+Resolution_dim = 
+SELECTCOLUMNS (
+    DISTINCT ( CallCenter_fact[Resolved] ),
+    "Resolved_ID", RANKX ( DISTINCT ( CallCenter_fact[Resolved] ), CallCenter_fact[Resolved], , ASC, DENSE ),
+    "Resolved", CallCenter_fact[Resolved]
+)
+
+Satisfaction Table
+------------------
+Satisfaction_dim = 
+SELECTCOLUMNS (
+    DISTINCT ( CallCenter_fact[Satisfaction rating] ),
+    "Satisfaction_ID", RANKX ( DISTINCT ( CallCenter_fact[Satisfaction rating] ), CallCenter_fact[Satisfaction rating], , ASC, DENSE ),
+    "Satisfaction_Rating", CallCenter_fact[Satisfaction rating]
+)
+
+CallOutcome Table
+------------------
+CallOutcome_dim =
+SELECTCOLUMNS (
+    DISTINCT ( CallCenter_fact[CallOutcome] ),
+    "Outcome_ID", RANKX ( DISTINCT ( CallCenter_fact[CallOutcome] ), CallCenter_fact[CallOutcome], , ASC, DENSE ),
+    "Call_Outcome", CallCenter_fact[CallOutcome]
+)
+
+Answered Table
+------------------
+Answered_dim = SELECTCOLUMNS (
+    DISTINCT ( 'CallCenter_fact'[Answered] ),
+    "Answered_ID", RANKX ( DISTINCT ('CallCenter_fact'[Answered]), 'CallCenter_fact'[Answered], , ASC, DENSE ),
+    "Answered", 'CallCenter_fact'[Answered]
+)
+
+
+CallCenter_fact - Id's
+--------------------------
+Create Agent_ID in Power BI Model:
+Open Power BI Desktop.
+Go to the "Model" view (the icon that looks like a table on the left).
+Select the CallCenter_fact table.
+In the Fields pane, right-click on CallCenter_fact ? Select "New Column."
+In the formula bar, enter the following DAX expression:
+
+Agent_ID = 
+LOOKUPVALUE(
+    Agent_dim[Agent_ID],
+    Agent_dim[Agent_Name], CallCenter_fact[Agent]
+)
+
+
+Time_Id = 
+FORMAT(
+    HOUR(CallCenter_fact[Time]) * 10000 + 
+    MINUTE(CallCenter_fact[Time]) * 100 + 
+    SECOND(CallCenter_fact[Time]), 
+    "000000"
+)
+
+
+Date_Id =
+FORMAT ( CallCenter_fact[Date], "YYYYMMDD" )
+
+
+Topic_Id = 
+LOOKUPVALUE (
+    Topic_dim[Topic_Id],
+    Topic_dim[Topic_Name], CallCenter_fact[Topic_Name]
+)
+
+
+Satisfaction_Id = 
+LOOKUPVALUE (
+    Satisfaction_dim[Satisfaction_Id],
+    Satisfaction_dim[Satisfaction_Rating], CallCenter_fact[Satisfaction_Rating]
+)
+
+
+Resolved_Id = 
+LOOKUPVALUE (
+    Resolution_dim[Resolved_Id],
+    Resolution_dim[Resolved], CallCenter_fact[Resolved]
+)
+
+
+
+
+
+
+

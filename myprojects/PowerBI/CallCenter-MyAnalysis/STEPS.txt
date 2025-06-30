@@ -1,0 +1,44 @@
+?? Steps to Build in Power BI
+1. Data Import
+Import the CSV file into Power BI.
+2. Data Cleaning
+Convert AvgTalkDuration to seconds for calculation.
+Replace empty fields with NULL values.
+3. Create Measures
+Total Calls Answered:
+DAX
+Copy
+Edit
+TotalAnswered = COUNTROWS(FILTER(CallData, CallData[Answered] = "Y"))
+Total Calls Abandoned:
+DAX
+Copy
+Edit
+TotalAbandoned = COUNTROWS(FILTER(CallData, CallData[Answered] = "N"))
+Average Speed of Answer:
+DAX
+Copy
+Edit
+AvgSpeedOfAnswer = AVERAGE(CallData[Speed of answer in seconds])
+Resolution Rate:
+DAX
+Copy
+Edit
+ResolutionRate = DIVIDE(COUNTROWS(FILTER(CallData, CallData[Resolved] = "Y")), COUNTROWS(CallData))
+Average Satisfaction:
+DAX
+Copy
+Edit
+AvgSatisfaction = AVERAGE(CallData[Satisfaction rating])
+Average Handle Time:
+DAX
+Copy
+Edit
+AvgHandleTime = AVERAGE(CallData[AvgTalkDuration])
+4. Visualizations
+Bar Chart: Calls by time (hour of day)
+Line Chart: Resolution rate over time
+Matrix: Calls and satisfaction by agent
+Scatter Plot: Performance quadrant (handle time vs calls answered)
+Card: Key metrics (total calls, avg satisfaction, resolution rate)
+Pie Chart: Call topics

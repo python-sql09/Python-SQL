@@ -1,0 +1,156 @@
+Let's break this down step-by-step to create a Power BI dashboard for Claire:
+
+? Step 1: Load Data into Power BI
+Open Power BI.
+Go to Home ? Get Data ? Excel/CSV (or copy-paste the table directly).
+Load the data into Power BI.
+Name the table Fact_Calls.
+? Step 2: Clean and Format the Data
+Date and Time Formatting:
+Split the Date and Time columns into Date_Id and Time_Id.
+Create Date_Id and Time_Id columns using the following formulas:
+?? Date_Id (in Power Query):
+
+M
+Copy
+Edit
+Date_Id = FORMAT(Fact_Calls[Date], "yyyyMMdd")
+?? Time_Id (in Power Query):
+
+M
+Copy
+Edit
+Time_Id = HOUR(Fact_Calls[Time]) * 10000 + MINUTE(Fact_Calls[Time]) * 100 + SECOND(Fact_Calls[Time])
+Create New Columns
+Create Resolved and Answered as binary (0 = No, 1 = Yes) for easier calculations:
+?? Answered Binary:
+
+DAX
+Copy
+Edit
+Answered_Binary = IF(Fact_Calls[Answered (Y/N)] = "Y", 1, 0)
+?? Resolved Binary:
+
+DAX
+Copy
+Edit
+Resolved_Binary = IF(Fact_Calls[Resolved] = "Y", 1, 0)
+Convert Duration to Seconds
+Convert AvgTalkDuration to total seconds for calculations:
+?? AvgTalkDuration (Seconds):
+
+DAX
+Copy
+Edit
+AvgTalkDuration_Seconds = HOUR(Fact_Calls[AvgTalkDuration]) * 3600 + MINUTE(Fact_Calls[AvgTalkDuration]) * 60 + SECOND(Fact_Calls[AvgTalkDuration])
+? Step 3: Create Date and Time Dimension Tables
+Create Date_dim and Time_dim in Power Query using the M code provided earlier.
+Establish relationships:
+Fact_Calls[Date_Id] ? Date_dim[Date_Id]
+Fact_Calls[Time_Id] ? Time_dim[Time_Id]
+? Step 4: Create KPIs and Measures
+?? 1. Overall Customer Satisfaction
+?? Measure:
+
+DAX
+Copy
+Edit
+Overall_Satisfaction = AVERAGE(Fact_Calls[Satisfaction rating])
+?? 2. Overall Calls Answered/Abandoned
+?? Measure for Total Calls:
+
+DAX
+Copy
+Edit
+Total_Calls = COUNTROWS(Fact_Calls)
+?? Measure for Answered Calls:
+
+DAX
+Copy
+Edit
+Answered_Calls = SUM(Fact_Calls[Answered_Binary])
+?? Measure for Abandoned Calls:
+
+DAX
+Copy
+Edit
+Abandoned_Calls = [Total_Calls] - [Answered_Calls]
+?? Answered Rate:
+
+DAX
+Copy
+Edit
+Answered_Rate = DIVIDE([Answered_Calls], [Total_Calls], 0)
+?? Abandoned Rate:
+
+DAX
+Copy
+Edit
+Abandoned_Rate = DIVIDE([Abandoned_Calls], [Total_Calls], 0)
+?? 3. Calls by Time
+?? Create a line chart:
+
+X-axis ? Time_dim[Time]
+Y-axis ? Answered_Calls
+?? 4. Average Speed of Answer
+?? Measure:
+
+DAX
+Copy
+Edit
+Avg_Speed_Answer = AVERAGE(Fact_Calls[Speed of answer in seconds])
+?? 5. Agent Performance Quadrant
+?? X-axis: Average Handle Time
+
+DAX
+Copy
+Edit
+Avg_Handle_Time = AVERAGE(Fact_Calls[AvgTalkDuration_Seconds])
+?? Y-axis: Total Calls Answered
+
+DAX
+Copy
+Edit
+Agent_Calls = COUNTROWS(Fact_Calls)
+Create a scatter plot:
+
+X-axis ? Avg_Handle_Time
+Y-axis ? Agent_Calls
+Legend ? Agent
+?? 6. Resolution Rate
+?? Measure:
+
+DAX
+Copy
+Edit
+Resolution_Rate = DIVIDE(SUM(Fact_Calls[Resolved_Binary]), [Answered_Calls], 0)
+? Step 5: Create Dashboard Elements
+?? Tile 1: Overall Performance Overview
+? Card visuals for:
+
+Overall Satisfaction
+Answered Rate
+Abandoned Rate
+Avg Speed of Answer
+Resolution Rate
+?? Tile 2: Calls by Time
+? Line chart ? Show call volume over time.
+
+?? Tile 3: Agent Performance
+? Scatter plot ? Average Handle Time vs Calls Answered by Agent.
+
+?? Tile 4: Customer Satisfaction Breakdown
+? Bar chart ? Satisfaction Rating by Agent.
+
+?? Tile 5: Answered vs Abandoned Calls
+? Pie chart ? Show the proportion of answered vs abandoned calls.
+
+? Step 6: Style and Formatting
+Use a clean, consistent color theme.
+Add dynamic filters for Agent, Date, and Topic.
+Title the dashboard "Customer Service Dashboard".
+Add Claire’s name at the top for personalization.
+? Final Dashboard Structure
+? Top Section: KPIs (Satisfaction, Answered Rate, Abandoned Rate, Resolution Rate, Avg Speed)
+? Middle Section: Line chart + Scatter plot
+? Bottom Section: Bar chart (by agent) + Pie chart
