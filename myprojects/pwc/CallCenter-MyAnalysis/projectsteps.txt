@@ -1,0 +1,136 @@
+Steps to Set Up the Power BI Dashboard:
+1. Import Data into Power BI:
+------------------------------
+Go to Home → Get Data → Text/CSV (if you're working with a CSV file) or Excel (if using an Excel file).
+Select the file containing the call data.
+
+2. Data Transformation Using Power Query Editor:
+-------------------------------------------------
+Once the data is imported:
+
+Open Power Query Editor by clicking on Transform Data.
+Ensure the data types for each column are correct. For instance:
+	
+2.1. Date and Time should be in date/time format.
+------------------------------------------------
+Steps to Combine Date and Time into DateTime:
+Open Power Query Editor:
+
+In Power BI, click on Transform Data to open the Power Query Editor.
+Select the Date and Time Columns:
+
+Ensure you have columns in the Date and Time formats that you want to combine.
+Add a Custom Column:
+
+Go to the Add Column tab in the Power Query Editor.
+Click on Custom Column.
+Combine Date and Time:
+
+In the Custom Column dialog, use the following formula to combine the Date and Time columns:
+s
+m
+
+DateTime.FromText(Text.From([Date]) & " " & Time.ToText([Time], "hh:mm:ss tt"))
+Explanation:
+
+Text.From([Date]): Converts the Date column into text.
+
+Time.ToText([Time], "hh:mm:ss tt"): Converts the Time column into a formatted text string (12-hour format with AM/PM).
+& " " &: Concatenates the date and time text with a space in between.
+DateTime.FromText(...): Converts the concatenated text back into a DateTime value.
+Check for Errors:
+
+Ensure there are no errors in the new column. The new column should now contain valid DateTime values.
+Set Data Type:
+
+You may need to set the Data Type of the new column to Date/Time. To do this:
+Right-click the new custom column header.
+Select Change Type and then choose Date/Time.
+
+2.2. Speed of answer in seconds and AvgTalkDuration should be in numeric format (ensure any text values like "N/A" or empty fields are handled properly).
+
+3. Data Model and Relationships:
+--------------------------------
+If you're working with multiple tables, make sure they are related correctly (e.g., Agent Table, Call Log Table).
+
+4. KPIs and Visuals:
+--------------------
+Total Calls Answered and Abandoned:
+
+Create a measure for "Answered Calls" by counting rows where "Answered" is "Y".
+Similarly, create a measure for "Abandoned Calls" by counting rows where "Answered" is "N".
+Visual: Use a Card visualization to display these totals.
+Speed of Answer:
+
+Create a measure to calculate the average of the "Speed of answer in seconds" column.
+Visual: Use a Card or Gauge to represent the average speed of answer.
+Average Talk Duration:
+
+Create a measure to calculate the average talk time. Ensure that "AvgTalkDuration" is in seconds, or convert it into a more readable format.
+Visual: Use a Card or Gauge for this KPI.
+Customer Satisfaction:
+
+Create a measure to calculate the average satisfaction rating.
+Visual: Use a Card or Bar Chart to represent this metric.
+Calls by Topic:
+
+Create a Bar Chart to represent the number of calls for each "Topic". This will give you insight into the distribution of calls across different topics (Contract related, Technical Support, etc.).
+Agent Performance Quadrant:
+
+This will involve plotting Average Talk Duration vs. Total Calls Answered for each agent.
+Visual: Use a Scatter Chart. Plot the "Average Talk Duration" on the x-axis and "Total Calls Answered" on the y-axis. Use different colors or data labels for agents.
+Satisfaction by Agent:
+
+Create a measure to calculate the average satisfaction rating for each agent.
+Visual: Use a Bar Chart or Column Chart to represent the average satisfaction score by agent.
+5. Filters and Slicers:
+Use Slicers to allow users to filter by:
+Agent Name
+Date Range
+Topic (Contract, Payment, Technical Support, etc.)
+6. Styling and Layout:
+Keep the dashboard clean with well-aligned visuals.
+Use a mix of Cards for individual metrics and Charts for trend and comparison insights.
+Apply color coding (e.g., red for low satisfaction, green for high satisfaction) to highlight important trends.
+Example of Visuals and Layout:
+Header Section:
+
+Display Total Calls Answered and Total Calls Abandoned in Cards.
+KPI Section:
+
+Show Speed of Answer and Average Talk Duration in Cards or Gauges.
+Show Customer Satisfaction (average satisfaction rating) in a Card.
+Trend Section:
+
+Create a Line Chart for Calls by Time to show how the number of calls fluctuates over time (daily, hourly).
+Performance Analysis:
+
+Use a Scatter Plot to display the Agent Performance Quadrant showing Average Talk Duration vs. Total Calls Answered.
+Topic Analysis:
+
+Use a Stacked Bar Chart to display Calls by Topic to show the distribution of call types.
+Agent Comparison:
+
+Use a Bar Chart to display Satisfaction by Agent.
+Example Power BI DAX Measures:
+Total Answered Calls:
+DAX
+Copy
+Answered Calls = COUNTROWS(FILTER('Calls', 'Calls'[Answered] = "Y"))
+Total Abandoned Calls:
+DAX
+Copy
+Abandoned Calls = COUNTROWS(FILTER('Calls', 'Calls'[Answered] = "N"))
+Average Speed of Answer:
+DAX
+Copy
+Avg Speed of Answer = AVERAGE('Calls'[Speed of answer in seconds])
+Average Talk Duration:
+DAX
+Copy
+Avg Talk Duration = AVERAGE('Calls'[AvgTalkDuration])
+Average Satisfaction Rating:
+DAX
+Copy
+Avg Satisfaction = AVERAGE('Calls'[Satisfaction rating])
+Once you've created the visuals and added the necessary interactivity, you will have a powerful dashboard that Claire can use to get insights into customer service operations and agent performance.
