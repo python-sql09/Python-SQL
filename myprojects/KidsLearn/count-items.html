@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Count the Items!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      background-color: #fff8e1;
+      padding: 2rem;
+    }
+    h1 {
+      color: #d84315;
+    }
+    .items {
+      font-size: 3rem;
+      margin: 1rem auto;
+      word-wrap: break-word;
+      max-width: 600px;
+    }
+    .choices {
+      margin: 1rem auto;
+    }
+    .choices button {
+      margin: 0.3rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      background-color: #ffcc80;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+    #score, #final {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    #menu-btn {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #81d4fa;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1><button onclick="goToMenu()" 
+          style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
+    🏠 Menu
+  </button></h1>
+
+  <h2 id="welcome-user"></h2>
+  <button id="logout" onclick="logout()">🚪 Logout</button>
+
+  <h1>🌼 Count the Items!</h1>
+  <div class="items" id="item-box"></div>
+  <p>How many <span id="item-name">items</span> do you see?</p>
+  <div class="choices" id="choices-box"></div>
+  <div id="result"></div>
+  <div id="score"></div>
+  <div id="final"></div>
+  <button id="menu-btn" onclick="goToMenu()">🏠 Back to Menu</button>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="music/kids-bgm.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button onclick="toggleMusic()" style="margin-top: 1rem; background-color: #ffd54f; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;">
+    🔊 Toggle Music
+  </button>
+
+  <canvas id="confetti-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none;"></canvas>
+
+  <script>
+    const user = localStorage.getItem("current_user");
+    if (!user) {
+      window.location.href = "login.html";
+    } else {
+      document.getElementById("welcome-user").textContent = `👋 Welcome, ${user}!`;
+    }
+
+    function logout() {
+      localStorage.removeItem("current_user");
+      window.location.href = "login.html";
+    }
+
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      music.muted = !music.muted;
+    }
+
+    // Simple confetti effect
+    function showConfetti() {
+      const canvas = document.getElementById("confetti-canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const confetti = Array.from({ length: 150 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 4 + 1,
+        d: Math.random() * 5 + 1,
+        color: `hsl(${Math.random() * 360}, 100%, 70%)`
+      }));
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        confetti.forEach(c => {
+          ctx.beginPath();
+          ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+          ctx.fillStyle = c.color;
+          ctx.fill();
+        });
+        update();
+      }
+
+      function update() {
+        confetti.forEach(c => {
+          c.y += c.d;
+          if (c.y > canvas.height) {
+            c.y = 0;
+            c.x = Math.random() * canvas.width;
+          }
+        });
+      }
+
+      let animation = setInterval(draw, 33);
+      setTimeout(() => clearInterval(animation), 4000);
+    }
+
+    const items = [
+      { name: "apples", emoji: "🍎" },
+      { name: "bananas", emoji: "🍌" },
+      { name: "cherries", emoji: "🍒" },
+      { name: "grapes", emoji: "🍇" },
+      { name: "peaches", emoji: "🍑" },
+      { name: "strawberries", emoji: "🍓" },
+      { name: "roses", emoji: "🌹" },
+      { name: "sunflowers", emoji: "🌻" },
+      { name: "tulips", emoji: "🌷" },
+      { name: "blossoms", emoji: "🌸" }
+    ];
+
+    let currentLevel = 1;
+    let questionIndex = 0;
+    let score = 0;
+    const questionsPerLevel = 6;
+    const maxLevels = 12;
+    let correctAnswer = 0;
+
+    function getRangeForLevel(level) {
+      const start = (level - 1) * 6 + 1;
+      const end = level * 6;
+      return { start, end };
+    }
+
+    function generateQuestion() {
+      const itemBox = document.getElementById("item-box");
+      const choicesBox = document.getElementById("choices-box");
+      const result = document.getElementById("result");
+      const itemName = document.getElementById("item-name");
+      const scoreDisplay = document.getElementById("score");
+      const final = document.getElementById("final");
+      const menuBtn = document.getElementById("menu-btn");
+
+      result.textContent = "";
+      final.textContent = "";
+      menuBtn.style.display = "none";
+
+      const { start, end } = getRangeForLevel(currentLevel);
+
+      if (questionIndex >= questionsPerLevel) {
+        if (score === questionsPerLevel) {
+          if (currentLevel === maxLevels) {
+            itemBox.textContent = "";
+            choicesBox.innerHTML = "";
+            final.textContent = `🎉 Congratulations! You completed all levels! Final Score: ${score} / ${questionsPerLevel * maxLevels}`;
+            menuBtn.style.display = "inline-block";
+            showConfetti();
+            return;
+          } else {
+            currentLevel++;
+            questionIndex = 0;
+            score = 0;
+            alert(`🎉 Great! Moving to Level ${currentLevel}`);
+          }
+        } else {
+          alert(`You scored ${score} / ${questionsPerLevel} in Level ${currentLevel}. Try again to advance!`);
+          questionIndex = 0;
+          score = 0;
+        }
+      }
+
+      scoreDisplay.textContent = `Level ${currentLevel} (${start}-${end}) - Question ${questionIndex + 1} / ${questionsPerLevel} | Score: ${score}`;
+
+      const selected = items[Math.floor(Math.random() * items.length)];
+      correctAnswer = Math.floor(Math.random() * (end - start + 1)) + start;
+
+      itemBox.textContent = selected.emoji.repeat(correctAnswer);
+      itemName.textContent = selected.name;
+
+      let options = new Set();
+      options.add(correctAnswer);
+      while (options.size < 3) {
+        const fake = Math.floor(Math.random() * (end - start + 1)) + start;
+        if (fake !== correctAnswer) options.add(fake);
+      }
+
+      const shuffled = Array.from(options).sort(() => Math.random() - 0.5);
+      choicesBox.innerHTML = "";
+      shuffled.forEach(num => {
+        const btn = document.createElement("button");
+        btn.textContent = num;
+        btn.onclick = () => checkAnswer(num);
+        choicesBox.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(answer) {
+      const result = document.getElementById("result");
+      speak(answer);
+
+      if (answer === correctAnswer) {
+        result.style.color = "green";
+        result.textContent = "✅ Correct!";
+        speak("Correct");
+        score++;
+      } else {
+        result.style.color = "red";
+        result.textContent = `❌ Wrong! Correct answer was ${correctAnswer}.`;
+        speak(`Wrong. The correct answer was ${correctAnswer}`);
+      }
+
+      questionIndex++;
+      setTimeout(generateQuestion, 2000);
+    }
+
+    function goToMenu() {
+      const grade = localStorage.getItem("selected_grade") || "tk";
+      window.location.href = `menu-${grade}.html`;
+    }
+
+    generateQuestion();
+  </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn Numbers</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #e1f5fe;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #0288d1;
+    }
+    .numbers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .number {
+      font-size: 2rem;
+      background-color: #b3e5fc;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px #aaa;
+      transition: background-color 0.3s;
+    }
+    .number:hover {
+      background-color: #81d4fa;
+    }
+    #canvas-container {
+      margin-top: 2rem;
+    }
+    canvas {
+      border: 2px dashed #0288d1;
+      background-color: #ffffff;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffcc80;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔢 Learn Numbers</h1>
+  <div class="numbers" id="numbers"></div>
+
+  <div id="canvas-container">
+    <h2>📝 Practice Writing</h2>
+    <canvas id="drawCanvas" width="400" height="300"></canvas><br>
+    <button onclick="clearCanvas()">🧹 Clear</button>
+  </div>
+
+  <script>
+    const numbers = Array.from({length: 20}, (_, i) => i + 1); // 1 to 20
+    const numbersContainer = document.getElementById('numbers');
+
+    numbers.forEach(num => {
+      const div = document.createElement('div');
+      div.className = 'number';
+      div.textContent = num;
+      div.onclick = () => speak(num);
+      numbersContainer.appendChild(div);
+    });
+
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    }
+
+    // Drawing functionality
+    const canvas = document.getElementById('drawCanvas');
+    const ctx = canvas.getContext('2d');
+    let drawing = false;
+
+    canvas.addEventListener('mousedown', () => drawing = true);
+    canvas.addEventListener('mouseup', () => drawing = false);
+    canvas.addEventListener('mouseout', () => drawing = false);
+    canvas.addEventListener('mousemove', draw);
+
+    function draw(event) {
+      if (!drawing) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      ctx.fillStyle = '#006064';
+      ctx.beginPath();
+      ctx.arc(x, y, 4, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  </script>
+</body>
+</html>

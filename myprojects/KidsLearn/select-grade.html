@@ -1,0 +1,24 @@
+<!-- ============================= -->
+<!-- 3. select-grade.html -->
+<!-- ============================= -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Select Grade</title>
+  <style> body { text-align: center; font-family: 'Comic Sans MS'; padding: 2rem; } .grade-btn { margin: 1rem; padding: 1rem 2rem; font-size: 1.2rem; } </style>
+</head>
+<body>
+  <h1>🎓 Select Your Grade</h1>
+  <button class="grade-btn" onclick="select('tk')">🧒 TK & Kinder</button>
+  <button class="grade-btn" onclick="select('1st')">1️⃣ 1st Grade</button>
+  <button class="grade-btn" onclick="select('2nd')">2️⃣ 2nd Grade</button>
+  <button class="grade-btn" onclick="select('3rd')">3️⃣ 3rd Grade</button>
+  <script>
+    function select(grade) {
+      localStorage.setItem("selected_grade", grade);
+      window.location.href = `menu-${grade}.html`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- ============================= -->
+<!-- 1. login.html -->
+<!-- ============================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style> body { text-align: center; padding: 2rem; font-family: 'Comic Sans MS'; } input, button { padding: 0.7rem; margin: 0.5rem; } </style>
+</head>
+<body>
+  <h1>🔐 Login</h1>
+  <input id="username" placeholder="Username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+  <script>
+    function login() {
+      const u = document.getElementById('username').value.trim().toLowerCase();
+      const p = document.getElementById('password').value;
+      const users = JSON.parse(localStorage.getItem("kids_users")) || {};
+      if (users[u] && users[u] === p) {
+        localStorage.setItem("current_user", u);
+        window.location.href = "select-grade.html";
+      } else {
+        alert("❌ Invalid username or password");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- ============================= -->
+<!-- 2. signup.html -->
+<!-- ============================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <style> body { text-align: center; padding: 2rem; font-family: 'Comic Sans MS'; } input, button { padding: 0.7rem; margin: 0.5rem; } </style>
+</head>
+<body>
+  <h1>📝 Sign Up</h1>
+  <input id="username" placeholder="New username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <input type="password" id="confirm" placeholder="Confirm Password"><br>
+  <label><input type="checkbox" onclick="togglePassword()"> Show Password</label><br>
+  <button onclick="signup()">Create Account</button>
+  <p>Have an account? <a href="login.html">Login</a></p>
+  <script>
+    function togglePassword() {
+      const p = document.getElementById('password');
+      const c = document.getElementById('confirm');
+      const type = p.type === 'password' ? 'text' : 'password';
+      p.type = c.type = type;
+    }
+    function signup() {
+      const u = document.getElementById('username').value.trim().toLowerCase();
+      const p = document.getElementById('password').value;
+      const c = document.getElementById('confirm').value;
+      if (!u || !p || !c) return alert("All fields required");
+      if (p !== c) return alert("Passwords do not match");
+      const users = JSON.parse(localStorage.getItem("kids_users")) || {};
+      if (users[u]) return alert("User exists");
+      users[u] = p;
+      localStorage.setItem("kids_users", JSON.stringify(users));
+      alert("Account created!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
