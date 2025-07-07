@@ -49,18 +49,25 @@
       background-color: #81d4fa;
       cursor: pointer;
     }
+    button.top-btn {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <h1><button onclick="goToMenu()" 
-          style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
-    🏠 Menu
-  </button></h1>
-
-  <h2 id="welcome-user"></h2>
-  <button id="logout" onclick="logout()">🚪 Logout</button>
-
-  <h1>🌼 Count the Items!</h1>
+  <button class="top-btn" onclick="goToMenu()">🏠 Menu</button>
+  <button class="top-btn" style="left: 9rem; background-color: #e53935;" onclick="logout()">🚪 Logout</button>
+  
+   <h2 id="welcome-user"></h2>
+   <h1>🌼 Count the Items!</h1>
   <div class="items" id="item-box"></div>
   <p>How many <span id="item-name">items</span> do you see?</p>
   <div class="choices" id="choices-box"></div>

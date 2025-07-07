@@ -51,8 +51,19 @@
   </style>
 </head>
 <body>
+ <h1><button onclick="goToMenu()" 
+    style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
+    🏠 Menu
+  </button></h1>
   <h1>🔠 Learn Letters</h1>
-  <div class="letters" id="letters"></div>
+
+<!-- Uppercase -->
+<h2 style="color: #ff7043;">Capital Letters</h2>
+<div class="letters" id="uppercase"></div>
+
+<!-- Lowercase -->
+<h2 style="color: #ff7043;">Small Letters</h2>
+<div class="letters" id="lowercase"></div>
 
   <div id="canvas-container">
     <h2>📝 Practice Writing</h2>
@@ -61,46 +72,59 @@
   </div>
 
   <script>
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    const lettersContainer = document.getElementById('letters');
+  function goToMenu() {
+    const grade = localStorage.getItem("selected_grade") || "tk";
+    window.location.href = `menu-${grade}.html`;
+  }
 
-    letters.forEach(letter => {
+  const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+  const uppercaseContainer = document.getElementById('uppercase');
+  const lowercaseContainer = document.getElementById('lowercase');
+
+  function createLetterButtons(container, lettersArray) {
+    lettersArray.forEach(letter => {
       const span = document.createElement('div');
       span.className = 'letter';
       span.textContent = letter;
       span.onclick = () => speak(letter);
-      lettersContainer.appendChild(span);
+      container.appendChild(span);
     });
+  }
 
-    function speak(text) {
-      const msg = new SpeechSynthesisUtterance(text);
-      window.speechSynthesis.speak(msg);
-    }
+  createLetterButtons(uppercaseContainer, uppercaseLetters);
+  createLetterButtons(lowercaseContainer, lowercaseLetters);
 
-    // Drawing functionality
-    const canvas = document.getElementById('drawCanvas');
-    const ctx = canvas.getContext('2d');
-    let drawing = false;
+  function speak(text) {
+    const msg = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(msg);
+  }
 
-    canvas.addEventListener('mousedown', () => drawing = true);
-    canvas.addEventListener('mouseup', () => drawing = false);
-    canvas.addEventListener('mouseout', () => drawing = false);
-    canvas.addEventListener('mousemove', draw);
+  // Drawing functionality
+  const canvas = document.getElementById('drawCanvas');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
 
-    function draw(event) {
-      if (!drawing) return;
-      const rect = canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      ctx.fillStyle = '#4a148c';
-      ctx.beginPath();
-      ctx.arc(x, y, 4, 0, Math.PI * 2);
-      ctx.fill();
-    }
+  canvas.addEventListener('mousedown', () => drawing = true);
+  canvas.addEventListener('mouseup', () => drawing = false);
+  canvas.addEventListener('mouseout', () => drawing = false);
+  canvas.addEventListener('mousemove', draw);
 
-    function clearCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  </script>
+  function draw(event) {
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    ctx.fillStyle = '#4a148c';
+    ctx.beginPath();
+    ctx.arc(x, y, 4, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+</script>
 </body>
 </html>

@@ -51,6 +51,10 @@
   </style>
 </head>
 <body>
+<h1><button onclick="goToMenu()" 
+          style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
+    🏠 Menu
+  </button></h1>
   <h1>🔢 Learn Numbers</h1>
   <div class="numbers" id="numbers"></div>
 
@@ -61,7 +65,12 @@
   </div>
 
   <script>
-    const numbers = Array.from({length: 20}, (_, i) => i + 1); // 1 to 20
+    function goToMenu() {
+    const grade = localStorage.getItem("selected_grade") || "tk";
+    window.location.href = `menu-${grade}.html`;
+  }
+
+    const numbers = Array.from({length: 25}, (_, i) => i + 1); // 1 to 25
     const numbersContainer = document.getElementById('numbers');
 
     numbers.forEach(num => {
