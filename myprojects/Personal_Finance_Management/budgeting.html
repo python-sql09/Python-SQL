@@ -1,0 +1,33 @@
+<!-- budgeting.html -->
+<div id="budget" class="tab-content">
+    <div class="budget-header">
+        <h2>📋 Budget Planning</h2>
+        <button class="btn-primary" onclick="showAddBudgetModal()">Add Budget Category</button>
+    </div>
+
+    <div class="budget-overview">
+        <div class="card">
+            <h3>Monthly Budget Summary</h3>
+            <div class="budget-summary">
+                <div class="summary-item">
+                    <span>Total Budgeted:</span>
+                    <span id="totalBudgeted">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Total Spent:</span>
+                    <span id="totalSpent">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span>Remaining:</span>
+                    <span id="totalRemaining">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="budget-categories" id="budgetCategories">
+        <div class="text-center">
+            <p>No budget categories yet. Click "Add Budget Category" to get started!</p>
+        </div>
+    </div>
+</div>
