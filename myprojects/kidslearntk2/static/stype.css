@@ -1,0 +1,36 @@
+body {
+    background-color: #FFE6F0;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #FF6B9D;
+}
+
+button {
+    background-color: #E91E63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c2185b;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background: #4CAF50;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    display: inline-block;
+}

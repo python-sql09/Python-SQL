@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Learn Letters and Missing Letter</title>
+  <style>
+    body {
+      background-color: #FFF8DC;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 { color: #8B0000; }
+    button {
+      font-size: 18px;
+      margin: 8px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .letter-buttons button,
+    #learn-letters button {
+      background-color: #E91E63;
+      color: white;
+    }
+    .letter-buttons button:hover,
+    #learn-letters button:hover {
+      background-color: #AD1457;
+    }
+    #mode-buttons button {
+      background-color: #2196F3;
+      color: white;
+    }
+    #mode-buttons button:hover {
+      background-color: #1976D2;
+    }
+    .level-button {
+      background-color: #FF9800;
+      color: white;
+    }
+    .level-button:disabled {
+      background-color: #ccc;
+      color: #666;
+    }
+    #learn-word, #word, #result, #timer, #score {
+      margin-top: 15px;
+      font-size: 20px;
+    }
+    .options button {
+      font-size: 24px;
+      margin: 8px;
+      background-color: #2196F3;
+      color: white;
+      border-radius: 6px;
+    }
+    .options button:hover {
+      background-color: #1976D2;
+    }
+    #word {
+      font-size: 60px;
+      margin: 20px 0;
+      color: #2F4F4F;
+      letter-spacing: 10px;
+    }
+    #next-btn {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 6px;
+    }
+    #score { color: #8B008B; margin-top: 20px; }
+    #timer { color: #F44336; }
+  </style>
+</head>
+  <body>
+  <a href="menu-tk.html">
+  <button style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
+    🏠 Menu
+  </button>
+</a>
+  <button id="back-btn" style="display:none; position:absolute; top:1rem; right:1rem; padding:0.5rem 1rem; background-color:#9C27B0; color:white; border:none; border-radius:8px;" onclick="goToMenu()">
+  🔙 Back
+</button>
+  
+  <h1 id="main-title">🔤 Learn Letters and Missing Letter</h1>
+  <div id="mode-buttons">
+    <button onclick="showLearnMode()">📚 Learn A-Z</button>
+    <button onclick="startGame()">🧩 Start Play</button>
+    <button onclick="openHandwritingPage()">✍️ Handwriting Practice</button>
+  </div>
+
+  <div id="learn-container">
+    <h2>🔠 Uppercase Letters</h2>
+    <div class="letter-buttons" id="uppercase-letters"></div>
+    <h2>🔡 Lowercase Letters</h2>
+    <div class="letter-buttons" id="lowercase-letters"></div>
+    <div id="learn-word"></div>
+  </div>
+
+  <div id="level-select" style="display:none;">
+    <h2>Select Level</h2>
+    <div id="level-buttons"></div>
+  </div>
+
+  <div id="puzzle-container" style="display:none;">
+    <div id="level-title">Level 1</div>
+    <div id="timer"></div>
+    <div id="word"></div>
+    <div class="options" id="options"></div>
+    <div id="result"></div>
+    <button id="next-btn" onclick="nextPuzzle()" style="display:none;">➡️ Next Puzzle</button>
+    <div id="score">Score: 0/0</div>
+  </div>
+
+  <script>
+
+  function goToMenu() {
+  document.getElementById('main-title').textContent = "🔤 Learn Letters and Missing Letter";
+  document.getElementById('learn-container').style.display = 'none';
+  document.getElementById('puzzle-container').style.display = 'none';
+  document.getElementById('level-select').style.display = 'none';
+  document.getElementById('back-btn').style.display = 'none';
+  document.getElementById('mode-buttons').style.display = 'block';
+}
+
+    const UwordsByLetter = { A: "Apple 🍎", B: "Ball ⚽", C: "Cat 🐱", D: "Dog 🐶", E: "Egg 🥚", F: "Fish 🐟", G: "Grapes 🍇",
+      H: "Hat 🎩", I: "Igloo 🧊", J: "Jug 🏺", K: "Kite 🪁", L: "Lion 🦁", M: "Monkey 🐒", N: "Nest 🪺",
+      O: "Orange 🍊", P: "Pen 🖊️", Q: "Queen 👸", R: "Rabbit 🐰", S: "Sun ☀️", T: "Tiger 🐯", U: "Umbrella ☂️",
+      V: "Violin 🎻", W: "Watch ⌚", X: "Xylophone 🎼", Y: "Yak 🦬", Z: "Zebra 🦓" };
+
+    const LwordsByLetter = { a: "Ant 🐜", b: "Bat 🦇", c: "Cup ☕", d: "Drum 🥁", e: "Earth 🌍", f: "Float 🎈", g: "Goat 🐐",
+      h: "Hammer 🔨", i: "Ice 🧊", j: "Jam 🍓", k: "King 🤴", l: "Lip 👄", m: "Money 💰", n: "Next ⏭️",
+      o: "Owl 🦉", p: "Pet 🐾", q: "Question ❓", r: "Rose 🌹", s: "Sweet 🍬", t: "Tall 📏", u: "Unicorn 🦄",
+      v: "Vet 👩‍⚕️", w: "Wall 🧱", x: "X-ray 🩻", y: "Yum 😋", z: "Zoo 🦁" };
+
+    const puzzleWords = {
+      2: ["AT", "AS", "AN", "BE", "BY", "DO", "GO", "HI", "IN", "UP", "IT", "IS", "IF", "ID", "ME", "MY", "NO", "ON", "SO", "TO", "US","WE"],
+      3: [
+        "ANT", "AIR", "ART", "BAT", "BED", "BAD", "CAT", "COW", "CUT", "DOG", "DOT", "DRY", "EYE", "EGG", "EAT", "FUN", "FAN", "FOG", "GET", "GOD", "GUM", "HOT", "HAT", "HER", "ICE", "INK", "ILL",
+        "JAM", "JUG", "JET", "KIT", "KEY", "KID", "LAB", "LOG", "LIP", "MAP", "MAT", "MAN", "NET", "NAP", "NUT", "OWL", "ONE", "OUT", "PEN", "POT", "PET", "QUE", "QAT", "QIN", "RAT", "RED", "RUN",
+        "SUN", "SIT", "SAD", "TEN", "TEA", "TOP", "URN", "USE", "UPS", "VAN", "VET", "VIA", "WIN", "WEB", "WHY", "SIX", "FOX", "BOX", "YAK", "YEM", "YES", "ZOO", "ZIP", "ZIG"
+      ],
+      4: ["ASIA", "AGAIN", "ABOUT", "BOOK", "BATH", "BUN", "CORN", "DOLL", "EAST", "FISH", "HAND", "FOOT", "READ", "JUMP", "KITE", "LION", "TREE", "DUCK", "SHIP", "FORK", "HAIR", "LOOK", "MAZE", "NEAT", "ROOF"],
+      5: ["APPLE", "ABOVE", "ADMIN", "BOAT", "bring", "Better", "CART", "DRUM", "EARN", "MANGO", "SNAKE", "GRAPE", "WATER", "SPOON", "SHEET", "CLEAN", "FRUIT", "WRITE"],
+      6: ["ALARM", "AIRPORT", "AROUND", "BUS", "bag", "bell", "COLOR", "DART", "EARTH", "MARKET", "FAMILY", "POCKET", "CANDLE", "BETTER", "BANANA"],
+      7: ["ANGEL", "ATE", "APRIL", "BOTTLE", "boss", "but","CHICKEN", "DARK", "ENGLISH", "GIRAFFE", "KANGAROO", "MONKEY", "PENGUIN", "TIGER", "ZEBRA", "DINOSAUR", "FIRETRUCK"],
+      8: ["ANGRY", "ARROW", "ADORE", "BALLOON", "belly", "button", "CIRCUS", "DOLPHIN", "ELECTRIC", "FANTASY", "GUITAR", "HOSPITAL", "JOURNEY", "KITCHEN"],
+      9: ["ANIMAL", "ARRIVE", "ADVICE", "BICYCLE", "bike", "baby", "CARNIVAL", "DREAMLAND", "EXPLORER", "FIREWORKS", "GARDENING", "HARMONICA", "INVENTION", "JELLYFISH"],
+      10: ["ALPHABET", "ANCHOR", "ARTIST", "BRAIN", "bird", "ban", "CROSSWORD", "DANCING", "EXERCISE", "FANTASTIC", "GIGANTIC", "HARMONY", "IMAGINATION", "JUMPING"],
+      11: ["AREA", "ARTICLE", "ARRIVAL", "BREATH", "battle", "bear", "CELEBRATION", "DISCOVERY", "EXCITING", "GRANDMOTHER", "HAPPINESS", "IMAGINARY", "JOURNEYMAN"],
+      12: ["AMAZING", "AIRPLANE", "ANYTHING", "BRILLIANT", "brown", "Business", "CREATIVE", "DYNAMIC", "EXTRAORDINARY", "FASCINATING", "GENEROUS", "HILARIOUS", "INSPIRATIONAL", "JOVIAL"],
+      13: ["ASTRONAUT", "ACTIVITY", "ARTIFACT", "BALL", "bright", "black", "CHERRY", "DEPARTMENT", "EXHILARATING", "GRACEFUL", "HARMONIOUS", "INNOVATIVE", "JUBILANT"],
+      14: ["ADVENTURE", "AVOCADO", "APPRECIATED", "BACK", "butterfly", "behave", "COMPUTER", "DISPOSE", "KINDNESS", "LIVELY", "MAGICAL", "NURTURING", "OPTIMISTIC", "PEACEFUL", "QUIETLY", "RESILIENT"],
+      15: ["ALLIGATOR", "ABACUSES", "ADULT", "BUTTER", "Birthday", "brother", "CITY", "DRAMA", "ELEPHANT", "CANDY", "DOLPHIN", "FIREWORKS", "GIRAFFE", "HONEYBEE", "IGLOO", "JELLYBEAN"]
+    };
+
+    let currentWord = "", correctLetter = "", missingIndex = 0;
+    let index = 0, score = 0, total = 0, answered = false;
+    let timer, countdown = 10, currentLevelWords = [], currentLevelNumber = 1;
+    const allPuzzleLevels = [];
+
+    (function buildLevels() {
+  function getWordsInLengthRange(min, max) {
+    const result = [];
+    for (let len = min; len <= max; len++) {
+      if (puzzleWords[len]) result.push(...puzzleWords[len]);
+    }
+    return result.sort(() => 0.5 - Math.random()); // shuffle
+  }
+
+  const ranges = [
+    [2, 3],   // Levels 1–6
+    [4, 5],   // Levels 7–12
+    [6, 7],   // Levels 13–18
+    [8, 9],   // Levels 19–24
+    [10, 15], // Levels 25–30
+  ];
+
+  for (const [min, max] of ranges) {
+    const words = getWordsInLengthRange(min, max);
+    const chunkSize = Math.ceil(words.length / 6); // divide into 6 levels
+    for (let i = 0; i < 6; i++) {
+      allPuzzleLevels.push(words.slice(i * chunkSize, (i + 1) * chunkSize));
+    }
+  }
+})();
+
+    function openHandwritingPage() {
+  window.location.href = "handwriting.html";  // 👈 Change to your file name
+}
+
+  function showLearnMode() {
+  document.getElementById('main-title').textContent = "📚 Learn Letters";
+  document.getElementById('learn-container').style.display = 'block';
+  document.getElementById('puzzle-container').style.display = 'none';
+  document.getElementById('level-select').style.display = 'none';
+  document.getElementById('mode-buttons').style.display = 'none';
+  document.getElementById('back-btn').style.display = 'inline-block';
+
+  const upper = document.getElementById("uppercase-letters");
+  const lower = document.getElementById("lowercase-letters");
+  upper.innerHTML = '';
+  lower.innerHTML = '';
+  document.getElementById("learn-word").textContent = '';
+  for (const l in UwordsByLetter) {
+    const btn = document.createElement("button");
+    btn.textContent = l;
+    btn.onclick = () => speakLetter(l, UwordsByLetter[l]);
+    upper.appendChild(btn);
+  }
+  for (const l in LwordsByLetter) {
+    const btn = document.createElement("button");
+    btn.textContent = l;
+    btn.onclick = () => speakLetter(l, LwordsByLetter[l]);
+    lower.appendChild(btn);
+  }
+}
+
+function startGame() {
+  document.getElementById('main-title').textContent = "🧩 Find Missing Letter";
+  document.getElementById('mode-buttons').style.display = 'none';
+  document.getElementById('back-btn').style.display = 'inline-block';
+  showLevelSelect();
+}
+
+    function speakLetter(letter, word) {
+      document.getElementById("learn-word").textContent = `${letter} is for ${word}`;
+      const utter = new SpeechSynthesisUtterance(`${letter}, is for ${word.replace(/[^a-zA-Z ]/g, '')}`);
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utter);
+    }
+
+    function speakText(text) {
+  const utter = new SpeechSynthesisUtterance(text);
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utter);
+  }
+
+
+      function showLevelSelect() {
+      document.getElementById('learn-container').style.display = 'none';
+      document.getElementById('puzzle-container').style.display = 'none';
+      document.getElementById('level-select').style.display = 'block';
+      const container = document.getElementById('level-buttons');
+      container.innerHTML = '';
+      for (let i = 1; i <= 30; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = `Level ${i}`;
+        btn.className = "level-button";
+        btn.disabled = i > 1 && !localStorage.getItem(`level${i - 1}_complete`);
+        btn.onclick = () => startLevel(i);
+        container.appendChild(btn);
+      }
+    }
+
+    function startLevel(levelNumber) {
+      index = 0;
+      score = 0;
+      total = 0;
+      currentLevelNumber = levelNumber;
+      currentLevelWords = allPuzzleLevels[levelNumber - 1];
+      document.getElementById('level-select').style.display = 'none';
+      document.getElementById('puzzle-container').style.display = 'block';
+      document.getElementById('level-title').textContent = `Level ${levelNumber}`;
+      nextPuzzle();
+    }
+
+  function nextPuzzle() {
+  if (index >= currentLevelWords.length) {
+    document.getElementById("word").textContent = "🎉 Level Complete!";
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("timer").textContent = "";
+    document.getElementById("next-btn").style.display = "none";
+
+    if (score === total && total === currentLevelWords.length) {
+      localStorage.setItem(`level${currentLevelNumber}_complete`, true);
+    }
+
+    return;
+  }
+
+  currentWord = currentLevelWords[index];
+  index++; // ✅ Only increase here
+
+  answered = false;
+  countdown = Math.floor(Math.random() * 16) + 15; // ✅ random between 15–30 seconds
+  missingIndex = Math.floor(Math.random() * currentWord.length);
+  correctLetter = currentWord[missingIndex];
+
+  const display = currentWord.split("").map((c, i) => i === missingIndex ? "_" : c).join(" ");
+  document.getElementById("word").textContent = display;
+  document.getElementById("result").textContent = "";
+  document.getElementById("next-btn").style.display = "none";
+
+  speakText(currentWord.replace(/[^a-zA-Z]/g, '')); // ✅ Speak the word
+  createOptions();
+  updateScore();
+  startTimer();
+}
+
+    function createOptions() {
+      const options = new Set([correctLetter]);
+      while (options.size < 4) {
+        options.add(String.fromCharCode(65 + Math.floor(Math.random() * 26)));
+      }
+      const shuffled = Array.from(options).sort(() => 0.5 - Math.random());
+      const container = document.getElementById("options");
+      container.innerHTML = "";
+      shuffled.forEach(l => {
+        const btn = document.createElement("button");
+        btn.textContent = l;
+        btn.onclick = () => checkAnswer(l);
+        container.appendChild(btn);
+      });
+    }
+
+  function checkAnswer(letter) {
+  if (answered) return;
+  answered = true;
+  clearInterval(timer);
+
+  const correct = letter === correctLetter;
+  if (correct) {
+    score++;
+    document.getElementById("result").textContent = "✅ Correct!";
+    speakText("Correct!");
+  } else if (letter === "") {
+    document.getElementById("result").textContent = `⏰ Timeout! The correct letter was '${correctLetter}'`;
+    speakText(`Timeout! The correct letter was ${correctLetter}`);
+  } else {
+    document.getElementById("result").textContent = `❌ Wrong! It was '${correctLetter}'`;
+    speakText(`Wrong. It was ${correctLetter}`);
+  }
+
+  document.getElementById("word").textContent = currentWord;
+  updateScore();
+  document.getElementById("next-btn").style.display = "inline-block";
+}
+
+
+    function updateScore() {
+      document.getElementById("score").textContent = `Score: ${score}/${currentLevelWords.length}`;
+    }
+
+    function startTimer() {
+      document.getElementById("timer").textContent = `⏱️ Time left: ${countdown}s`;
+      timer = setInterval(() => {
+        countdown--;
+        document.getElementById("timer").textContent = `⏱️ Time left: ${countdown}s`;
+        if (countdown <= 0 && !answered) {
+          clearInterval(timer);
+          checkAnswer("");
+        }
+      }, 1000);
+    }
+
+    // Initialize Learn mode on load
+   // showLearnMode();
+   // Show mode buttons on load
+      document.getElementById('mode-buttons').style.display = 'block';
+      document.getElementById('learn-container').style.display = 'none';
+      document.getElementById('puzzle-container').style.display = 'none';
+      document.getElementById('level-select').style.display = 'none';
+  </script>
+</body>
+</html>

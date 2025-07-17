@@ -1,0 +1,633 @@
+import tkinter as tk
+from tkinter import ttk, messagebox
+import random
+import math
+
+class KidsLearnNumbersApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("🔢 Kids Learn Numbers - Fun Math Learning!")
+        self.root.geometry("900x700")
+        self.root.configure(bg='#E8F5E8')
+        
+        # Game variables
+        self.current_number = 1
+        self.score = 0
+        self.total_questions = 0
+        self.game_mode = 'learn'  # 'learn', 'quiz', 'counting', 'math'
+        
+        # Number facts and examples
+        self.number_facts = {
+            0: "Zero means nothing! Like having zero cookies 🍪",
+            1: "One is the first counting number! Like one sun ☀️",
+            2: "Two is a pair! Like two eyes 👀 or two hands ✋✋",
+            3: "Three makes a triangle! Like three wheels on a tricycle 🚲",
+            4: "Four has four sides! Like a square ⬜ or four legs on a table",
+            5: "Five fingers on one hand! ✋ High five!",
+            6: "Six legs on an insect! 🐛 Like a beetle or ant",
+            7: "Seven days in a week! 📅 Monday to Sunday",
+            8: "Eight legs on a spider! 🕷️ Or eight arms on an octopus",
+            9: "Nine lives for a cat! 🐱 (Just a saying!)",
+            10: "Ten fingers total! ✋✋ Perfect for counting!"
+        }
+        
+        self.number_examples = {
+            0: ["Zero apples", "No cars", "Empty box"],
+            1: ["One ball", "One cat", "One star"],
+            2: ["Two shoes", "Two ears", "Two wings"],
+            3: ["Three bears", "Three wheels", "Three colors"],
+            4: ["Four seasons", "Four wheels", "Four corners"],
+            5: ["Five fingers", "Five senses", "Five toes"],
+            6: ["Six sides", "Six pack", "Six strings"],
+            7: ["Seven colors", "Seven days", "Seven notes"],
+            8: ["Eight legs", "Eight planets", "Eight hours"],
+            9: ["Nine lives", "Nine months", "Nine squares"],
+            10: ["Ten fingers", "Ten toes", "Ten dollars"]
+        }
+        
+        self.setup_ui()
+        self.show_learning_mode()
+        
+    def setup_ui(self):
+        # Title
+        title_frame = tk.Frame(self.root, bg='#E8F5E8')
+        title_frame.pack(pady=10)
+        
+        title_label = tk.Label(title_frame, text="🔢 Kids Learn Numbers!", 
+                              font=('Comic Sans MS', 24, 'bold'), 
+                              bg='#E8F5E8', fg='#2E7D32')
+        title_label.pack()
+        
+        # Mode selection buttons
+        mode_frame = tk.Frame(self.root, bg='#E8F5E8')
+        mode_frame.pack(pady=10)
+        
+        learn_btn = tk.Button(mode_frame, text="📚 Learn Numbers", 
+                             font=('Comic Sans MS', 12, 'bold'),
+                             bg='#4CAF50', fg='white', 
+                             command=self.show_learning_mode,
+                             relief='raised', bd=3)
+        learn_btn.pack(side=tk.LEFT, padx=5)
+        
+        quiz_btn = tk.Button(mode_frame, text="🎯 Quiz Mode", 
+                            font=('Comic Sans MS', 12, 'bold'),
+                            bg='#2196F3', fg='white', 
+                            command=self.show_quiz_mode,
+                            relief='raised', bd=3)
+        quiz_btn.pack(side=tk.LEFT, padx=5)
+        
+        counting_btn = tk.Button(mode_frame, text="🔢 Counting Game", 
+                                font=('Comic Sans MS', 12, 'bold'),
+                                bg='#FF9800', fg='white', 
+                                command=self.show_counting_mode,
+                                relief='raised', bd=3)
+        counting_btn.pack(side=tk.LEFT, padx=5)
+        
+        math_btn = tk.Button(mode_frame, text="➕ Simple Math", 
+                            font=('Comic Sans MS', 12, 'bold'),
+                            bg='#9C27B0', fg='white', 
+                            command=self.show_math_mode,
+                            relief='raised', bd=3)
+        math_btn.pack(side=tk.LEFT, padx=5)
+        
+        # Score display
+        self.score_label = tk.Label(self.root, text="Score: 0/0", 
+                                   font=('Comic Sans MS', 14, 'bold'),
+                                   bg='#E8F5E8', fg='#2E7D32')
+        self.score_label.pack(pady=5)
+        
+        # Main content frame
+        self.content_frame = tk.Frame(self.root, bg='#E8F5E8')
+        self.content_frame.pack(expand=True, fill='both', padx=20, pady=20)
+        
+    def show_learning_mode(self):
+        self.game_mode = 'learn'
+        self.clear_content()
+        
+        # Number display
+        number_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        number_frame.pack(pady=20)
+        
+        self.number_display = tk.Label(number_frame, text=str(self.current_number), 
+                                      font=('Comic Sans MS', 120, 'bold'),
+                                      bg='#E8F5E8', fg='#2E7D32',
+                                      relief='raised', bd=5)
+        self.number_display.pack()
+        
+        # Number word
+        number_words = ["Zero", "One", "Two", "Three", "Four", "Five", 
+                       "Six", "Seven", "Eight", "Nine", "Ten"]
+        self.number_word = tk.Label(number_frame, 
+                                   text=number_words[self.current_number],
+                                   font=('Comic Sans MS', 18, 'bold'),
+                                   bg='#E8F5E8', fg='#1976D2')
+        self.number_word.pack(pady=10)
+        
+        # Visual representation
+        visual_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        visual_frame.pack(pady=20)
+        
+        self.create_visual_representation(visual_frame)
+        
+        # Fun fact
+        fact_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        fact_frame.pack(pady=20)
+        
+        tk.Label(fact_frame, text="💡 Fun Fact:", 
+                font=('Comic Sans MS', 14, 'bold'),
+                bg='#E8F5E8', fg='#FF6B9D').pack()
+        
+        self.fact_label = tk.Label(fact_frame, 
+                                  text=self.number_facts.get(self.current_number, "Amazing number!"),
+                                  font=('Comic Sans MS', 12),
+                                  bg='#E8F5E8', fg='#333',
+                                  wraplength=600)
+        self.fact_label.pack(pady=10)
+        
+        # Examples
+        examples_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        examples_frame.pack(pady=10)
+        
+        tk.Label(examples_frame, text="Examples:", 
+                font=('Comic Sans MS', 12, 'bold'),
+                bg='#E8F5E8', fg='#333').pack()
+        
+        self.examples_label = tk.Label(examples_frame, 
+                                      text=", ".join(self.number_examples.get(self.current_number, ["Great number!"])),
+                                      font=('Comic Sans MS', 11),
+                                      bg='#E8F5E8', fg='#666',
+                                      wraplength=600)
+        self.examples_label.pack(pady=5)
+        
+        # Navigation
+        nav_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        nav_frame.pack(pady=20)
+        
+        prev_btn = tk.Button(nav_frame, text="⬅️ Previous", 
+                            font=('Comic Sans MS', 12, 'bold'),
+                            bg='#FF9800', fg='white',
+                            command=self.previous_number,
+                            relief='raised', bd=3)
+        prev_btn.pack(side=tk.LEFT, padx=10)
+        
+        next_btn = tk.Button(nav_frame, text="Next ➡️", 
+                            font=('Comic Sans MS', 12, 'bold'),
+                            bg='#4CAF50', fg='white',
+                            command=self.next_number,
+                            relief='raised', bd=3)
+        next_btn.pack(side=tk.LEFT, padx=10)
+        
+        # Number buttons (0-10)
+        numbers_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        numbers_frame.pack(pady=20)
+        
+        tk.Label(numbers_frame, text="Click any number:", 
+                font=('Comic Sans MS', 12, 'bold'),
+                bg='#E8F5E8', fg='#333').pack()
+        
+        buttons_frame = tk.Frame(numbers_frame, bg='#E8F5E8')
+        buttons_frame.pack(pady=10)
+        
+        for i in range(11):
+            btn = tk.Button(buttons_frame, text=str(i), 
+                           font=('Comic Sans MS', 12, 'bold'),
+                           bg='#E91E63', fg='white',
+                           width=3, height=1,
+                           command=lambda n=i: self.jump_to_number(n),
+                           relief='raised', bd=2)
+            btn.pack(side=tk.LEFT, padx=2)
+            
+    def create_visual_representation(self, parent):
+        visual_label = tk.Label(parent, text="Visual:", 
+                               font=('Comic Sans MS', 12, 'bold'),
+                               bg='#E8F5E8', fg='#333')
+        visual_label.pack()
+        
+        dots_frame = tk.Frame(parent, bg='#E8F5E8')
+        dots_frame.pack(pady=10)
+        
+        # Create visual dots/shapes
+        if self.current_number == 0:
+            empty_label = tk.Label(dots_frame, text="∅ (Empty)", 
+                                  font=('Comic Sans MS', 20, 'bold'),
+                                  bg='#E8F5E8', fg='#666')
+            empty_label.pack()
+        else:
+            # Create dots in rows
+            dots_per_row = 5
+            rows = math.ceil(self.current_number / dots_per_row)
+            
+            for row in range(rows):
+                row_frame = tk.Frame(dots_frame, bg='#E8F5E8')
+                row_frame.pack(pady=2)
+                
+                dots_in_row = min(dots_per_row, self.current_number - row * dots_per_row)
+                for dot in range(dots_in_row):
+                    dot_label = tk.Label(row_frame, text="●", 
+                                        font=('Comic Sans MS', 20, 'bold'),
+                                        bg='#E8F5E8', fg='#4CAF50')
+                    dot_label.pack(side=tk.LEFT, padx=2)
+                    
+    def show_quiz_mode(self):
+        self.game_mode = 'quiz'
+        self.clear_content()
+        
+        # Generate random question
+        question_type = random.choice(['identify', 'count', 'next', 'previous'])
+        
+        if question_type == 'identify':
+            self.quiz_number = random.randint(0, 10)
+            question_text = f"What number is this?"
+            
+            # Show visual representation
+            visual_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+            visual_frame.pack(pady=20)
+            
+            if self.quiz_number == 0:
+                tk.Label(visual_frame, text="∅ (Empty)", 
+                        font=('Comic Sans MS', 30, 'bold'),
+                        bg='#E8F5E8', fg='#666').pack()
+            else:
+                dots_frame = tk.Frame(visual_frame, bg='#E8F5E8')
+                dots_frame.pack()
+                
+                dots_per_row = 5
+                rows = math.ceil(self.quiz_number / dots_per_row)
+                
+                for row in range(rows):
+                    row_frame = tk.Frame(dots_frame, bg='#E8F5E8')
+                    row_frame.pack(pady=2)
+                    
+                    dots_in_row = min(dots_per_row, self.quiz_number - row * dots_per_row)
+                    for dot in range(dots_in_row):
+                        dot_label = tk.Label(row_frame, text="●", 
+                                            font=('Comic Sans MS', 25, 'bold'),
+                                            bg='#E8F5E8', fg='#4CAF50')
+                        dot_label.pack(side=tk.LEFT, padx=2)
+                        
+        elif question_type == 'count':
+            items = ['🍎', '⭐', '🚗', '🐱', '🌸', '⚽', '🎈', '🦋']
+            item = random.choice(items)
+            self.quiz_number = random.randint(1, 8)
+            question_text = f"How many {item} are there?"
+            
+            # Show items to count
+            items_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+            items_frame.pack(pady=20)
+            
+            items_per_row = 4
+            rows = math.ceil(self.quiz_number / items_per_row)
+            
+            for row in range(rows):
+                row_frame = tk.Frame(items_frame, bg='#E8F5E8')
+                row_frame.pack(pady=5)
+                
+                items_in_row = min(items_per_row, self.quiz_number - row * items_per_row)
+                for i in range(items_in_row):
+                    item_label = tk.Label(row_frame, text=item, 
+                                         font=('Comic Sans MS', 30),
+                                         bg='#E8F5E8')
+                    item_label.pack(side=tk.LEFT, padx=5)
+                    
+        elif question_type == 'next':
+            self.quiz_number = random.randint(0, 9)
+            question_text = f"What number comes after {self.quiz_number}?"
+            self.quiz_number += 1
+            
+            # Show the number
+            tk.Label(self.content_frame, text=str(self.quiz_number - 1), 
+                    font=('Comic Sans MS', 80, 'bold'),
+                    bg='#E8F5E8', fg='#2E7D32').pack(pady=20)
+            
+        else:  # previous
+            self.quiz_number = random.randint(1, 10)
+            question_text = f"What number comes before {self.quiz_number}?"
+            self.quiz_number -= 1
+            
+            # Show the number
+            tk.Label(self.content_frame, text=str(self.quiz_number + 1), 
+                    font=('Comic Sans MS', 80, 'bold'),
+                    bg='#E8F5E8', fg='#2E7D32').pack(pady=20)
+        
+        # Question label
+        self.question_label = tk.Label(self.content_frame, text=question_text,
+                                      font=('Comic Sans MS', 18, 'bold'),
+                                      bg='#E8F5E8', fg='#333',
+                                      wraplength=600)
+        self.question_label.pack(pady=20)
+        
+        # Answer options
+        self.create_quiz_options()
+        
+    def create_quiz_options(self):
+        options_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        options_frame.pack(pady=30)
+        
+        # Generate options
+        correct_answer = self.quiz_number
+        options = [correct_answer]
+        
+        while len(options) < 4:
+            option = random.randint(0, 10)
+            if option not in options:
+                options.append(option)
+        
+        random.shuffle(options)
+        
+        # Create option buttons in 2x2 grid
+        for i, option in enumerate(options):
+            row = i // 2
+            col = i % 2
+            
+            if row == 0:
+                if not hasattr(self, 'top_row'):
+                    self.top_row = tk.Frame(options_frame, bg='#E8F5E8')
+                    self.top_row.pack(pady=5)
+                frame = self.top_row
+            else:
+                if not hasattr(self, 'bottom_row'):
+                    self.bottom_row = tk.Frame(options_frame, bg='#E8F5E8')
+                    self.bottom_row.pack(pady=5)
+                frame = self.bottom_row
+            
+            btn = tk.Button(frame, text=str(option), 
+                           font=('Comic Sans MS', 24, 'bold'),
+                           bg='#9C27B0', fg='white',
+                           width=4, height=2,
+                           command=lambda opt=option: self.check_quiz_answer(opt),
+                           relief='raised', bd=3)
+            btn.pack(side=tk.LEFT, padx=10)
+            
+        # Next question button (hidden initially)
+        self.next_quiz_btn = tk.Button(self.content_frame, text="🎯 Next Question", 
+                                      font=('Comic Sans MS', 14, 'bold'),
+                                      bg='#4CAF50', fg='white',
+                                      command=self.show_quiz_mode,
+                                      relief='raised', bd=3)
+        
+    def show_counting_mode(self):
+        self.game_mode = 'counting'
+        self.clear_content()
+        
+        # Instructions
+        tk.Label(self.content_frame, text="🔢 Count the objects and click the number!",
+                font=('Comic Sans MS', 16, 'bold'),
+                bg='#E8F5E8', fg='#333').pack(pady=20)
+        
+        # Generate random counting exercise
+        objects = ['🍎', '⭐', '🚗', '🐱', '🌸', '⚽', '🎈', '🦋', '🍌', '🌺']
+        self.counting_object = random.choice(objects)
+        self.counting_number = random.randint(1, 10)
+        
+        # Show objects
+        objects_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        objects_frame.pack(pady=20)
+        
+        objects_per_row = 5
+        rows = math.ceil(self.counting_number / objects_per_row)
+        
+        for row in range(rows):
+            row_frame = tk.Frame(objects_frame, bg='#E8F5E8')
+            row_frame.pack(pady=5)
+            
+            objects_in_row = min(objects_per_row, self.counting_number - row * objects_per_row)
+            for i in range(objects_in_row):
+                obj_label = tk.Label(row_frame, text=self.counting_object, 
+                                    font=('Comic Sans MS', 25),
+                                    bg='#E8F5E8')
+                obj_label.pack(side=tk.LEFT, padx=5)
+        
+        # Number buttons
+        buttons_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        buttons_frame.pack(pady=30)
+        
+        tk.Label(buttons_frame, text="How many do you see?", 
+                font=('Comic Sans MS', 14, 'bold'),
+                bg='#E8F5E8', fg='#333').pack(pady=10)
+        
+        numbers_frame = tk.Frame(buttons_frame, bg='#E8F5E8')
+        numbers_frame.pack()
+        
+        for i in range(1, 11):
+            btn = tk.Button(numbers_frame, text=str(i), 
+                           font=('Comic Sans MS', 16, 'bold'),
+                           bg='#FF9800', fg='white',
+                           width=3, height=2,
+                           command=lambda n=i: self.check_counting_answer(n),
+                           relief='raised', bd=3)
+            btn.pack(side=tk.LEFT, padx=2)
+            
+        # Next counting exercise button
+        self.next_counting_btn = tk.Button(self.content_frame, text="🔢 Next Exercise", 
+                                          font=('Comic Sans MS', 14, 'bold'),
+                                          bg='#4CAF50', fg='white',
+                                          command=self.show_counting_mode,
+                                          relief='raised', bd=3)
+        
+    def show_math_mode(self):
+        self.game_mode = 'math'
+        self.clear_content()
+        
+        # Instructions
+        tk.Label(self.content_frame, text="➕ Simple Math Problems!",
+                font=('Comic Sans MS', 16, 'bold'),
+                bg='#E8F5E8', fg='#333').pack(pady=20)
+        
+        # Generate simple math problem
+        operation = random.choice(['+', '-'])
+        
+        if operation == '+':
+            self.math_num1 = random.randint(1, 5)
+            self.math_num2 = random.randint(1, 5)
+            self.math_answer = self.math_num1 + self.math_num2
+            problem_text = f"{self.math_num1} + {self.math_num2} = ?"
+        else:
+            self.math_num1 = random.randint(5, 10)
+            self.math_num2 = random.randint(1, self.math_num1)
+            self.math_answer = self.math_num1 - self.math_num2
+            problem_text = f"{self.math_num1} - {self.math_num2} = ?"
+        
+        # Show problem
+        tk.Label(self.content_frame, text=problem_text,
+                font=('Comic Sans MS', 30, 'bold'),
+                bg='#E8F5E8', fg='#2E7D32').pack(pady=30)
+        
+        # Visual representation
+        visual_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        visual_frame.pack(pady=20)
+        
+        if operation == '+':
+            # Show addition visually
+            left_frame = tk.Frame(visual_frame, bg='#E8F5E8')
+            left_frame.pack(side=tk.LEFT, padx=20)
+            
+            for i in range(self.math_num1):
+                tk.Label(left_frame, text="●", 
+                        font=('Comic Sans MS', 20, 'bold'),
+                        bg='#E8F5E8', fg='#4CAF50').pack()
+            
+            tk.Label(visual_frame, text="+", 
+                    font=('Comic Sans MS', 30, 'bold'),
+                    bg='#E8F5E8', fg='#333').pack(side=tk.LEFT, padx=10)
+            
+            right_frame = tk.Frame(visual_frame, bg='#E8F5E8')
+            right_frame.pack(side=tk.LEFT, padx=20)
+            
+            for i in range(self.math_num2):
+                tk.Label(right_frame, text="●", 
+                        font=('Comic Sans MS', 20, 'bold'),
+                        bg='#E8F5E8', fg='#2196F3').pack()
+        
+        # Answer buttons
+        answers_frame = tk.Frame(self.content_frame, bg='#E8F5E8')
+        answers_frame.pack(pady=30)
+        
+        # Generate answer options
+        correct = self.math_answer
+        options = [correct]
+        
+        while len(options) < 4:
+            option = random.randint(0, 15)
+            if option not in options:
+                options.append(option)
+        
+        random.shuffle(options)
+        
+        for i, option in enumerate(options):
+            if i % 2 == 0:
+                row_frame = tk.Frame(answers_frame, bg='#E8F5E8')
+                row_frame.pack(pady=5)
+            
+            btn = tk.Button(row_frame, text=str(option), 
+                           font=('Comic Sans MS', 20, 'bold'),
+                           bg='#9C27B0', fg='white',
+                           width=4, height=2,
+                           command=lambda opt=option: self.check_math_answer(opt),
+                           relief='raised', bd=3)
+            btn.pack(side=tk.LEFT, padx=10)
+            
+        # Next problem button
+        self.next_math_btn = tk.Button(self.content_frame, text="➕ Next Problem", 
+                                      font=('Comic Sans MS', 14, 'bold'),
+                                      bg='#4CAF50', fg='white',
+                                      command=self.show_math_mode,
+                                      relief='raised', bd=3)
+        
+    def clear_content(self):
+        for widget in self.content_frame.winfo_children():
+            widget.destroy()
+        # Reset row frames
+        if hasattr(self, 'top_row'):
+            delattr(self, 'top_row')
+        if hasattr(self, 'bottom_row'):
+            delattr(self, 'bottom_row')
+            
+    def next_number(self):
+        if self.current_number < 10:
+            self.current_number += 1
+        else:
+            self.current_number = 0
+        self.update_learning_display()
+        
+    def previous_number(self):
+        if self.current_number > 0:
+            self.current_number -= 1
+        else:
+            self.current_number = 10
+        self.update_learning_display()
+        
+    def jump_to_number(self, number):
+        self.current_number = number
+        self.update_learning_display()
+        
+    def update_learning_display(self):
+        number_words = ["Zero", "One", "Two", "Three", "Four", "Five", 
+                       "Six", "Seven", "Eight", "Nine", "Ten"]
+        
+        self.number_display.config(text=str(self.current_number))
+        self.number_word.config(text=number_words[self.current_number])
+        self.fact_label.config(text=self.number_facts.get(self.current_number, "Amazing number!"))
+        self.examples_label.config(text=", ".join(self.number_examples.get(self.current_number, ["Great number!"])))
+        
+        # Update visual representation
+        for widget in self.content_frame.winfo_children():
+            if isinstance(widget, tk.Frame):
+                for child in widget.winfo_children():
+                    if isinstance(child, tk.Label) and child.cget('text') == "Visual:":
+                        parent = child.master
+                        # Clear and recreate visual
+                        for w in parent.winfo_children()[1:]:
+                            w.destroy()
+                        self.create_visual_representation(parent)
+                        break
+                        
+    def check_quiz_answer(self, selected):
+        self.total_questions += 1
+        
+        if selected == self.quiz_number:
+            self.score += 1
+            result_text = "🎉 Excellent! That's correct!"
+            result_color = '#4CAF50'
+        else:
+            result_text = f"❌ Oops! The correct answer is {self.quiz_number}"
+            result_color = '#F44336'
+            
+        self.update_score()
+        self.show_result(result_text, result_color)
+        self.next_quiz_btn.pack(pady=20)
+        
+    def check_counting_answer(self, selected):
+        self.total_questions += 1
+        
+        if selected == self.counting_number:
+            self.score += 1
+            result_text = f"🎉 Perfect! There are {self.counting_number} {self.counting_object}!"
+            result_color = '#4CAF50'
+        else:
+            result_text = f"❌ Try again! There are {self.counting_number} {self.counting_object}"
+            result_color = '#F44336'
+            
+        self.update_score()
+        self.show_result(result_text, result_color)
+        self.next_counting_btn.pack(pady=20)
+        
+    def check_math_answer(self, selected):
+        self.total_questions += 1
+        
+        if selected == self.math_answer:
+            self.score += 1
+            result_text = f"🎉 Amazing! {self.math_answer} is correct!"
+            result_color = '#4CAF50'
+        else:
+            result_text = f"❌ Close! The answer is {self.math_answer}"
+            result_color = '#F44336'
+            
+        self.update_score()
+        self.show_result(result_text, result_color)
+        self.next_math_btn.pack(pady=20)
+        
+    def update_score(self):
+        self.score_label.config(text=f"Score: {self.score}/{self.total_questions}")
+        
+    def show_result(self, text, color):
+        result_label = tk.Label(self.content_frame, text=text,
+                               font=('Comic Sans MS', 16, 'bold'),
+                               bg='#E8F5E8', fg=color)
+        result_label.pack(pady=20)
+        
+        # Disable all buttons
+        self.disable_buttons()
+        
+    def disable_buttons(self):
+        for widget in self.content_frame.winfo_children():
+            if isinstance(widget, tk.Frame):
+                for child in widget.winfo_children():
+                    if isinstance(child, tk.Frame):
+                        for button in child.winfo_children():
+                            if isinstance(button, tk.Button):
+                                button.config(state='disabled')
+                    elif isinstance(child, tk.Button):
+                        child.config(state='disabled')
+
+def main():
+    root = tk.Tk()

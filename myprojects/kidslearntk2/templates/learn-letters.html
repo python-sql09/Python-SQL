@@ -1,0 +1,143 @@
+<!--# --------------------------------------------------------------------------------------
+# Project Name : Kids Fun & Learn – Interactive Learning Platform for Kids (TK–Grade 1)
+# Author       : Deepa Ponnusamy
+# Email        : kpdeepa1980@gmail.com
+# GitHub       : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/kidslearn_tk
+# Date         : July 3, 2025 – Ongoing
+# Description  : A web-based interactive educational platform for kids in TK through 3rd grade.
+#                Features include fun games and learning modules for counting, addition,
+#                subtraction, letters, numbers, and shapes. Includes audio instructions, 
+#                emoji visuals, drawing canvas for writing practice, multi-level progression, 
+#                score tracking, background music, user login/signup, and menu navigation 
+#                based on grade level.
+#---------------------------------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn Letters</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #fff3e0;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #ff7043;
+    }
+    .letters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .letter {
+      font-size: 2rem;
+      background-color: #ffccbc;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 6px #aaa;
+      transition: background-color 0.3s;
+    }
+    .letter:hover {
+      background-color: #ffab91;
+    }
+    #canvas-container {
+      margin-top: 2rem;
+    }
+    canvas {
+      border: 2px dashed #ff7043;
+      background-color: #ffffff;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #81d4fa;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+  <body>
+    <h1><button onclick="goToMenu()" 
+    style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
+    🏠 Menu
+  </button></h1>
+  <h1>🔠 Learn Letters</h1>
+
+<!-- Uppercase -->
+<h2 style="color: #ff7043;">Capital Letters</h2>
+<div class="letters" id="uppercase"></div>
+
+<!-- Lowercase -->
+<h2 style="color: #ff7043;">Small Letters</h2>
+<div class="letters" id="lowercase"></div>
+
+  <div id="canvas-container">
+    <h2>📝 Practice Writing</h2>
+    <canvas id="drawCanvas" width="400" height="300"></canvas><br>
+    <button onclick="clearCanvas()">🧹 Clear</button>
+  </div>
+
+  <script>
+  function goToMenu() {
+    const grade = localStorage.getItem("selected_grade") || "tk";
+    window.location.href = `menu-${grade}.html`;
+  }
+
+  const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+  const uppercaseContainer = document.getElementById('uppercase');
+  const lowercaseContainer = document.getElementById('lowercase');
+
+  function createLetterButtons(container, lettersArray) {
+    lettersArray.forEach(letter => {
+      const span = document.createElement('div');
+      span.className = 'letter';
+      span.textContent = letter;
+      span.onclick = () => speak(letter);
+      container.appendChild(span);
+    });
+  }
+
+  createLetterButtons(uppercaseContainer, uppercaseLetters);
+  createLetterButtons(lowercaseContainer, lowercaseLetters);
+
+  function speak(text) {
+    const msg = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(msg);
+  }
+
+  // Drawing functionality
+  const canvas = document.getElementById('drawCanvas');
+  const ctx = canvas.getContext('2d');
+  let drawing = false;
+
+  canvas.addEventListener('mousedown', () => drawing = true);
+  canvas.addEventListener('mouseup', () => drawing = false);
+  canvas.addEventListener('mouseout', () => drawing = false);
+  canvas.addEventListener('mousemove', draw);
+
+  function draw(event) {
+    if (!drawing) return;
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    ctx.fillStyle = '#4a148c';
+    ctx.beginPath();
+    ctx.arc(x, y, 4, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+</script>
+</body>
+</html>

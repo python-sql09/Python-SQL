@@ -1,0 +1,29 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}KidsLearn{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>🎓 KidsLearn</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">🏠 Home</a>
+      <a href="{{ url_for('learn_letters') }}">🔤 Letters</a>
+      <a href="{{ url_for('learn_numbers') }}">🔢 Numbers</a>
+      <a href="{{ url_for('learn_shapes') }}">🟢 Shapes</a>
+      <!-- Add more nav links as needed -->
+    </nav>
+  </header>
+
+  <audio autoplay loop>
+    <source src="{{ url_for('static', filename='music/kids-bgm.mp3') }}" type="audio/mpeg">
+  </audio>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

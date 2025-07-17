@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TK Menu - Kids Fun & Learn</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <style>
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .menu-card {
+      width: 180px;
+      height: 180px;
+      background-color: #fff8f4;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #E91E63;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .menu-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎓 TK Grade Learning Menu</h1>
+
+  <div class="menu-container">
+    <a href="uppercase.html" class="menu-card">
+      <div class="emoji">🔠</div>
+      Learn Uppercase   
+    </a>
+    <a href="lowercase.html" class="menu-card">
+      <div class="emoji">🔤</div>
+      Learn Lowercase
+    </a>
+    <a href="kids-learn-letters.html" class="menu-card">
+      <div class="emoji">🧒</div>
+      Kids Learn Letters
+    </a>
+    <a href="learn-numbers.html" class="menu-card">
+      <div class="emoji">🔢</div>
+      Learn Numbers
+    </a>
+    <a href="kids-learn-numbers.html" class="menu-card">
+      <div class="emoji">👶</div>
+      Kids Learn Numbers
+    </a>
+    <a href="connect-letters.html" class="menu-card">
+      <div class="emoji">✏️</div>
+      Connect Letters
+    </a>
+    <a href="connect-numbers.html" class="menu-card">
+      <div class="emoji">🔗</div>
+      Connect Numbers
+    </a>
+  </div>
+
+  <button onclick="goHome()">🏠 Back to Home</button>
+
+  <script>
+    function goHome() {
+      localStorage.removeItem("selected_grade");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

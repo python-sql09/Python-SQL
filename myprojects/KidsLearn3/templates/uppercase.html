@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Learn Letters</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <style>
+    .letter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      gap: 15px;
+      margin: 2rem auto;
+      max-width: 600px;
+      font-size: 2rem;
+      color: #33691e;
+    }
+
+    .letter {
+      background-color: #f0fff0;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .letter:hover {
+      transform: scale(1.2);
+      background-color: #dcedc8;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔤 Learn Letters</h1>
+  <p>Click a letter to hear its sound!</p>
+
+  <div class="letter-grid">
+    <!-- A–Z -->
+    <span class="letter" onclick="speak('A')">A</span>
+    <span class="letter" onclick="speak('B')">B</span>
+    <span class="letter" onclick="speak('C')">C</span>
+    <span class="letter" onclick="speak('D')">D</span>
+    <span class="letter" onclick="speak('E')">E</span>
+    <span class="letter" onclick="speak('F')">F</span>
+    <span class="letter" onclick="speak('G')">G</span>
+    <span class="letter" onclick="speak('H')">H</span>
+    <span class="letter" onclick="speak('I')">I</span>
+    <span class="letter" onclick="speak('J')">J</span>
+    <span class="letter" onclick="speak('K')">K</span>
+    <span class="letter" onclick="speak('L')">L</span>
+    <span class="letter" onclick="speak('M')">M</span>
+    <span class="letter" onclick="speak('N')">N</span>
+    <span class="letter" onclick="speak('O')">O</span>
+    <span class="letter" onclick="speak('P')">P</span>
+    <span class="letter" onclick="speak('Q')">Q</span>
+    <span class="letter" onclick="speak('R')">R</span>
+    <span class="letter" onclick="speak('S')">S</span>
+    <span class="letter" onclick="speak('T')">T</span>
+    <span class="letter" onclick="speak('U')">U</span>
+    <span class="letter" onclick="speak('V')">V</span>
+    <span class="letter" onclick="speak('W')">W</span>
+    <span class="letter" onclick="speak('X')">X</span>
+    <span class="letter" onclick="speak('Y')">Y</span>
+    <span class="letter" onclick="speak('Z')">Z</span>
+  </div>
+
+  <button onclick="goBack()">🔙 Back to Menu</button>
+
+  <script>
+    function speak(letter) {
+      const msg = new SpeechSynthesisUtterance(letter);
+      window.speechSynthesis.speak(msg);
+    }
+
+    function goBack() {
+      const grade = localStorage.getItem("selected_grade") || "tk";
+      window.location.href = `menu-${grade}.html`;
+    }
+  </script>
+</body>
+</html>

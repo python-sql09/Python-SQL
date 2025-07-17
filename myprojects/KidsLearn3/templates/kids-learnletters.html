@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kids Learn Letters</title>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+<body>
+  <h1>🧒 Kids Learn Letters</h1>
+  <p>Click on a letter to hear it:</p>
+  <div style="font-size: 4rem; color: #33691e; cursor: pointer;">
+    <span onclick="speak('A')">A</span> 
+    <span onclick="speak('B')">B</span> 
+    <span onclick="speak('C')">C</span> 
+    <span onclick="speak('D')">D</span> 
+    <span onclick="speak('E')">E</span> 
+    <span onclick="speak('F')">F</span> 
+    <span onclick="speak('G')">G</span> 
+    <span onclick="speak('H')">H</span> 
+    <span onclick="speak('I')">I</span> 
+    <span onclick="speak('J')">J</span>
+    <!-- Add more letters as desired -->
+  </div>
+
+  <button onclick="goBack()">🔙 Back to Menu</button>
+
+  <script>
+    function speak(letter) {
+      const msg = new SpeechSynthesisUtterance(letter);
+      window.speechSynthesis.speak(msg);
+    }
+    function goBack() {
+      const grade = localStorage.getItem('selected_grade') || 'tk';
+      window.location.href = `menu-${grade}.html`;
+    }
+  </script>
+</body>
+</html>

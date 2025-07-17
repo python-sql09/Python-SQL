@@ -1,0 +1,222 @@
+<!--# --------------------------------------------------------------------------------------
+# Project Name : Kids Fun & Learn – Interactive Learning Platform for Kids (TK–Grade 1)
+# Author       : Deepa Ponnusamy
+# Email        : kpdeepa1980@gmail.com
+# GitHub       : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/KidsLearn
+# Date         : July 3, 2025 – Ongoing
+# Description  : A web-based interactive educational platform for kids in TK through 3rd grade.
+#                Features include fun games and learning modules for counting, addition,
+#                subtraction, letters, numbers, and shapes. Includes audio instructions, 
+#                emoji visuals, drawing canvas for writing practice, multi-level progression, 
+#                score tracking, background music, user login/signup, and menu navigation 
+#                based on grade level.
+#---------------------------------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn Addition</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #fce4ec;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #ec407a;
+    }
+    #question {
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+    .emoji-set {
+      font-size: 2.5rem;
+      margin: 1rem;
+    }
+    .choices {
+      margin: 2rem 0;
+    }
+    .choices button {
+      margin: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      font-size: 1.2rem;
+      border: none;
+      background-color: #f8bbd0;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #feedback, #stars {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    #score {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    #final {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      color: green;
+    }
+    #menu-btn {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #81d4fa;
+      cursor: pointer;
+    }
+    button.top-btn {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="top-btn" onclick="goToMenu()">🏠 Menu</button>
+  <button class="top-btn" style="left: 9rem; background-color: #e53935;" onclick="logout()">🚪 Logout</button>
+
+  <h1>➕ Learn Addition</h1>
+  <audio id="bg-music" autoplay loop>
+    <source src="music/kids-bgm.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+  <button onclick="toggleMusic()" style="margin-bottom: 1rem; background-color: #ffd54f; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer;">
+    🔊 Toggle Music
+  </button>
+
+  <div id="question"></div>
+  <div class="emoji-set" id="set1"></div>
+  <div style="font-size: 2rem;">+</div>
+  <div class="emoji-set" id="set2"></div>
+  <div class="choices" id="choices"></div>
+  <div id="feedback"></div>
+  <div id="score"></div>
+  <div id="stars"></div>
+  <div id="final"></div>
+  <button id="menu-btn" onclick="goToMenu()">🏠 Back to Menu</button>
+
+  <script>
+    const emojis = ['🍎','🍓','🍊','🍇','🍉','🍌','🍍','🥝'];
+    const user = localStorage.getItem("current_user");
+    if (!user) window.location.href = "login.html";
+
+    let level = 1;
+    let questionNumber = 0;
+    let score = 0;
+    const questionsPerLevel = 15;
+    const maxLevels = 15;
+    let correctAnswer = 0;
+
+    function goToMenu() {
+      const grade = localStorage.getItem("selected_grade") || "tk";
+      window.location.href = `menu-${grade}.html`;
+    }
+
+    function logout() {
+      localStorage.removeItem("current_user");
+      window.location.href = "login.html";
+    }
+
+    function speak(text) {
+      const msg = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(msg);
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      music.paused ? music.play() : music.pause();
+    }
+
+    function generateQuestion() {
+      const set1 = document.getElementById("set1");
+      const set2 = document.getElementById("set2");
+      const question = document.getElementById("question");
+      const choices = document.getElementById("choices");
+      const feedback = document.getElementById("feedback");
+      const scoreBox = document.getElementById("score");
+      const final = document.getElementById("final");
+      const menuBtn = document.getElementById("menu-btn");
+      const starsBox = document.getElementById("stars");
+
+      if (questionNumber >= questionsPerLevel) {
+        let levelStars = '⭐'.repeat(score >= 12 ? 3 : score >= 8 ? 2 : score >= 4 ? 1 : 0);
+        starsBox.textContent = `🌟 Level ${level} Stars: ${levelStars}`;
+        if (level === maxLevels) {
+          final.textContent = `🎉 You completed all levels! Final Score: ${score} / ${questionsPerLevel * maxLevels}`;
+          speak("Congratulations! You finished all levels!");
+          menuBtn.style.display = "inline-block";
+          return;
+        } else {
+          alert(`🎉 Great job! Moving to Level ${level + 1}`);
+          level++;
+          questionNumber = 0;
+        }
+      }
+
+      feedback.textContent = "";
+      menuBtn.style.display = "none";
+      final.textContent = "";
+
+      const rangeStart = (level - 1) * 3 + 1;
+      const rangeEnd = rangeStart + 4;
+
+      const num1 = Math.floor(Math.random() * (rangeEnd - rangeStart + 1)) + rangeStart;
+      const num2 = Math.floor(Math.random() * (rangeEnd - rangeStart + 1)) + rangeStart;
+
+      correctAnswer = num1 + num2;
+
+      const emoji = emojis[Math.floor(Math.random() * emojis.length)];
+      set1.textContent = emoji.repeat(num1);
+      set2.textContent = emoji.repeat(num2);
+      question.textContent = `What is ${num1} + ${num2} ?`;
+
+      speak(`${num1} plus ${num2}. What is the answer?`);
+
+      let options = new Set();
+      options.add(correctAnswer);
+      while (options.size < 3) {
+        const fake = correctAnswer + Math.floor(Math.random() * 5) - 2;
+        if (fake > 0 && fake !== correctAnswer) options.add(fake);
+      }
+
+      const shuffled = Array.from(options).sort(() => Math.random() - 0.5);
+      choices.innerHTML = "";
+      shuffled.forEach(option => {
+        const btn = document.createElement("button");
+        btn.textContent = option;
+        btn.onclick = () => checkAnswer(option);
+        choices.appendChild(btn);
+      });
+
+      scoreBox.textContent = `Level ${level} | Question ${questionNumber + 1} / ${questionsPerLevel} | Score: ${score}`;
+    }
+
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedback");
+      if (answer === correctAnswer) {
+        feedback.style.color = "green";
+        feedback.textContent = "✅ Correct!";
+        score++;
+      } else {
+        feedback.style.color = "red";
+        feedback.textContent = `❌ Oops! Answer was ${correctAnswer}.`;
+      }
+      questionNumber++;
+      setTimeout(generateQuestion, 1500);
+    }
+
+    generateQuestion();
+  </script>
+</body>
+</html>

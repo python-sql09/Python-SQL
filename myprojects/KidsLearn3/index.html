@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🔤 Learn A-Z + Puzzle Game with Level Unlocks</title>
+  <style>
+    body {
+      background-color: #FFF8DC;
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 { color: #8B0000; }
+    button {
+      font-size: 18px;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #learn-letters button {
+      background-color: #E91E63;
+      color: white;
+    }
+    #learn-letters button:hover {
+      background-color: #AD1457;
+    }
+    #mode-buttons button {
+      background-color: #2196F3;
+      color: white;
+    }
+    #mode-buttons button:hover {
+      background-color: #1976D2;
+    }
+    .level-button {
+      background-color: #FF9800;
+      color: white;
+    }
+    .level-button:disabled {
+      background-color: #ccc;
+      color: #666;
+    }
+    #learn-word, #word, #result, #timer, #score {
+      margin-top: 15px;
+      font-size: 20px;
+    }
+    .options button {
+      font-size: 24px;
+      margin: 8px;
+      background-color: #2196F3;
+      color: white;
+    }
+    .options button:hover {
+      background-color: #1976D2;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔤 Learn A-Z & 🧩 Puzzle with Level Unlocks</h1>
+
+  <div id="mode-buttons">
+    <button onclick="showLearnMode()">📚 Learn A-Z</button>
+    <button onclick="showLevelSelect()">🧩 Puzzle Mode</button>
+  </div>
+
+  <!-- Learn Mode -->
+  <div id="learn-container" style="display:none;">
+    <h2>Learn Letters</h2>
+    <div id="learn-letters"></div>
+    <div id="learn-word"></div>
+  </div>
+
+  <!-- Level Select -->
+  <div id="level-select" style="display:none;">
+    <h2>Choose Level</h2>
+    <button class="level-button" onclick="startLevel(1)">Level 1</button>
+    <button class="level-button" id="level2-btn" onclick="startLevel(2)" disabled>Level 2 🔒</button>
+  </div>
+
+  <!-- Puzzle Mode -->
+  <div id="puzzle-container" style="display:none;">
+    <div id="timer"></div>
+    <div id="word"></div>
+    <div class="options" id="options"></div>
+    <div id="result"></div>
+    <button id="next-btn" onclick="nextPuzzle()">➡️ Next Puzzle</button>
+    <div id="score">Score: 0/0</div>
+  </div>
+
+  <script>
+    const wordsByLetter = {
+      A: "Apple", B: "Ball", C: "Cat", D: "Dog", E: "Egg", F: "Fish", G: "Grapes",
+      H: "Hat", I: "Igloo", J: "Jug", K: "Kite", L: "Lion", M: "Monkey", N: "Nest",
+      O: "Orange", P: "Pen", Q: "Queen", R: "Rabbit", S: "Sun", T: "Tiger", U: "Umbrella",
+      V: "Violin", W: "Watch", X: "Xylophone", Y: "Yak", Z: "Zebra"
+    };
+
+    const puzzleLevels = {
+      1: ["CAT", "DOG", "BAT", "RAT", "FAN"],
+      2: ["PEN", "BED", "HAT", "PAN", "SUN"]
+    };
+
+    let currentLevel = 1;
+    let words = [];
+    let index = 0;
+    let correctLetter = "";
+    let score = 0;
+    let total = 0;
+    let timer, countdown, answered;
+
+    function showLearnMode() {
+      document.getElementById('learn-container').style.display = 'block';
+      document.getElementById('level-select').style.display = 'none';
+      document.getElementById('puzzle-container').style.display = 'none';
+      document.getElementById('learn-letters').innerHTML = '';
+      document.getElementById('learn-word').textContent = '';
+
+      for (const letter in wordsByLetter) {
+        const btn = document.createElement('button');
+        btn.textContent = `${letter} / ${letter.toLowerCase()}`;
+        btn.onclick = () => {
+          const word = wordsByLetter[letter];
+          document.getElementById('learn-word').textContent = `${letter} / ${letter.toLowerCase()} is for ${word}`;
+          const utterance = new SpeechSynthesisUtterance(`${letter}, is for ${word}`);
+          speechSynthesis.cancel();
+          speechSynthesis.speak(utterance);
+        };
+        document.getElementById('learn-letters').appendChild(btn);
+      }
+    }
+
+    function showLevelSelect() {
+      document.getElementById('learn-container').style.display = 'none';
+      document.getElementById('puzzle-container').style.display = 'none';
+      document.getElementById('level-select').style.display = 'block';
+
+      if (localStorage.getItem("level2_unlocked") === "true") {
+        document.getElementById("level2-btn").disabled = false;
+        document.getElementById("level2-btn").textContent = "Level 2 ✅";
+      }
+    }
+
+    function startLevel(level) {
+      currentLevel = level;
+      words = puzzleLevels[level];
+      index = 0;
+      score = 0;
+      total = 0;
+      document.getElementById("score").textContent = "Score: 0/0";
+      document.getElementById("level-select").style.display = "none";
+      document.getElementById("puzzle-container").style.display = "block";
+      nextPuzzle();
+    }
+
+    function nextPuzzle() {
+      if (index >= words.length) {
+        document.getElementById("word").textContent = "🎉 Level Complete!";
+        document.getElementById("options").innerHTML = "";
+        document.getElementById("timer").textContent = "";
+        document.getElementById("next-btn").style.display = "none";
+
+        if (currentLevel === 1 && score >= 3) {
+          localStorage.setItem("level2_unlocked", "true");
+        }
+        return;
+      }
+
+      answered = false;
+      countdown = 10;
+      const word = words[index];
+      const missing = Math.floor(Math.random() * word.length);
+      correctLetter = word[missing];
+      const display = word.split("").map((c, i) => i === missing ? "_" : c).join(" ");
+      document.getElementById("word").textContent = display;
+      document.getElementById("result").textContent = "";
+      document.getElementById("next-btn").style.display = "none";
+      showOptions(correctLetter);
+      startTimer();
+    }
+
+    function showOptions(correct) {
+      const options = new Set([correct]);
+      while (options.size < 4) {
+        options.add(String.fromCharCode(65 + Math.floor(Math.random() * 26)));
+      }
+      const arr = Array.from(options).sort(() => 0.5 - Math.random());
+      const container = document.getElementById('options');
+      container.innerHTML = '';
+      arr.forEach(l => {
+        const btn = document.createElement('button');
+        btn.textContent = l;
+        btn.onclick = () => checkAnswer(l);
+        container.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(letter) {
+      if (answered) return;
+      answered = true;
+      clearInterval(timer);
+      total++;
+      if (letter === correctLetter) {
+        score++;
+        document.getElementById("result").textContent = "✅ Correct!";
+      } else {
+        document.getElementById("result").textContent = `❌ Wrong! It was ${correctLetter}`;
+      }
+      document.getElementById("score").textContent = `Score: ${score}/${total}`;
+      index++;
+      document.getElementById("next-btn").style.display = "inline-block";
+    }
+
+    function startTimer() {
+      document.getElementById("timer").textContent = `⏱️ 10s`;
+      timer = setInterval(() => {
+        countdown--;
+        document.getElementById("timer").textContent = `⏱️ ${countdown}s`;
+        if (countdown <= 0) {
+          clearInterval(timer);
+          if (!answered) checkAnswer("");
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

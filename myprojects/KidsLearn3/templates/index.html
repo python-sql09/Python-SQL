@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌈 Kids Fun & Learn</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fff3e0, #ffe0f7);
+      font-family: 'Comic Sans MS', cursive;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background-color: #fff8dc;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 0 20px #f8bbd0;
+    }
+
+    h1 {
+      color: #ff4081;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #4caf50;
+      margin-bottom: 1.5rem;
+    }
+
+    select {
+      font-size: 1.2rem;
+      padding: 0.6rem;
+      border-radius: 10px;
+      background-color: #dcedc8;
+      border: none;
+    }
+
+    .start-btn {
+      margin-top: 1.5rem;
+    }
+
+    button {
+      background-color: #ff80ab;
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 15px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f06292;
+      transform: scale(1.05);
+    }
+
+    .emoji-banner {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    audio {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="emoji-banner">🎉🧠🎨📚🎵</div>
+    <h1>Welcome to Kids Fun & Learn</h1>
+    <p class="subtitle">
+      Explore letters, numbers, drawing, and games made just for kids from TK to 3rd grade!
+    </p>
+
+    <label for="grade">🎓 Choose Your Grade:</label><br /><br />
+    <select id="grade">
+      <option value="tk">TK (Transitional Kindergarten)</option>
+      <option value="k">Kindergarten</option>
+      <option value="1">Grade 1</option>
+      <option value="2">Grade 2</option>
+      <option value="3">Grade 3</option>
+    </select>
+
+    <div class="start-btn">
+      <button onclick="goToMenu()">🚀 Let's Go!</button>
+    </div>
+
+    <audio autoplay loop>
+      <source src="static/music/kids-happy-bgm.mp3" type="audio/mpeg" />
+      Your browser does not support background music.
+    </audio>
+  </div>
+
+  <script>
+    function goToMenu() {
+      const grade = document.getElementById("grade").value;
+      localStorage.setItem("selected_grade", grade);
+      window.location.href = `menu-${grade}.html`;
+    }
+  </script>
+</body>
+</html>

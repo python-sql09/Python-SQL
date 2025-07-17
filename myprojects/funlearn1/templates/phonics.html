@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>🎺 Phonics Sounds A–Z</title>
+<style>
+  body {
+    font-family: 'Comic Sans MS', cursive;
+    background: #f9fbe7;
+    text-align: center;
+    padding: 2rem;
+  }
+  h1 {
+    color: #388e3c;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .card:hover {
+    background: #e8f5e9;
+    transform: scale(1.03);
+  }
+  .letter {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+    color: #2e7d32;
+  }
+  .ipa {
+    font-size: 1.2rem;
+    color: #616161;
+    margin-bottom: 0.5rem;
+  }
+  .emoji {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
+  .example {
+    font-size: 1rem;
+    color: #424242;
+  }
+  button.back {
+    margin-top: 2rem;
+    background: #81c784;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  button.back:hover {
+    background: #66bb6a;
+  }
+</style>
+</head>
+<body>
+
+<h1>🎺 Phonics Sounds A–Z</h1>
+<div class="grid" id="phonicsGrid"></div>
+
+<button class="back" onclick="goBack()">🔙 Back to Menu</button>
+
+<script>
+  const phonics = [
+    { letter: "A", ipa: "/æ/", emoji: "🍎 🐊", example: "apple, alligator", sound: "a" },
+    { letter: "B", ipa: "/b/", emoji: "🦇 🧸", example: "bat, bear", sound: "b" },
+    { letter: "C", ipa: "/k/", emoji: "✂️ 🐱", example: "cut, cat", sound: "c" },
+    { letter: "D", ipa: "/d/", emoji: "💧 🐶", example: "dip, dog", sound: "d" },
+    { letter: "E", ipa: "/ɛ/", emoji: "🐘 🥚", example: "elephant, egg", sound: "e" },
+    { letter: "F", ipa: "/f/", emoji: "😂 🐸", example: "fun, frog", sound: "f" },
+    { letter: "G", ipa: "/g/", emoji: "🦒 🎁", example: "goat, get", sound: "g" },
+    { letter: "H", ipa: "/h/", emoji: "🎩 🔨", example: "hat, hammer", sound: "h" },
+    { letter: "I", ipa: "/ɪ/", emoji: "🍦 🧊", example: "ice, igloo", sound: "i" },
+    { letter: "J", ipa: "/ʤ/", emoji: "🏃‍♂️ 🍬", example: "jog, jelly", sound: "j" },
+    { letter: "K", ipa: "/k/", emoji: "🎒 🪁", example: "kit, kite", sound: "k" },
+    { letter: "L", ipa: "/l/", emoji: "👄 🦁", example: "lip, lion", sound: "l" },
+    { letter: "M", ipa: "/m/", emoji: "☕ 🐭 ", example: "mug, mouse", sound: "m" },
+    { letter: "N", ipa: "/n/", emoji: "👃 😴", example: "nap, nose", sound: "n" },
+    { letter: "O", ipa: "/ɒ/", emoji: "🐙 🐦", example: "octopus, ostrich", sound: "o" },
+    { letter: "P", ipa: "/p/", emoji: "🐷 🖊️", example: "pig, pen", sound: "p" },
+    { letter: "Q", ipa: "/kw/", emoji: "👑 	🪙", example: "queen, quarter", sound: "q" },
+    { letter: "R", ipa: "/r/", emoji: "🐇 🌹", example: "rabbit", sound: "r" },
+    { letter: "S", ipa: "/s/", emoji: "☀️ 🥄", example: "sun, spoon", sound: "s" },
+    { letter: "T", ipa: "/t/", emoji: "🐯 ⛺", example: "tiger, tent", sound: "t" },
+    { letter: "U", ipa: "/ʌ/", emoji: "☔️ 🦄", example: "umbrella, unicorn", sound: "u" },
+    { letter: "V", ipa: "/v/", emoji: "🎿 🧹", example: "violin, vacuum", sound: "v" },
+    { letter: "W", ipa: "/w/", emoji: "🌊 🪵", example: "water, wood", sound: "w" },
+    { letter: "X", ipa: "/ks/", emoji: "📦 🎼 ", example: "box, xylophone", sound: "x" },
+    { letter: "Y", ipa: "/j/", emoji: "🧶 🐂", example: "yarn, yak", sound: "y" },
+    { letter: "Z", ipa: "/z/", emoji: "🦓 🧥", example: "zebra, zipper", sound: "z" },
+  ];
+
+  const letterToWords = {
+    a: ["apple", "alligator"],
+    b: ["bat", "bear"],
+    c: ["cut", "cat"],
+    d: ["dip", "dog"],
+    e: ["egg", "elephant"],
+    f: ["fun", "frog"],
+    g: ["goat", "get"],
+    h: ["hat", "hammer"],
+    i: ["ice", "igloo"],
+    j: ["jog", "jelly"],
+    k: ["kit", "kite"],
+    l: ["lip", "lion"],
+    m: ["mug", "mouse"],
+    n: ["nap", "nose"],
+    o: ["octopus", "ostrich"],
+    p: ["pig", "pen"],
+    q: ["queen", "quarter"],
+    r: ["rabbit", "rose"],
+    s: ["sun", "spoon"],
+    t: ["tiger", "tent"],
+    u: ["umbrella", "unicorn"],
+    v: ["violin", "vacuum"],
+    w: ["water", "wood"],
+    x: ["box", "xylophone"],
+    y: ["yarn", "yak"],
+    z: ["zebra", "zipper"],
+  };
+
+  function playSound(letter) {
+    const audio = new Audio(`../static/sounds/${letter}.wav`);
+    audio.onerror = () => alert(`Missing sound file: ${letter}.wav`);
+    audio.onended = () => speakWords(letter);
+    audio.play().catch(() => alert(`Could not play sound for ${letter}`));
+  }
+
+  function speakWords(letter) {
+    const words = letterToWords[letter.toLowerCase()];
+    if (!words || !window.speechSynthesis) return;
+
+    const utterance = new SpeechSynthesisUtterance(words.join(" and "));
+    utterance.lang = "en-US";
+    utterance.rate = 0.9; // slower for kids
+    window.speechSynthesis.speak(utterance);
+  }
+
+  window.onload = () => {
+    const grid = document.getElementById("phonicsGrid");
+    phonics.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.onclick = () => playSound(p.sound);
+      card.innerHTML = `
+        <div class="letter">${p.letter}</div>
+        <div class="ipa">${p.ipa}</div>
+        <div class="emoji">${p.emoji}</div>
+        <div class="example">${p.example}</div>
+      `;
+      grid.appendChild(card);
+    });
+  };
+
+  function goBack() {
+    const grade = localStorage.getItem("selected_grade") || "tk";
+    window.location.href = `menu-${grade}.html`;
+  }
+</script>
+
+</body>
+</html>

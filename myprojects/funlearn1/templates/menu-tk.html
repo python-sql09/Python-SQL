@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌈 TK Menu – Kids Fun & Learn</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to bottom, #e0f7fa, #fffde7);
+      text-align: center;
+      padding: 2rem;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #0288d1;
+      margin-bottom: 1rem;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .menu-button {
+      background-color: #81c784;
+      border: none;
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      font-size: 1.2rem;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.2s, background-color 0.3s;
+    }
+    .menu-button:hover {
+      background-color: #66bb6a;
+      transform: scale(1.05);
+    }
+    .emoji {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    audio {
+      display: block;
+      margin: 1rem auto;
+    }
+  </style>
+</head>
+<body>
+   <h1><button onclick="goToMenu()" 
+    style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
+    🏠 Menu
+  </button></h1>
+
+  <div class="top-bar">
+    <h1>👶 TK and Kindergarten Learning Menu</h1>
+  </div>
+
+  <h1>🎉 Welcome to TK and Kindergarten Learning Menu!</h1>
+
+  <div class="menu-grid">
+    <button class="menu-button" onclick="location.href='learn-letters.html'">
+      <span class="emoji">🧠</span>
+      Learn Letters
+    </button>
+    
+    <button class="menu-button" onclick="location.href='phonics.html'">
+      <span class="emoji">🔤</span>
+      Phonics Sounds
+    </button>
+    
+    <button class="menu-button" onclick="location.href='connect-letters.html'">
+      <span class="emoji">🔗</span>
+      Connect Letters
+    </button>
+
+    <button class="menu-button" onclick="location.href='handwriting.html'">
+      <span class="emoji">✍️</span>
+      Handwriting Practice
+    </button>
+
+    <button class="menu-button" onclick="location.href='learn-numbers.html'">
+      <span class="emoji">🔢</span>
+      Learn Numbers
+    </button>
+
+    <button class="menu-button" onclick="location.href='kids-learn-numbers.html'">
+      <span class="emoji">🤹‍♀️</span>
+      Kids Practice Numbers
+    </button>
+
+    <button class="menu-button" onclick="location.href='connect-numbers.html'">
+      <span class="emoji">🎯</span>
+      Connect Numbers Game
+    </button>
+  </div>
+
+  <audio autoplay loop>
+    <source src="static/music/kids-happy-bgm.mp3" type="audio/mp3">
+    Your browser does not support background music.
+  </audio>
+<script>
+  function goTo(page) {
+    window.location.href = page;
+  }
+
+  function goToMenu() {
+    window.location.href = 'index.html';
+  }
+
+  function logout() {
+    localStorage.removeItem("current_user");
+    window.location.href = 'login.html';
+  }
+</script>
+</body>
+</html>

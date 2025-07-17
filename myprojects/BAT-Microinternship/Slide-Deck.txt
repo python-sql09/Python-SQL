@@ -1,0 +1,103 @@
+🎯 SLIDE DECK: Optimizing Capital Structure at BAT
+📄 Slide 1: Cover Page
+Deepa Ponnusamy
+📞 +1 (747) 234-1109
+📧 deepa.ponnusamy@calbrightcollege.org
+🎓 Calbright College — Python for Data Science
+🎓 Expected Graduation: 2025
+🌐 GitHub: https://github.com/python-sql09
+📍 Burbank, CA 91502
+
+📊 Slide 2: Executive Summary
+Title:
+🔹 Optimizing Capital Structure to Strengthen Financial Flexibility
+
+Insight:
+BAT has high levels of debt (£36.95B in 2024) and incurred significant finance costs (£1.6B adjusted). While it maintains strong cash flow, this capital structure limits agility and increases exposure to macroeconomic volatility.
+
+Recommendation:
+Suspend or reduce share buyback program (£1.6B planned) and redirect funds toward debt reduction to:
+
+Lower interest burden and enhance profitability
+
+Improve credit ratings and investor confidence
+
+Provide room for strategic investments (e.g., Smokeless Products, R&D)
+
+Expected Impact:
+
+Potential savings of ~£1.6B
+
+Improved leverage ratio (already improved to 2.4x in 2024)
+
+More resilient long-term capital structure and higher retained earnings
+
+📈 Slide 3: Debt Trend (2022–2024)
+Year	Total Borrowings	YoY Change
+2022	£43.1B	—
+2023	£39.7B	-7.9%
+2024	£36.95B	-7.0%
+
+Leverage Ratio improved from 2.9x → 2.4x
+
+Significant progress, but £1.6B still spent on buybacks in 2024
+
+Finance cost in 2024: £1.6B adjusted — ~6% of total revenue
+
+📌 Source: BAT 2024 Annual Report, Financial Summary p.48, 55
+
+📊 Slide 4: Peer Comparison — Capital Structure
+Company	Debt/EBITDA	Interest Expense (B)	Share Buyback?
+BAT	2.4x	£1.6B (adj)	Yes (£1.6B)
+Altria	~2.1x	$1.0B	Yes (reduced)
+Philip Morris	~2.0x	$0.9B	Limited
+
+Competitors maintaining lower leverage
+
+BAT's higher buybacks during high-rate environment = riskier capital decision
+
+📌 Source: Annual reports (2023–2024), investor presentations
+
+💸 Slide 5: Alternative Scenario – Dividend + Debt Strategy
+Current Strategy:
+Dividend payout: £5.9B (240.24p/share)
+
+Share buyback: £1.6B (2024–25)
+
+Total shareholder returns: ~£7.5B
+
+Alternative:
+Maintain dividend
+
+Suspend buyback
+
+Use £1.6B for early debt repayment → save interest and reduce risk
+
+✅ Even a 1% reduction in financing cost (~£370M/year) compounds to long-term savings
+
+🟢 More flexibility to invest in:
+
+Smokeless innovation (17.5% of revenue)
+
+Expansion into Asia-Pacific/Oral category
+
+📚 Slide 6: Sources
+British American Tobacco 2024 Annual Report (Form 20-F)
+
+Financial Summary: pp. 48–55
+
+CFO Overview: p. 20–22
+
+Debt & Cash Flow: p. 55
+
+Sustainability & Strategy: p. 12–17
+
+Altria Group 2023 Annual Report
+
+Philip Morris 2023 Financial Results
+
+Yahoo Finance / Morningstar Peer Debt Ratios
+
+FT.com – Market Commentary on Debt Trends
+
+Would you like me to help you design this in Google Slides, PowerPoint, or Canva next? I can also provide downloadable files.

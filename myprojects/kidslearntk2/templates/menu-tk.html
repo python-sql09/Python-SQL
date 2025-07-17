@@ -1,0 +1,153 @@
+
+<!--# --------------------------------------------------------------------------------------
+# Project Name : Kids Fun & Learn – Interactive Learning Platform for Kids (TK–Grade 1)
+# Author       : Deepa Ponnusamy
+# Email        : kpdeepa1980@gmail.com
+# GitHub       : https://github.com/python-sql09/Python-SQL/tree/main/myprojects/KidsLearn
+# Date         : July 3, 2025 – Ongoing
+# Description  : A web-based interactive educational platform for kids in TK through 3rd grade.
+#                Features include fun games and learning modules for counting, addition,
+#                subtraction, letters, numbers, and shapes. Includes audio instructions, 
+#                emoji visuals, drawing canvas for writing practice, multi-level progression, 
+#                score tracking, background music, user login/signup, and menu navigation 
+#                based on grade level.
+#---------------------------------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TK Menu - KidsLearn</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #fffbe6;
+      text-align: center;
+      padding: 2rem;
+      color: #4e342e;
+    }
+    h1 {
+      color: #ff7043;
+    }
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .activity {
+      background-color: #ffe082;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+    .activity:hover {
+      background-color: #ffd54f;
+    }
+    .activity span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .top-bar button {
+      padding: 0.5rem 1rem;
+      background-color: #81d4fa;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <button onclick="goHome()">🏠 Home</button>
+    <h1>👶 TK Learning Menu</h1>
+    <button onclick="logout()">🚪 Logout</button>
+  </div>
+
+  <div class="activity-grid">
+    <div class="activity" onclick="goTo('learn-letters.html')">
+      <span>🔤</span>
+      Practice Letters
+    </div>
+
+    <div class="activity" onclick="goTo('kids-learn-letters.html')">
+      <span>🔤</span>
+      Learn Letters
+    </div>
+  
+    <div class="activity" onclick="goTo('handwriting.html')">
+      <span>🔠</span>
+      Handwriting Practice
+    </div>
+
+    <div class="activity" onclick="goTo('connect-letters.html')">
+      <span🔠></span>
+      Connect Letters (Dot-to-Dot)
+    </div>
+
+    <div class="activity" onclick="goTo('learn-numbers.html')">
+      <span>🔢</span>
+      Learn Numbers
+    </div>
+
+    <div class="activity" onclick="goTo('learn-shapes.html')">
+      <span>🔺</span>
+      Learn Shapes
+    </div>
+
+    <div class="activity" onclick="goTo('connect-numbers.html')">
+      <span>🔟</span>
+      Connect Numbers (Dot-to-Dot)
+    </div>
+
+    <div class="activity" onclick="goTo('count-items.html')">
+      <span>🍎</span>
+      Count the Items
+    </div>
+
+    <div class="activity" onclick="goTo('addition-game.html')">
+      <span>➕</span>
+      Addition Game
+    </div>
+
+    <div class="activity" onclick="goTo('subtraction-game.html')">
+      <span>➖</span>
+      Subtraction Game
+    </div>
+
+    <div class="activity" onclick="goTo('drawing.html')">
+      <span>🖍️</span>
+      Drawing Practice
+    </div>
+
+    <div class="activity" onclick="goTo('storytime.html')">
+      <span>📖</span>
+      Stories & Questions
+    </div>
+
+    
+
+  <script>
+    function goTo(page) {
+      window.location.href = page;
+    }
+    function goHome() {
+      window.location.href = 'index.html';
+    }
+    function logout() {
+      localStorage.removeItem("current_user");
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

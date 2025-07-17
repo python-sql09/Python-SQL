@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jai Market</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>🛍️ Jai Market</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      {% if user %}
+        <span>Welcome, {{ user }} | <a href="{{ url_for('logout') }}">Logout</a></span>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+      {% endif %}
+      <a href="#" onclick="showCart()">🛒 Cart (<span id="cartCount">0</span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Featured Products</h2>
+    <div id="product-list" class="grid"></div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeCart()" class="close">&times;</span>
+      <h3>Your Cart</h3>
+      <div id="cartItems"></div>
+      <p>Total: $<span id="cartTotal">0.00</span></p>
+      <button onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Jai Market</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>

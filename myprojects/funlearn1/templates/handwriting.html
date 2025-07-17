@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>✍️ Handwriting Practice A–Z</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #f9fafb;
+      padding: 20px;
+      text-align: center;
+      margin: 0;
+    }
+    .btn {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    .btn:disabled { background-color: #aaa; }
+    .color-picker button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #ddd;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    canvas {
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      cursor: crosshair;
+      max-width: 100%;
+    }
+    svg {
+      position: absolute;
+      pointer-events: none;
+    }
+    .wrapper {
+      position: relative;
+      display: inline-block;
+      max-width: 100%;
+    }
+    @media (max-width: 768px) {
+      canvas, svg {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="menu-tk.html">
+  <button style="position: absolute; top: 1rem; left: 1rem; padding: 0.5rem 1rem; background-color: #4caf50; color: white; border: none; border-radius: 8px;">
+    🔙 Back to Menu
+  </button>
+</a>
+
+  <h1>✍️ Handwriting Practice</h1>
+  <div id="letterHeading" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></div>
+
+  <!-- Color Palette -->
+  <div class="color-picker" id="colorPalette"></div>
+
+  <!-- Controls -->
+  <div>
+    <button class="btn" onclick="prevPage()">⬅️ Previous</button>
+    <span class="btn" id="pageInfo"></span>
+    <button class="btn" onclick="nextPage()">Next ➡️</button>
+    <button class="btn" onclick="clearCanvas()">🧹 Clear</button>
+    <button class="btn" onclick="downloadCanvas()">📥 Download</button>
+    <button class="btn" onclick="speakCurrent()">🔊 Speak</button>
+  </div>
+
+  <!-- Drawing Area -->
+  <div class="wrapper">
+    <svg width="800" height="600" id="guideLayer"></svg>
+    <canvas id="canvas" width="800" height="600"></canvas>
+  </div>
+
+  <script>
+    const alphabetData = [
+      { upper: 'A', lower: 'ɑ', emoji: '🐜' },
+      { upper: 'B', lower: 'b', emoji: '🐝' },
+      { upper: 'C', lower: 'c', emoji: '🐱' },
+      { upper: 'D', lower: 'd', emoji: '🐶' },
+      { upper: 'E', lower: 'e', emoji: '🐘' },
+      { upper: 'F', lower: 'f', emoji: '🐸' },
+      { upper: 'G', lower: 'g', emoji: '🦒' },
+      { upper: 'H', lower: 'h', emoji: '🏠' },
+      { upper: 'I', lower: 'i', emoji: '🍦' },
+      { upper: 'J', lower: 'j', emoji: '🕹️' },
+      { upper: 'K', lower: 'k', emoji: '🔑' },
+      { upper: 'L', lower: 'l', emoji: '🦁' },
+      { upper: 'M', lower: 'm', emoji: '🌝' },
+      { upper: 'N', lower: 'n', emoji: '🗞️' },
+      { upper: 'O', lower: 'o', emoji: '🐙' },
+      { upper: 'P', lower: 'p', emoji: '🅿️' },
+      { upper: 'Q', lower: 'q', emoji: '👸' },
+      { upper: 'R', lower: 'r', emoji: '🤖' },
+      { upper: 'S', lower: 's', emoji: '🐍' },
+      { upper: 'T', lower: 't', emoji: '🐯' },
+      { upper: 'U', lower: 'u', emoji: '☂️' },
+      { upper: 'V', lower: 'v', emoji: '🎻' },
+      { upper: 'W', lower: 'w', emoji: '🌊' },
+      { upper: 'X', lower: 'x', emoji: '❌' },
+      { upper: 'Y', lower: 'y', emoji: '🛳️' },
+      { upper: 'Z', lower: 'z', emoji: '🦓' }
+    ];
+
+    const numbers = Array.from({ length: 108 }, (_, i) => i + 1);
+    const totalPages = alphabetData.length + Math.ceil(numbers.length / 3);
+    let currentPage = 0;
+    let selectedColor = '#2563eb';
+    let isDrawing = false;
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const guideLayer = document.getElementById('guideLayer');
+    const pageInfo = document.getElementById('pageInfo');
+    const letterHeading = document.getElementById('letterHeading');
+
+    const colors = ['#2563eb', '#dc2626', '#16a34a', '#ca8a04', '#9333ea', '#c2410c', '#0891b2', '#be185d'];
+
+    function renderColorPalette() {
+      const container = document.getElementById('colorPalette');
+      colors.forEach(color => {
+        const btn = document.createElement('button');
+        btn.style.backgroundColor = color;
+        btn.onclick = () => selectedColor = color;
+        container.appendChild(btn);
+      });
+    }
+
+    function getCurrentContent() {
+      if (currentPage < alphabetData.length) {
+        return { type: 'letter', data: alphabetData[currentPage] };
+      } else {
+        const start = (currentPage - alphabetData.length) * 3;
+        return { type: 'number', data: numbers.slice(start, start + 3) };
+      }
+    }
+
+    function drawGuidelines(content) {
+      guideLayer.innerHTML = '';
+      for (let i = 0; i < 6; i++) {
+        const y = 99 + i * 80;
+        guideLayer.innerHTML += `
+          <line x1="20" y1="${y}" x2="780" y2="${y}" stroke="#666" stroke-width="2"/>
+          <line x1="20" y1="${y + 25}" x2="780" y2="${y + 25}" stroke="#999" stroke-width="1" stroke-dasharray="5,5"/>
+          <line x1="20" y1="${y + 50}" x2="780" y2="${y + 50}" stroke="#666" stroke-width="2"/>
+        `;
+      }
+
+      if (content.type === 'letter') {
+        const { upper, lower, emoji } = content.data;
+        letterHeading.textContent = `${upper} ${lower}   ${emoji}`;
+
+        // Row 1 - Big Letter and Emoji
+        guideLayer.innerHTML += `
+          <text x="400" y="60" font-size="60" font-family="Arial" fill="#222" text-anchor="middle">${upper} ${lower} ${emoji}</text>
+        `;
+
+        // Row 2 - Dotted Tracing Pairs (3x)
+        const positions = [120, 320, 520];
+        positions.forEach((x) => {
+          guideLayer.innerHTML += `
+            <text x="${x}" y="150" font-size="75" font-family="Arial" stroke="#bbb" stroke-width="2" stroke-dasharray="8,4" text-anchor="middle">${upper}</text>
+            <text x="${x + 60}" y="150" font-size="48" font-family="Arial" stroke="#bbb" stroke-width="2" stroke-dasharray="8,4" text-anchor="middle">${lower}</text>
+             <text x="${x}" y="225" font-size="64" font-family="Arial" fill="none" stroke="#bbb" stroke-width="2" stroke-dasharray="8,4" text-anchor="middle">${upper}</text>
+            <text x="${x + 60}" y="228" font-size="48" font-family="Arial" fill="none" stroke="#bbb" stroke-width="2" stroke-dasharray="8,4" text-anchor="middle">${lower}</text>
+  `         ;
+        });
+
+        
+      } else {
+        const nums = content.data;
+        letterHeading.textContent = `🔢 Numbers: ${nums.join(', ')}`;
+        nums.forEach((num, i) => {
+          const x = 180 + i * 200;
+          guideLayer.innerHTML += `
+            <text x="${x}" y="150" font-size="72" font-family="Arial" stroke="#bbb" stroke-width="2" stroke-dasharray="8,4" text-anchor="middle">${num}</text>
+          `;
+        });
+      }
+    }
+
+    function renderPage() {
+      const content = getCurrentContent();
+      drawGuidelines(content);
+      pageInfo.textContent = `Page ${currentPage + 1} of ${totalPages}`;
+      clearCanvas();
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages - 1) {
+        currentPage++;
+        renderPage();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        renderPage();
+      }
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function downloadCanvas() {
+      const link = document.createElement('a');
+      link.download = 'handwriting-practice.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+
+    function speakCurrent() {
+  const content = getCurrentContent();
+
+  if (content.type === 'letter') {
+    const { upper, emoji } = content.data;
+    let word = '';
+
+    // Define letter-to-word mapping (you can customize this further)
+    const words = {
+      A: 'Ant', B: 'Bee', C: 'Cat', D: 'Dog', E: 'Elephant', F: 'Frog', G: 'Giraffe',
+      H: 'House', I: 'Ice cream', J: 'Joystick', K: 'Key', L: 'Lion', M: 'Moon',
+      N: 'Newspaper', O: 'Octopus', P: 'Parking', Q: 'Queen', R: 'Robot',
+      S: 'Snake', T: 'Tiger', U: 'Umbrella', V: 'Violin', W: 'Wave',
+      X: 'X mark', Y: 'Yacht', Z: 'Zebra'
+    };
+
+    word = words[upper] || 'something';
+    const sentence = `${upper} is for ${word}`;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(new SpeechSynthesisUtterance(sentence));
+  } else {
+    // Numbers page
+    const sentence = content.data.join(', ');
+    speechSynthesis.cancel();
+    speechSynthesis.speak(new SpeechSynthesisUtterance(sentence));
+  }
+}
+
+    // Drawing logic
+    canvas.addEventListener('mousedown', (e) => {
+      isDrawing = true;
+      const { x, y } = canvas.getBoundingClientRect();
+      ctx.beginPath();
+      ctx.moveTo(e.clientX - x, e.clientY - y);
+    });
+    canvas.addEventListener('mousemove', (e) => {
+      if (!isDrawing) return;
+      const { x, y } = canvas.getBoundingClientRect();
+      ctx.lineTo(e.clientX - x, e.clientY - y);
+      ctx.strokeStyle = selectedColor;
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+    });
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mouseleave', () => isDrawing = false);
+
+    renderColorPalette();
+    renderPage();
+  </script>
+</body>
+</html>
