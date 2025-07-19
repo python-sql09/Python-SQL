@@ -73,10 +73,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const div = document.createElement("div");
         div.classList.add("product-card");
         div.innerHTML = `
-          <h3>${product.title}</h3>
-          <p>Price: $${product.price.toFixed(2)}</p>
-          <button onclick="addToCart(${product.id}, \`${product.title}\`, ${product.price})">Add to Cart</button>
-        `;
+        <img src="${product.image}" alt="${product.title}" class="product-image">
+        <h3>${product.emoji || "🛍️"} ${product.title}</h3>
+        <p>Price: $${product.price.toFixed(2)}</p>
+        <button onclick="addToCart(${product.id}, '${product.title}', ${product.price})">Add to Cart</button>
+`       ;
         productList.appendChild(div);
       });
     })
@@ -85,3 +86,93 @@ document.addEventListener("DOMContentLoaded", () => {
       productList.innerHTML = "<p>Failed to load products.</p>";
     });
 });
+
+// 🌗 Dark Mode Toggle
+const themeToggle = document.getElementById("themeToggle");
+themeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+  localStorage.setItem("theme", themeToggle.checked ? "dark" : "light");
+});
+
+// Load theme on page load
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  themeToggle.checked = true;
+}
+
+function loadCategory(category) {
+  fetch("/api/products")
+    .then((res) => res.json())
+    .then((products) => {
+      const filtered = products.filter(p => p.category === category);
+      const productList = document.getElementById("product-list");
+      productList.innerHTML = "";
+      filtered.forEach((product) => {
+        const div = document.createElement("div");
+        div.classList.add("product-card");
+        div.innerHTML = `
+          <img src="${product.image}" class="product-image" alt="${product.title}">
+          <h3>${product.title}</h3>
+          <p>Price: $${product.price}</p>
+          <button onclick="addToCart(${product.id}, '${product.title}', ${product.price})">Add to Cart</button>
+        `;
+        productList.appendChild(div);
+      });
+    });
+}
+
+function searchProducts() {
+  const term = document.getElementById("searchInput").value.toLowerCase();
+  fetch("/api/products")
+    .then((res) => res.json())
+    .then((products) => {
+      const filtered = products.filter(p => p.title.toLowerCase().includes(term));
+      const productList = document.getElementById("product-list");
+      productList.innerHTML = "";
+      filtered.forEach(product => {
+        const div = document.createElement("div");
+        div.classList.add("product-card");
+        div.innerHTML = `
+          <img src="${product.image}" class="product-image" alt="${product.title}">
+          <h3>${product.title}</h3>
+          <p>Price: $${product.price}</p>
+          <button onclick="addToCart(${product.id}, '${product.title}', ${product.price})">Add to Cart</button>
+        `;
+        productList.appendChild(div);
+      });
+    });
+}
+
+function showLogin() {
+  const modal = document.getElementById("authModal");
+  document.getElementById("loginForm").style.display = "block";
+  document.getElementById("signupForm").style.display = "none";
+  modal.style.display = "flex";
+}
+
+function showSignup() {
+  const modal = document.getElementById("authModal");
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("signupForm").style.display = "block";
+  modal.style.display = "flex";
+}
+
+function closeAuth() {
+  document.getElementById("authModal").style.display = "none";
+}
+
+function showCart() {
+  document.getElementById("cartModal").style.display = "flex";
+}
+
+function closeCart() {
+  document.getElementById("cartModal").style.display = "none";
+}
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const show = "{{ show_modal }}";
+    if (show === "login") showLogin();
+    else if (show === "signup") showSignup();
+  });
+</script>
