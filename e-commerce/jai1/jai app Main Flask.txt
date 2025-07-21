@@ -1,0 +1,23 @@
+jai/
+│
+├── app.py                     # Main Flask app
+├── models.py                  # SQLAlchemy models
+├── forms.py                   # WTForms for login/signup/product
+├── config.py                  # Config settings
+├── requirements.txt           # Python dependencies
+│
+├── static/
+│   └── uploads/               # Uploaded product images
+│
+├── templates/
+│   ├── base.html              # Common layout
+│   ├── index.html             # Product listing
+│   ├── login.html             # Login form
+│   ├── register.html          # Signup form
+│   ├── product.html           # Product detail
+│   ├── cart.html              # Cart page
+│   ├── checkout.html          # Checkout page
+│   └── dashboard.html         # Admin page
+│
+└── database/
+    └── jai.db                 # SQLite DB (auto-created)

@@ -172,6 +172,9 @@ def not_found(error):
 def internal_error(error):
     return render_template('500.html'), 500
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+if __name__ == '__main__':
+    # Create users file if it doesn't exist
+    if not os.path.exists(USERS_FILE):
+        save_users({})
     
+    app.run(debug=True, host='0.0.0.0', port=5000)
