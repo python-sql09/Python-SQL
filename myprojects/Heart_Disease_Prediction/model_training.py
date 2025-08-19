@@ -1,3 +1,12 @@
+# --------------------------------------------------------------------------------------
+# Project Name: Heart Disease Prediction
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      :https://github.com/python-sql09/Python-SQL/tree/main/myprojects/Heart_Disease_Prediction
+# Date        :March 27, 2024 to May 3, 2024
+# Description : This project applies data preprocessing, feature engineering, and multiple machine learning
+#               algorithms to compare performance and identify the best predictive model.
+# ----------------------------------------------------------------------------------------
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier

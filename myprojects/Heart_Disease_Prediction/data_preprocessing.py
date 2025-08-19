@@ -1,4 +1,13 @@
 # data_preprocessing.py
+# --------------------------------------------------------------------------------------
+# Project Name: Heart Disease Prediction
+# Author      : Deepa Ponnusamy
+# Email       : kpdeepa1980@gmail.com,
+# GitHub      :https://github.com/python-sql09/Python-SQL/tree/main/myprojects/Heart_Disease_Prediction
+# Date        :March 27, 2024 to May 3, 2024
+# Description : This project applies data preprocessing, feature engineering, and multiple machine learning
+#               algorithms to compare performance and identify the best predictive model.
+# ----------------------------------------------------------------------------------------
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
