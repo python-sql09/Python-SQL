@@ -1,0 +1,125 @@
+ETL-Scripting
+------------
+https://github.com/python-sql09/Python-SQL/tree/main/myprojects/ETL-scripting
+
+
+✅ Main Functional Areas of Your ETL Project
+Here’s a brief breakdown based on the extracted contents:
+
+🔍 1. Extraction
+You’ve created scripts to extract data from various sources:
+
+CSV: extract-CSV.py
+
+JSON: extract-JSON.py
+
+XML: extract-XML-custom.py
+
+MySQL: extract-PYMYSQL.py, extract-pymysql1.py
+
+SQLite: extract-SQLITE3.py, extract-dict-SQLITE.py
+
+MongoDB: extract-MONGODB.py, extract-MONGODB3.py
+
+General handler: extract.py, extract-main.py
+
+🔁 2. Transformation
+You’ve implemented a set of transformation scripts using pandas, including:
+
+Renaming columns: transform-renaming-column.py, transform-rename-multiple-columns.py
+
+Cleaning: transform-removing-items.py, transform-removing-multiple-columns.py
+
+Aggregation or reshaping: transform-head-tail.py
+
+Rounding values: transform-round-price.py
+
+Modular handler: transform.py
+
+📥 3. Loading
+You support multiple target destinations:
+
+CSV: load-CSV-to-CSV.py, load-CSV-to-CSV1.py
+
+JSON: load-CSV-to-JSON.py, load-CSV-to-JSON1.py
+
+MongoDB: load-CSV-to-MONGODB.py
+
+MySQL: load-CSV-to-MYSQL.py
+
+Generic loader: load.py
+
+🧠 4. Supporting Files
+README.md: Likely contains a project overview (can summarize if you’d like).
+
+amazon-reviews.py: Possibly a separate project on text or sentiment analysis.
+
+SQL files: cstocks.sql, deeparecordshop.sql – used for database schema setup.
+
+Sample data: stocks1.csv, stocks_copy1.json, sample_rss_feed.xml, etc.
+
+📄 Portfolio Summary You Can Use
+Here’s an updated project summary for your portfolio or resume:
+
+ETL Data Pipeline Project
+Developed a modular ETL pipeline using Python, with support for extracting data from diverse formats (CSV, JSON, XML) and databases (MySQL, MongoDB, SQLite). The pipeline includes:
+
+Extraction: Custom scripts to pull data from APIs, flat files, and databases.
+
+Transformation: Automated data cleaning, formatting, column renaming, and filtering using pandas.
+
+Loading: Final datasets are exported to CSV, JSON, MongoDB, or MySQL for downstream analysis.
+
+Features:
+
+Duplicate handling, null checks, and price rounding logic.
+
+Reusable, modular design using Python scripts.
+
+Real-world sample datasets with product records and stock data.
+
+Tech Stack: Python, Pandas, MySQL, MongoDB, SQLite, XML, JSON
+
+🔗 GitHub: View project
+
+
+or
+
+
+🧩 ETL Pipeline Project Summary
+Overview
+Built a complete end-to-end ETL (Extract, Transform, Load) pipeline using Python to streamline data processing workflows. The project handled multiple data formats (CSV, JSON, XML) and integrated with relational and NoSQL databases such as MySQL and MongoDB.
+
+Key Features
+
+Extraction: Automated the ingestion of data from structured and semi-structured sources including CSV files, XML, and JSON.
+
+Transformation: Cleaned and normalized datasets using pandas, applied data validation rules, handled missing values, and renamed or reformatted columns for consistency.
+
+Loading: Loaded the transformed data into target storage systems:
+
+MySQL for structured relational storage.
+
+MongoDB for unstructured and flexible schema storage.
+
+JSON/XML files for data exchange and backup.
+
+Modular Design: Used OOP and modular scripting to separate extraction, transformation, and loading phases.
+
+Validation & Logging: Implemented duplicate detection, type validation, and logging for error tracking and audit trails.
+
+Reporting: Generated summary statistics and saved results in multiple formats for downstream analytics.
+
+Tech Stack
+
+Python (pandas, json, xml.etree, pymongo, mysql-connector)
+
+MySQL, MongoDB
+
+JSON, XML, CSV
+
+GitHub
+📎 GitHub Repository Link
+
+
+

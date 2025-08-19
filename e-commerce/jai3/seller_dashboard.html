@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Jai Market</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #2d3748;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .user-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .user-name {
+            color: white;
+            font-weight: 500;
+        }
+
+        .logout-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Dashboard Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            height: fit-content;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            margin-bottom: 1rem;
+            color: #2d3748;
+            font-size: 1.1rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            color: #4a5568;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .nav-link .icon {
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #fff, #f8f9ff);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-title {
+            color: #718096;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-change {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .stat-change.positive {
+            color: #38a169;
+        }
+
+        .stat-change.negative {
+            color: #e53e3e;
+        }
+
+        /* Quick Actions */
+        .quick-actions {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-btn {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #2d3748;
+        }
+
+        .action-btn:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .action-btn .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .action-btn .title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .action-btn .desc {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        /* Recent Products */
+        .recent-products {
+            margin-bottom: 2rem;
+        }
+
+        .products-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th {
+            background: #f7fafc;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #2d3748;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .table tr:hover {
+            background: #f8f9ff;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .product-image {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .product-details h4 {
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+
+        .product-details p {
+            font-size: 0.85rem;
+            color: #718096;
+        }
+
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+
+        .status-draft {
+            background: #fed7d7;
+            color: #c53030;
+        }
+
+        .status-low-stock {
+            background: #faf089;
+            color: #744210;
+        }
+
+        .price {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: 2;
+            }
+            
+            .main-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .table-container {
+                overflow-x: auto;
+            }
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content > * {
+            animation: slideIn 0.6s ease-out forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+        .stat-card:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🛍️ Jai Market</div>
+                <div class="user-menu">
+                    <div class="user-avatar">JS</div>
+                    <span class="user-name">John's Store</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <aside class="sidebar">
+                <h3>Seller Dashboard</h3>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                            <span class="icon">📊</span>
+                            Overview
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="icon">📦</span>
+                            Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="icon">📋</span>
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="icon">💰</span>
+                            Analytics
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="icon">⚙️</span>
+                            Settings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <span class="icon">❓</span>
+                            Support
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="main-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Revenue</span>
+                            <div class="stat-icon" style="background: linear-gradient(45deg, #48bb78, #38a169);">💰</div>
+                        </div>
+                        <div class="stat-value">₹45,230</div>
+                        <div class="stat-change positive">↗️ +12% this month</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Products Sold</span>
+                            <div class="stat-icon" style="background: linear-gradient(45deg, #4299e1, #3182ce);">📦</div>
+                        </div>
+                        <div class="stat-value">284</div>
+                        <div class="stat-change positive">↗️ +8% this month</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Active Listings</span>
+                            <div class="stat-icon" style="background: linear-gradient(45deg, #ed8936, #dd6b20);">📋</div>
+                        </div>
+                        <div class="stat-value">42</div>
+                        <div class="stat-change negative">↘️ -2 this week</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Pending Orders</span>
+                            <div class="stat-icon" style="background: linear-gradient(45deg, #9f7aea, #805ad5);">⏳</div>
+                        </div>
+                        <div class="stat-value">7</div>
+                        <div class="stat-change positive">↗️ +3 today</div>
+                    </div>
+                </div>
+
+                <section class="quick-actions">
+                    <h2 class="section-title">Quick Actions</h2>
+                    <div class="actions-grid">
+                        <a href="#" class="action-btn" onclick="addProduct()">
+                            <span class="icon">➕</span>
+                            <div class="title">Add Product</div>
+                            <div class="desc">Create new listing</div>
+                        </a>
+                        <a href="#" class="action-btn" onclick="viewOrders()">
+                            <span class="icon">📋</span>
+                            <div class="title">View Orders</div>
+                            <div class="desc">Manage customer orders</div>
+                        </a>
+                        <a href="#" class="action-btn" onclick="updateInventory()">
+                            <span class="icon">📊</span>
+                            <div class="title">Update Inventory</div>
+                            <div class="desc">Manage stock levels</div>
+                        </a>
+                        <a href="#" class="action-btn" onclick="viewAnalytics()">
+                            <span class="icon">📈</span>
+                            <div class="title">View Analytics</div>
+                            <div class="desc">Sales performance</div>
+                        </a>
+                    </div>
+                </section>
+
+                <section class="recent-products">
+                    <h2 class="section-title">Recent Products</h2>
+                    <div class="products-table">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="productsTable">
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <div class="product-image">📱</div>
+                                                <div class="product-details">
+                                                    <h4>iPhone 15 Pro</h4>
+                                                    <p>Latest Apple smartphone</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Electronics</td>
+                                        <td class="price">₹1,29,999</td>
+                                        <td>15</td>
+                                        <td><span class="status-badge status-active">Active</span></td>
+                                        <td>
+                                            <button onclick="editProduct(1)" style="background: none; border: none; color: #667eea; cursor: pointer; margin-right: 0.5rem;">Edit</button>
+                                            <button onclick="deleteProduct(1)" style="background: none; border: none; color: #e53e3e; cursor: pointer;">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <div class="product-image">👕</div>
+                                                <div class="product-details">
+                                                    <h4>Cotton T-Shirt</h4>
+                                                    <p>Comfortable casual wear</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Clothing</td>
+                                        <td class="price">₹799</td>
+                                        <td>3</td>
+                                        <td><span class="status-badge status-low-stock">Low Stock</span></td>
+                                        <td>
+                                            <button onclick="editProduct(2)" style="background: none; border: none; color: #667eea; cursor: pointer; margin-right: 0.5rem;">Edit</button>
+                                            <button onclick="deleteProduct(2)" style="background: none; border: none; color: #e53e3e; cursor: pointer;">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <div class="product-image">📚</div>
+                                                <div class="product-details">
+                                                    <h4>Programming Guide</h4>
+                                                    <p>Learn to code effectively</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Books</td>
+                                        <td class="price">₹599</td>
+                                        <td>0</td>
+                                        <td><span class="status-badge status-draft">Out of Stock</span></td>
+                                        <td>
+                                            <button onclick="editProduct(3)" style="background: none; border: none; color: #667eea; cursor: pointer; margin-right: 0.5rem;">Edit</button>
+                                            <button onclick="deleteProduct(3)" style="background: none; border: none; color: #e53e3e; cursor: pointer;">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Navigation functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Quick action functions
+        function addProduct() {
+            alert('Opening Add Product form...');
+            // In a real app, this would navigate to add product page
+        }
+
+        function viewOrders() {
+            alert('Opening Orders management...');
+        }
+
+        function updateInventory() {
+            alert('Opening Inventory management...');
+        }
+
+        function viewAnalytics() {
+            alert('Opening Analytics dashboard...');
+        }
+
+        function editProduct(id) {
+            alert(`Editing product with ID: ${id}`);
+        }
+
+        function deleteProduct(id) {
+            if (confirm('Are you sure you want to delete this product?')) {
+                alert(`Product ${id} deleted!`);
+                // In a real app, this would make an API call
+            }
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                alert('Logging out...');
+                // In a real app, this would clear session and redirect
+            }
+        }
+
+        // Simulated real-time updates
+        function updateStats() {
+            const revenue = document.querySelector('.stat-value');
+            let currentRevenue = parseInt(revenue.textContent.replace('₹', '').replace(',', ''));
+            
+            setInterval(() => {
+                if (Math.random() > 0.7) { // 30% chance of update
+                    currentRevenue += Math.floor(Math.random() * 1000);
+                    revenue.textContent = `₹${currentRevenue.toLocaleString()}`;
+                }
+            }, 10000); // Update every 10 seconds
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStats();
+            
+            // Add loading animation
+            document.querySelectorAll('.stat-card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
