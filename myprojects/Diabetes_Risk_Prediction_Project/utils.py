@@ -1,4 +1,6 @@
 # utils.py
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 def evaluate_model(y_test, predictions):
     accuracy = accuracy_score(y_test, predictions)
     print("Accuracy:", accuracy)
