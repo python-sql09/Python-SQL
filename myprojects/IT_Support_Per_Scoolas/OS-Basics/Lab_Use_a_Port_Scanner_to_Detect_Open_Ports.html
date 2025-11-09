@@ -1,0 +1,1203 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+    </style>
+
+</head><body>
+
+<div class="article__inner">
+
+
+  <div class="block__container">
+  <div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k1" class="block c2522dc61b454a229b5510cb996373aca8k1 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+  <div class="block__header">
+    <div class="block__header-inner">
+
+      <div class="block__title">
+
+        <div class="js-heading is-incomplete">
+
+<div id="c2522dc61b454a229b5510cb996373aca8k1-heading" class="js-heading-inner" role="heading" aria-level="3">
+
+  <span class="aria-label">
+      Incomplete Lab - Use a Port Scanner to Detect Open Ports
+      </span>
+
+</div>
+</div><div class="block__title-inner" aria-hidden="true">
+          Lab - Use a Port Scanner to Detect Open Ports
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak1" class="component text effc45c44b4e46a1bfa1a4380368b3cak1 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak1-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Objectives</h3><p>Use Nmap, a port scanner and network mapping, tool to detect open ports.</p><h3>Background / Scenario</h3><p>Network Mapper, or Nmap, is an open-source utility used for network discovery and security auditing. A common task is to scan local machines to determine potential vulnerabilities including open and unmanaged ports. All workstations require open ports and services to communicate and perform tasks like printing, sharing a file, or browsing the web. Administrators also use Nmap for monitoring hosts or managing service upgrade schedules. Nmap determines what hosts are available on a network, what services are running, what operating systems are running, and what packet filters or firewalls are running. In this lab, you will use Nmap inside your VM environment to detect open ports.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k2" class="block c2522dc61b454a229b5510cb996373aca8k2 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak2" class="component text effc45c44b4e46a1bfa1a4380368b3cak2 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak2-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <strong>Introduction to TCP/UDP Ports</strong><p>All communication that happens over the internet is exchanged using ports. Every IP host can use two types of ports: TCP and UDP. There can be up to 65,535 of each for any given IP address.</p><p>Services that connect to the internet (like web browsers, email clients, and file transfer services) use specific ports to receive information. Therefore, each logical connection is assigned a specific number. The port number also identifies which port it must send or receive traffic through when communicating. The Internet Assigned Number Authority (IANA) assigned the official port numbers and divided these ports into three sub-categories:</p><ul><li>Well-Known Ports (0-1023)</li><li>Registered Ports (1024 - 49,151)</li><li>Dynamic / Private Ports (49,152 - 65,535)</li></ul><p>The following lists common ports:</p><p>20 - File Transfer Protocol - Data (FTP-DATA)</p><p>21 - File Transfer Protocol - Control (FTP)</p><p>22 - Secure Shell (SSH)</p><p>23 - Telnet (TELNET)</p><p>25 - Simple Mail Transfer Protocol (SMTP)</p><p>53 - Domain Name System (DNS)</p><p>67 - Client to server Dynamic Host Configuration Protocol v4 (DHCPv4)</p><p>68 - Server to client Dynamic Host Configuration Protocol v4 (DHCPv4)</p><p>69 - Trivial File Transfer Protocol (TFTP)</p><p>80 - Hypertext Transfer Protocol (HTTP)</p><p></p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k3" class="block c2522dc61b454a229b5510cb996373aca8k3 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak3" class="component table effc45c44b4e46a1bfa1a4380368b3cak3 is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="component__header table__header" id="effc45c44b4e46a1bfa1a4380368b3cak3-header">
+      <div class="component__header-inner table__header-inner">
+    
+    
+        
+    
+        <div class="component__body table__body">
+          <div class="component__body-inner table__body-inner">
+            <strong>Security of Logical Ports</strong><p>Every logical port is subject to a threat and poses a vulnerability to a system, but some of the commonly used ports receive a lot of attention from attackers. Over 75% of all cyberattacks involve just a few common ports. Attackers scan systems to identify opened ports on a target system. Here is a list of potential logical ports that are the most common targets of cybercriminals:</p><p></p>
+          </div>
+        </div>
+    
+        <div class="component__instruction table__instruction">
+          <div class="component__instruction-inner table__instruction-inner">
+            Better viewed in landscape mode.
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            20/21 FTP
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            67/68 BOOTP
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            123 NTP
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            22 SSH
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            69 TFTP
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            137-139 NetBIOS
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-2 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            23 Telnet
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            80 HTTP
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            143 IMAP
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-3 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            25 SMTP
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            110 POP3
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            161 SNMP
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-4 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            50/51 IPsec
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            111 Port Map
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            389 LDAP
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-5 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            53 DNS
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            119 NNTP
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            443 SSL
+                        </td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k4" class="block c2522dc61b454a229b5510cb996373aca8k4 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak4" class="component text effc45c44b4e46a1bfa1a4380368b3cak4 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak4-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <strong>Required Resources</strong><ul><li>PC with the CSE-LABVM installed in VirtualBox.</li></ul><h3>Instructions</h3><strong>Step 1: Open a terminal window in the CSE-LABVM.</strong><ol type="a"><li>Launch the CSE-LABVM.</li><li>Double-click the Terminal icon to open a terminal.</li></ol><strong>Step 2: Run Nmap.</strong><p>At the command prompt, enter the following command to run a basic scan against this system:</p><pre>cisco@labvm:~$ nmap localhost<br>Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:14 UTC<br>Nmap scan report for localhost (127.0.0.1)<br>Host is up (0.000035s latency).<br>Other addresses for localhost (not scanned): ::1<br>Not shown: 997 closed ports</pre>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k04" class="block c2522dc61b454a229b5510cb996373aca8k04 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="84770cac008645459e4b3e00c745b324k04" class="component table 84770cac008645459e4b3e00c745b324k04 page-tracer-table is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            PORT
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            STATE
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            SERVICE
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            22/tcp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            ssh
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-2 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            23/tcp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            telnet
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-3 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            631/tcp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            ipp
+                        </td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k5" class="block c2522dc61b454a229b5510cb996373aca8k5 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k5" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k5 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__header opentextbox__header" id="effc45c44b4e46a1bfa1a4380368b3caa7k5-header">
+      <div class="component__header-inner opentextbox__header-inner">
+    
+    
+        
+    
+        <div class="component__body opentextbox__body">
+          <div class="component__body-inner opentextbox__body-inner">
+            <pre>Nmap done: 1 IP address (1 host up) scanned in 0.04 seconds</pre><p>The results are a scan of the first 1024 TCP ports.</p>
+          </div>
+        </div>
+    
+    
+      </div>
+    </div>
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">What TCP ports are open?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Ports 22, 23, and 631</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k6" class="block c2522dc61b454a229b5510cb996373aca8k6 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k6" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k6 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">Provide a description of the service associated with each open port.</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none"><p>Port 22 - SSH (Secure Shell) is a remote administration protocol used to control and modify a remote server over the internet. SSH authenticates the remote user and uses cryptography to encrypt all communications to and from the remote server.</p><p> Port 23 - Telnet provides a command line interface for communication with a remote server and transmits using clear-text (there is no encryption).</p><p> Port 631 - CUPS allows a computer to act as a print server. A system running CUPS can accept print jobs from clients and send the print jobs to the appropriate printer. CUPS uses IPP (Internet Printing Protocol).</p></div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k7" class="block c2522dc61b454a229b5510cb996373aca8k7 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k7" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k7 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">Research the vulnerabilities associated with each of these open ports.</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Answers may vary.<br>An unauthorized user only needs your username and password to gain access to a server with an open SSH port. You may see many attempts to log in to the server with default or common logins to gain access.<br>Other common targets are ports 22 and 23 (SSH) and (Telnet). These ports are designed to provide authorized remote access to an IP host. Port 23 is essentially unsafe because the data transferred in plaintext. Port 22 is much more secure and is preferred when connecting to a remote host. These ports can be utilized by cybercriminals to perform the following types of malicious activity.<br>- Gain authorized remote access to a host.<br>- Plant backdoors and other types of malicious codes.<br>- View sensitive data and credentials.<br>- Perform man-in-the-middle attacks.<br>- Impact the availability of other host services.<br>UDP Port 631 is a popular protocol in TCP/IP networks.<br>The term CUPS (Common UNIX Printing System) is modular network printing service for Linux host which allows a computer to act as a print server. UPS consists of a print spooler and scheduler, a filter system that converts the print data to a format that the printer will understand, and a backend system that sends this data to the print device.<br>An unauthorized user may be able to execute arbitrary commands with the privileges of the CUPS daemon. Additionally, a remote DoS may cause the server to be unresponsive.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k8" class="block c2522dc61b454a229b5510cb996373aca8k8 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak8" class="component text effc45c44b4e46a1bfa1a4380368b3cak8 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak8-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <strong>Step 3: Use administrative privileges with Nmap.</strong><ol type="a"><li>Type the following command in the terminal to scan the computer’s UDP ports (remember, Ubuntu is case sensitive) and enter the password <strong>password</strong> when prompted:<pre>cisco@labvm:~$ <strong>sudo nmap -sU localhost</strong><br>[sudo] password for cisco:<br>Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:18 UTC<br>Nmap scan report for localhost (127.0.0.1)<br>Host is up (0.0000020s latency).<br>Other addresses for localhost (not scanned): ::1<br>Not shown: 998 closed ports</pre>
+        </li></ol></div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k08" class="block c2522dc61b454a229b5510cb996373aca8k08 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="84770cac008645459e4b3e00c745b324k08" class="component table 84770cac008645459e4b3e00c745b324k08 page-tracer-table is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            PORT
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            STATE
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            SERVICE
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            631/udp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open|filtered
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            ipp
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-2 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            5353/udp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open|filtered
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            zeroconf
+                        </td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k9" class="block c2522dc61b454a229b5510cb996373aca8k9 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k9" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k9 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__header opentextbox__header" id="effc45c44b4e46a1bfa1a4380368b3caa7k9-header">
+      <div class="component__header-inner opentextbox__header-inner">
+    
+    
+        
+    
+        <div class="component__body opentextbox__body">
+          <div class="component__body-inner opentextbox__body-inner">
+            <pre>Nmap done: 1 IP address (1 host up) scanned in 1.32 seconds</pre>
+          </div>
+        </div>
+    
+    
+      </div>
+    </div>
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">What UDP ports are open?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Ports 68, 631, and 5353</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373acalat" class="block c2522dc61b454a229b5510cb996373acalat background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3camat1" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3camat1 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">Describe the purpose of the UDP services associated with each port.</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Port 67 and 68 provide client-server Dynamic Host Configuration Protocol (DHCP) services. The DHCP is a network management protocol used on Internet Protocol (IP) networks. It dynamically assigns an IP address and other network configuration parameters to host on the network. This information is required for IP hosts to communicate with other hosts on the IP networks.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k10" class="block c2522dc61b454a229b5510cb996373aca8k10 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k10" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k10 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">Research the vulnerabilities associated with each of these open ports.</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Answers may vary.<br>An open port 68 provides Dynamic Host Configuration Protocol (DHCP) services.<br>This port allows hackers to disrupt dynamic network addressing and can be used for network spoofing and remote code execution.<br>An open port 631 allows cyber attackers to cause a denial of service and possibly execute arbitrary code.<br>An open port 5353 is used by Multicast Domain Name System (mDNS) which allows hosts to resolve hostnames to IP addresses in small networks that do not include a name server. However, if the mDNS port 5353 is exposed to the internet, attackers can query the service collect information about the server as well as launch a DoS attack by spoofing a target and flooding the network with mDNS requests.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k11" class="block c2522dc61b454a229b5510cb996373aca8k11 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak11" class="component text effc45c44b4e46a1bfa1a4380368b3cak11 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak11-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol type="a" start="2"><li>Type the following command in the terminal:<br><pre>cisco@labvm:~$ <strong>nmap –sV localhost</strong><br>Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:19 UTC<br>Nmap scan report for localhost (127.0.0.1)<br>Host is up (0.000038s latency).<br>Other addresses for localhost (not scanned): ::1<br>Not shown: 997 closed ports</pre></li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k12" class="block c2522dc61b454a229b5510cb996373aca8k12 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="84770cac008645459e4b3e00c745b324k12" class="component table 84770cac008645459e4b3e00c745b324k12 page-tracer-table is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            PORT
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            STATE
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            SERVICE
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            VERSION
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            22/tcp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            ssh
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-2 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            23/tcp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            telnet
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            Linux telnetd
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-3 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            631/tcp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            ipp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            CUPS 2.3
+                        </td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k13" class="block c2522dc61b454a229b5510cb996373aca8k13 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak13" class="component text effc45c44b4e46a1bfa1a4380368b3cak13 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak13-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <pre>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 6.34 seconds</pre><p>Using the <strong>–sV</strong> switch with the <strong>nmap</strong> command performs a version detection which you can use to research vulnerabilities.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k14" class="block c2522dc61b454a229b5510cb996373aca8k14 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak14" class="component text effc45c44b4e46a1bfa1a4380368b3cak14 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak14-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <strong>Step 4: Capture SSH keys.</strong><ol type="a"><li>Type the following command in the terminal to initiate a script scan:<br><pre>cisco@labvm:~$ nmap –A localhost<br>Starting Nmap 7.80 ( https://nmap.org ) at 2021-03-19 14:21 UTC<br>Nmap scan report for localhost (127.0.0.1)<br>Host is up (0.000037s latency).<br>Other addresses for localhost (not scanned): ::1<br>Not shown: 997 closed ports</pre></li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k15" class="block c2522dc61b454a229b5510cb996373aca8k15 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="84770cac008645459e4b3e00c745b324k15" class="component table 84770cac008645459e4b3e00c745b324k15 page-tracer-table is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            PORT
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            STATE
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            SERVICE
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            VERSION
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            22/tcp
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            open
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            ssh
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+                        </td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k16" class="block c2522dc61b454a229b5510cb996373aca8k16 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak16" class="component text effc45c44b4e46a1bfa1a4380368b3cak16 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak16-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <pre>| ssh-hostkey:<br>|   3072 56:68:77:00:41:7f:50:17:5b:73:82:36:47:c4:bc:2d (RSA)<br>|   256 0e:52:78:ba:08:2a:df:e5:be:1b:07:a7:98:3a:c8:50 (ECDSA)<br>|_  256 f7:9e:03:10:96:94:cc:f4:4f:2a:f2:7c:6a:37:c1:6f (ED25519)<br>23/tcp  open  telnet  Linux telnetd<br>631/tcp open  ipp     CUPS 2.3<br>| http-robots.txt: 1 disallowed entry<br>|_/<br>|_http-server-header: CUPS/2.3 IPP/2.1<br>|_http-title: Home - CUPS 2.3.1<br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel<br><br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .<br>Nmap done: 1 IP address (1 host up) scanned in 13.37 seconds</pre><p>You captured the SSH keys for the host system. The command runs a set of scripts built into Nmap to test specific vulnerabilities.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k17" class="block c2522dc61b454a229b5510cb996373aca8k17 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k17" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k17 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">What are the values of the SSH hostkeys?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">| ssh-hostkey:<br>|   3072 56:68:77:00:41:7f:50:17:5b:73:82:36:47:c4:bc:2d (RSA)<br>|   256 0e:52:78:ba:08:2a:df:e5:be:1b:07:a7:98:3a:c8:50 (ECDSA)<br>|_  256 f7:9e:03:10:96:94:cc:f4:4f:2a:f2:7c:6a:37:c1:6f (ED25519)</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k18" class="block c2522dc61b454a229b5510cb996373aca8k18 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k18" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k18 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">How would an attacker use this information?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">This information could be used to gain unauthorized remote access to the target host.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k19" class="block c2522dc61b454a229b5510cb996373aca8k19 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7k19" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7k19 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">How could you prevent the cyber attacker from stealing the key information?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Send the keys by phone, text, or email.  This is called out-of-band key exchange.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k20" class="block c2522dc61b454a229b5510cb996373aca8k20 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak20" class="component text effc45c44b4e46a1bfa1a4380368b3cak20 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak20-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol type="a" start="2"><li>Enter the <strong>man nmap</strong> command to open the manual pages for the Nmap utility.</li></ol><pre>cisco@labvm:~$ man nmap<br>NMAP(1)                           Nmap Reference Guide                  NMAP(1)<br><br>NAME<br>&nbsp;&nbsp;&nbsp;nmap - Network exploration tool and security / port scanner<br><br>SYNOPSIS<br>&nbsp;&nbsp;&nbsp;nmap [Scan Type...] [Options] {target specification}<br>&lt;output omitted&gt;</pre><p>You can use this resource to locate other available options for the Nmap utility. At any time, enter <strong>q</strong> or <strong>quit</strong> to exit the man pages. You can read the manual pages available for any service or command by entering the <strong>man</strong> command followed by the name of the utility or command.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8k21" class="block c2522dc61b454a229b5510cb996373aca8k21 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cak21" class="component text effc45c44b4e46a1bfa1a4380368b3cak21 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cak21-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Summary</h3><strong>Highly Vulnerable Ports</strong><p>Many ports must be open for a host to function in a normal computing and communication environment. However, these common ports should be monitored regularly to ensure they are not compromised and being used to attack a victim, provide unauthorized remote access, or being used to hijack a host to participate in a distributed attack on other victims.</p><p>Port 21 of TCP is one of the most popular ports for attackers. This port is designed to transmit and receive files from one host to another. Attackers use this port to perform the following types of malicious activity:</p><ul><li>Unauthorized transfer, deletion, and modification of files</li><li>Unauthorized transfer of malicious code or payloads</li><li>Anonymous authentication to host file systems</li><li>Inject malicious scripts like XSS attack</li><li> Impact the availability of other host services</li></ul><p></p><p>Another common target is port 23 (Telnet). This port provides authorized remote access to an IP host. This port poses a vulnerability because the data transferred is in plaintext. Attackers use this port to perform the following types of malicious activity:</p><ul><li>Gain unauthorized remote access to a host</li><li>Plant backdoors and other types of malicious code</li><li>View sensitive data and credentials</li><li>Perform man-in-the-middle attacks</li><li>Impact the availability of other host services</li></ul><p></p><p>Another favorite port for attackers is port 53. This port is used for DNS or looking up domain names when browsing the internet or transferring information. This port is the most common exit route for the attacker after an attack. Because this port is rarely monitored, attackers use this port to exit after clearing their files, logs, and other information to cover their tracks.</p><p>The most common port used by attackers is TCP port 80. This port transfers webpages between a web server and the host browser. Attackers use this port to perform the following types of malicious activity:</p><ul><li>Unauthorized transfer, deletion, and modification of data</li><li>Unauthorized transfer of malicious code or payloads</li><li>Injection of malicious scripts (like an XSS attack)</li><li>Impact the availability of other host services</li></ul><p></p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div></div><div class="openTextBoxController-inner"><div class="openTextBoxController__button-container">
+  <button class="btn-text showhidebtn openTextBoxController__showButton" tabindex="0">Show All Answers</button>
+  <button class="btn-text showhidebtn openTextBoxController__hideButton u-display-none" tabindex="0">Hide All Answers</button>
+  <button class="btn-text resetbtn openTextBoxController__resetButton" tabindex="0">Clear All Responses</button>
+</div>
+  <div class="post-text"><hr>© 2017 - 2023 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+</div>
+
+</div>
+</body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+    });
+  </script>
+  </html>

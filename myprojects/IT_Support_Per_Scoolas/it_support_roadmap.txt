@@ -1,0 +1,126 @@
+Perfect! Here’s a 12-month step-by-step learning plan for advancing from IT Support → Network Technician → Network Engineer, using free/low-cost resources. This plan assumes you’re starting from scratch in IT Support and dedicating ~15–20 hours per week.
+
+Months 1–3: IT Support Fundamentals
+
+Goal: Learn hardware, OS, and basic networking
+
+Tasks:
+
+Google IT Support Professional Certificate – Complete 2–3 modules per week
+
+Focus: troubleshooting, Windows & Linux basics, command line
+
+Link
+
+CompTIA A+ Prep (Professor Messer)
+
+Watch videos on hardware, software, networking basics
+
+Hands-on: set up a small PC or virtual machine
+
+Practice Labs:
+
+Install Ubuntu/Windows in VirtualBox
+
+Practice basic file management, installing software, using command line
+
+Months 4–6: Networking Foundations
+
+Goal: Understand TCP/IP, LAN/WAN, and network troubleshooting
+
+Tasks:
+
+CompTIA Network+ (Professor Messer Free Videos)
+
+Topics: IP addressing, subnetting, VLANs, routing basics
+
+Cisco Networking Academy – Intro to Networks
+
+Complete exercises & labs
+
+Link
+
+Hands-on Practice:
+
+Packet Tracer or GNS3 simulations
+
+Configure basic networks: routers, switches, VLANs
+
+Certifications Prep:
+
+Begin CompTIA Network+ exam preparation (aim to test at end of Month 6)
+
+Months 7–9: Junior Network Technician / Administrator Skills
+
+Goal: Configure and troubleshoot networks in real scenarios
+
+Tasks:
+
+Cisco CCNA Preparation (free YouTube series or NetAcad)
+
+Routing & switching, VLANs, subnetting, NAT, ACLs
+
+Hands-on Labs:
+
+Packet Tracer: set up multi-router networks
+
+Practice troubleshooting connectivity issues
+
+Optional: Build a small home lab (physical or virtual) with 1 router + 1 switch or multiple VMs
+
+Certifications:
+
+Aim to complete CompTIA Network+
+
+Start CCNA prep
+
+Months 10–12: Network Engineer / Advanced Networking
+
+Goal: Advance to enterprise-level networking skills
+
+Tasks:
+
+Cisco CCNA – Advanced Topics
+
+OSPF, EIGRP, VPNs, network security basics
+
+Cloud Networking Basics (AWS or Azure free courses)
+
+AWS: VPC, security groups, routing tables
+
+Azure: Virtual Networks, subnets
+
+Network Monitoring & Security:
+
+Wireshark labs: analyze network traffic
+
+Nmap: scan networks for devices and services
+
+Portfolio / Practical Projects:
+
+Document your home lab network setups
+
+Create a GitHub repository or PDF portfolio
+
+Certifications Goal:
+
+Complete CCNA by the end of Month 12 (or at least be ready to attempt)
+
+Weekly Time Allocation (~15–20 hours)
+Day	Focus
+Mon/Wed	Video lessons (1–2 hrs)
+Tue/Thu	Hands-on labs / exercises (2–3 hrs)
+Fri	Review notes, practice quizzes (1–2 hrs)
+Sat	Lab projects or simulations (3–4 hrs)
+Sun	Catch-up / rest / optional reading
+Outcome after 12 months
+
+Competent in IT Support & basic network troubleshooting
+
+Network+ certified
+
+CCNA preparation advanced, ready for CCNA exam
+
+Practical lab experience with routers, switches, VLANs, and cloud networks
+
+Portfolio of projects demonstrating your skills

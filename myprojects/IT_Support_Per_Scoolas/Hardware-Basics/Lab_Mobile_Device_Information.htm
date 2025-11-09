@@ -1,0 +1,799 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Lab - Mobile Device Information</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Webdings;
+	panose-1:5 3 1 2 1 5 9 6 7 3;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial",sans-serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	page-break-after:avoid;
+	font-size:3.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:normal;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-weight:bold;}
+p.AnswerLineL25, li.AnswerLineL25, div.AnswerLineL25
+	{mso-style-name:"Answer Line L25";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;
+	font-style:italic;}
+p.PageHead, li.PageHead, div.PageHead
+	{mso-style-name:"Page Head";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+p.TableText, li.TableText, div.TableText
+	{mso-style-name:"Table Text";
+	mso-style-link:"Table Text Char";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.TableTextChar
+	{mso-style-name:"Table Text Char";
+	mso-style-link:"Table Text";}
+p.TableHeading, li.TableHeading, div.TableHeading
+	{mso-style-name:"Table Heading";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.Bulletlevel1, li.Bulletlevel1, div.Bulletlevel1
+	{mso-style-name:"Bullet level 1";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
+	{mso-style-name:"Config Window";
+	margin:0in;
+	font-size:3.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-style:italic;}
+p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
+	{mso-style-name:"SubStep Alpha";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
+	{mso-style-name:"Body Text L50";
+	mso-style-link:"Body Text L50 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
+	{mso-style-name:"Body Text L25";
+	mso-style-link:"Body Text L25 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.LabTitleInstVersred
+	{mso-style-name:"Lab Title Inst Vers \(red\)";
+	font-family:"Arial",sans-serif;
+	color:#EE0000;
+	font-weight:bold;}
+span.AnswerGray
+	{mso-style-name:"Answer Gray";
+	font-family:"Arial",sans-serif;
+	color:windowtext;
+	border:none;
+	background:#D9D9D9;
+	font-weight:bold;}
+p.SubStepNum, li.SubStepNum, div.SubStepNum
+	{mso-style-name:"SubStep Num";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.ReflectionQ, li.ReflectionQ, div.ReflectionQ
+	{mso-style-name:"Reflection Q";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Times New Roman",serif;
+	color:white;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.BodyTextL25Char
+	{mso-style-name:"Body Text L25 Char";
+	mso-style-link:"Body Text L25";}
+p.TableAnswer, li.TableAnswer, div.TableAnswer
+	{mso-style-name:"Table Answer";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.BodyTextL50Char
+	{mso-style-name:"Body Text L50 Char";
+	mso-style-link:"Body Text L50";}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:76.5pt .75in 1.0in .75in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Suk-Yi Pennock -X (spennock - UNICON INC at Cisco)</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">1950500.00000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Suk-Yi Pennock -X (spennock - UNICON INC at Cisco)</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x01010001F18ECBD8ED834DABF5ACC3DB9AA918</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<script>
+var TXT_showAnswer = 'Show Answer';
+var TXT_hideAnswer = 'Hide Answer';
+var TXT_showAllAnswers = 'Show All Answers';
+var TXT_hideAllAnswers = 'Hide All Answers';
+var TXT_clearMyAnswers = 'Clear My Responses';
+var TXT_exportMyAnswers = 'Export My Answers';
+var TXT_showConfig = 'Show Confguration';
+var TXT_hideConfig = 'Hide Confguration';
+var TXT_clearDrawing = 'Clear Drawing';
+var TXT_placeholder = 'Type your answer here.';
+</script>
+<script src='fixer.js' type="text/javascript"></script>
+<body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle><span style='color:#EE0000;font-weight:normal'><b><span
+style='color:windowtext'>Lab - Mobile Device Information</span></b></span></p>
+
+<h1 style='margin-left:0in;text-indent:0in'>Introduction</h1>
+
+<p class=BodyTextL25>In this activity, you will use the internet, a technical
+journal, or a local store to gather information about an Android and an iOS
+device. You will document the specifications of each Android and iOS device
+on this worksheet. Be prepared to discuss your decisions regarding the
+devices you would purchase as your next mobile device.</p>
+
+<h1 style='margin-left:0in;text-indent:0in'>Recommended Equipment</h1>
+
+<p class=Bulletlevel1 style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+3.0pt;margin-left:.5in;line-height:115%'><span style='font-size:7.0pt;
+line-height:115%;font-family:Webdings'>=<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span></span>Device with internet connection</p>
+
+<h1 style='margin-left:0in;text-indent:0in'>Instructions</h1>
+
+<p class=BodyTextL25>In this activity, you will perform research on an Android and
+iOS device in your decision for the next mobile device purchase.</p>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Choose an Android device and an iOS device for research.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Record the hardware specifications for each type of mobile devices below.</p>
+
+<div align=center>
+
+<table class=LabTableStyle border=1 cellspacing=0 cellpadding=0
+ summary="This table is where you list the specifications for android and iOS mobile devices."
+ width=672 style='width:7.0in;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+   background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Specifications</span></p>
+   </td>
+   <td width=267 valign=bottom style='width:200.1pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Android Device</span></p>
+   </td>
+   <td width=273 valign=bottom style='width:205.0pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>iOS Device</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='page-break-inside:avoid;height:22.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText><b>Model</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:22.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText><b>Manufacturer</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:21.2pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableText><b>Operating System</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:22.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText><b>Available Memory</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:17.6pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:17.6pt'>
+  <p class=TableText><b>Camera </b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:17.6pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:17.6pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:21.2pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableText><b>Wi-Fi Connectivity</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:31.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText><b>Cellular Network Connectivity</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:31.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText><b>Battery Information</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:32.8pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:32.8pt'>
+  <p class=TableText><b>Screen Size and Resolution</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:32.8pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:32.8pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:20.65pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:20.65pt'>
+  <p class=TableText><b>Size and Weight</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:20.65pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:20.65pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=ConfigWindow>Blank Line, No additional information</p>
+
+<p class=BodyTextL50>Click <b>Show Answer</b> to see a sample answer.</p>
+
+<div align=center>
+
+<table class=LabAnswerTable border=1 cellspacing=0 cellpadding=0
+ summary="This table is where you list the specifications for android and iOS mobile devices."
+ width=672 style='width:7.0in;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+   background:#F2DBDB;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Specifications</span></p>
+   </td>
+   <td width=267 valign=bottom style='width:200.1pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#F2DBDB;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Android Device</span></p>
+   </td>
+   <td width=273 valign=bottom style='width:205.0pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#F2DBDB;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>iOS Device</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='page-break-inside:avoid;height:22.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText><b>Model</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText>Galaxy S22 Ultra</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText>iPhone 14 Pro Max</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:22.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText><b>Manufacturer</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText>Samsung</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:22.1pt'>
+  <p class=TableText>Apple</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:21.2pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableText><b>Operating System</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableText>Android 12</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:21.2pt'>
+  <p class=TableText>iOS 16.x</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:35.6pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:35.6pt'>
+  <p class=TableText><b>Available Memory</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:35.6pt'>
+  <p class=TableText>8 GB RAM, 128GB; 12GB RAM, 256 / 512 / 1TB GB</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:35.6pt'>
+  <p class=TableText>6GB RAM, 128GB / 256GB / 512 GB / 1TB</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:139.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:139.1pt'>
+  <p class=TableText><b>Camera </b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:139.1pt'>
+  <p class=TableText><b>Rear</b>: Quad Camera</p>
+  <p class=TableText style='margin-left:25.55pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Main</b>: 108 MP</p>
+  <p class=TableText style='margin-left:25.55pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Second</b>: 10MP</p>
+  <p class=TableText style='margin-left:25.55pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Third</b>: 10 MP</p>
+  <p class=TableText style='margin-left:25.55pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Fourth</b>: 12 MP</p>
+  <p class=TableText style='margin-left:25.55pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Video</b>: 8K</p>
+  <p class=TableText><b>Front</b>:</p>
+  <p class=TableText style='margin-left:25.55pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>40 MP</p>
+  <p class=TableText style='margin-left:25.55pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Video</b>: 8K</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:139.1pt'>
+  <p class=TableText><b>Rear</b>: Triple Camera</p>
+  <p class=TableText style='margin-left:27.8pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Main</b>: 48 MP</p>
+  <p class=TableText style='margin-left:27.8pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Second</b>: 12MP</p>
+  <p class=TableText style='margin-left:27.8pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Third</b>: 12 MP</p>
+  <p class=TableText style='margin-left:27.8pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Video</b>: 4K</p>
+  <p class=TableText><b>Front</b>:</p>
+  <p class=TableText style='margin-left:27.8pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>12 MP</p>
+  <p class=TableText style='margin-left:27.8pt;text-indent:-.25in'><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><b>Video</b>: 4K</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:34.7pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:34.7pt'>
+  <p class=TableText><b>Wi-Fi Connectivity</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:34.7pt'>
+  <p class=TableText>802.11 a, b, g, n, ac, ax (Wi-Fi 6); Wi-Fi Direct, Hotspot</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:34.7pt'>
+  <p class=TableText>802.11 a, b, g, n, ac, ax (Wi-Fi 6); Wi-Fi Direct, Hotspot</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:31.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText><b>Cellular Network Connectivity</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText>GSM / CDMA / HSPA / EVDO / LTE / 5G</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText>GSM / CDMA / HSPA / EVDO / LTE / 5G</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:31.1pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText><b>Battery Information</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText>Li-ion, 5000 mAh</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:31.1pt'>
+  <p class=TableText>Li-Ion, 4323 mAh</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:35.05pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:35.05pt'>
+  <p class=TableText><b>Screen Size and Resolution</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:35.05pt'>
+  <p class=TableText>6.8 inches screen</p>
+  <p class=TableText>3088 x 1440 pixels, 19.3:9 ratio, 501 PPI</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:35.05pt'>
+  <p class=TableText>6.7 inches screen</p>
+  <p class=TableText>2796 x 1290 pixels, 19.5:9 ratio, 460 PPI</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:48.55pt'>
+  <td width=132 valign=bottom style='width:98.9pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt;height:48.55pt'>
+  <p class=TableText><b>Size and Weight</b></p>
+  </td>
+  <td width=267 valign=bottom style='width:200.1pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:48.55pt'>
+  <p class=TableText>6.43 x 3.07 x 0.35 inches</p>
+  <p class=TableText>(163.3 x 77.9 x 8.9 mm)</p>
+  <p class=TableText>Weight: 8.08 oz (229.0 g)</p>
+  </td>
+  <td width=273 valign=bottom style='width:205.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt;height:48.55pt'>
+  <p class=TableText>6.33 x 3.05 x 0.31 inches</p>
+  <p class=TableText>(160.7 x 77.6 x 7.85 mm)</p>
+  <p class=TableText>Weight: 255 g (8.99 oz)</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=ConfigWindow>Blank Line, No additional information</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL25 style='margin-top:0in'>Based on your research, which
+mobile device would you select? Be prepared to discuss your decisions regarding
+the mobile device you select. What are other factors that affect your
+selection?</p>
+
+<p class=AnswerLineL25>Type your answers here.</p>
+
+<p class=BodyTextL25><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary.</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> Other factors that may affect the selection can be the price</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> and </span></span></span><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>carrier availability</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'>.</span></span></span></p>
+
+<p class=ConfigWindow>End of Document</p>
+
+</div>
+
+</body>
+
+</html>

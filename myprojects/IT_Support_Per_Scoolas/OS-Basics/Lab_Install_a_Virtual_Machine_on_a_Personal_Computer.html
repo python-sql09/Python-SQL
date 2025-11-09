@@ -1,0 +1,704 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+    </style>
+
+</head><body>
+
+<div class="article__inner">
+
+
+  <div class="block__container">
+  <div data-adapt-id="c2522dc61b454a229b5510cb996373aca1" class="block c2522dc61b454a229b5510cb996373aca1 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+  <div class="block__header">
+    <div class="block__header-inner">
+
+      <div class="block__title">
+
+        <div class="js-heading is-incomplete">
+
+<div id="c2522dc61b454a229b5510cb996373aca1-heading" class="js-heading-inner" role="heading" aria-level="3">
+
+  <span class="aria-label">
+      Incomplete Lab - Install a Virtual Machine on a Personal Computer
+      </span>
+
+</div>
+</div><div class="block__title-inner" aria-hidden="true">
+          Lab - Install a Virtual Machine on a Personal Computer
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa1" class="component text effc45c44b4e46a1bfa1a4380368b3caa1 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caa1-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Objectives</h3><p><strong>Part 1: Prepare a Computer for Virtualization</strong></p><p><strong>Part 2: Import a Virtual Machine into VirtualBox Inventory</strong></p><h3>Background / Scenario</h3><p>Computing power and resources have increased tremendously over the last 10 years. A benefit of having multicore processors and large amounts of RAM is the ability to use virtualization. With virtualization, one or more virtual computers can operate inside a single physical computer. Virtual computers that run within physical computers are called virtual machines. Virtual machines are often called guests, and physical computers are often called hosts. Anyone with a modern computer and operating system can run virtual machines.</p><p>A virtual machine image file has been created for you to install on your computer. In this lab, you will download and import this image file using a desktop virtualization application, such as VirtualBox.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca2" class="block c2522dc61b454a229b5510cb996373aca2 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa2" class="component text effc45c44b4e46a1bfa1a4380368b3caa2 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caa2-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Required Resources</h3><ul><li>Computer with a minimum of extra 4 GB of RAM and 50 GB of free disk space allocated to run virtual machines</li><li>High speed internet access to download Oracle VirtualBox and the virtual machine image file</li></ul><p><b>Note</b>: The image file is about 4 GB, and can grow up to 50 GB after the virtual machines are in operation. While you can delete the image file after the virtual machine is imported, the 50 GB free disk space requirement is for users who decide to keep the image file.</p><p><b>Note</b>: To install and run 64bit virtual machines on a host physical computer, the computer needs to be a 64bit system and have hardware virtualization technology enabled in BIOS. If you are unable to install the virtual machine image you may need to reboot your computer and enter setup mode in BIOS to enable hardware virtualization technology under advanced system settings.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca3" class="block c2522dc61b454a229b5510cb996373aca3 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa3" class="component text effc45c44b4e46a1bfa1a4380368b3caa3 no-element-backgrounds is-full"><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caa3-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Instructions</h3><p><strong>Part 1: Prepare a Host Computer for Virtualization</strong></p><p>In Part 1, you will download and install desktop virtualization software, and also download an image file that can be used to complete labs throughout the course. For this lab, the virtual machine is running Linux.</p><p><strong>Step 1: Download and install VirtualBox.</strong></p><p>VMware Workstation Player and Oracle VirtualBox are two virtualization programs that you can download and install to support the image file. In this lab, you will use VirtualBox.</p><ol start="1" type="a"><li>Navigate to <strong> <a href="https://www.virtualbox.org" target="_blank" tabindex="0">https://www.virtualbox.org</a></strong>.</li><li>Choose and download the appropriate installation file based on your operating system.</li><li>When you have downloaded the VirtualBox installation file, run the installer and accept the default installation settings.</li></ol><p><strong>Step 2: Download the Virtual Machine image file.</strong></p><p>The image file was created in accordance with the Open Virtualization Format (OVF). OVF is an open standard for packaging and distributing virtual appliances. An OVF package has several files placed into one directory. This directory is then distributed as an OVA package. This package contains all the OVF files necessary for the deployment of the virtual machine. The virtual machine used in this lab was exported in accordance with the OVF standard.</p><p>Click <strong><a href="https://skillsforall.com/resources/lab-downloads" target="_blank" tabindex="0">here</a></strong> to download the <strong>CSE-LABVM</strong> and the <strong>Security Workstation</strong> OVA files.</p><p><strong>Note:</strong> The files are about 5 GB in total, and it may take over an hour to download, depending on the speed of your internet connection.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca4" class="block c2522dc61b454a229b5510cb996373aca4 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa4" class="component text effc45c44b4e46a1bfa1a4380368b3caa4 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caa4-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Part 2: Import the Virtual Machine into the VirtualBox Inventory</strong></p><p>In Part 2, you will import the virtual machine images into VirtualBox and start the virtual machines.</p><p><strong>Step 1: Import the virtual machine files into VirtualBox.</strong></p><ol start="1" type="a"><li>Open <strong>VirtualBox</strong>. Click <strong>File</strong> &gt; <strong>Import Appliance...</strong> to import the virtual machine image.</li><li>In the Appliance to import window, specify the location of the .OVA file. Click <strong>Next</strong> to continue.</li><li>The appliance settings window appears. In the Machine Base Folder field, you may need to click the dropdown arrow and change the destination by selecting Other and browsing to a folder (you can use your user’s Documents folder). Set the MAC Address Policy to <strong>Generate new MAC addresses for all network adapters</strong>. Leave all other settings as default. Click Import.</li><li>When the import process is complete, you will see the new Virtual Machine added to the VirtualBox inventory in the left panel. The virtual machine is now ready to use.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca5" class="block c2522dc61b454a229b5510cb996373aca5 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa5" class="component text effc45c44b4e46a1bfa1a4380368b3caa5 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caa5-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Step 2: Start the CSE-LABVM virtual machine and log in.</strong></p><ol start="1" type="a"><li>  In the inventory shown on the left, select the virtual machine you wish to use. In this example, you will select the virtual machine <strong>CSE-LABVM</strong>.</li><li>Click the <strong>Start</strong> button. It is the green arrow located at the top portion of the VirtualBox application window. A new window will appear, and the virtual machine boot process will start.<p><strong>Note</strong>: If the virtual machine fails to start, either disable the USB Controller by going into the virtual machine’s settings and unchecking the USB controller setting under USB, or go to the VirtualBox download webpage and download and install the Oracle VM VirtualBox Extension Pack.</p></li><li>When the boot process is complete, the virtual machine will automatically login and load the desktop. If you need superuser access at anytime, use the following credentials for the virtual machine <strong>CSE-LABVM</strong>:<p>Username: <strong>cisco</strong></p><p></p><p>Password: <strong>password</strong></p></li></ol><p><strong>Note</strong>: The window running the virtual machine is a completely different computer than your host. Functions such as copy and paste will not work between the two without changing the default settings in VirtualBox. Notice the keyboard and mouse focus. When you click inside the virtual machine window, your mouse and keyboard will operate the guest operating system. Your host operating system will no longer detect keystrokes or mouse movements. Press the right <strong>CTRL</strong> key to return keyboard and mouse focus to the host operating system.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca6" class="block c2522dc61b454a229b5510cb996373aca6 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa6" class="component text effc45c44b4e46a1bfa1a4380368b3caa6 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caa6-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Step 3: Familiarize yourself with CSE-LABVM.</strong></p><p>The <strong>CSE-LABVM</strong> virtual machine you just installed is one of the VMs that you will be using in the course. Familiarize yourself with the icons in the list below:</p><p>The launcher icons are on the left (from top to bottom):</p><ul><li><strong>cisco's Home</strong> - home directory for the user, <strong>cisco</strong></li><li><strong>DPI Scanling</strong> - shortcut command for increasing the resolution</li><li><strong>Firefox Web Browser</strong> - internet browser</li><li><strong>jcryptool</strong> - cryptography and cryptanalysis tool</li><li><strong>Keyboard</strong> - quick access to change your keyboard layout</li><li><strong>Terminal</strong> - command line access</li><li><strong>Wireshark</strong> - packet sniffer and network protocol analyzer</li></ul><ol start="1" type="a"><li>Open the terminal application. Type the <strong>ip address</strong> command at the prompt to determine the IP address of your virtual machine.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca7" class="block c2522dc61b454a229b5510cb996373aca7 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa7" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa7 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">What are the IP addresses assigned to your virtual machine?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Answers will vary. The loopback interface is assigned 127.0.0.1/8, and the Ethernet interface is assigned an IP address in the 10.0.2.15/24 network.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca8" class="block c2522dc61b454a229b5510cb996373aca8 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa8" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caa8 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__header opentextbox__header" id="effc45c44b4e46a1bfa1a4380368b3caa8-header">
+      <div class="component__header-inner opentextbox__header-inner">
+    
+    
+        
+    
+        <div class="component__body opentextbox__body">
+          <div class="component__body-inner opentextbox__body-inner">
+            <ol start="2" type="a"><li> Locate and launch the web browser application.</li></ol>
+          </div>
+        </div>
+    
+    
+      </div>
+    </div>
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText"><p>Can you navigate to your favorite search engine?</p></div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Yes</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373aca9" class="block c2522dc61b454a229b5510cb996373aca9 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caa9" class="component text effc45c44b4e46a1bfa1a4380368b3caa9 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caa9-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p></p><h4>Step 4: Shutdown the CSE-LABVM.</h4><p></p><ol start="1" type="a"><li> Press the right ctrl key to release the cursor from the virtual machine. Now go to the menu at the top of the virtual machine window and choose <b>File</b> &gt; <b>Close</b> to close the virtual machine.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agb1" class="block c2522dc61b454a229b5510cb996373agb1 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cgb1" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3cgb1 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">What options are available?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Save the machine state, Send the shutdown signal and power off the machine</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+            <div class="openTextBox__postText"><ol start="2" type="a"><li>Click the Save the machine state radio button and then click OK. The next time you start the virtual machine, you will be able to resume working in the operating system in its current state.</li></ol></div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agb2" class="block c2522dc61b454a229b5510cb996373agb2 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cgb2" class="component text effc45c44b4e46a1bfa1a4380368b3cgb2 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cgb2-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h4>Step 5: Import and Start the Security Workstation virtual machine and log in.</h4><ol start="1" type="a"><li>To import the <strong>Security Workstation</strong>, follow the same procedures you used to import the <strong>CSE-LABVM</strong>.</li><li> In the inventory shown on the left, select the <strong>Security Workstation</strong>.</li><li>Click the <strong>Start</strong> button and the virtual machine boot process will start.</li><li> If you get an error about your Ethernet adapter, click <strong>Change Network Settings</strong>. From the <strong>Name</strong> dropdown list, choose the network adapter your computer is using to connect to the internet, and then click <strong>OK</strong>.</li><li>When prompted, change the user to <strong>analyst</strong>, enter <strong>cyberops</strong> as the password, and then click <strong>Log in</strong>.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agb3" class="block c2522dc61b454a229b5510cb996373agb3 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cgb3" class="component text effc45c44b4e46a1bfa1a4380368b3cgb3 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3cgb3-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h4>Step 6: Familiarize yourself with Security Workstation.</h4><p>The <strong>Security Workstation</strong> virtual machine is based on the Arch Linux distribution so that you can run a variety of services with minimal impact to your host machine's resources. Feel free to explore the VM as much as you like. However, this VM will be explored in more detail in later labs.</p><h4>Step 7: Shutdown the Security Workstation.</h4><p>In the VirtualBox menu, choose File &gt; Close, choose Save the machine state, and then click OK.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agb4" class="block c2522dc61b454a229b5510cb996373agb4 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3cgb4" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3cgb4 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__header opentextbox__header" id="effc45c44b4e46a1bfa1a4380368b3cgb4-header">
+      <div class="component__header-inner opentextbox__header-inner">
+    
+    
+        
+    
+        <div class="component__body opentextbox__body">
+          <div class="component__body-inner opentextbox__body-inner">
+            <h4>Reflection</h4>
+          </div>
+        </div>
+    
+    
+      </div>
+    </div>
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">What are the advantages and disadvantages of using a virtual machine?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">With a virtual machine, you are able to test new applications or operating systems without affecting your host machine. You are also able to save the current machine state when you close virtual machine. If you have any issues, you have the option to revert the virtual machine to a previously saved state. Disadvantages are that a virtual machine requires hardware resources from the host machine, such as hard drive space, RAM, and processing power.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div></div><div class="openTextBoxController-inner"><div class="openTextBoxController__button-container">
+  <button class="btn-text showhidebtn openTextBoxController__showButton" tabindex="0">Show All Answers</button>
+  <button class="btn-text showhidebtn openTextBoxController__hideButton u-display-none" tabindex="0">Hide All Answers</button>
+  <button class="btn-text resetbtn openTextBoxController__resetButton" tabindex="0">Clear All Responses</button>
+</div>
+  <div class="post-text"><hr>© 2017 - 2023 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+</div>
+
+</div>
+</body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+    });
+  </script>
+  </html>

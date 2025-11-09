@@ -1,0 +1,11 @@
+<svg id="ico_completed" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="Component_2121" data-name="Component 2121">
+    <g id="Ellipse_567" data-name="Ellipse 567" fill="#6abf4b" stroke="#6abf4b" stroke-width="1">
+      <circle cx="12.5" cy="12.5" r="12.5" stroke="none"/>
+      <circle cx="12.5" cy="12.5" r="12" fill="none"/>
+    </g>
+  </g>
+  <g id="check" transform="translate(6.875 8.308)">
+    <path id="icons_check" data-name="icons/check" d="M3.75,8.384.183,4.817a.625.625,0,0,1,.884-.884L3.75,6.616,10.183.183a.625.625,0,1,1,.884.884Z" fill="#fff"/>
+  </g>
+</svg>
