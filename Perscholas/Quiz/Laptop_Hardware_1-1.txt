@@ -1,0 +1,26 @@
+What are the two main types of laptop batteries?;Lithium-ion (Li-ion) and Lithium-ion polymer (Li-Po)
+True or False: Modern lithium-ion batteries suffer from memory effect.;False — they can be recharged at any time without reducing capacity
+How do modular laptop batteries differ from non-removable batteries?;Modular batteries can be removed easily via a latch; non-removable require disassembling the laptop
+What is the recommended first step when a laptop keyboard stops working?;Plug in an external USB keyboard to check if the problem is hardware or software-related
+What is the laptop memory module called?;SO-DIMM (Small Outline Dual In-line Memory Module)
+What storage devices are commonly found in modern laptops?;M.2 SSDs (modern), sometimes 2.5” SSDs or HDDs in older laptops
+Why are M.2 SSDs preferred over 2.5” drives?;Smaller form factor, faster speeds, easier installation
+What is the purpose of cloning/imaging software in laptops?;To copy the entire drive (OS, apps, data) to a new drive without reinstalling
+Where are Wi-Fi antennas usually located in a laptop?;Wrapped around the display bezel
+After installing a Wi-Fi Mini PCIe or M.2 card, what must also be connected?;The wireless antenna wires (Main and Aux)
+Which hardware is required for Windows Hello Face authentication?;An IR-capable camera (built-in laptop webcam)
+Which hardware is required for Windows Hello Fingerprint authentication?;A fingerprint scanner
+What is NFC (Near Field Communication) used for on laptops?;Short-range authentication (payments, access cards, device-to-device)
+What is a common method to replace an internal laptop storage drive?;Remove back panel, unscrew drive, swap 2.5” or M.2 drive, then replace panel
+How are laptop keyboards usually connected to the motherboard?;Via a ribbon cable with a connector
+A user complains their laptop battery no longer holds a charge. The battery is built into the laptop chassis. What should a technician do first?;Remove the bottom screws, disassemble the laptop, and replace the internal battery. Check the exact battery model to ensure compatibility
+A laptop keyboard is not registering certain keys. You plug in an external USB keyboard and all keys work. What does this indicate?;The laptop keyboard hardware is faulty. The issue is not OS/software related. Technician should replace or repair the built-in keyboard
+A user wants to upgrade their laptop from an old spinning hard drive to an SSD without reinstalling the OS. What is the recommended approach?;Use cloning/imaging software to copy all partitions from the old drive to the new SSD. Then replace the drive physically (2.5” or M.2) and verify functionality
+After installing a new Mini PCIe Wi-Fi card, the laptop cannot detect networks. What is the most likely cause?;The wireless antenna wires were not connected. Mini PCIe and M.2 Wi-Fi cards require Main and Aux antennas connected for proper operation
+A laptop with Windows Hello Face login is unable to authenticate. Fingerprint login works fine. What hardware is missing or malfunctioning?;The IR-capable camera (webcam) is either missing, disabled, or malfunctioning. Face recognition requires the IR camera
+A technician replaces a single key on a laptop keyboard. After reassembly, the key is unresponsive. What should they check first?;Ensure the ribbon cable connector is fully seated on the motherboard and the keycap was installed correctly, without damaging underlying switches
+An older laptop has a 2.5” HDD. The user wants faster performance and higher reliability. Which upgrade is best?;Replace the HDD with a 2.5” or M.2 SSD. SSDs are faster, have no moving parts, and are more reliable in mobile environments
+A technician wants to add extra memory to a laptop, but the SO-DIMM slots are empty. The memory on the motherboard is soldered. What does this mean?;The existing memory cannot be upgraded. To increase memory, the entire motherboard must be replaced, since soldered memory is non-modular
+A laptop user needs short-range authentication to log in to a workstation or POS system. Which technology should the laptop support?;NFC (Near Field Communication) for short-range wireless authentication, such as access cards or mobile devices
+A technician replaces a laptop M.2 SSD. After booting, the laptop does not recognize the drive. What could be the problem?;Possible issues include: SSD not fully seated in the M.2 slot, missing mounting screw, BIOS not recognizing the drive, or incompatible form factor. Verify installation carefully
+

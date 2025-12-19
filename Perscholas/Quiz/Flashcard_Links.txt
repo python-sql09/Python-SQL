@@ -1,0 +1,137 @@
+Fernando Kahoot:
+~~~~~~~~~~~~~~~~
+Module 132:
+**********
+tps://create.kahoot.it/share/module-132/ad81699c-8fde-41a9-b58a-2d896a32e6fd
+
+Module 133:
+**********
+https://create.kahoot.it/share/module-133/f407c6c9-2e33-4783-b248-ebb2e744c1c0
+
+Chapter7:
+*********
+https://create.kahoot.it/share/chapter-7-1200-series/cef699ab-2317-4c19-8e0c-f5699651c218
+
+Test1:
+
+https://notebooklm.google.com/notebook/154c097c-ef0a-4626-8073-9adccede5250
+
+Test2:
+
+https://notebooklm.google.com/notebook/154c097c-ef0a-4626-8073-9adccede5250
+
+Professor Messer first 4 videos flash card:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+https://perscholas.instructure.com/courses/3032/pages/identify-the-problem-obj-5-dot-1
+https://perscholas.instructure.com/courses/3032/pages/establish-a-theory-obj-5-dot-1
+https://perscholas.instructure.com/courses/3032/pages/test-the-theory-obj-5-dot-1
+
+
+
+https://perscholas.instructure.com/courses/3032/pages/adding-expansion-cards-obj-1-dot-1
+https://perscholas.instructure.com/courses/3032/pages/cable-types-obj-3-dot-1
+
+https://notebooklm.google.com/notebook/0185ffcd-894d-49c7-ab60-665a5a270429
+
+https://notebooklm.google.com/notebook/33571b90-e180-4112-b307-db0ff0cec9f9?authuser=2
+
+https://notebooklm.google.com/notebook/a2653c6e-0a89-4150-af36-0fb39398c337
+
+Laptop Hardware 1.1:
+--------------------
+https://notebooklm.google.com/notebook/583d1d83-3f9f-4fae-9e48-b66a1957aae1
+
+ch1.Notes:
+
+https://notebooklm.google.com/notebook/d98af5ea-6d2e-49dc-80a2-1779db1265a1
+
+Ports Flash Cards:
+~~~~~~~~~~~~~~~~~~~
+https://notebooklm.google.com/notebook/639fcce2-8265-4274-a2c7-0cf7c49201ce
+https://wordwall.net/resource/696467/computing/network-ports
+
+Anne Chapter7&8:
+~~~~~~~~~~~~~~~
+https://notebooklm.google.com/notebook/639fcce2-8265-4274-a2c7-0cf7c49201ce
+
+Network+:
+~~~~~~~~~
+https://www.proprofs.com/quiz-school/story.php?title=network-ports-quiz_33d
+
+Motherboard IO ports:
+---------------------
+https://notebooklm.google.com/notebook/69f04946-131b-4ca4-a903-e7973c758786
+
+Slack:
+~~~~~~
+https://app.slack.com/client/T04411PBUN8/C043VK291QD
+
+Discord:
+~~~~~~~~
+https://discord.com/channels/1438403106445463564/1438403107045380161
+
+Coursera cybersecurity:
+~~~~~~~~~~~~~~~~~~~~~~~
+https://www.coursera.org/programs/per-scholas-it-support-dqcop?invitationToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbnZpdGF0aW9uSWQiOiJXYl91cDg5WFJSU183cWZQVnpVVTJ3IiwiZXhwIjoiOTIyMzM3MjAzNjg1NDc3NTgwNyIsImp0aSI6IldiX3VwODlYUlJTXzdxZlBWelVVMncifQ.VHzYzC43EoUKuTXjE_FhQ2XaRo9tx-lHU4-pqUtcMyI&utm_medium=email&utm_source=other&utm_campaign=programInvitation
+
+
+Disable MYSQL and MONGODB:
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+(base) deepa3@deepa3-Vostro-3546:~$ sudo mv /etc/apt/sources.list.d/mysql.list /etc/apt/sources.list.d/mysql.list.disabled
+[sudo] password for deepa3: 
+(base) deepa3@deepa3-Vostro-3546:~$ sudo mv /etc/apt/sources.list.d/mongodb-org-6.0.list /etc/apt/sources.list.d/mongodb-org-6.0.list.disabled
+(base) deepa3@deepa3-Vostro-3546:~$ 
+
+Enable:
+-------
+🔄 Re-enable MySQL repository
+sudo mv /etc/apt/sources.list.d/mysql.list.disabled /etc/apt/sources.list.d/mysql.list
+
+🔄 Re-enable MongoDB repository
+sudo mv /etc/apt/sources.list.d/mongodb-org-6.0.list.disabled /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+
+Then refresh:
+
+sudo apt update
+
+⚠️ IMPORTANT (before enabling)
+
+Since you’re on Ubuntu 24.04 (noble), these repos must be fixed first, or the same GPG errors will come back.
+
+Fix keys (do once)
+
+MySQL key
+
+curl -fsSL https://repo.mysql.com/RPM-GPG-KEY-mysql-2023 | sudo gpg --dearmor -o /usr/share/keyrings/mysql.gpg
+
+
+MongoDB key
+
+curl -fsSL https://pgp.mongodb.com/server-6.0.asc | sudo gpg --dearmor -o /usr/share/keyrings/mongodb.gpg
+
+🛠️ Verify repo files (very important)
+MySQL
+sudo nano /etc/apt/sources.list.d/mysql.list
+
+
+It must contain noble, not mantic:
+
+deb [signed-by=/usr/share/keyrings/mysql.gpg] http://repo.mysql.com/apt/ubuntu noble mysql-8.0
+
+MongoDB
+sudo nano /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+
+Use:
+
+deb [signed-by=/usr/share/keyrings/mongodb.gpg] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/6.0 multiverse
+
+
+Save and exit.
+
+✅ Final check
+sudo apt update
+
+
+If you see no GPG errors, everything is correct.

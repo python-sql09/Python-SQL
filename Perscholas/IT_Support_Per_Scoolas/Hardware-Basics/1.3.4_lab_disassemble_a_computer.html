@@ -1,0 +1,2127 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .SubStepNum {
+        text-indent: -25.5px;
+        margin-inline-start: 50px;
+      }
+      .component__content .component__body-inner .BodyTextL50 {
+        margin-inline-start: 30px;
+      }
+      .component__content .component__body-inner .Bulletlevel1 {
+        text-indent: -19px;
+        margin-inline-start: 48px;
+      }
+      .component__content .component__body-inner .Bulletlevel2 {
+          text-indent: -19px;
+          margin-inline-start: 72px;
+      }
+      .openTextBox__inner .openTextBox__widget .ReflectionQ, .component__content .component__body-inner .SubStepAlpha {
+          text-indent: -25.5px;
+          margin-inline-start: 30px;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article 62c749ed99b89900e9aa22a1 background-color-white remove-padding-top is-complete ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$360940522$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="article__header-wrapper background-color-white remove-padding-top ">
+        <div class="article__header ">
+              <div class="article__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$360940522$--><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b1" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b1" class="633ad13812b7ea0837bb22b1 block background-color-white  remove-padding-bottom  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b1" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white  remove-padding-bottom  ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$--> <div class=" block__title ">
+                      <!--?lit$360940522$--><heading-view aria-hidden="true" id="633ad13812b7ea0837bb22b1-heading-view" headingtitle="Lab - Disassemble a Computer" modelid="633ad13812b7ea0837bb22b1" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="block-heading" aria-level="1">
+        <span class="aria-label"> <!--?lit$360940522$-->Complete &nbsp;<!--?lit$360940522$-->Lab - Disassemble a Computer</span>
+        </div>
+      </div>
+    </heading-view>
+                        <div tabindex="0" role="heading" class="block__title-inner " aria-level="">
+                        <span class="accessibility-completion-indicator"><!--?lit$360940522$-->Complete </span>
+                        <!--?lit$360940522$-->Lab - Disassemble a Computer</div>
+                      </div>
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><text-view modelid="62bdd2967577ae00e364c221" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c221" class="component text 62bdd2967577ae00e364c221  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$360940522$--><h3>Introduction</h3><p>In this lab, you will disassemble a desktop computer using safe lab procedures and the proper tools. Use extreme care and follow all safety procedures. Familiarize yourself with the tools you will be using inthis lab. </p><p>The goal of this lab is to separate the components and practice using tools properly. The separated components can be used in a later lab for assembly.</p><p>This lab does not include removing the motherboard, CPU, and cooling device from the computer due to the replacement cost of these items. If possible, allow learners to remove these components from spare or broken computers that are kept in the classroom for part identification and demonstration.</p><p><strong>Part 1: Preparation</strong></p><p><strong>Part 2: Parts Removal<!--<strong--></strong></p><h3><strong>Recommended Tools</strong></h3><table cellspacing="0" class="Table" style="border-collapse:collapse; border:none; font-family:&quot;Times New Roman&quot;; margin-left:12px; text-decoration-color:initial; text-decoration-style:initial; text-decoration-thickness:initial" summary="A table of recommended tools."><thead><tr><td style="border-bottom:1px solid black; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:300px"><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Safety glasses</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Antistatic wrist strap</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Antistatic mat</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Flat head screwdrivers</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Phillips head screwdrivers</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Torx screwdrivers</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Hex driver</span></span></p></td><td style="border-bottom:1px solid black; border-left:none; border-right:1px solid black; border-top:1px solid black; vertical-align:top; width:378px"><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Part retriever</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Thermal compound</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Can of compressed air</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Cable ties</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Parts organizer</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Containers for storing computer parts</span></span></p><p><span style="font-size:10pt; margin-left:10px"><span style="font-family:Arial,sans-serif">Antistatic bags for electronic parts</span></span></p></td></tr></thead></table></div>
+                      </div>
+                    </div>
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b2" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b2" class="633ad13812b7ea0837bb22b2 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b2" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><text-view modelid="62bdd2967577ae00e364c222" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c222" class="component text 62bdd2967577ae00e364c222  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$360940522$--><h3>Instructions</h3><h3>Part 1: Preparation</h3><p><strong>Step 1: Power off the Computer and remove peripheral items.</strong></p><ol type="a"><li><p>Turn off the power to the computer and disconnect the power cable from the wall and the power supply.</p></li><li><p>Remove all external peripheral items, such as Ethernet cables, monitors, keyboards.</p></li></ol><p><strong>Step 2: Open the Computer Case.</strong></p><p>Generally, computer cases are held in place using one or a combination of these three ways below:</p><p><strong>Screwless</strong></p><p>These cases are held together using metal or plastic clips. To open the case, the clips are released by pressing buttons or switches to remove the side panel.</p><p><strong>Screw</strong></p><p>Locate all the screws that secure the side panels to the back of the computer. These screws are located at the edge of the case. Use the proper size and type of screwdriver to remove the side panel screws. Do not remove the screws that secure the power supply to the case. Put all the screws in one place, such as a compartment in the parts organizer or small cup. Label the compartment or cup with a piece of masking tape on which you have written&nbsp;<strong>side panel screws</strong>. Remove the side panels from the case.</p><p><strong>Thumbscrew</strong></p><p>These cases come with screws that can be tightened or loosened with your fingers. Loosen the thumbscrews to remove the side panel. The thumbscrews are located on the edge of the computer case.</p><p>If you have a camera or smartphone, take a picture of the inside of the computer case to be used as a reference when reassembling the computer.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b3" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b3" class="633ad13812b7ea0837bb22b3 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b3" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c223" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c223" class="component opentextbox 62bdd2967577ae00e364c223  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c223" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$-->What type of screwdriver did you use to remove the screws?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->A Phillips screwdriver and hex drivers are the most commonly used screwdrivers to remove case panels.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b4" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b4" class="633ad13812b7ea0837bb22b4 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b4" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c224" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c224" class="component opentextbox 62bdd2967577ae00e364c224  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c224" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$-->How many screws secured the side panels?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. Normally there are two screws for each panel on a mid-tower case.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b5" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b5" class="633ad13812b7ea0837bb22b5 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b5" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><text-view modelid="62bdd2967577ae00e364c225" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c225" class="component text 62bdd2967577ae00e364c225  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+              <div class="component__header-inner text__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$--> <div class="component__content">
+                      <div tabindex="0" class="component__body text__body">
+                        <div class="component__body-inner text__body-inner"><!--?lit$360940522$--><p><strong>Step 3: Antistatic Wrist Strap.</strong></p><p>Put on an antistatic wrist strap. Connect one end of the conductor to the wrist strap. Clip the other end of the conductor to an unpainted, metal part of the case.</p><p>If you have an antistatic mat, place it on the work surface and put the computer case on top of it. Ground the antistatic mat to an unpainted, metal part of the case.</p><h3>Part 2: Parts Removal</h3><p>In this part, you will remove the internal drives and data cables, adapter cards, memory modules, and power supply.</p><p></p><p><strong>Note</strong>: Some manufacturers do not use screws to fasten components inside of the computer case. Some may use plastic or metal clips that fasten components to the computer chassis. When in doubt, perform a web search for the computer case manufacturer or computer system.</p><p><strong>Note</strong>: Be careful to remove only screws holding components in place, and not the screws that hold components together.</p></div>
+                      </div>
+                    </div>
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        </text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b6" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b6" class="633ad13812b7ea0837bb22b6 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b6" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c226" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c226" class="component opentextbox 62bdd2967577ae00e364c226  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c226" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><p><strong>Step 1: Remove the Hard Drive.</strong></p><ol type="a"><li><p>Locate the hard drive. Carefully disconnect the power and data cables from the back of the hard drive.</p></li></ol>Which type of data cable did you disconnect?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. SATA is an example of data cables.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b7" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b7" class="633ad13812b7ea0837bb22b7 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b7" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c227" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c227" class="component opentextbox 62bdd2967577ae00e364c227  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c227" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><ol type="a" start="2"><li><p>Locate all the screws that secure the hard drive in place. Use the proper size and type of screwdriver to remove the hard drive screws. Put all the screws in one place and label them.</p></li></ol>What type of screws secured the hard drive to the case?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. Normally, crosshead screws secure hard drives in place.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b8" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b8" class="633ad13812b7ea0837bb22b8 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b8" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c228" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c228" class="component opentextbox 62bdd2967577ae00e364c228  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c228" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$-->How many screws secured the hard drive to the case?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. Most cases allow for up to four screws per hard drive.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b9" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b9" class="633ad13812b7ea0837bb22b9 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b9" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c229" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c229" class="component opentextbox 62bdd2967577ae00e364c229  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c229" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$-->Is the hard drive connected to a mounting bracket? If so, what type of screws secure the hard drive to the mounting bracket?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. Most hard drive manufacturers use a flush, crosshead screw.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--> <div class="openTextBox__postText"> <!--?lit$360940522$--><p><strong>Caution</strong>: Do NOT remove the screws that hold the hard drive together.</p> </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b10" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b10" class="633ad13812b7ea0837bb22b10 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b10" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c230" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c230" class="component opentextbox 62bdd2967577ae00e364c230  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c230" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><ol type="a" start="3"><li><p></p><p>Gently remove the hard drive from the case. Look for a jumper reference chart on the hard drive. If there is a jumper installed on the hard drive, use the jumper reference chart to see if the hard drive is set for a Master, Slave, or Cable Select (CS) drive. Place the hard drive in an antistatic bag.</p></li></ol><p></p>What is the jumper setting of the hard drive?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Master, Slave, or Cable Select (CS)
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b11" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b11" class="633ad13812b7ea0837bb22b11 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b11" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c231" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c231" class="component opentextbox 62bdd2967577ae00e364c231  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c231" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><p><strong>Step 2: Remove Optical Drive.</strong></p><ol><li type="a">Locate the optical drive (Blu-ray, DVD, etc.). Carefully disconnect the power and data cables from the optical drive. Remove the audio cable from the optical drive if there is one connected.<p></p></li></ol>What kind of data cable did you disconnect?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. For example, SATA cable connects the optical drive to the motherboard.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b012" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b012" class="633ad13812b7ea0837bb22b012 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b012" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c232" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c232" class="component opentextbox 62bdd2967577ae00e364c232  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c232" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$-->Is there a jumper on the optical drive? What is the jumper setting?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Master, Slave, or Cable Select (CS) drive.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b13" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b13" class="633ad13812b7ea0837bb22b13 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b13" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c233" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c233" class="component opentextbox 62bdd2967577ae00e364c233  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c233" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><ol type="a" start="2"><li><p></p><p> Locate and remove all the screws that secure the optical drive to the case. Put all the screws in one place and label them. Place the optical drive in an antistatic bag.</p></li></ol><p></p>How many screws secured the optical drive to the case?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. There are usually four screws.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b14" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b14" class="633ad13812b7ea0837bb22b14 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b14" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c234" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c234" class="component opentextbox 62bdd2967577ae00e364c234  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c234" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><p><strong>Step 3: Remove the Power Supply.</strong></p><ol type="a"><li><p> Locate the power supply. Find the power connection(s) to the motherboard.</p></li><li><p>Gently remove the power connection(s) from the motherboard.</p></li></ol>How many pins are there in the motherboard connector?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b15" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b15" class="633ad13812b7ea0837bb22b15 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b15" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c235" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c235" class="component opentextbox 62bdd2967577ae00e364c235  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c235" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><ol type="a" start="3"><li><p>Disconnect the power cables from any case fans.</p></li><li><p>Disconnect the power cable from the video card if it requires one.</p></li><li><p>Disconnect any other power supply cables from where they were connected.</p></li></ol><p>If there were additional cables disconnected, to what were they connected?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b16" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b16" class="633ad13812b7ea0837bb22b16 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b16" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c236" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c236" class="component opentextbox 62bdd2967577ae00e364c236  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c236" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><p></p><ol type="a" start="6"><li><p>Locate and remove all the screws that secure the power supply to the case. Put all the screws in one place and label them.</p>How many screws secure the power supply to the case?</li></ol></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--> <div class="openTextBox__postText"> <!--?lit$360940522$--><ol type="a" start="7"><li><p>Carefully remove the power supply from the case. Place the power supply with the other computer components.</p></li></ol> </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b17" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b17" class="633ad13812b7ea0837bb22b17 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b17" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentabletextbox-view modelid="62bdd2967577ae00e364c237" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+      <div class="component">
+        <div class="opentabletextbox-inner component__inner">
+          <div data-socialgoodpulse-id="62bdd2967577ae00e364c237" class="component opentabletextbox 62bdd2967577ae00e364c237  is-undefined is-complete  ">
+            <div class="component__header-container">
+              <div data-socialgoodpulse-id="62bdd2967577ae00e364c237" class="opentabletextbox ">
+                <base-view type="component" lowercase_component="openTableTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTableTextBox__header">
+              <div class="component__header-inner openTableTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$--> <div class="component__content">
+                      <div tabindex="0" class="component__body openTableTextBox__body">
+                        <div class="component__body-inner openTableTextBox__body-inner"><!--?lit$360940522$--><p><strong>Step 4: Remove Adapter Cards.</strong></p><ol type="a"><li><p>Locate any adapter cards that are installed in the computer, such as a video, NIC, or sound card.</p></li><li><p>Locate and remove the screw that secures the adapter card to the case. Put the adapter card screws in one place and label them.</p></li><li><p>Carefully remove the adapter card from the slot. Be sure to hold the adapter card by the mounting bracket or by the edges. Place the adapter card in an antistatic bag. Repeat this process for all the adapter cards.</p></li></ol><p><strong>Note</strong>: Be very careful when removing video adapters. There is often a locking tab on the slot that must be released before the card can be removed.</p><ol type="a" start="4"><li><p>List the adapter cards and the slot types below.</p></li></ol></div>
+                      </div>
+                    </div>
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+              </div>
+            </div>
+            <div class="component__widget opentabletextBox__widget question-container ">
+              <div class="openTableTextBox__preText">
+                <!--?lit$360940522$-->
+              </div>
+              <div class="opentabletextbox-container openTableTextBox__table-container">
+                <table class="opentabletextbox-table" tabindex="0">
+                  <!--?lit$360940522$-->
+                        <thead class="openTableTextBox__table-header">
+                          <tr>
+                            <!--?lit$360940522$--><!----><th tabindex="0" scope="col"><!--?lit$360940522$-->Adapter Card</th><!----><!----><th tabindex="0" scope="col"><!--?lit$360940522$-->Slot Type</th><!---->
+                          </tr>
+                        </thead>
+                  <tbody>
+                    <!--?lit$360940522$--><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$360940522$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$360940522$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$360940522$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!----><!---->
+                        <tr class="openTableTextBox__table-row ">
+                          <!--?lit$360940522$--><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!----><!---->
+                              <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                <div class="openTableTextBox__textArea-container">
+                                  <!--?lit$360940522$-->
+                                        <div class="openTableTextBox__textArea-container">
+                                          <fieldset class="openTableTextBox__fieldset">
+                                            <legend class="openTableTextBox__legend">
+                                              <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                                            </legend>
+                                            <textarea class="openTableTextBox__textArea" rows="3" name="answerArea" tabindex="0" placeholder="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                                          </fieldset>
+                                        </div>
+                                      
+                                </div>
+                              </td>
+                            <!---->
+                        </tr>
+                      <!---->
+                  </tbody>
+                </table>
+              </div>
+              <div class="openTableTextBox__answerText answergray openTableTextBox__table-container  hide">
+                <table class="opentabletextbox-table openTableTextBox__table-inner" tabindex="0">
+                  <!--?lit$360940522$-->
+                        <thead class="openTableTextBox__table-header">
+                          <tr tabindex="0">
+                            <!--?lit$360940522$--><!----><th scope="col"><!--?lit$360940522$-->Adapter Card</th><!----><!----><th scope="col"><!--?lit$360940522$-->Slot Type</th><!---->
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <!--?lit$360940522$--><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$360940522$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->Answers may vary: Video, NIC, Modem</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->Answers may vary: PCI, PCIe, or CNR</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$360940522$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->&nbsp;</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->&nbsp;</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$360940522$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->&nbsp;</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->&nbsp;</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!----><!---->
+                                <tr class="openTableTextBox__table-row ">
+                                  <!--?lit$360940522$--><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->&nbsp;</div>
+                                        </div>
+                                      </td>
+                                    <!----><!---->
+                                      <td tabindex="0" class="openTableTextBox__table-row-data ">
+                                        <div class="openTableTextBox__textArea-container">
+                                          <div><!--?lit$360940522$-->&nbsp;</div>
+                                        </div>
+                                      </td>
+                                    <!---->
+                                </tr>
+                              <!---->
+                      </tbody>
+                </table>
+              </div>
+              <div class="btn__container">
+                <button class="btn-text openTableTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>
+                <button class="btn-text openTableTextBox__showButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>
+              </div>
+              <div class="openTableTextBox__postText">
+                <!--?lit$360940522$-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </opentabletextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b18" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b18" class="633ad13812b7ea0837bb22b18 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b18" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c238" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c238" class="component opentextbox 62bdd2967577ae00e364c238  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c238" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><p><strong>Step 5: Remove Memory Modules.</strong></p><ol type="a"><li><p>Locate the memory modules on the motherboard.</p></li></ol>What type of memory modules are installed on the motherboard?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. Some of the examples are DDR3 and DDR4.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b19" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b19" class="633ad13812b7ea0837bb22b19 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b19" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c239" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c239" class="component opentextbox 62bdd2967577ae00e364c239  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c239" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$-->How many memory modules are installed on the motherboard?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--> <div class="openTextBox__postText"> <!--?lit$360940522$--><ol type="a" start="2"><li><p>Remove the memory modules from the motherboard. Be sure to release any locking tabs that may be securing the memory module. Hold the memory module by the edges and gently lift it out of the slot. Put the memory modules in an antistatic bag.</p></li></ol> </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!----><!---->
+                                    <block-view modelid="633ad13812b7ea0837bb22b20" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="block" style="width: 5%;"><!---->
+                
+                <div data-socialgoodpulse-id="633ad13812b7ea0837bb22b20" class="633ad13812b7ea0837bb22b20 block background-color-white remove-padding-top remove-padding-bottom is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="633ad13812b7ea0837bb22b20" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="block__header-wrapper background-color-white remove-padding-top remove-padding-bottom ">
+        <div class="block__header ">
+              <div class="block__header-inner ">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                        <div class="component__container">                            
+                                <!--?lit$360940522$--><!----><opentextbox-view modelid="62bdd2967577ae00e364c240" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="62bdd2967577ae00e364c240" class="component opentextbox 62bdd2967577ae00e364c240  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="62bdd2967577ae00e364c240" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+              <div class="component__header-inner openTextBox__header-inner">
+                  
+                    <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+                  <!--?lit$360940522$-->
+              </div>
+          </div>
+        </div>
+      
+    </base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$360940522$--> <div class="openTextBox__preText"><!--?lit$360940522$--><p><strong>Step 6: Remove Data Cables.</strong></p><ol type="a"><li><p>Remove all data cables from the motherboard. Make sure to note the connection location of any cable you disconnect.</p></li></ol>What types of cables were disconnected?</div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$360940522$--><!--?lit$360940522$-->Answer Area<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answer here." aria-label="Type your answer here.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$360940522$-->
+                      <!--?lit$360940522$-->Answers may vary. Some of the examples are SATA cables.
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$360940522$-->Show Answer</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$360940522$-->Hide Answer</button>                    
+                      </div>
+                      <!--?lit$360940522$--> <div class="openTextBox__postText"> <!--?lit$360940522$--><ol type="a" start="2"><li><p>You have completed this lab. The computer case should contain the motherboard, the CPU, and any cooling devices. Do not remove any additional components.</p></li></ol> </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      </opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            </block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$360940522$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="linux" dir="ltr" location="page" theme="light" orientation="landscape" themetype="block-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$360940522$-->Show All Answers</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$360940522$-->Hide All Answers</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$360940522$-->Clear My Responses</button>         
+            </div>
+            <!--?lit$360940522$--><hr>
+            <!--?lit$360940522$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$360940522$-->© 2017 - 2023 Cisco and/or its affiliates. All rights reserved. Cisco Public
+                </div>
+                   
+        </sgpluse-opentextboxcontroller-view><script></script></body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      .querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </html>

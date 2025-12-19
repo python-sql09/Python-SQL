@@ -1,0 +1,2273 @@
+<!DOCTYPE html><html><head>
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+    </style>
+
+</head><body>
+
+<div class="article__inner">
+
+
+  <div class="block__container">
+  <div data-adapt-id="c2522dc61b454a229b5510cb996373agba1" class="block c2522dc61b454a229b5510cb996373agba1 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+  <div class="block__header">
+    <div class="block__header-inner">
+
+      <div class="block__title">
+
+        <div class="js-heading is-incomplete">
+
+<div id="c2522dc61b454a229b5510cb996373agba1-heading" class="js-heading-inner" role="heading" aria-level="3">
+
+  <span class="aria-label">
+      Incomplete Lab - Working with Text Files in the CLI
+      </span>
+
+</div>
+</div><div class="block__title-inner" aria-hidden="true">
+          Lab - Working with Text Files in the CLI
+        </div>
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba1" class="component text effc45c44b4e46a1bfa1a4380368b3caba1 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba1-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Objectives</h3><p>In this lab, you will become familiar with Linux command line text editors and configuration files.</p><p><strong>Part 1: Graphical Text Editors</strong></p><p><strong>Part 2: Command Line Text Editors</strong></p><p><strong>Part 3: Working with Configuration Files</strong></p><h3>Required Resources</h3><ul><li>Security Workstation virtual machine</li></ul>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba2" class="block c2522dc61b454a229b5510cb996373agba2 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba2" class="component text effc45c44b4e46a1bfa1a4380368b3caba2 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba2-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Instructions</h3><p><strong>Part 1: Graphical Text Editors</strong></p><p>Before you can work with text files in Linux, you must be familiar with text editors.</p><p>Text editors are one of the oldest categories of applications created for computers. Linux, like many other operating systems, has many different text editors, with various features and functions. Some text editors include graphical interfaces, while others are only usable via the command line. Each text editor includes a feature set designed to support a specific work scenario. Some text editors focus on the programmer and include features such as syntax highlighting, bracket matching, find and replace, multi-line Regex support, spell check, and other programming-focused features.</p><p>To save space and keep the virtual machine lean, the <strong>Cisco CyberOps Workstation VM</strong> only includes <strong>SciTE</strong> as a graphical text editor application. <strong>SciTE</strong> is a simple, small and fast text editor. It does not have many advanced features, but it fully supports the work done in this course.</p><p><strong>Note</strong>: The choice of text editor is a personal one. There is no such thing as a best text editor. The best text editor is the one that you feel most comfortable with and works best for you.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba3" class="block c2522dc61b454a229b5510cb996373agba3 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba3" class="component text effc45c44b4e46a1bfa1a4380368b3caba3 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba3-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Step 1: Open SciTE from the GUI</strong></p><ol type="a"><li>Log on to the CyberOps VM as the user <strong>analyst</strong> using the password <strong>cyberops</strong>. The account <strong>analyst</strong> is used as the example user account throughout this lab.</li><li> On the top bar, navigate to <strong>Applications &gt; CyberOPS &gt; SciTE</strong> to launch the <strong>SciTE</strong> text editor.</li><li><strong>SciTE</strong> is simple but includes a few important features: tabbed environment, syntax highlighting and more. Spend a few minutes with SciTE. In the main work area, type or copy and paste the text below:<br>“Space, is big. Really big. You just won't believe how vastly, hugely, mindbogglingly big it is. I mean, you may think it's a long way down the road to the chemist, but that's just peanuts to space.”<br>― Douglas Adams, The Hitchhiker’s Guide to the Galaxy</li><li>Click <strong>File</strong> &gt; <strong>Save</strong> to save the file. Notice that <strong>SciTE</strong> attempts to save the file to the current user’s home directory, which is analyst, by default. Name the file <strong>space.txt</strong> and click <strong>Save</strong>.</li><li>Close <strong>SciTE</strong> by clicking the <strong>X</strong> icon on the upper right side of the window and then reopen <strong>SciTE</strong>.</li><li>Click <strong>File</strong> &gt; <strong>Open…</strong> and search for the newly saved file, <strong>space.txt</strong>.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba4" class="block c2522dc61b454a229b5510cb996373agba4 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba4" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba4 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">Could you immediately find space.txt?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">No</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba5" class="block c2522dc61b454a229b5510cb996373agba5 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba5" class="component text effc45c44b4e46a1bfa1a4380368b3caba5 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba5-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol start="7" type="a"><li>Even though SciTE is looking at the correct directory (/home/analyst), space.txt is not displayed. This is because SciTE is looking for known extensions and .txt is not one of them. To display all files, click the dropdown menu at the bottom of the <strong>Open File</strong> window and select <strong>All Files (*)</strong>.</li><li>Select <strong>space.txt</strong> to open it.<br><strong>Note</strong>: While the Linux file systems do not rely on extensions, some applications such as <strong>SciTE</strong> may attempt to use them to identify file types.</li><li>Close space.txt when finished.</li></ol><p><strong>Step 2: Open SciTE from the Terminal.</strong></p><ol type="a"><li>Alternatively, you can also open SciTE from the command line. Click the <strong>terminal</strong> icon located in the Dock at the bottom of the desktop. The <strong>terminal</strong> emulator opens.</li><li>Type <strong>ls</strong> to see the contents of the current directory. Notice <strong>space.txt</strong> is listed. This means you do not have to provide path information to open the file.</li><li>Type <strong>scite space.txt</strong> to open <strong>SciTE</strong>. Note that this will not only launch <strong>SciTE</strong> in the GUI, but it will also automatically load the space.txt text file that was previously created.<br><pre>[analyst@secOps ~]$ <strong> scite space.txt</strong></pre></li><li> Notice that while <strong>SciTE</strong> is open on the foreground, the terminal window used to launch it is still open in the background. In addition, notice that the terminal window used to launch <strong>SciTE</strong> no longer displays the prompt.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba6" class="block c2522dc61b454a229b5510cb996373agba6 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba6" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba6 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">Why is the prompt not shown in the terminal?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Because the terminal is running SciTE, and therefore, unable to receive commands.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba7" class="block c2522dc61b454a229b5510cb996373agba7 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba7" class="component text effc45c44b4e46a1bfa1a4380368b3caba7 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba7-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol start="5" type="a"><li>Close this instance of <strong>SciTE</strong> by either clicking the X icon as before, or by switching the focus back to the terminal window that launched <strong>SciTE</strong> and stopping the process. You can stop the process by pressing <strong>CTRL+C</strong>.<br><strong>Note</strong>: Starting <strong>SciTE</strong> from the command line is helpful when you want to run <strong>SciTE</strong> as <strong>root</strong>. Simply precede <strong>scite</strong> with the <strong>sudo</strong> command, <strong>sudo scite</strong>.</li><li>Close <strong>SciTE</strong> and move on to the next section.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba8" class="block c2522dc61b454a229b5510cb996373agba8 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba8" class="component text effc45c44b4e46a1bfa1a4380368b3caba8 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba8-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Part 2: Command Line Text Editors</strong></p><p>While graphical text editors are convenient and easy to use, command line-based text editors are very important in Linux computers. The main benefit of command line-based text editors is that they allow for text file editing from a remote shell on a remote computer.</p><p>Consider the following scenario. A user must perform administrative tasks on a Linux computer but is not sitting in front of that computer. Using SSH, the user starts a remote shell to the aforementioned computer. Under the text-based remote shell, the graphical interface may not be available which makes it impossible to rely on graphical text editors. In this type of situation, text-based text editors are crucial.</p><p><strong>Note</strong>: This is mainly true when connecting to remote, headless servers that lack a GUI interface.</p><p>The <strong>Cisco CyberOps Workstation VM</strong> includes a few command line-based text editors. This course focuses on <strong>nano</strong>.</p><p><strong>Note</strong>: Another extremely popular text editor is called <strong>vi</strong>. While the learning curve for <strong>vi</strong> is considered steep, <strong>vi</strong> is a very powerful command line-based text editor. It is included by default in almost all Linux distributions and its original code was first created in 1976. An updated version of <strong>vi</strong> is named <strong>vim</strong> which stands for vi-improved. Today most <strong>vi</strong> users are actually using the updated version, <strong>vim</strong>.</p><p>Due to the lack of graphical support, <strong>nano</strong> (or GNU <strong>nano</strong>) can be controlled solely through the keyboard. <strong>CTRL+O</strong> saves the current file; <strong>CTRL+W</strong> opens the search menu. GNU <strong>nano</strong> uses a two-line shortcut bar at the bottom of the screen, where a number of commands for the current context are listed. After nano is open, press <strong>CTRL+G</strong> for the help screen and a complete list.</p><ol type="a"><li>In the terminal window, type <strong>nano space.txt</strong> to open the text file created in Part 1.<br><pre>[analyst@secOps ~]$ <strong> nano space.txt</strong></pre></li><li><strong>nano</strong> will launch and automatically load the <strong>space.txt</strong> text file. While the text may seem to be truncated or incomplete, it is not. Because the text was created with no return characters and line wrapping is not enabled, by default, <strong>nano</strong> is displaying one long line of text.<br>Use the Home and End keyboard keys to quickly navigate to the beginning and to the end of a line, respectively.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba9" class="block c2522dc61b454a229b5510cb996373agba9 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba9" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba9 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">What character does nano use to represent that a line continues beyond the boundaries of the screen?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">The greater than sign (&gt;) or the dollar sign ($), depending on the nano version.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba10" class="block c2522dc61b454a229b5510cb996373agba10 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba10" class="component text effc45c44b4e46a1bfa1a4380368b3caba10 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba10-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol type="a" start="3"><li>As shown on the bottom shortcut lines, <strong>CTRL+X</strong> can be used to exit <strong>nano</strong>. <strong>nano</strong> will ask if you want to save the file before exiting (‘Y’ for Yes, or N for ‘No’). If ‘Y’ is chosen, you will be prompted to press enter to accept the given file name, or change the file name, or provide a file name if it is a new unnamed document.</li><li> To control <strong>nano</strong>, you can use <strong>CTRL</strong>, <strong>ALT</strong>, <strong>ESCAPE</strong> or the META keys. The META key is the key on the keyboard with a Windows or Mac logo, depending on your keyboard configuration.<br>Navigation in nano is very user friendly. Use the arrows to move around the files. Page Up and Page Down can also be used to skip forward or backwards entire pages. Spend some time with <strong>nano</strong> and its help screen. To enter the help screen, press <strong>CTRL+G</strong>. Press <strong>q</strong> to quit the help screen and return to document editing in nano.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba11" class="block c2522dc61b454a229b5510cb996373agba11 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba11" class="component text effc45c44b4e46a1bfa1a4380368b3caba11 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba11-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Part 3: Working with Configuration Files</strong></p><p>In Linux, everything is treated as a file, including the memory, the disks, the monitor output, the files, and the directories. From the operating system standpoint, everything is a file. It should be no surprise that the system itself is configured through files. Known as configuration files, they are usually text files and are used by various applications and services to store adjustments and settings for that specific application or service. Practically everything in Linux relies on configuration files to work. Some services have not one but several configuration files.</p><p>Users with proper permission levels use text editors to change the contents of such configuration files. After the changes are made, the file is saved and can be used by the related service or application. Users are able to specify exactly how they want any given application or service to behave. When launched, services and applications check the contents of specific configuration files and adjust their behavior accordingly.</p><p><strong>Step 1: Locating Configuration Files</strong></p><p>The program author defines the location of configuration for a given program (service or application). Because of that, the documentation should be consulted when assessing the location of the configuration file. Conventionally however, in Linux, configuration files that are used to configure user applications are often placed in the user’s home directory while configuration files used to control system-wide services are placed in the <strong>/etc</strong> directory. Users always have permission to write to their own home directories and are able to configure the behavior of applications they use.</p><ol type="a"><li>Use the <strong>ls</strong> command to list all the files in the <strong>analyst</strong> home directory:</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba12" class="block c2522dc61b454a229b5510cb996373agba12 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba12" class="component table effc45c44b4e46a1bfa1a4380368b3caba12 page-tracer-table table-padding-increase is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="component__header table__header" id="effc45c44b4e46a1bfa1a4380368b3caba12-header">
+      <div class="component__header-inner table__header-inner">
+    
+    
+        
+    
+        <div class="component__body table__body">
+          <div class="component__body-inner table__body-inner">
+            <pre>[analyst@secOps ~]$ <strong>ls –l</strong></pre><br><pre>total 20</pre>
+          </div>
+        </div>
+    
+        <div class="component__instruction table__instruction">
+          <div class="component__instruction-inner table__instruction-inner">
+            Better viewed in landscape mode.
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>2</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 22<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>Desktop<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>3</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Apr&nbsp; 2<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>14:44<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>Downloads<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-2 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>9</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Jul 19<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>lab.support.files<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-3 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>2</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 21<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>second_drive<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-4 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-r--r--<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>255</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Apr 17<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>16:42<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>space.txt<code>
+                        </code></code></td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba13" class="block c2522dc61b454a229b5510cb996373agba13 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba13" class="component table effc45c44b4e46a1bfa1a4380368b3caba13 page-tracer-table table-padding-increase is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="component__header table__header" id="effc45c44b4e46a1bfa1a4380368b3caba13-header">
+      <div class="component__header-inner table__header-inner">
+    
+    
+        
+    
+        <div class="component__body table__body">
+          <div class="component__body-inner table__body-inner">
+            <p>While a few files are displayed, none of them seem to be configuration files. This is because it is convention to hide home-directory-hosted configuration files by preceding their names with a “.” (dot) character.</p><ol type="a" start="2"><li> Use the ls command again but this time add the <strong>–a</strong> option to also include hidden files in the output:</li></ol><pre>[analyst@secOps ~]$ <strong>ls –la</strong></pre><br><pre>total 144</pre>
+          </div>
+        </div>
+    
+        <div class="component__instruction table__instruction">
+          <div class="component__instruction-inner table__instruction-inner">
+            Better viewed in landscape mode.
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            <code>drwx------<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>14</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Apr 17<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>16:34<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>3</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>root<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>root</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 20<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>..<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-2 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-------<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>424</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Apr 17<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>12:52<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.bash_history<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-3 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-r--r--<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>21</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Feb&nbsp; 7<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.bash_logout<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-4 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-r--r--<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>57</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Feb&nbsp; 7<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.bash_profile<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-5 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-r--r--<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>97</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 20<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.bashrc<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-6 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-r--r--<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>141</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Feb&nbsp; 7<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.bashrc_stock<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-7 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>8</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 25<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>12:18<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.cache<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-8 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>10</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Jul 19<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.config<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-9 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>2</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 22<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>Desktop<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-10 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-r--r--<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>23</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 23<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.dmrc<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-11 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>3</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Apr&nbsp; 2<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>14:44<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>Downloads<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-12 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwx-----<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>3</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 22<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.gnupg<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-13 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-------<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>2520</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 24<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>12:32<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.ICEauthority<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-14 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>2</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 24<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.idlerc<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-15 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>9</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Jul 19<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>lab.support.files<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-16 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>3</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 22<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.local<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-17 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwx------<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>5</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 24<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>.mozilla<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-18 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drwxr-xr-x<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>2</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>4096</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Mar 21<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>2018<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>second_drive<code>
+                        </code></code></td>
+            </tr>
+            <tr class="table-row nth-child-19 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>-rw-r--r--<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>1</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>analyst<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>analyst</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-4 ">
+                            <code>255</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-5 ">
+                            <code>Apr 17<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-6 ">
+                            <code>16:42<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-7 ">
+                            <code>space.txt<code>
+                        </code></code></td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba14" class="block c2522dc61b454a229b5510cb996373agba14 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba14" class="component text effc45c44b4e46a1bfa1a4380368b3caba14 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba14-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol type="a" start="3"><li>Use <strong>cat</strong> command to display the contents of the <strong>.bashrc</strong> file. This file is used to configure user-specific terminal behavior and customization.<br><pre>[analyst@secOps ~]$ <strong>cat .bashrc</strong></pre><br><pre>export EDITOR=vim</pre><br><br><pre>PS1='/[/e[1;32m/][/u@/h /W]/$/[/e[0m/] '</pre><br><pre>alias ls='ls --color'</pre><br><pre>alias vi='vim'</pre><p>Do not worry too much about the syntax of .bashrc at this point. The important thing to notice is that .bashrc contains configuration for the terminal. For example, the line PS1='/[/e[1;32m/][/u@/h /W]/$/[/e[0m/] ' defines the prompt structure of the prompt displayed by the terminal: [username@hostname current_dir] followed by a dollar sign, all in green. A few other configurations include shortcuts to commands such as ls and vi. In this case, every time the user types ls, the shell automatically converts that to ls –color to display a color-coded output for ls (directories in blue, regular files in grey, executable files in green, etc.)</p><p></p>The specific syntax is out of the scope of this course. What is important is understanding that user configurations are conventionally stored as hidden files in the user’s home directory.<p></p></li><li>While configuration files related to user applications are conventionally placed under the user’s home directory, configuration files relating to system-wide services are place in the <strong>/etc</strong> directory, by convention. Web services, print services, ftp services, and email services are examples of services that affect the entire system and of which configuration files are stored under <strong>/etc</strong>. Notice that regular users do not have writing access to <strong>/etc</strong>. This is important as it restricts the ability to change the system-wide service configuration to the <strong>root</strong> user only.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba15" class="block c2522dc61b454a229b5510cb996373agba15 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba15" class="component table effc45c44b4e46a1bfa1a4380368b3caba15 page-tracer-table is-full scroll"><div class="table-inner component-inner">
+    
+    
+    <div class="component__header table__header" id="effc45c44b4e46a1bfa1a4380368b3caba15-header">
+      <div class="component__header-inner table__header-inner">
+    
+    
+        
+    
+        <div class="component__body table__body">
+          <div class="component__body-inner table__body-inner">
+            <p>Use the <strong>ls</strong> command to list the contents of the <strong>/etc</strong> directory:</p><pre>[analyst@secOps ~]$ <strong>ls /etc</strong></pre>
+          </div>
+        </div>
+    
+        <div class="component__instruction table__instruction">
+          <div class="component__instruction-inner table__instruction-inner">
+            Better viewed in landscape mode.
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    <div class="table-wrapper">
+    <div class="table-widget component-widget">
+        <table class="" style="min-width: 800px">
+            <tbody><tr class="table-row nth-child-0 ">
+                        <td rowspan="1" colspan="1" style="width: 200;" class="table-data nth-child-0 ">
+                            <code>adjtime<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>host.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>mke2fs.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>rc_maps.cfg</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-1 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>apache-ant<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>hostname</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>mkinitcpio.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>request-key.conf</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-2 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>apparmor.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>hosts</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>mkinitcpio.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>request-key.d</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-3 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>arch-release<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>ifplugd</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>modprobe.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>resolv.conf</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-4 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>avahi<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>initcpio</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>modules-load.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>resolvconf.conf</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-5 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>bash.bash_logout<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>inputrc</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>motd<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>rpc</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-6 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>bash.bashrc<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>iproute2</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>mtab<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>rsyslog.conf</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-7 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>binfmt.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>iptables</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>nanorc<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>securetty</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-8 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>ca-certificates<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>issue</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>netconfig<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>security</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-9 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>crypttab<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>java-7-openjdk</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>netctl<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>services</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-10 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>dbus-1<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>java-8-openjdk</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>netsniff-ng<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>shadow</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-11 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>default<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>kernel</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>nginx<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>shadow-</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-12 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>depmod.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>krb5.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>nscd.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>shells</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-13 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>dhcpcd.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>ld.so.cache</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>nsswitch.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>skel</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-14 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>dhcpcd.duid<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>ld.so.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>ntp.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>ssh</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-15 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>dkms<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>ld.so.conf.d</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>openldap<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>ssl</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-16 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>drirc<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>libnl</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>openvswitch<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>sudoers</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-17 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>elasticsearch<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>libpaper.d</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>os-release<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>sudoers.d</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-18 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>environment<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>lightdm</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pacman.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>sudoers.pacnew</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-19 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>ethertypes<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>locale.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pacman.conf.pacnew<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>sysctl.d</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-20 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>filebeat<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>locale.gen</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pacman.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>systemd</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-21 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>fonts<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>locale.gen.pacnew</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pam.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>tmpfiles.d</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-22 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>fstab<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>localtime</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pango<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>trusted-key.key</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-23 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>gai.conf<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>login.defs</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>papersize<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>udev</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-24 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>gemrc<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>logrotate.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>passwd<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>UPower</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-25 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>group<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>logrotate.d</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>passwd-<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>vdpau_wrapper.cfg</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-26 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>group-<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>logstash</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pcmcia<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>vimrc</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-27 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>group.pacnew<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>lvm</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pkcs11<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>webapps</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-28 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>grub.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>machine-id</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>polkit-1<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>wgetrc</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-29 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>gshadow<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>mail.rc</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>profile<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>X11</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-30 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>gshadow-<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>makepkg.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>profile.d<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>xdg</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-31 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>gshadow.pacnew<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>man_db.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>protocols<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>xinetd.d</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-32 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>gtk-2.0<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>mdadm.conf</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>pulse<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            <code>yaourtrc</code>
+                        </td>
+            </tr>
+            <tr class="table-row nth-child-33 ">
+                        <td rowspan="1" colspan="1" class="table-data nth-child-0 ">
+                            <code>gtk-3.0<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-1 ">
+                            <code>mime.types</code>
+                        </td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-2 ">
+                            <code>rc_keymaps<code>
+                        </code></code></td>
+                        <td rowspan="1" colspan="1" class="table-data nth-child-3 ">
+                            
+                        </td>
+            </tr>
+        </tbody></table>
+    </div>
+    </div>
+</div></div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba16" class="block c2522dc61b454a229b5510cb996373agba16 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba16" class="component text effc45c44b4e46a1bfa1a4380368b3caba16 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba16-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol start="5" type="a"><li>Use the <strong>cat</strong> command to display the contents of the <strong>bash.bashrc</strong> file:<code><br><br>[analyst@secOps ~]$ <strong>cat /etc/bash.bashrc</strong><br>#<br># /etc/bash.bashrc<br>#<br><br># If not running interactively, don't do anything<br>[[ $- != *i* ]] &amp;&amp; return<br><br>[[ $DISPLAY ]] &amp;&amp; shopt -s checkwinsize<br><br>PS1='[/u@/h /W]/$ '<br><br>case ${TERM} in<br>&nbsp;&nbsp;xterm*|rxvt*|Eterm|aterm|kterm|gnome*)<br>&nbsp;&nbsp;&nbsp;&nbsp;PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf '/033]0;%s@%s:%s/007' '${USER}' '${HOSTNAME%%.*}' '${PWD/#$HOME//~}''<br><br>;;<br>&nbsp;&nbsp;screen)<br>&nbsp;&nbsp;&nbsp;&nbsp; PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }'printf '/033_%s@%s:%s/033\' '${USER}' '${HOSTNAME%%.*}' '${PWD/#$HOME//~}''<br>;;<br>esac<br><br>[ -r /usr/share/bash-completion/bash_completion   ] &amp;&amp; . /usr/share/bash-completion/bash_completion<br>[analyst@secOps ~]$</code></li></ol><p>The syntax of <strong>bash.bashrc</strong> is out of scope of this course. This file defines the default behavior of the shell for all users. If a user wants to customize his/her own shell behavior, the default behavior can be overridden by editing the <strong>.bashrc</strong> file located in the user’s home directory. Because this is a system-wide configuration, the configuration file is placed under <strong>/etc</strong>, making it editable only by the root user. Therefore, the user will have to log in as root to modify <strong>bash.bashrc</strong>.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba17" class="block c2522dc61b454a229b5510cb996373agba17 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba17" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba17 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText"><p>Why are user application configuration files saved in the user’s home directory and not under <strong>/etc</strong> with all the other system-wide configuration files?</p></div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">Regular users do not have permission to write to /etc. Because Linux is a multi-user operating system, placing user-application configuration files under /etc would keep users from being able to customize their applications.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba18" class="block c2522dc61b454a229b5510cb996373agba18 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba18" class="component text effc45c44b4e46a1bfa1a4380368b3caba18 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba18-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Step 2: Editing and Saving Configuration files</strong></p><p>As mentioned before, configuration files can be edited with text editors.</p><p>Let’s edit <strong>.bashrc</strong> to change the color of the shell prompt from green to red for the <strong>analyst</strong> user.</p><ol type="a"><li> First, open <strong>SciTE</strong> by selecting <strong>Applications</strong> &gt; <strong>CyberOPS</strong> &gt; <strong>SciTE</strong> from the tool bar located in the upper portion of the <strong>Cisco CyberOPS VM</strong> screen.</li><li>Select <strong>File</strong> &gt; <strong>Open</strong> to launch <strong>SciTE</strong>’s Open File window.</li><li>Because <strong>.bashrc</strong> is a hidden file with no extension, SciTE does not display it in the file list. If the Location feature is not visible in the dialog box, Change the type of file shown by selecting <strong>All Files (*)</strong> from the type drop box, as shown below. All the files in the analyst’s home directory are shown.</li><li>Select <strong>.bashrc</strong> and click <strong>Open</strong>.</li><li>Locate 32 and replace it with 31. 32 is the color code for green, while 31 represents red.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba19" class="block c2522dc61b454a229b5510cb996373agba19 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba19" class="component graphic effc45c44b4e46a1bfa1a4380368b3caba19    is-left  "><div class="component__inner graphic__inner">
+
+  
+  
+
+  <div class="component__widget graphic__widget">
+
+    <div class="graphic__image-container">
+
+      <img loading="eager" class="graphic__image js-graphic-set-image-src" src="data:image/png;base64,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" data-large="course/en-US/assets/8.2.6-1-lab.jpg" data-small="course/en-US/assets/8.2.6-1-lab.jpg" aria-hidden="true">
+
+
+    </div>
+
+  </div>
+
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba20" class="block c2522dc61b454a229b5510cb996373agba20 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba20" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba20 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__header opentextbox__header" id="effc45c44b4e46a1bfa1a4380368b3caba20-header">
+      <div class="component__header-inner opentextbox__header-inner">
+    
+    
+        
+    
+        <div class="component__body opentextbox__body">
+          <div class="component__body-inner opentextbox__body-inner">
+            <ol start="6" type="a"><li>Save the file by selecting <strong>File</strong> &gt; <strong>Save</strong> and close <strong>SciTE</strong> by clicking the <strong>X</strong> icon.</li><li>Click the Terminal application icon located on the Dock, at the bottom center of the <strong>Cisco CyberOPS VM</strong> screen. The prompt should appear in red instead of green.</li></ol>
+          </div>
+        </div>
+    
+    
+      </div>
+    </div>
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText"><p>Did the terminal window which was already open also change color from green to red? Explain.</p></div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">No. The .bashrc file is executed and applied when a terminal is first opened, so any previously opened terminals will be unaffected by the changes to the .bashrc file.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba21" class="block c2522dc61b454a229b5510cb996373agba21 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba21" class="component text effc45c44b4e46a1bfa1a4380368b3caba21 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba21-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <ol type="a" start="8"><li>The same change could have been made from the command line with a text editor such as <strong>nano</strong>. From a new terminal window, type <strong>nano .bashrc</strong> to launch <strong>nano</strong> and automatically load the <strong>.bashrc</strong> file in it:<br><code>[analyst@secOps ~]$ <strong>nano .bashrc</strong><br><br> GNU nano 4.9.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File: .bashrc<br><br>export EDITOR=vim<br><br>PS1='/[/e[1;31m/][/u@/h /W]/$/[/e[0m/] '<br>alias ls='ls --color'<br>alias vi='vim'<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ Read 5 lines ]<br>^G Get Help&nbsp;&nbsp;^O Write Out ^W Where Is&nbsp;&nbsp;^K Cut Text ^J Justify&nbsp;&nbsp;&nbsp;&nbsp;^C Cur Pos<br>^X Exit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^R Read File ^\ Replace&nbsp;&nbsp;&nbsp;^U Uncut Text^T To Spell&nbsp;&nbsp;^_ Go To Line</code></li><li> Change 31 to 33. 33 is the color code to yellow.</li><li>Press <strong>CTRL+X</strong> to save and then press <strong>Y</strong> to confirm. The text editor <strong>nano</strong> will also offer you the chance to change the filename. Simply press <strong>ENTER</strong> to use the same name, <strong>.bashrc</strong>.</li><li>The text editor <strong>nano</strong> will end, and you will be back on the shell prompt. This time reload the bash terminal by entering the command <strong>bash</strong> in the terminal. The prompt should now appear in yellow instead of red.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba22" class="block c2522dc61b454a229b5510cb996373agba22 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba22" class="component text effc45c44b4e46a1bfa1a4380368b3caba22 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba22-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Step 3: Editing Configuration Files for Services</strong></p><p>System-wide configuration files are not very different from the user-application files. <strong>nginx</strong> is a lightweight web server that is installed in the <strong>Cisco CyberOps Workstation VM</strong>. <strong>nginx</strong> can be customized by changing its configuration file, which is located in <strong>/etc/nginx</strong>.</p><ol type="a"><li>First, open <strong>nginx</strong>’s configuration file in a <strong>nano</strong>. The configuration file name used here is <strong>custom_server.conf</strong>. Notice below that the command is preceded by the <strong>sudo</strong> command. After typing <strong>nano</strong> include a space and the <strong>-l</strong> switch to turn on line-numbering.<br><code>[analyst@secOps ~]$ <strong>sudo nano -l /etc/nginx/custom_server.conf</strong><br>[sudo] password for analyst:</code></li></ol><p>Use the arrow keys to navigate through the file.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba23" class="block c2522dc61b454a229b5510cb996373agba23 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba23" class="component text effc45c44b4e46a1bfa1a4380368b3caba23 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba23-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <code>GNU nano 4.9.2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/etc/nginx/custom_server.conf<br><br>1<br>2 #user html;<br>3 worker_processes&nbsp; 1;<br>4<br>5 #error_log&nbsp; logs/error.log;<br>6 #error_log&nbsp; logs/error.log&nbsp; notice;<br>7 #error_log&nbsp; logs/error.log&nbsp; info;<br>8<br>9 #pid&nbsp; &nbsp; &nbsp; &nbsp; logs/nginx.pid;<br>10<br>11<br>12 events {<br>13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;worker_connections  1024;<br>14 }<br>15<br>16<br>17 http {<br>18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mime.types;<br>19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default_type&nbsp; application/octet-stream;<br>20<br>21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#log_format&nbsp; main&nbsp; '$remote_addr - $remote_user [$time_local] '$request' '<br>22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'$status $body_bytes_sent '$http_referer' '<br>23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;''$http_user_agent' '$http_x_forwarded_for'';<br>24<br>25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#access_log&nbsp; logs/access.log&nbsp; main;<br>26<br>27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sendfile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on;<br>28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#tcp_nopush&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on;<br>29<br>30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#keepalive_timeout&nbsp; 0;<br>31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;keepalive_timeout&nbsp; 65;<br>32<br>33&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#gzip&nbsp; on;<br>34<br>35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;types_hash_max_size 4096;<br>36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server_names_hash_bucket_size 128;<br>37<br>38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server {<br>39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;81;<br>40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server_name&nbsp; localhost;<br>41<br>42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#charset koi8-r;<br>43<br>44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#access_log&nbsp; logs/host.access.log  main;<br>45<br>46&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location / {<br>47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root&nbsp;&nbsp; /usr/share/nginx/html;<br>48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp; index.html index.htm;<br>49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br></code>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba24" class="block c2522dc61b454a229b5510cb996373agba24 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba24" class="component text effc45c44b4e46a1bfa1a4380368b3caba24 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba24-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <p><strong>Note</strong>: Conventionally, .conf extensions are used to identify configuration files.</p><ol start="2" type="a"><li>While the configuration file has many parameters, we will configure only two: the port nginx listens on for incoming connections, and the directory it will serve web pages from, including the index HTML homepage file.</li><li> Notice that at the bottom of the window, above the nano commands, the line number is highlighted and listed. On line 39, change the port number from <strong>81</strong> to <strong>8080</strong>. This will tell nginx to listen to HTTP requests on port <strong>TCP 8080</strong>.</li><li>Next, move to line 47 and change the path from <strong>/usr/share/nginx/html/</strong> to <strong>/usr/share/nginx/html/text_ed_lab/</strong><br><strong>Note</strong>: Be careful not to remove the semi-colon at the end of the line or <strong>nginx</strong> will throw an error on startup.</li><li>Press <strong>CTRL+X</strong> to save the file. Press <strong>Y</strong> and then <strong>ENTER</strong> to confirm and use the <strong>custom_server.conf</strong> as the filename.</li><li>Type the command below to execute nginx using the modified configuration file:<br>[analyst@secOps ~]$ <strong>sudo nginx -c custom_server.conf</strong></li><li>Click the web browser icon on the Dock to launch Firefox.</li><li>On the address bar, type <strong>127.0.0.1:8080</strong> to connect to a web server hosted on the local machine on port 8080. A page related to this lab should appear.</li><li>After successfully opening the <strong>nginx</strong> homepage, look at the connection message in the terminal window.</li></ol>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba25" class="block c2522dc61b454a229b5510cb996373agba25 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba25" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba25 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText"><p>What is the error message referring to?</p></div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">The error message was generated by the successful web page connection and seems to be caused by a missing favicon.ico file in the lab.support.files directory.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba26" class="block c2522dc61b454a229b5510cb996373agba26 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba26" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba26 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__header opentextbox__header" id="effc45c44b4e46a1bfa1a4380368b3caba26-header">
+      <div class="component__header-inner opentextbox__header-inner">
+    
+    
+        
+    
+        <div class="component__body opentextbox__body">
+          <div class="component__body-inner opentextbox__body-inner">
+            <ol start="10" type="a"><li>To shut down the <strong>nginx</strong> webserver, press <strong>ENTER</strong> to get a command prompt and type the following command in the terminal window:<br>[analyst@secOps ~]$ <strong>sudo pkill nginx</strong></li><li>You can test whether the <strong>nginx</strong> server is indeed shut down by first clearing the recent history in the web browser, then close and re-open the web browser, then go to the nginx homepage at 127.0.0.1:8080.</li></ol>
+          </div>
+        </div>
+    
+    
+      </div>
+    </div>
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText">Does the web page appear?</div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">No.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba27" class="block c2522dc61b454a229b5510cb996373agba27 background-color-white remove-padding-bottom remove-padding-top">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba27" class="component opentextbox effc45c44b4e46a1bfa1a4380368b3caba27 is-full"><div class="component__inner openTextBox__inner">
+    
+    
+    <div class="component__widget openTextBox__widget question-container">
+            <div class="openTextBox__preText"><p><strong>Challenge Question</strong>: Can you edit the <strong>/etc/nginx/custom_configuration.conf</strong> file with SciTE? Describe the process below.<br>Remember, because the file is stored under /etc, you will need root permissions to edit it.</p></div>
+        <div class="openTextBox__textArea-container">
+            <fieldset class="openTextBox__fieldset">
+                <legend class="openTextBox__legend">Answer Area</legend>
+                <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Type your answers here." tabindex="0"></textarea>
+            </fieldset>
+        </div>
+        <div class="openTextBox__answerText answergray u-display-none">From a terminal window, issue sudo scite /etc/nginx/custom_configuration.conf to launch scite as root.</div>
+        <div class="btn__container">
+            <button class="btn-text openTextBox__showButton show-answer" tabindex="0">Show Answer</button>
+            <button class="btn-text openTextBox__hideButton hide-answer u-display-none" tabindex="0">Hide Answer</button>
+        </div>
+    </div>
+</div>
+</div></div>
+
+</div>
+</div><div data-adapt-id="c2522dc61b454a229b5510cb996373agba28" class="block c2522dc61b454a229b5510cb996373agba28 background-color-white remove-padding-bottom remove-padding-top    ">
+
+<div class="block__inner">
+
+
+  <div class="component__container">
+  <div data-adapt-id="effc45c44b4e46a1bfa1a4380368b3caba28" class="component text effc45c44b4e46a1bfa1a4380368b3caba28 no-element-backgrounds   is-full  "><div class="component__inner text__inner">
+  
+  
+  <div class="component__header text__header" id="effc45c44b4e46a1bfa1a4380368b3caba28-header">
+    <div class="component__header-inner text__header-inner">
+  
+  
+      
+  
+      <div class="component__body text__body">
+        <div class="component__body-inner text__body-inner">
+          <h3>Reflection</h3><p>Depending on the service, more options may be available for configuration.</p><p>Configuration file location, syntax, and available parameters will vary from service to service. Always consult the documentation for information.</p><p>Permissions are a very common cause of problems. Make sure you have the correct permissions before trying to edit configuration files.</p><p>More often than not, services must be restarted before the changes take effect.</p>
+        </div>
+      </div>
+  
+  
+    </div>
+  </div>
+</div>
+</div></div>
+
+</div>
+</div></div><div class="openTextBoxController-inner"><div class="openTextBoxController__button-container">
+  <button class="btn-text showhidebtn openTextBoxController__showButton" tabindex="0">Show All Answers</button>
+  <button class="btn-text showhidebtn openTextBoxController__hideButton u-display-none" tabindex="0">Hide All Answers</button>
+  <button class="btn-text resetbtn openTextBoxController__resetButton" tabindex="0">Clear All Responses</button>
+</div>
+  <div class="post-text"><hr>© 2017 - 2023 Cisco and/or its affiliates. All rights reserved. Cisco Public</div>
+</div>
+
+</div>
+</body>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            .querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      var event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        .querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        .querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+    });
+  </script>
+  </html>

@@ -1,0 +1,901 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Lab – Disassemble a Computer</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Webdings;
+	panose-1:5 3 1 2 1 5 9 6 7 3;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Arial",sans-serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-indent:0in;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	page-break-after:avoid;
+	font-size:3.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:normal;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	font-size:8.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.AnswerLineL25, li.AnswerLineL25, div.AnswerLineL25
+	{mso-style-name:"Answer Line L25";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;
+	font-style:italic;}
+p.PageHead, li.PageHead, div.PageHead
+	{mso-style-name:"Page Head";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	line-height:115%;
+	border:none;
+	padding:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.AnswerLineL50, li.AnswerLineL50, div.AnswerLineL50
+	{mso-style-name:"Answer Line L50";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;
+	font-style:italic;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+p.TableText, li.TableText, div.TableText
+	{mso-style-name:"Table Text";
+	mso-style-link:"Table Text Char";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.TableTextChar
+	{mso-style-name:"Table Text Char";
+	mso-style-link:"Table Text";}
+p.TableHeading, li.TableHeading, div.TableHeading
+	{mso-style-name:"Table Heading";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	text-align:center;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.ConfigWindow, li.ConfigWindow, div.ConfigWindow
+	{mso-style-name:"Config Window";
+	margin:0in;
+	font-size:3.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-style:italic;}
+p.SubStepAlpha, li.SubStepAlpha, div.SubStepAlpha
+	{mso-style-name:"SubStep Alpha";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL50, li.BodyTextL50, div.BodyTextL50
+	{mso-style-name:"Body Text L50";
+	mso-style-link:"Body Text L50 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+p.BodyTextL25, li.BodyTextL25, div.BodyTextL25
+	{mso-style-name:"Body Text L25";
+	mso-style-link:"Body Text L25 Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.AnswerGray
+	{mso-style-name:"Answer Gray";
+	font-family:"Arial",sans-serif;
+	color:windowtext;
+	border:none;
+	background:#D9D9D9;
+	font-weight:bold;}
+p.SubStepNum, li.SubStepNum, div.SubStepNum
+	{mso-style-name:"SubStep Num";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-indent:-.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.DevConfigGray
+	{mso-style-name:"DevConfig Gray";
+	font-family:"Courier New";
+	color:windowtext;
+	border:none;
+	background:#D9D9D9;
+	font-weight:bold;}
+p.BodyTextL25Bold, li.BodyTextL25Bold, div.BodyTextL25Bold
+	{mso-style-name:"Body Text L25 Bold";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;
+	font-weight:bold;}
+p.ReflectionQ, li.ReflectionQ, div.ReflectionQ
+	{mso-style-name:"Reflection Q";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-link:"Heading 4";
+	font-family:"Times New Roman",serif;
+	color:white;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.BodyTextL25Char
+	{mso-style-name:"Body Text L25 Char";
+	mso-style-link:"Body Text L25";}
+p.TableAnswer, li.TableAnswer, div.TableAnswer
+	{mso-style-name:"Table Answer";
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+span.BodyTextL50Char
+	{mso-style-name:"Body Text L50 Char";
+	mso-style-link:"Body Text L50";}
+.MsoChpDefault
+	{font-size:10.0pt;
+	font-family:"Arial",sans-serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:76.5pt .75in 1.0in .75in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Suk-Yi Pennock -X (spennock - UNICON INC at Cisco)</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">1950000.00000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:SharedWithUsers msdt:dt="string"></mso:SharedWithUsers>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Suk-Yi Pennock -X (spennock - UNICON INC at Cisco)</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x01010001F18ECBD8ED834DABF5ACC3DB9AA918</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:MediaLengthInSeconds msdt:dt="string"></mso:MediaLengthInSeconds>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<script>
+var TXT_showAnswer = 'Show Answer';
+var TXT_hideAnswer = 'Hide Answer';
+var TXT_showAllAnswers = 'Show All Answers';
+var TXT_hideAllAnswers = 'Hide All Answers';
+var TXT_clearMyAnswers = 'Clear My Responses';
+var TXT_exportMyAnswers = 'Export My Answers';
+var TXT_showConfig = 'Show Confguration';
+var TXT_hideConfig = 'Hide Confguration';
+var TXT_clearDrawing = 'Clear Drawing';
+var TXT_placeholder = 'Type your answer here.';
+</script>
+<script src='fixer.js' type="text/javascript"></script>
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle><span style='color:#EE0000;font-weight:normal'><b><span
+style='color:windowtext'>Lab – Disassemble a Computer</span></b></span></p>
+
+<h1>Introduction</h1>
+
+<p class=BodyTextL25>In this lab, you will disassemble a desktop computer using
+safe lab procedures and the proper tools. Use extreme care and follow all
+safety procedures. Familiarize yourself with the tools you will be using in
+this lab. </p>
+
+<p class=BodyTextL25>The goal of this lab is to separate the components and
+practice using tools properly. The separated components can be used in a later
+lab for assembly.</p>
+
+<p class=BodyTextL25>This lab does not include removing the motherboard, CPU,
+and cooling device from the computer due to the replacement cost of these
+items. If possible, allow learners to remove these components from spare or
+broken computers that are kept in the classroom for part identification and
+demonstration.</p>
+
+<p class=BodyTextL25Bold>Part 1: Preparation</p>
+
+<p class=BodyTextL25Bold>Part 2: Parts Removal</p>
+
+<h1 style='margin-left:0in;text-indent:0in'>Recommended Tools</h1>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ title="recommended tools table" summary="A table of recommended tools."
+ width=678 style='width:508.5pt;margin-left:8.75pt;border-collapse:collapse;
+ border:none'>
+ <thead>
+  <tr>
+   <td width=300 valign=top style='width:225.0pt;border:solid windowtext 1.0pt;
+   padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableText>Safety glasses</p>
+   <p class=TableText>Antistatic wrist strap</p>
+   <p class=TableText>Antistatic mat</p>
+   <p class=TableText>Flat head screwdrivers</p>
+   <p class=TableText>Phillips head screwdrivers</p>
+   <p class=TableText>Torx screwdrivers</p>
+   <p class=TableText>Hex driver</p>
+   </td>
+   <td width=378 valign=top style='width:283.5pt;border:solid windowtext 1.0pt;
+   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableText>Part retriever</p>
+   <p class=TableText>Thermal compound</p>
+   <p class=TableText>Can of compressed air</p>
+   <p class=TableText>Cable ties</p>
+   <p class=TableText>Parts organizer</p>
+   <p class=TableText>Containers for storing computer parts</p>
+   <p class=TableText>Antistatic bags for electronic parts</p>
+   </td>
+  </tr>
+ </thead>
+</table>
+
+<h1 style='margin-left:0in;text-indent:0in'>Instructions</h1>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 1: Preparation</h2>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Power off the Computer and
+remove peripheral items.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Turn off the power to the computer and disconnect the power cable from
+the wall and the power supply.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Remove all external peripheral items, such as Ethernet cables, monitors,
+keyboards.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Open the Computer Case.</h3>
+
+<p class=BodyTextL25>Generally, computer cases are held in place using one or a
+combination of these three ways below:</p>
+
+<p class=BodyTextL25Bold style='page-break-after:avoid'>Screwless</p>
+
+<p class=BodyTextL50>These cases are held together using metal or plastic clips.
+To open the case, the clips are released by pressing buttons or switches to
+remove the side panel.</p>
+
+<p class=BodyTextL25Bold style='page-break-after:avoid'>Screw</p>
+
+<p class=BodyTextL50>Locate all the screws that secure the side panels to the
+back of the computer. These screws are located at the edge of the case. Use the
+proper size and type of screwdriver to remove the side panel screws. Do not
+remove the screws that secure the power supply to the case. Put all the screws
+in one place, such as a compartment in the parts organizer or small cup. Label
+the compartment or cup with a piece of masking tape on which you have written <b>side
+panel screws</b>. Remove the side panels from the case.</p>
+
+<p class=BodyTextL25Bold style='page-break-after:avoid'>Thumbscrew</p>
+
+<p class=BodyTextL50>These cases come with screws that can be tightened or
+loosened with your fingers. Loosen the thumbscrews to remove the side panel.
+The thumbscrews are located on the edge of the computer case.</p>
+
+<p class=BodyTextL25>If you have a camera or smartphone, take a picture of the
+inside of the computer case to be used as a reference when reassembling the
+computer.</p>
+
+<h4 style='margin-left:.25in'>Questions:</h4>
+
+<p class=BodyTextL25 style='margin-top:0in'>What type of screwdriver did you
+use to remove the screws?</p>
+
+<p class=AnswerLineL25>Type your answers here.</p>
+
+<p class=BodyTextL25><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>A Phillips screwdriver and hex drivers
+are the most commonly used screwdrivers to remove case panels.</span></span></span></p>
+
+<p class=BodyTextL25>How many screws secured the side panels?</p>
+
+<p class=AnswerLineL25>Type your answers here.</p>
+
+<p class=BodyTextL25><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary. Normally there are <span
+style='border:none'>two screws for each panel on a mid-tower case.</span></span></span></span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 3: Antistatic Wrist Strap.</h3>
+
+<p class=BodyTextL25>Put on an antistatic wrist strap. Connect one end of the
+conductor to the wrist strap. Clip the other end of the conductor to an
+unpainted, metal part of the case.</p>
+
+<p class=BodyTextL25>If you have an antistatic mat, place it on the work
+surface and put the computer case on top of it. Ground the antistatic mat to an
+unpainted, metal part of the case.</p>
+
+<h2 style='margin-left:0in;text-indent:0in'>Part 2: Parts Removal</h2>
+
+<p class=BodyTextL25>In this part, you will remove the internal drives and data
+cables, adapter cards, memory modules, and power supply.</p>
+
+<p class=BodyTextL25><b>Note</b>: Some manufacturers do not use screws to
+fasten components inside of the computer case. Some may use plastic or metal
+clips that fasten components to the computer chassis. When in doubt, perform a
+web search for the computer case manufacturer or computer system.</p>
+
+<p class=BodyTextL25><b>Note</b>: Be careful to remove only screws holding 
+components in place, and not the screws that hold components together.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 1: Remove the Hard Drive.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate the hard drive. Carefully disconnect the power and data cables from
+the back of the hard drive.</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>Which type of data cable did you
+disconnect?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary.</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> SATA</span></span></span><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'> is an example of data cables</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'>.</span></span></span></p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate all the screws that secure the hard drive in place. Use the
+proper size and type of screwdriver to remove the hard drive screws. Put all
+the screws in one place and label them.</p>
+
+<h4>Questions:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>What type of screws secured the
+hard drive to the case?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary. Normally, crosshead
+screws secure hard driv<span style='border:none'>es in place.</span></span></span></span></p>
+
+<p class=BodyTextL50>How many screws secured the hard drive to the case?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary. Most cases allow for
+up to four screws per hard drive.</span></span></span></p>
+
+<p class=BodyTextL50>Is the hard drive connected to a mounting bracket? If so,
+what type of screws secure the hard drive to the mounting bracket?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary. Most hard drive
+manufacturers use a flush, crosshead screw.</span></span></span></p>
+
+<p class=BodyTextL50><b>Caution</b>: Do NOT remove the screws that hold the
+hard drive together.</p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Gently remove the hard drive from the case. Look for a jumper reference
+chart on the hard drive. If there is a jumper installed on the hard drive, use
+the jumper reference chart to see if the hard drive is set for a Master, Slave,
+or Cable Select (CS) drive. Place the hard drive in an antistatic bag. </p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>What is the jumper setting of the
+hard drive?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Master, Slave, or Cable Select (CS)</span></span></span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 2: Remove Optical Drive.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate the optical drive (Blu-ray, DVD, etc.). Carefully disconnect the
+power and data cables from the optical drive. Remove the audio cable from the
+optical drive if there is one connected.</p>
+
+<h4>Questions:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>What kind of data cable did you
+disconnect?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary.</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> </span></span></span><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>For example, </span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'>SATA </span></span></span><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>cable</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> </span></span></span><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>connects</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> the</span></span></span><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'> op<span style='border:none'>tical drive</span></span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> to the motherboard</span></span></span><span class=AnswerGray><span
+style='color:black;border:none'><span style='border:none'>.</span></span></span></p>
+
+<p class=BodyTextL50>Is there a jumper on the optical drive? What is the jumper
+setting?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Master, Slave, or Cable Select (CS)
+drive.</span></span></span></p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate and remove all the screws that secure the optical drive to the
+case. Put all the screws in one place and label them. Place the optical drive
+in an antistatic bag.</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>How many screws secured the optical
+drive to the case?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary.</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> There are usually four screws.</span></span></span></p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 3: Remove the Power Supply.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate the power supply. Find the power connection(s) to the
+motherboard.</p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Gently remove the power connection(s) from the motherboard.</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>How many pins are there in the
+motherboard connector?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary.</span></span></span></p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Disconnect the power cables from any case fans.</p>
+
+<p class=SubStepAlpha>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Disconnect the power cable from the video card if it requires one. </p>
+
+<p class=SubStepAlpha>e.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Disconnect any other power supply cables from where they were connected.</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>If there were additional cables
+disconnected, to what were they connected?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'>.</span></span></span></p>
+
+<p class=SubStepAlpha>f.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate and remove all the screws that secure the power supply to the
+case. Put all the screws in one place and label them.</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>How many screws secure the power
+supply to the case?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>A<span style='border:none'>nswers may
+vary.</span></span></span></span></p>
+
+<p class=SubStepAlpha>g.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Carefully remove the power supply from the case. Place the power supply
+with the other computer components.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 4: Remove Adapter Cards.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate any adapter cards that are installed in the computer, such as a
+video, NIC, or sound card.</p>
+
+<p class=SubStepAlpha><span style='color:black'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:black'>Locate and remove the screw that
+secures the adapter card to the case. Put the adapter card screws in one place
+and label them.</span></p>
+
+<p class=SubStepAlpha>c.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Carefully remove the adapter card from the slot. Be sure to hold the
+adapter card by the mounting bracket or by the edges. Place the adapter card in
+an antistatic bag. Repeat this process for all the adapter cards.</p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.25in;line-height:normal'><b><span style='font-size:10.0pt'>Note</span></b><span
+style='font-size:10.0pt'>: Be very careful when removing video adapters. There
+is often a locking tab on the slot that must be released before the card can be
+removed.</span></p>
+
+<p class=SubStepAlpha style='page-break-after:avoid'>d.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>List the adapter cards and the slot types below.</p>
+
+<div align=center>
+
+<table class=LabTableStyle border=1 cellspacing=0 cellpadding=0
+ title="Adapter Card and Slot Type"
+ summary="This table is where you can list the adapter cards and slot types. "
+ width=672 style='width:7.0in;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+   background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Adapter Card</span></p>
+   </td>
+   <td width=312 valign=bottom style='width:233.7pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#DBE5F1;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Slot Type</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableAnswer>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=ConfigWindow>Blank Line, No additional information</p>
+
+<div align=center>
+
+<table class=LabAnswerTable border=1 cellspacing=0 cellpadding=0
+ title="Adapter Card and Slot Type"
+ summary="This table is where you can list the adapter cards and slot types. "
+ width=672 style='width:7.0in;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+   background:#F2DBDB;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Adapter Card</span></p>
+   </td>
+   <td width=312 valign=bottom style='width:233.7pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#F2DBDB;padding:.7pt 5.75pt .7pt 5.75pt'>
+   <p class=TableHeading><span style='color:black'>Slot Type</span></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>Answers may vary: Video, NIC, Modem</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>Answers may vary: PCI, PCIe, or CNR</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>&nbsp;</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>&nbsp;</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td width=322 valign=bottom style='width:241.65pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>&nbsp;</p>
+  </td>
+  <td width=312 valign=bottom style='width:233.7pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:.7pt 5.75pt .7pt 5.75pt'>
+  <p class=TableText>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=ConfigWindow>Blank Line, No additional information</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 5: Remove Memory Modules.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Locate the memory modules on the motherboard.</p>
+
+<h4>Questions:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>What type of memory modules are
+installed on the motherboard?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary.</span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'> Some of the examples are DDR3 and DDR4.</span></span></span></p>
+
+<p class=BodyTextL50>How many memory modules are installed on the motherboard?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>Answers may vary.</span></span></span></p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Remove the memory modules from the motherboard. Be sure to release any
+locking tabs that may be securing the memory module. Hold the memory module by
+the edges and gently lift it out of the slot. Put the memory modules in an
+antistatic bag.</p>
+
+<h3 style='margin-left:0in;text-indent:0in'>Step 6: Remove Data Cables.</h3>
+
+<p class=SubStepAlpha>a.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Remove all data cables from the motherboard. Make sure to note the
+connection location of any cable you disconnect.</p>
+
+<h4>Question:</h4>
+
+<p class=BodyTextL50 style='margin-top:0in'>What types of cables were
+disconnected?</p>
+
+<p class=AnswerLineL50>Type your answers here.</p>
+
+<p class=BodyTextL50><span class=AnswerGray><span style='color:black;
+border:none'><span style='border:none'>An<span style='border:none'>swers may
+vary.</span></span></span></span><span class=AnswerGray><span style='color:
+black;border:none'><span style='border:none'> Some of the examples are </span></span></span><span
+class=AnswerGray><span style='color:black;border:none'><span style='border:
+none'>SATA cables.</span></span></span></p>
+
+<p class=SubStepAlpha>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>You have completed this lab. The computer case should contain the
+motherboard, the CPU, and any cooling devices. Do not remove any additional
+components.</p>
+
+<p class=ConfigWindow>End of Document</p>
+
+</div>
+
+</body>
+
+</html>

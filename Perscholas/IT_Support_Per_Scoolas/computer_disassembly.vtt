@@ -1,0 +1,123 @@
+- [Instructor] Hello
+everyone, can you believe it? We're here to disassemble a perfectly good and working computer. But that's how we learn and that's how we're going to practice becoming
+the best IT professional.
+Let's get started on disassembling. 
+To begin, I'm going to power off the computer, then I'm going to disconnect the power cable from the power supply.
+Commonly, we like to depress the power button and hold it down a little bit longer, let it get rid of any excess power on the system.
+On the back of the computer, now we can remove all these video and audio cables, mice and keyboard. Also, I'm pulling my network cable as well.
+Network cable, mouse, keyboard, I can remove the audio cable and then even my video connector.
+The computer is completely unplugged and now I'm going to lay it on its side and we're going to get to the internals.
+I'm going to move the mouse and keyboard to make it easy.
+I'm going to get the computer on its side. I can remove this screw on the back.
+You can either do this by hand or use a screwdriver if you need, then we can slide the case cover. We'll start again on the inside.
+With my case opened up, laying on its side, you need to start with our hard drive.
+My solid state hard drive is mounted right here.
+We're going to zoom in on that and we're going to disassemble.
+First what we're going to is take off the SATA power connector which is right here.
+You can safely pull that straight back and disconnect.
+Then we have the SATA data connector, which I can also pull and disconnect.
+At this time, I can now unscrew that hard drive and we can pull it right out of there.
+I'll take that corresponding screw driver with the correct bit and we'll remove these screws that are holding it on.
+With the first screw removed, hold it up so it doesn't drop, and take out the next
+screw that's holding it in.
+Commonly, your hard drives will have four screws to remove, but for the sake of recording I've got two.
+Hard drive is out and the screw is removed. At this point, we're going to continue on.
+I'm going to do the optical disk drive. 
+The optical disk drive is up here at the top of my case, so we'll zoom in on that next and we'll remove it.
+Let's continue on and remove this optical drive.
+This is the best view you are going to get in this tight space.
+We got the power supply here, we got the optical drive right next to it.
+So what we're going to do here is remove the SATA power connector from our optical drive 
+which is this one and grab it with my fingers right there and pop it out.
+Right behind that, we have the smaller SATA data connector, so I'm going to remove that as well. Just grabbing it and pulling it straight out as well.
+The power and the data is now disconnected from this SATA optical disk drive.
+We got a couple things to get it out though.
+Number one is I've got two screws, which you'll see one here and one here that we need to remove. So we'll remove those two screws.
+As we're removing those two screws, I want you to think about something.
+The power supply is right behind this optical drive and we've got the optical drive that was screwed in.
+Which way is this optical drive going to go to get out of our case?
+Does it go back into the power supply or we have to pull this thing out the front?
+That's the conversation that you got to have when you work on these cases.
+For us, screws are out, optical drive is ready to go nowhere.
+What we're going to need to do is turn this case so the front is facing up and we need to pop off the front plastic of our case, let's do that next.
+So that optical drive needs to move, it's not going anywhere, it's not going back and it's not going forward.
+So what we need to do is pop up the front plastic part of our case.
+I've got three of these over here, there's three on the other side.
+I'll show you this, what I'm going to do is pull them up, I'm going to pull them up, I'm
+going to push that case forward and I can pop off this front cover.
+And now, the thing just popped off.
+What I can do is take this optical drive and I'm push it from the back, look at that.
+It's going to slide right out for me, optical drive out.
+Let's continue on and go through more components of disassembly.
+Let's continue and we're going to remove the power supply.
+In order to do this, we need to disconnect it from the motherboard.
+Up here at the top, you can see I have a 24-pin main power supply connection to my motherboard. I've got that little lever right there.
+We're going to pull that back and pull this thing straight up off the motherboard.
+I'm going to get my hand in there, put my finger on that little lever and then I'm going to grab it and pull straight up, got it, there you go, with the lever and all, you can see that clip on there.
+I'm not done yet though, as we take a closer look inside this case, we see that there's this other ATX CPU power connector.
+You may not have this on the board, it really does depend on your computer.
+But this one also has a little lever. This lever you can see right down over here.
+Let's zoom in on that and we'll get this one removed as well.
+We zoomed in, you can see it better.
+It's a four pin right there and we see that it's got that little clip on it as well.
+I'm going to reach my hand in there, try to not to obstruct the cameras as best as possible, which is not easy, because there is a very small space to work in here.
+I'm going to grab that thing, I'm going to put my thumb on that lever and pull straight up and we got it.
+It's the four pin ATX CPU power connector. It gives us extra power to
+the board for our components. So we're good on the power disconnects.
+We're going to zoom out a little bit and we're going to take out some adapter cards and finish off our disassembly.
+We've got one adapter card here and that's our video card and we're going to remove this thing. In order to remove it, what I need to do is take off this.
+What is this?
+This is going to be our mounting bracket. 
+When I remove this mounting bracket, it will allow us to actually lift up and pull out this graphics card.
+I'll take my screwdriver and we're going to grab that screw on that mounting bracket and we're going to unscrew it like so.
+With that being unscrewed, which now it's out, I can go ahead and I can just lift this off.
+This secures any cards I have so they're not going to shift or be removed.
+At this time, I'm going to reach into that computer case and my graphics card has a
+little lever on the bottom.
+This lever's very difficult to see so we're going to do some camera movement here.
+Here's a better angle, we got a diagonal view of this graphics card.
+If you look closely down there, I'll try not to block the light as I get in this small space. There's this little black lever right here.
+If I try to pull up on the card right now, like right here and pull up, it's not going anywhere.
+So what I have to do is pull this lever out to the left, which is towards my yellow wand there and I can lift straight up on the card and it will come out of the PCI slot that I have.
+I reach in there, so you can see it, I'll pull that lever right there, pull it towards me, I can lift the card straight up, now it pops out.
+You can see where the lever is actually holding onto right down there, over here, which comes in handy so your card won't fall of the slot. I'll pull that card out, it's gone.
+We'll continue onwards now and we're going to work on that power supply.
+We may have already removed our power supply connectors off they motherboard, but it's time to remove the power supply from the case.
+In order to do this, I'm going to tilt my power supply up in the case and we're going to
+take a look at a couple screws.
+We've got screws of, screw number one, screw number two, screw number three and screw number four.
+Now we need to take these out in order to get access to slide this power supply out of the case.
+I think you can tell which way it's going to slide out.
+See how the middle of the case is?
+It's not going towards me, it's going to slide out into the case.
+So let's go into the case, so let's do this. Take my screwdriver and let's unscrew.
+This is that moment where you stop and you make sure it's not going to fall literally into the case at a vertical angle.
+My power supply here actually has a lever.
+And the lever I'll show you in a little bit is down below and that's keeping the power supply locked in.
+Even now, it's not shifting where there's one screw left.
+Now that's not going to be common for every single computer case, so keep in mind, for you it might be a good time to hold onto the power supply as you take out your last screw.
+I can do the same, because you've already seen the other ones in video.
+So last screw is out and take a look my power supply is not moving, it's still locked.
+And that's because of another angle with the video I'm going to show you.
+If you look closely, down here at the bottom corner of my power supply, right over here, that's a locking lever.
+That is preventing my power supply from moving into the case.
+So what I have to do is take my hand and I'm going to depress with my thumb on that lever, see how it moves.
+Then you push down and then case is going to be able to allow our parts to come right out and there it goes.
+So we're going to remove the rest of the connectors and we've got these front panel
+connectors inside of here.
+I've got one for audio on that front panel, I've got one for USB and I've got another one 
+for the front panel power, as well as, it's going to be a power LED reset switch, even a speaker for BIOS.
+So all we need to do is just take on these and lightly pull them straight up and there goes our audio,
+there goes our USB, and lastly our front panel connectors for our power button, reset
+button, speaker and more.
+Next, we need to get the memory out, which is going to be our RAM, our random access memory, which are two memory chips here. You see them right here and right here.
+We're going to zoom in on those, I'm going to take a look at how to remove those from our computer case.
+Now that we've located, we zoomed in on our two RAM modules, we're going to release that locking tabs on both of the memory modules on the motherboard and it's on both sides.
+After that, we can gently lift each of these out of the motherboard slots and we can place them on our antistatic mat for safety.
+So I'll go ahead and I'll pop the one locking lever, so you can pull it down.
+Go on the other side, which is a small case and you can lift that RAM module out and put it on our mat.
+You can do the same thing for the second module, pull it on the locking levers and then lift that card right out, awesome.
+At this time, we're finished with our disassembly.
+There's always more that we could take out, but due to the fragile nature of our remaining items I've got a CPU with a CPU heatsink and fan and I've got the motherboard itself with the case fans.
+This completes the disassembly of our computer tower.
+
